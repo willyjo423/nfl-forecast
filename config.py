@@ -1,7 +1,9 @@
 """Central configuration for the NFL build.
 
 Constants that differ from the college version are marked, because most of the
-differences are not cosmetic - they reflect a genuinely different sport.
+differences are not cosmetic - they reflect a genuinely different sport. The
+ones the first live probe settled are marked MEASURED, with the number it
+reported, so nobody has to wonder later whether a value was reasoned or copied.
 """
 from __future__ import annotations
 
@@ -13,8 +15,9 @@ DATA = ROOT / "data"
 CACHE = DATA / "cache"
 MODELS = ROOT / "models"
 DOCS = ROOT / "docs"
+FORECASTS = DATA / "forecasts"
 
-for _p in (DATA, CACHE, MODELS, DOCS):
+for _p in (DATA, CACHE, MODELS, DOCS, FORECASTS):
     _p.mkdir(parents=True, exist_ok=True)
 
 # --- Sources ---------------------------------------------------------------
@@ -37,33 +40,79 @@ def pbp_urls(season: int) -> list[str]:
     ]
 
 
-# Live forecasts still need a weather service: `temp` and `wind` in the games
-# file are populated for games already played, not for ones about to be.
+# Live forecasts still need a weather service. MEASURED: temp and wind are
+# populated for 69% of all rows - the gap is indoor games (where roof already
+# says so) plus games not yet played, which is exactly the set a forecast is
+# about. So the games file covers history and Open-Meteo covers the slate.
 OPEN_METEO_FORECAST = "https://api.open-meteo.com/v1/forecast"
 
 # --- Training window -------------------------------------------------------
-# The NFL plays ~272 games a season against college football's ~800, so the
-# window has to be wider to reach a comparable sample. 2010 is a deliberate
-# floor: earlier football is different enough that the relationships drift.
-TRAIN_START_YEAR = int(os.environ.get("TRAIN_START_YEAR", 2010))
-TRAIN_END_YEAR = int(os.environ.get("TRAIN_END_YEAR", 2025))
+# MEASURED: the games file runs 1999-2026 with complete spreads and totals from
+# 1999 onward, so the floor is a judgement about football rather than a data
+# limit. 2006 keeps roughly 5,400 games - about 25% more than a 2010 floor -
+# while staying inside the modern passing era. Widen or narrow it with the
+# environment variable and let walk-forward MAE settle the argument.
+TRAIN_START_YEAR = int(os.environ.get("TRAIN_START_YEAR", 2006))
+TRAIN_END_YEAR = int(os.environ.get("TRAIN_END_YEAR", 2026))
 REGULAR_SEASON_WEEKS = 18
 
 # --- Ratings engine --------------------------------------------------------
-# Far better determined than the college version: 32 teams playing 17 games
-# each, rather than 133 teams playing 12, so the solve needs less shrinkage.
-RIDGE_LAMBDA_BASE = 18.0
+# The right ridge strength is roughly (game noise variance) / (true team-quality
+# variance). NFL margins scatter about 13 points around their expectation while
+# real team quality spans only about 6, which puts the ratio near 5 - nothing
+# like the 40 the college build uses, where the talent gap between the best and
+# worst teams is enormous and a single result says much more.
+#
+# The first version of this file carried 18 on the reasoning that 32 teams
+# playing 17 games is better determined than 133 playing 12. That confused how
+# well-*connected* the schedule is with how *informative* a game is, and it is
+# the second that sets the shrinkage. At 18 the projected margins came out with
+# a standard deviation of 3.1 points against a real spread of 13.7 - every game
+# looked like a coin flip. The offline sweep is monotonic from 26 down to 2.
+RIDGE_LAMBDA_BASE = 5.0
 # NFL margins are tighter, so the blowout cap comes down with them.
 MARGIN_CAP = 21.0
-# Home field is worth noticeably less than in college, and has been shrinking.
-HFA_PRIOR = 1.7
-# Rosters are far more stable year to year, so last season carries more.
-YEAR_CARRYOVER = 0.72
-# An 18-week season with a bye; half-life in weeks.
-RECENCY_HALFLIFE_WEEKS = 5.0
+# MEASURED: home margin averaged +1.87 over 2015-2019 and +1.90 over 2020-2024,
+# against +3.24 in 1999 - home field has roughly halved this century. Those
+# figures include playoffs, where the home side is the better seed by
+# construction, so the regular-season prior sits a little under them.
+HFA_PRIOR = 1.8
+# Rosters are more stable than college, but the draft, the cap and a
+# strength-of-schedule formula all pull hard toward the mean, and NFL
+# year-over-year point-differential correlation is only about 0.5. The college
+# value of 0.60 would have been optimistic here, and 0.72 plainly wrong.
+YEAR_CARRYOVER = 0.55
+# Half-life in weeks. Deliberately longer than the college value of 6: with 17
+# games instead of 12 there is less data per team, and discarding September
+# aggressively leaves November running on four games.
+#
+# The offline sweep prefers no decay at all, but that result is worthless - the
+# synthetic teams have a fixed strength all season, so forgetting can only
+# lose information. Real teams change, and only the live walk-forward can say
+# by how fast. Treat this as a judgement, not a measurement.
+RECENCY_HALFLIFE_WEEKS = 8.0
+
+# --- Efficiency ------------------------------------------------------------
+# Rates are noisier per game than scoring margin, so they shrink harder.
+EFF_LAMBDA = 10.0
+# MEASURED: after excluding garbage time, competitive plays per team-game
+# averaged 52 but ran as low as 14. A 14-play team-game is a blowout whose
+# rates are mostly noise, so the solve weights rows by play count and anything
+# under this floor is dropped outright.
+MIN_EFF_PLAYS = 20
+
+# --- Quarterbacks ----------------------------------------------------------
+# MEASURED: home_qb_id and away_qb_id are present on 96.4% of rows, and on
+# essentially all of them inside the training window. This is the one thing the
+# NFL data gives us that college never did.
+# Starts needed before a quarterback's own record outweighs the league mean.
+QB_SHRINKAGE_STARTS = 10.0
+# Half-life in games for a quarterback's own history.
+QB_HALFLIFE_GAMES = 24.0
 
 # --- Model -----------------------------------------------------------------
 RANDOM_SEED = 1729
+EDGE_TIERS = [(1.5, "slim"), (2.5, "moderate"), (4.0, "large")]
 
 # --- Runtime ---------------------------------------------------------------
 REQUEST_TIMEOUT = 90

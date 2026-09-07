@@ -242,15 +242,31 @@ def test_efficiency() -> None:
     check("efficiency recovers the planted signal", corr > 0.2,
           f"corr={corr:+.3f}")
 
+    # Passing and rushing EPA replaced the qb_epa column the first live probe
+    # exposed as a duplicate of epa. They must be genuinely different numbers,
+    # or the replacement achieved nothing.
+    check("pass and rush EPA both produced",
+          {"pass_epa", "rush_epa"} <= set(eff.columns))
+    gap = float((eff["pass_epa"] - eff["rush_epa"]).abs().mean())
+    check("pass and rush EPA are not the same column", gap > 0.01,
+          f"mean absolute difference {gap:.4f}")
+    check("garbage share is recorded",
+          eff["garbage_share"].between(0, 1).all())
+
     check("empty input returns empty frame",
           nflverse.team_game_efficiency(pd.DataFrame()).empty)
 
     # A season missing an optional column must still aggregate.
-    thin = pbp.drop(columns=["qb_epa", "penalty"])
+    thin = pbp.drop(columns=["penalty", "down"])
     eff2 = nflverse.team_game_efficiency(thin)
     check("missing optional pbp column still aggregates", len(eff2) == len(eff),
           f"{len(eff2)} vs {len(eff)}")
-    check("absent qb_epa becomes NaN, not zero", eff2["qb_epa"].isna().all())
+
+    no_sacks = pbp.drop(columns=["sack"])
+    eff3 = nflverse.team_game_efficiency(no_sacks)
+    check("an absent metric becomes NaN, not zero",
+          eff3["sack_rate"].isna().all(),
+          "a zero here would claim nobody was sacked")
 
 
 def main() -> int:

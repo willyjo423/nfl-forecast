@@ -78,6 +78,11 @@ PBP_FIELDS: dict[str, list[str]] = {
     "rush_attempt": ["rush_attempt", "rush"],
     "down": ["down"],
     "wp": ["wp"],
+    # Pulled and reported, but deliberately NOT aggregated: the first live
+    # probe showed qb_epa averaged to the team-game is a near-duplicate of epa
+    # (identical min and max), so it was one feature counted twice. Passing and
+    # rushing EPA are split out in nflverse.py instead. Kept here so a future
+    # probe can re-check that finding rather than take it on trust.
     "qb_epa": ["qb_epa"],
     "sack": ["sack"],
     "interception": ["interception"],

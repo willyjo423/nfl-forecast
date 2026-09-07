@@ -87,8 +87,9 @@ def make_games(seasons=(2022, 2023, 2024), weeks: int = 17,
                     "total_line": total_line,
                     "away_moneyline": int(rng.integers(-400, 400)),
                     "home_moneyline": int(rng.integers(-400, 400)),
-                    "away_rest": int(rng.choice([6, 7, 7, 7, 10, 13])),
-                    "home_rest": int(rng.choice([6, 7, 7, 7, 10, 13])),
+                    # 4 is a Thursday game on a short week, 13/14 is a bye.
+                    "away_rest": int(rng.choice([4, 6, 7, 7, 7, 10, 13])),
+                    "home_rest": int(rng.choice([4, 6, 7, 7, 7, 10, 13])),
                     "div_game": int(rng.integers(0, 2)),
                     "roof": str(rng.choice(ROOFS)),
                     "surface": str(rng.choice(SURFACES)),
@@ -164,6 +165,54 @@ def make_pbp(games: pd.DataFrame, plays_per_team: int = 62,
             })
 
     return pd.DataFrame(rows)
+
+
+def make_games_with_qbs(seasons=(2022, 2023, 2024), weeks: int = 17,
+                        seed: int = 1729, qb_effect: float = 6.0
+                        ) -> tuple[pd.DataFrame, dict]:
+    """Games where the starting quarterback genuinely matters.
+
+    Each team has a starter and a clearly worse backup, the backup starts a
+    stretch of games, and the margin reflects it. That gives the quarterback
+    layer something real to find - and, just as importantly, gives the ablation
+    a case where the honest answer is "this helps", so a null result elsewhere
+    can be trusted rather than blamed on the harness.
+    """
+    rng = np.random.default_rng(seed)
+    g = make_games(seasons=seasons, weeks=weeks, seed=seed)
+
+    truth = {}
+    for team in TEAMS:
+        truth[f"{team}_QB1"] = float(rng.normal(qb_effect / 2, 2.0))
+        truth[f"{team}_QB2"] = float(rng.normal(-qb_effect / 2, 2.0))
+
+    # Each team loses its starter for a run of games in one season.
+    injured = {}
+    for season in seasons:
+        for team in TEAMS:
+            start = int(rng.integers(2, max(3, weeks - 4)))
+            injured[(season, team)] = set(range(start, start + 4))
+
+    for side in ("home", "away"):
+        ids, names = [], []
+        for row in g.itertuples(index=False):
+            team = getattr(row, f"{side}_team")
+            out = row.week in injured.get((row.season, team), set())
+            qb = f"{team}_QB2" if out else f"{team}_QB1"
+            ids.append(qb)
+            names.append(qb.replace("_", " "))
+        g[f"{side}_qb_id"] = ids
+        g[f"{side}_qb_name"] = names
+
+    delta = (g["home_qb_id"].map(truth).to_numpy()
+             - g["away_qb_id"].map(truth).to_numpy())
+    played = g["home_score"].notna()
+    g.loc[played, "home_score"] = (g.loc[played, "home_score"]
+                                   + delta[played.to_numpy()]).round()
+    g["home_score"] = g["home_score"].clip(lower=0)
+    g.loc[played, "result"] = g.loc[played, "home_score"] - g.loc[played, "away_score"]
+    g.loc[played, "total"] = g.loc[played, "home_score"] + g.loc[played, "away_score"]
+    return g, truth
 
 
 def make_renamed_games(**kwargs) -> pd.DataFrame:

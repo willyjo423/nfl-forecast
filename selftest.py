@@ -61,9 +61,20 @@ def columns_block(df: pd.DataFrame) -> None:
 
 
 def mapping_block(df: pd.DataFrame, mapping: dict, required: list,
-                  label: str) -> dict:
+                  label: str, window: tuple[int, int] | None = None) -> dict:
     rep = schema.report(df, mapping, required)
     cov = schema.coverage(df, mapping)
+
+    # Coverage over every row is misleading when the file reaches back to 1999
+    # and the model trains on a recent window. The first run reported the
+    # moneylines at 71.6% and temperature at 69%, both of which are artefacts
+    # of old seasons and indoor games rather than of the window we care about.
+    cov_win: dict[str, float] = {}
+    if window and "season" in df.columns:
+        season = pd.to_numeric(df["season"], errors="coerce")
+        sel = df[(season >= window[0]) & (season <= window[1])]
+        if len(sel):
+            cov_win = schema.coverage(sel, mapping)
 
     sub(f"{label}: CANONICAL FIELDS")
     print(f"  rows: {rep['n_rows']:,}")
@@ -81,16 +92,33 @@ def mapping_block(df: pd.DataFrame, mapping: dict, required: list,
 
     sub(f"{label}: COVERAGE  (share of rows carrying a real value)")
     print("  a column can exist and still be empty; this is the number that")
-    print("  decides whether a feature is worth building on.\n")
+    print("  decides whether a feature is worth building on.")
+    if cov_win:
+        print(f"  ALL = every row in the file; WINDOW = {window[0]}-{window[1]},")
+        print("  which is the only one that constrains the model.\n")
+        print(f"  {'field':<18} {'ALL':>7} {'WINDOW':>8}")
+    else:
+        print()
     for field in sorted(cov, key=lambda f: (-cov[f], f)):
         pct = cov[field] * 100
-        bar = "#" * int(round(pct / 5))
-        flag = ""
-        if cov[field] == 0.0:
-            flag = "  <- present but entirely empty"
-        elif cov[field] < 0.5:
-            flag = "  <- thin"
-        print(f"  {field:<18} {pct:6.1f}%  {bar:<20}{flag}")
+        if cov_win:
+            wpct = cov_win.get(field, float("nan")) * 100
+            flag = ""
+            if wpct == 0.0:
+                flag = "  <- unusable in the window"
+            elif wpct < 50:
+                flag = "  <- thin in the window"
+            elif wpct - pct > 10:
+                flag = "  <- fine here; the gap is older seasons"
+            print(f"  {field:<18} {pct:6.1f}% {wpct:7.1f}%{flag}")
+        else:
+            bar = "#" * int(round(pct / 5))
+            flag = ""
+            if cov[field] == 0.0:
+                flag = "  <- present but entirely empty"
+            elif cov[field] < 0.5:
+                flag = "  <- thin"
+            print(f"  {field:<18} {pct:6.1f}%  {bar:<20}{flag}")
 
     if rep["unmapped"]:
         sub(f"{label}: COLUMNS THE MAPPING IGNORES")
@@ -101,7 +129,7 @@ def mapping_block(df: pd.DataFrame, mapping: dict, required: list,
 
 
 def unconfirmed_block(rep: dict, cov: dict) -> None:
-    sub("THE FIELDS I COULD NOT CONFIRM FROM THE DOCS")
+    sub("THE FIELDS I COULD NOT CONFIRM FROM THE DOCS  (within the window)")
     for field in UNCONFIRMED:
         if field in rep["resolved"]:
             pct = cov.get(field, 0.0) * 100
@@ -196,12 +224,30 @@ def market_block(g: pd.DataFrame) -> None:
 
 def hfa_block(g: pd.DataFrame) -> None:
     sub("HOME FIELD, MEASURED")
-    d = g[g["completed"]]
-    by_era = d.groupby(d["season"] // 5 * 5)["margin"].mean()
+    d = g[g["completed"]].copy()
     print(f"  overall home margin  {d['margin'].mean():+.2f} pts")
-    for era, val in by_era.items():
-        print(f"    {int(era)}-{int(era) + 4:<6} {val:+.2f}")
-    print(f"\n  config.HFA_PRIOR is currently {config.HFA_PRIOR}")
+
+    # Five-season blocks anchored to the first season present, so the labels
+    # describe seasons that exist. The first run printed "1995-1999" for a
+    # bucket holding only 1999, which is a rounding artefact, not a decade.
+    first = int(d["season"].min())
+    d["era"] = first + (d["season"] - first) // 5 * 5
+    for era, block in d.groupby("era"):
+        lo, hi = int(block["season"].min()), int(block["season"].max())
+        label = f"{lo}-{hi}" if lo != hi else f"{lo}"
+        print(f"    {label:<12} {block['margin'].mean():+.2f}   "
+              f"(n={len(block):,})")
+
+    # Playoff home teams are the better seed by construction, which inflates
+    # any home-margin figure that includes them. The prior wants the regular
+    # season number.
+    if "game_type" in d.columns:
+        reg = d[d["game_type"].astype(str).str.upper().isin(["REG", "REGULAR"])]
+        recent = reg[reg["season"] >= d["season"].max() - 9]
+        if len(recent):
+            print(f"\n  regular season only, last 10 years: "
+                  f"{recent['margin'].mean():+.2f} pts on {len(recent):,} games")
+    print(f"  config.HFA_PRIOR is currently {config.HFA_PRIOR}")
 
 
 def pbp_block(season: int) -> None:
@@ -257,9 +303,13 @@ def main() -> int:
         return 1
 
     columns_block(raw)
+    window = (config.TRAIN_START_YEAR, config.TRAIN_END_YEAR)
     rep = mapping_block(raw, schema.GAME_FIELDS, schema.REQUIRED_GAME_FIELDS,
-                        "GAMES")
-    unconfirmed_block(rep, schema.coverage(raw, schema.GAME_FIELDS))
+                        "GAMES", window=window)
+    season = pd.to_numeric(raw.get("season"), errors="coerce")
+    in_window = raw[(season >= window[0]) & (season <= window[1])]
+    unconfirmed_block(rep, schema.coverage(
+        in_window if len(in_window) else raw, schema.GAME_FIELDS))
 
     head("AFTER NORMALISING")
     g = nflverse.load_games()

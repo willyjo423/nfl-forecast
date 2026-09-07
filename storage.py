@@ -64,3 +64,42 @@ def table_exists(path: str | Path) -> bool:
     path = Path(path)
     return (path.with_suffix(".parquet").exists()
             or path.with_suffix(".pkl.gz").exists())
+
+
+# Shorter aliases, since the callers only ever deal in tables and models.
+save = save_table
+load = load_table
+
+
+def save_model(obj, path: str | Path) -> Path:
+    """Persist a fitted model. joblib if present, pickle otherwise."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        import joblib
+        joblib.dump(obj, path)
+    except ImportError:
+        import pickle
+        path = path.with_suffix(".pkl")
+        with open(path, "wb") as fh:
+            pickle.dump(obj, fh)
+        log.info("joblib unavailable; wrote %s instead", path.name)
+    return path
+
+
+def load_model(path: str | Path):
+    """Load a fitted model, or None when nothing has been trained yet."""
+    path = Path(path)
+    for candidate in (path, path.with_suffix(".pkl")):
+        if not candidate.exists():
+            continue
+        try:
+            if candidate.suffix == ".pkl":
+                import pickle
+                with open(candidate, "rb") as fh:
+                    return pickle.load(fh)
+            import joblib
+            return joblib.load(candidate)
+        except Exception as exc:  # noqa: BLE001 - try the next candidate
+            log.warning("could not load %s: %s", candidate.name, exc)
+    return None

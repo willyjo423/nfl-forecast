@@ -23,6 +23,7 @@ import logging
 import time
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import requests
 
@@ -92,6 +93,31 @@ def _read_table(blob: bytes, url: str, usecols=None) -> pd.DataFrame:
     return pd.read_csv(io.BytesIO(blob), low_memory=False, usecols=usecols)
 
 
+# ---------------------------------------------------------------- franchises
+# A franchise that moves gets a new abbreviation, and its history would
+# otherwise be orphaned: the Raiders' 2019 rating would not carry into 2020
+# because "OAK" and "LV" look like different teams. Ratings track the
+# franchise, so the abbreviations are folded onto one name per franchise.
+TEAM_ALIASES = {
+    "OAK": "LV",    # Oakland -> Las Vegas, 2020
+    "SD": "LAC",    # San Diego -> Los Angeles, 2017
+    "STL": "LA",    # St Louis -> Los Angeles, 2016
+    "SL": "LA",
+    "LAR": "LA",    # nflverse has used both spellings for the Rams
+    "JAC": "JAX",
+    "ARZ": "ARI",
+    "BLT": "BAL",
+    "CLV": "CLE",
+    "HST": "HOU",
+    "WSH": "WAS",
+}
+
+
+def canonical_team(series: pd.Series) -> pd.Series:
+    s = series.astype(str).str.strip().str.upper()
+    return s.replace(TEAM_ALIASES)
+
+
 # ---------------------------------------------------------------- games
 def load_games_raw() -> pd.DataFrame:
     """The whole games file, exactly as published."""
@@ -126,7 +152,7 @@ def load_games(seasons: list[int] | None = None,
     g["week"] = g["week"].astype(int)
 
     for col in ("home_team", "away_team"):
-        g[col] = g[col].astype(str).str.strip().str.upper()
+        g[col] = canonical_team(g[col])
 
     g["kickoff"] = pd.to_datetime(
         g["gameday"].astype(str) + " " + g["gametime"].fillna("13:00").astype(str),
@@ -189,7 +215,7 @@ def team_game_efficiency(pbp: pd.DataFrame) -> pd.DataFrame:
 
     p = schema.normalise(pbp, schema.PBP_FIELDS)
     for col in ("epa", "success", "yards_gained", "pass_attempt",
-                "rush_attempt", "down", "wp", "qb_epa", "sack",
+                "rush_attempt", "down", "wp", "sack",
                 "interception", "fumble_lost", "penalty", "season", "week"):
         p[col] = pd.to_numeric(p[col], errors="coerce")
 
@@ -202,7 +228,8 @@ def team_game_efficiency(pbp: pd.DataFrame) -> pd.DataFrame:
         return pd.DataFrame()
 
     # Garbage time distorts everything; nflverse's win probability makes it
-    # cheap to exclude, and we keep a flag so the effect can be measured.
+    # cheap to exclude, and we keep the raw count so the caller can see how
+    # much of a team-game was thrown away.
     p["competitive"] = p["wp"].between(0.05, 0.95) | p["wp"].isna()
 
     p["explosive"] = (p["epa"] > 1.0).astype(float)
@@ -210,10 +237,14 @@ def team_game_efficiency(pbp: pd.DataFrame) -> pd.DataFrame:
     p["is_rush"] = p["rush_attempt"].fillna(0)
     p["turnover"] = (p["interception"].fillna(0) + p["fumble_lost"].fillna(0))
 
+    raw_counts = (p.groupby(["game_id", "posteam"], dropna=True).size()
+                  .rename("plays_raw").reset_index())
+
     comp = p.loc[p["competitive"]]
     base = comp if len(comp) > 0.4 * len(p) else p
 
-    agg = base.groupby(["game_id", "posteam", "defteam"], dropna=True).agg(
+    keys = ["game_id", "posteam", "defteam"]
+    agg = base.groupby(keys, dropna=True).agg(
         season=("season", "first"),
         week=("week", "first"),
         plays=("epa", "size"),
@@ -223,11 +254,28 @@ def team_game_efficiency(pbp: pd.DataFrame) -> pd.DataFrame:
         pass_rate=("is_pass", "mean"),
         sack_rate=("sack", "mean"),
         turnover_rate=("turnover", "mean"),
-        qb_epa=("qb_epa", "mean"),
         yards_per_play=("yards_gained", "mean"),
     ).reset_index()
 
-    return agg.rename(columns={"posteam": "team", "defteam": "opponent"})
+    # Passing and rushing efficiency separately. The probe showed `qb_epa` is
+    # a near-duplicate of `epa` once averaged to the team-game - identical min
+    # and max to three decimals - so carrying both was one real feature and one
+    # copy of it. Splitting by play type gives two genuinely different numbers,
+    # and the passing half is what the quarterback layer needs.
+    for name, mask in (("pass_epa", base["is_pass"] > 0),
+                       ("rush_epa", base["is_rush"] > 0)):
+        side = (base.loc[mask].groupby(keys, dropna=True)["epa"]
+                .agg(["mean", "size"]))
+        side.columns = [name, f"{name}_n"]
+        agg = agg.merge(side.reset_index(), on=keys, how="left")
+
+    agg = agg.merge(raw_counts, on=["game_id", "posteam"], how="left")
+    agg["garbage_share"] = 1.0 - agg["plays"] / agg["plays_raw"].replace(0, np.nan)
+
+    agg = agg.rename(columns={"posteam": "team", "defteam": "opponent"})
+    for col in ("team", "opponent"):
+        agg[col] = canonical_team(agg[col])
+    return agg
 
 
 def load_efficiency(seasons: list[int]) -> pd.DataFrame:
