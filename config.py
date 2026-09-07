@@ -68,7 +68,13 @@ REGULAR_SEASON_WEEKS = 18
 # well-*connected* the schedule is with how *informative* a game is, and it is
 # the second that sets the shrinkage. At 18 the projected margins came out with
 # a standard deviation of 3.1 points against a real spread of 13.7 - every game
-# looked like a coin flip. The offline sweep is monotonic from 26 down to 2.
+# looked like a coin flip.
+#
+# Swept on real results afterwards, final MAE across lambda 2 to 12 varied by
+# only 0.06 points, with a shallow best near 8. The reason is that the trees
+# ride on a *rescaled* ratings baseline, and the rescaling absorbs most of a
+# shrinkage change before the model ever sees it. So this is worth getting
+# roughly right and not worth tuning: the leverage is elsewhere.
 RIDGE_LAMBDA_BASE = 5.0
 # NFL margins are tighter, so the blowout cap comes down with them.
 MARGIN_CAP = 21.0
@@ -81,15 +87,20 @@ HFA_PRIOR = 1.8
 # strength-of-schedule formula all pull hard toward the mean, and NFL
 # year-over-year point-differential correlation is only about 0.5. The college
 # value of 0.60 would have been optimistic here, and 0.72 plainly wrong.
+#
+# Swept on real results: 0.30 to 0.85 spans 0.045 points of MAE, marginally
+# favouring the high end. Left at 0.55 because the difference is noise and the
+# lower value is the one the sport's own regression to the mean supports.
 YEAR_CARRYOVER = 0.55
 # Half-life in weeks. Deliberately longer than the college value of 6: with 17
 # games instead of 12 there is less data per team, and discarding September
 # aggressively leaves November running on four games.
 #
 # The offline sweep prefers no decay at all, but that result is worthless - the
-# synthetic teams have a fixed strength all season, so forgetting can only
-# lose information. Real teams change, and only the live walk-forward can say
-# by how fast. Treat this as a judgement, not a measurement.
+# synthetic teams have a fixed strength all season, so forgetting can only lose
+# information. On real results the whole range from 4 weeks to no decay at all
+# spans 0.04 points of MAE, which is nothing. Same story as the ridge strength,
+# and the same conclusion: get it roughly right and stop.
 RECENCY_HALFLIFE_WEEKS = 8.0
 
 # --- Efficiency ------------------------------------------------------------

@@ -88,21 +88,26 @@ meaning anything.
 
 ## Every feature group has to earn its place
 
-`build.py` prints this before it trains anything:
+`build.py` prints this before it trains anything — each group measured **on its
+own** against the ratings baseline, paired game by game:
 
 ```
-group              cols     MAE    delta
-strength             17  xx.xxx   +0.000
-situation            32  xx.xxx   +x.xxx
-efficiency           56  xx.xxx   +x.xxx
-quarterback          66  xx.xxx   +x.xxx
+group              cols     MAE    delta       t   verdict
+strength             17  10.385   +0.000   +0.00   baseline
+situation            32  10.384   -0.001   -0.07   not distinguishable
+efficiency           41  10.339   -0.047   -1.32   not distinguishable
+quarterback          27  10.224   -0.162   -3.54   helps
+everything           66  10.234   -0.151   -3.33   helps
 ```
 
-Groups are added cumulatively to the ratings baseline, measured by walk-forward
-MAE. A group that does not move that number is reported as a null and should be
-removed, however good the story behind it is. The college build kept an entire
-comparables engine that turned out to be worth 0.008 points, and the only
-reason anyone found out is that it got measured instead of assumed.
+`|t|` under 2 means the difference cannot be told from zero.
+
+**This table used to add the groups cumulatively, and that was a real mistake.**
+The first bootstrap reported the quarterback features at −0.041 points, which
+reads as nothing. Measured alone they are worth −0.16 at t = −3.5. The two null
+groups stacked in front of them were diluting a genuine effect. A cumulative
+ablation cannot tell "this carries no signal" apart from "this carries signal
+that something else drowned", and those call for opposite decisions.
 
 The harness is itself tested. `test_model.py` builds the same fixture twice —
 once where the starting quarterback is worth eight points and once where every
@@ -110,22 +115,58 @@ quarterback is identical — and requires the quarterback features to help in th
 first case and not in the second. Without that second half, "the harness said
 it helps" would be indistinguishable from "adding columns always helps a bit".
 
+### Where the quarterback layer acts
+
+Averages hide effects that live in a subset. `build.py` also prints this:
+
+```
+one side on a new starter        n=  498   -0.459 pts  (t = -3.73)
+both sides settled               n= 1853   -0.068 pts  (t = -1.42)
+weeks 5 and later                n= 1922   -0.159 pts  (t = -3.09)
+```
+
+Nearly half a point of accuracy on the one game in five where somebody's
+regular starter is not playing, and close to nothing everywhere else. That is
+exactly the shape the feature was built for, and it is invisible in a
+league-wide average — which is how a working feature gets retired by a careless
+measurement.
+
+Both halves of the layer contribute independently: continuity (who is starting,
+and whether that changed) is worth −0.083 at t = −2.2 and needs nothing but the
+games file; quarterback value (how the offence has passed in his starts) is
+worth −0.106 at t = −2.6 and is the only reason the pipeline downloads
+play-by-play at all, now that team efficiency has measured as a null.
+
 ---
 
-## What to expect
+## What it actually does
 
-The probe measured the closing line's own accuracy over 7,276 games:
+First real bootstrap, 2006–2026, 3,857 out-of-sample games:
 
 ```
-market margin MAE   10.27 pts
-market total MAE    10.62 pts
+Margin MAE                    : 10.37 pts
+Total MAE                     : 10.67 pts
+Win-pick accuracy             : 63.8%
+Win-prob calibration error    :  1.3%
+
+Closing-line margin MAE       : 10.01 pts
+  -> model is 0.36 pts worse than the market
+ATS record (all picks)        : 50.4% on 3,757 games (break-even 52.4%)
 ```
 
-That is the bar, and it is the hardest one in sport. The college model settled
-about 1.5 points behind its market; the same gap or worse is the realistic
-expectation here, on a third as many games per season. If a run ever reports
-the model *beating* the closing line, treat it as a bug until a full season of
-forward-only results says otherwise.
+Two things worth reading carefully.
+
+**0.36 points behind the closing line is a good result.** The college model
+settled about 1.5 points behind its market. Against the most efficient price in
+sport, on a third as many games per season, this lands much closer. The win
+probabilities are also genuinely well calibrated — 1.3% expected calibration
+error means that when it says 70%, those teams win about 70% of the time.
+
+**And it still has no betting edge.** 50.4% against the spread, with break-even
+at 52.4%. Being 0.36 points behind the market means the market's number is
+better than ours, so disagreeing with it is not an opportunity. This is the same
+null the college build measured over 5,286 games, and the same conclusion: the
+gap between the model and the line is our error, not the market's.
 
 So this is a forecasting tool. It tells you what a game is likely to look like
 and how uncertain that is. It does not tell you what to bet.

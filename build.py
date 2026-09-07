@@ -102,22 +102,43 @@ def main() -> int:
 
     if not args.no_ablation:
         rule("WHAT EACH FEATURE GROUP IS WORTH")
-        print("Walk-forward MAE, groups added cumulatively to the ratings")
-        print("baseline. A group that does not move this number does not")
-        print("belong in the model, however good the story behind it is.\n")
+        print("Walk-forward MAE. Each group is measured ON ITS OWN against the")
+        print("ratings baseline, paired game by game, with the t statistic")
+        print("beside it. |t| under 2 means the difference cannot be told from")
+        print("zero and the group is not earning its place.\n")
         abl = model_mod.ablation(feat, FEATURE_GROUPS)
         if abl:
-            print(f"  {'group':<16} {'cols':>5} {'MAE':>7} {'delta':>8}")
+            print(f"  {'group':<16} {'cols':>5} {'MAE':>7} {'delta':>8} "
+                  f"{'t':>7}   verdict")
             for name, r in abl.items():
-                mark = ""
-                if r["delta"] < -0.05:
-                    mark = "  helps"
-                elif r["delta"] > 0.05:
-                    mark = "  HURTS"
-                elif name != "strength":
-                    mark = "  null"
+                t = r.get("t")
+                ts = "     -" if t is None or pd.isna(t) else f"{t:+7.2f}"
                 print(f"  {name:<16} {r['columns']:>5} {r['margin_mae']:>7.3f} "
-                      f"{r['delta']:>+8.3f}{mark}")
+                      f"{r['delta']:>+8.3f} {ts}   {r.get('verdict', '')}")
+
+        rule("WHERE THE QUARTERBACK LAYER ACTS")
+        print("A group can be worth little on average and a great deal on the")
+        print("games it is actually about. A backup starting is that shape.\n")
+        subs = model_mod.subgroup_report(
+            feat,
+            cols=FEATURE_GROUPS["strength"] + FEATURE_GROUPS["quarterback"],
+            base_cols=FEATURE_GROUPS["strength"],
+            subsets={
+                "one side on a new starter":
+                    (feat["home_qb_new"] == 1) | (feat["away_qb_new"] == 1),
+                "both sides settled":
+                    (feat["home_qb_new"] == 0) & (feat["away_qb_new"] == 0),
+                "a starter under 5 career starts":
+                    (feat["home_qb_starts"] < 5) | (feat["away_qb_starts"] < 5),
+                "weeks 1-4": feat["week"] <= 4,
+                "weeks 5 and later": feat["week"] > 4,
+            })
+        for label, r in subs.items():
+            if "note" in r:
+                print(f"  {label:<34} {r['note']}")
+                continue
+            print(f"  {label:<34} n={r['n']:>5}  {r['delta']:>+7.3f} pts  "
+                  f"(t = {r['t']:+.2f})")
 
     rule("WALK-FORWARD EVALUATION")
     oos = model_mod.walk_forward(feat)

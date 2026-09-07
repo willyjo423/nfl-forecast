@@ -382,7 +382,15 @@ def walk_forward(feat: pd.DataFrame, min_train_seasons: int = 5,
         log.info("walk-forward %s: trained on %d, tested on %d",
                  season, int(train.sum()), int(test.sum()))
 
-    return pd.concat(out, ignore_index=True) if out else pd.DataFrame()
+    if not out:
+        return pd.DataFrame()
+    # The original row index is preserved deliberately. It is what lets two
+    # runs be compared game by game rather than only as two averages, and a
+    # paired comparison is the difference between "0.04 better" and "0.04
+    # better, which is well inside the noise".
+    res = pd.concat(out)
+    res["abs_err"] = (res["margin"] - res["pred_margin"]).abs()
+    return res
 
 
 def evaluate(oos: pd.DataFrame) -> dict:
@@ -460,43 +468,115 @@ def evaluate(oos: pd.DataFrame) -> dict:
     return m
 
 
+def _paired(run: pd.DataFrame, base: pd.DataFrame) -> tuple[float, float, int]:
+    """Mean per-game improvement over a baseline run, and its t statistic.
+
+    Both runs cover the same games, so the honest comparison is game by game.
+    Comparing two averages instead throws away the pairing and makes a real
+    effect and a rounding artefact look identical.
+    """
+    joined = run[["abs_err"]].join(base[["abs_err"]], how="inner",
+                                   lsuffix="_run", rsuffix="_base")
+    d = (joined["abs_err_run"] - joined["abs_err_base"]).to_numpy(dtype=float)
+    d = d[np.isfinite(d)]
+    if len(d) < 30:
+        return float("nan"), float("nan"), len(d)
+    se = d.std(ddof=1) / np.sqrt(len(d))
+    return float(d.mean()), float(d.mean() / se if se > 0 else np.nan), len(d)
+
+
 def ablation(feat: pd.DataFrame, groups: dict[str, list[str]],
              base_group: str = "strength") -> dict:
-    """Measure what each feature group is actually worth.
+    """Measure what each feature group is actually worth, one at a time.
 
     Every group has to earn its place by improving walk-forward MAE. The
-    college build kept a whole comparables engine that turned out to be worth
-    +0.008 points, and the only reason that was ever discovered is that it got
-    measured instead of assumed. This runs the same test here, before anyone
-    gets attached to the quarterback layer.
+    college build kept a whole comparables engine worth +0.008 points, and the
+    only reason anyone found out is that it got measured instead of assumed.
+
+    This used to add the groups *cumulatively*, and that was a mistake worth
+    recording. On the first real bootstrap the stacked run reported the
+    quarterback features at -0.041 points, indistinguishable from nothing.
+    Measured on their own against the same baseline they were worth -0.16 with
+    a t of -3.5 - a real effect that the extra columns of two null groups had
+    been diluting. A cumulative ablation cannot tell "this carries no signal"
+    apart from "this carries signal that something else drowned", and those
+    call for opposite decisions.
+
+    So each group is now measured alone against the baseline, paired game by
+    game, with the t statistic printed next to it. The stacked total is still
+    reported at the end, because that is what the shipped model will be.
     """
     results = {}
     base_cols = list(groups[base_group])
-
-    baseline = evaluate(walk_forward(feat, columns=base_cols))
-    if not baseline:
+    base = walk_forward(feat, columns=base_cols)
+    if base.empty:
         return {}
-    results[base_group] = {"columns": len(base_cols),
-                           "margin_mae": baseline["margin_mae"],
-                           "delta": 0.0}
-    log.info("ablation %-14s %d cols -> MAE %.3f",
-             base_group, len(base_cols), baseline["margin_mae"])
 
-    cumulative = list(base_cols)
+    results[base_group] = {
+        "columns": len(base_cols), "margin_mae": float(base["abs_err"].mean()),
+        "delta": 0.0, "t": 0.0, "n": int(len(base)), "verdict": "baseline"}
+    log.info("ablation %-16s %3d cols -> MAE %.3f",
+             base_group, len(base_cols), results[base_group]["margin_mae"])
+
     for name, cols in groups.items():
         if name == base_group:
             continue
-        cumulative = cumulative + [c for c in cols if c not in cumulative]
-        got = evaluate(walk_forward(feat, columns=cumulative))
-        if not got:
+        use = base_cols + [c for c in cols if c not in base_cols]
+        run = walk_forward(feat, columns=use)
+        if run.empty:
             continue
-        delta = got["margin_mae"] - results[base_group]["margin_mae"]
-        results[name] = {"columns": len(cumulative),
-                         "margin_mae": got["margin_mae"],
-                         "delta": delta}
-        log.info("ablation +%-13s %d cols -> MAE %.3f (%+.3f vs %s alone)",
-                 name, len(cumulative), got["margin_mae"], delta, base_group)
+        delta, t, n = _paired(run, base)
+        results[name] = {
+            "columns": len(use), "margin_mae": float(run["abs_err"].mean()),
+            "delta": delta, "t": t, "n": n,
+            "verdict": ("helps" if t <= -2 else
+                        "HURTS" if t >= 2 else "not distinguishable")}
+        log.info("ablation +%-15s %3d cols -> MAE %.3f (%+.3f, t=%+.2f) %s",
+                 name, len(use), results[name]["margin_mae"], delta, t,
+                 results[name]["verdict"])
+
+    every = [c for cols in groups.values() for c in cols]
+    every = list(dict.fromkeys(every))
+    run = walk_forward(feat, columns=every)
+    if not run.empty:
+        delta, t, n = _paired(run, base)
+        results["everything"] = {
+            "columns": len(every), "margin_mae": float(run["abs_err"].mean()),
+            "delta": delta, "t": t, "n": n,
+            "verdict": ("helps" if t <= -2 else
+                        "HURTS" if t >= 2 else "not distinguishable")}
     return results
+
+
+def subgroup_report(feat: pd.DataFrame, cols: list[str],
+                    base_cols: list[str],
+                    subsets: dict[str, pd.Series]) -> dict:
+    """Where a feature group acts, not just whether it acts on average.
+
+    An average over several thousand games hides a large effect on a small
+    slice of them. A backup quarterback starting is precisely that shape: it
+    should barely register league-wide and matter enormously in the one game in
+    five where it happens. Reporting only the average would have retired a
+    feature that works.
+    """
+    base = walk_forward(feat, columns=base_cols)
+    run = walk_forward(feat, columns=cols)
+    if base.empty or run.empty:
+        return {}
+
+    out = {}
+    for label, mask in subsets.items():
+        idx = feat.index[mask.fillna(False).to_numpy()]
+        b = base.loc[base.index.intersection(idx)]
+        r = run.loc[run.index.intersection(idx)]
+        if len(b) < 50 or len(r) < 50:
+            out[label] = {"n": int(len(b)), "note": "too few games to judge"}
+            continue
+        delta, t, n = _paired(r, b)
+        out[label] = {"n": n, "margin_mae": float(r["abs_err"].mean()),
+                      "delta": delta, "t": t}
+        log.info("subgroup %-38s n=%5d  %+.3f (t=%+.2f)", label, n, delta, t)
+    return out
 
 
 def summarize(metrics: dict) -> str:
