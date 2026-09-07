@@ -1,0 +1,71 @@
+name: Daily
+
+# Forecasts the next slate and publishes the page. Nothing to submit - it works
+# out the season and the week on its own.
+on:
+  schedule:
+    # 11:00 UTC daily, which is 6 or 7am Eastern depending on the season.
+    # Cron on GitHub is best-effort and can run late when the fleet is busy.
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Force a week number (blank = next slate)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  # A manual run and the schedule colliding would race on the same commit.
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Restore data cache
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: nflverse-daily-${{ github.run_id }}
+          restore-keys: |
+            nflverse-daily-
+            nflverse-cache-
+
+      - name: Forecast
+        run: |
+          if [ -n "${{ inputs.week }}" ]; then
+            python daily.py --week ${{ inputs.week }}
+          else
+            python daily.py
+          fi
+
+      - name: Grade past forecasts
+        # Never let the scoreboard take the forecasts down with it.
+        continue-on-error: true
+        run: python track.py --write
+
+      - name: Publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/ data/forecasts/
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Forecasts: $(date -u +%Y-%m-%d)"
+          git pull --rebase --autostash origin main || true
+          git push
