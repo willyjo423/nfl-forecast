@@ -1,0 +1,48 @@
+name: Probe
+
+# One live run that prints exactly what nflverse actually publishes.
+# Run this first. Its output decides what gets built next.
+on:
+  workflow_dispatch:
+    inputs:
+      pbp_season:
+        description: "Also probe one play-by-play season (blank to skip)"
+        required: false
+        default: "2024"
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Offline checks
+        # These need no network. If they fail, the problem is in the code,
+        # not in the data - worth knowing before reading the live output.
+        run: python test_data.py
+
+      - name: Live probe
+        run: |
+          if [ -n "${{ inputs.pbp_season }}" ]; then
+            python selftest.py --pbp "${{ inputs.pbp_season }}" | tee probe.txt
+          else
+            python selftest.py | tee probe.txt
+          fi
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe-output
+          path: probe.txt
+          retention-days: 30
