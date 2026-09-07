@@ -1,0 +1,81 @@
+name: Bootstrap
+
+# Downloads every season, measures what each feature group is worth, runs the
+# walk-forward evaluation, and trains the model. Run this once to start, and
+# again whenever the feature code changes.
+on:
+  workflow_dispatch:
+    inputs:
+      start_year:
+        description: "First training season"
+        required: false
+        default: "2006"
+      end_year:
+        description: "Last training season"
+        required: false
+        default: "2026"
+      ablation:
+        description: "Measure each feature group (slower, but it is the point)"
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Offline checks
+        run: |
+          python test_data.py
+          python test_model.py
+
+      # Play-by-play is roughly 20 MB per season and never changes once a
+      # season is finished, so caching it turns a 20-minute download into
+      # seconds on every rerun.
+      - name: Restore data cache
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: nflverse-cache-${{ inputs.start_year }}-${{ inputs.end_year }}-v1
+          restore-keys: nflverse-cache-
+
+      - name: Build
+        run: |
+          if [ "${{ inputs.ablation }}" = "false" ]; then
+            python build.py --seasons ${{ inputs.start_year }} ${{ inputs.end_year }} --no-ablation | tee bootstrap.txt
+          else
+            python build.py --seasons ${{ inputs.start_year }} ${{ inputs.end_year }} | tee bootstrap.txt
+          fi
+
+      - name: Keep the model and the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bootstrap-output
+          path: |
+            bootstrap.txt
+            data/metrics.json
+            models/
+          retention-days: 30
+
+      - name: Commit the trained model
+        # The daily job needs the model file, so it lives in the repo rather
+        # than in an artifact that expires.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f models/ data/metrics.json
+          git diff --staged --quiet || git commit -m "Bootstrap: retrain model"
+          git push
