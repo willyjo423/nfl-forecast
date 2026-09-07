@@ -209,6 +209,31 @@ def test_quarterbacks() -> None:
     check("an unnamed starter yields NaN, not 0",
           np.isnan(unknown["qb_value"]) and unknown["qb_known"] == 0)
 
+    # Career starts must not depend on whether anyone measured the passing EPA.
+    # The daily job loads two seasons of play-by-play where training loaded
+    # twenty; counting starts only when a value existed put Mahomes on the live
+    # page at 14 career starts, against the ~120 the model was trained against.
+    no_eff = QBEngine(build_starter_table(g, None))
+    with_eff = engine.lookup(late, 16, "KC", "KC_QB1")["qb_starts"]
+    without = no_eff.lookup(late, 16, "KC", "KC_QB1")["qb_starts"]
+    check("career starts do not need play-by-play", without == with_eff > 0,
+          f"{without} without efficiency vs {with_eff} with it")
+    check("value still needs it",
+          np.isnan(no_eff.lookup(late, 16, "KC", "KC_QB1")["qb_value"]),
+          "with no passing data there is nothing to value him on")
+
+    # Across a season boundary "did he start the last game" asks about a game
+    # played before an entire offseason, and is wrong after a week-18 rest.
+    wk1 = engine.lookup(late, 1, "KC", "KC_QB1")
+    check("the in-season change flag is unknown in week 1",
+          np.isnan(wk1["qb_new_starter"]),
+          f"got {wk1['qb_new_starter']} - a returning starter is not a new one")
+    check("but whether he has started here before is known",
+          wk1["qb_first_for_team"] == 0.0,
+          "he started for this team last season")
+    check("a quarterback new to the team is marked as such",
+          engine.lookup(late, 1, "KC", "SF_QB1")["qb_first_for_team"] == 1.0)
+
     # Leakage: value at week W must not move when later weeks are deleted.
     trimmed = starters[~((starters["season"] == late) & (starters["week"] >= 9))]
     e2 = QBEngine(trimmed)

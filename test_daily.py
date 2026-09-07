@@ -52,7 +52,7 @@ def game(home="KC", away="BUF", hp=27, ap=20, prob=0.68, sigma=12.0,
                      "margin_p25": round(margin - 0.6745 * sigma, 1),
                      "margin_p75": round(margin + 0.6745 * sigma, 1)},
         "quarterbacks": {"home": "P. Mahomes", "away": "J. Allen",
-                         "home_new": 0, "away_new": 0,
+                         "home_new": 0, "away_new": 0, "home_first": 0, "away_first": 0,
                          "home_starts": 120, "away_starts": 110},
         "context": {"home_rest": 7, "away_rest": 7, "div_game": 0,
                     "is_dome": 0, "games_played": 6},
@@ -166,6 +166,26 @@ def test_quarterbacks() -> None:
     check("an inexperienced starter shows his starts",
           "3 career starts" in flagged, flagged)
     check("only the changed side is flagged", flagged.count("NEW STARTER") == 1)
+
+    # The bug the first live page showed: Mahomes came back in week 1 flagged
+    # NEW STARTER, because a backup had finished the previous January. Across a
+    # season boundary the in-season flag is unknown, not true.
+    returning = game()
+    returning["quarterbacks"] = {**returning["quarterbacks"],
+                                 "home_new": None, "home_first": 0}
+    out = dashboard._quarterbacks(returning)
+    check("a returning starter in week 1 is not called new",
+          "NEW STARTER" not in out, out)
+
+    debut = game()
+    debut["quarterbacks"] = {**debut["quarterbacks"], "home_new": None,
+                             "home_first": 1, "home": "C. Ward",
+                             "home_starts": 0}
+    out = dashboard._quarterbacks(debut)
+    check("a genuine first start for the team is flagged",
+          "FIRST START HERE" in out, out)
+    check("and is not called an in-season change",
+          "NEW STARTER" not in out.replace("FIRST START HERE", ""))
 
     blank = dashboard._quarterbacks(
         {**game(), "quarterbacks": {"home": None, "away": None}})

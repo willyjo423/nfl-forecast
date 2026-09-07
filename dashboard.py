@@ -173,8 +173,16 @@ def _quarterbacks(g: dict) -> str:
         name = q.get(side)
         if not name:
             continue
-        flag = ('<span class="flagnew">NEW STARTER</span>'
-                if q.get(f"{side}_new") == 1 else "")
+        # Two different claims, and the first live page conflated them: a
+        # quarterback returning in week 1 after resting the previous January
+        # is not a new starter. "New starter" is an in-season change; "first
+        # start for this team" is the one that survives an offseason.
+        if q.get(f"{side}_new") == 1:
+            flag = '<span class="flagnew">NEW STARTER</span>'
+        elif q.get(f"{side}_first") == 1:
+            flag = '<span class="flagnew">FIRST START HERE</span>'
+        else:
+            flag = ""
         starts = q.get(f"{side}_starts")
         tail = (f' <span style="opacity:.7">({starts:.0f} career starts)</span>'
                 if starts is not None and starts < 16 else "")

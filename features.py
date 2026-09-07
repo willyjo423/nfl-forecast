@@ -66,6 +66,9 @@ QB_COLUMNS = [
     "home_qb_value", "away_qb_value", "qb_value_diff",
     "home_qb_starts", "away_qb_starts",
     "home_qb_new", "away_qb_new",
+    # Whether he has ever started for this team, which - unlike "did he start
+    # the last game" - still means something in week 1.
+    "home_qb_first", "away_qb_first",
     "home_qb_team_starts", "away_qb_team_starts",
     "qb_known",
 ]
@@ -206,6 +209,8 @@ def build_features(games: pd.DataFrame, engine: RatingsEngine,
             "home_qb_starts": qh["qb_starts"], "away_qb_starts": qa["qb_starts"],
             "home_qb_new": qh["qb_new_starter"],
             "away_qb_new": qa["qb_new_starter"],
+            "home_qb_first": qh["qb_first_for_team"],
+            "away_qb_first": qa["qb_first_for_team"],
             "home_qb_team_starts": qh["qb_team_starts"],
             "away_qb_team_starts": qa["qb_team_starts"],
             "qb_known": float(qh["qb_known"] and qa["qb_known"]),

@@ -98,12 +98,28 @@ def run(week: int | None = None, target: date | None = None,
     wk = int(slate["week"].iloc[0])
     log.info("week %s: %d games", wk, len(slate))
 
-    # Efficiency and quarterback history: this season plus last, so week 1 is
-    # not blind. Play-by-play for the current season appears a day or two after
-    # each slate, so an early-season run may legitimately find only last year's.
+    # Efficiency: this season plus last, so week 1 is not blind. Play-by-play
+    # for the current season appears a day or two after each slate, so an early
+    # run may legitimately find only last year's.
     eff = dataset.load_efficiency_for([season - 1, season])
     efficiency = EfficiencyEngine(eff) if not eff.empty else None
-    quarterbacks = QBEngine(build_starter_table(games, eff))
+
+    # Quarterback history goes back as far as the training window, and this is
+    # not optional. Career starts are a trained feature: the model learned what
+    # a 120-start quarterback looks like, so handing it 14 for the same man is
+    # not a smaller number, it is a different player. Built from two seasons,
+    # the first live page had Patrick Mahomes at 14 career starts.
+    #
+    # It costs one extra pass over a 2 MB file. Efficiency stays on the short
+    # window because that is 20 MB a season, and quarterback *value* decays on
+    # a 24-game half-life anyway, so seasons that old barely register.
+    history = dataset.build_games(
+        seasons=list(range(config.TRAIN_START_YEAR, season + 1)))
+    quarterbacks = QBEngine(build_starter_table(history, eff))
+    cov = quarterbacks.coverage()
+    log.info("quarterbacks: %d team-games, %.0f%% with a named starter, "
+             "%d distinct", cov["rows"], cov.get("identified", 0) * 100,
+             cov.get("distinct_qbs", 0))
 
     engine = RatingsEngine(games, PreseasonPriors())
     engine.build_priors([season - 1, season])
@@ -188,6 +204,8 @@ def _record(r) -> dict:
             "away": None if pd.isna(r.get("away_qb")) else str(r.get("away_qb")),
             "home_new": _j(r.get("home_qb_new"), 0),
             "away_new": _j(r.get("away_qb_new"), 0),
+            "home_first": _j(r.get("home_qb_first"), 0),
+            "away_first": _j(r.get("away_qb_first"), 0),
             "home_starts": _j(r.get("home_qb_starts"), 0),
             "away_starts": _j(r.get("away_qb_starts"), 0),
         },

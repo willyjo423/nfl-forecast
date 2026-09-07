@@ -35,11 +35,13 @@ import config
 log = logging.getLogger(__name__)
 
 BLANK = {
-    "qb_value": np.nan,       # points-ish: pass EPA above the running league mean
-    "qb_starts": 0.0,         # weighted evidence behind that number
-    "qb_known": 0,            # did we identify the starter at all
-    "qb_new_starter": np.nan, # 1 if he did not start this team's last game
-    "qb_team_starts": 0.0,    # consecutive-ish starts for this team
+    "qb_value": np.nan,        # points-ish: pass EPA above the running league mean
+    "qb_starts": 0.0,          # career starts, the evidence behind that number
+    "qb_known": 0,             # did we identify the starter at all
+    "qb_new_starter": np.nan,  # 1 if he did not start this team's last game
+                               # (NaN across a season boundary - see lookup)
+    "qb_first_for_team": np.nan,  # 1 if he has never started for this team
+    "qb_team_starts": 0.0,     # consecutive starts for this team
 }
 
 
@@ -110,8 +112,10 @@ class QBEngine:
 
         # qb_id -> [weighted sum of value, total weight, raw starts]
         qb: dict[str, list[float]] = {}
-        # team -> [last qb_id, starts by that qb for this team]
+        # team -> [last qb_id, consecutive starts by him, season of that start]
         team_last: dict[str, list] = {}
+        # team -> every quarterback who has ever started for it
+        team_seen: dict[str, set] = {}
         league = [0.0, 0.0]  # running weighted mean of pass_epa
 
         decay = 0.5 ** (1.0 / max(self.halflife, 1.0))
@@ -128,7 +132,19 @@ class QBEngine:
                 if isinstance(qid, str) and qid:
                     prev = team_last.get(team)
                     same = prev is not None and prev[0] == qid
-                    team_last[team] = [qid, (prev[1] + 1) if same else 1]
+                    team_last[team] = [qid, (prev[1] + 1) if same else 1,
+                                       int(year)]
+                    team_seen.setdefault(team, set()).add(qid)
+
+                    # A start is a start whether or not anyone measured the
+                    # passing EPA in it. Counting starts only when a value
+                    # existed was a real bug: the daily job loads two seasons
+                    # of play-by-play where training loaded twenty, so on the
+                    # live page Patrick Mahomes appeared with 14 career starts.
+                    # The model had been trained against honest counts and was
+                    # handed a number an order of magnitude smaller.
+                    cur = qb.setdefault(qid, [0.0, 0.0, 0.0])
+                    cur[2] += 1.0
 
                 if pd.notna(value):
                     # Decay everyone a touch, so old form fades even for a
@@ -136,11 +152,9 @@ class QBEngine:
                     league[0] = league[0] * decay + float(value)
                     league[1] = league[1] * decay + 1.0
                     if isinstance(qid, str) and qid:
-                        cur = qb.get(qid, [0.0, 0.0, 0.0])
+                        cur = qb.setdefault(qid, [0.0, 0.0, 0.0])
                         cur[0] = cur[0] * decay + float(value)
                         cur[1] = cur[1] * decay + 1.0
-                        cur[2] += 1.0
-                        qb[qid] = cur
 
             # Snapshot AFTER this week is folded in, keyed by the week it
             # covers. A lookup for week W then takes the newest snapshot from
@@ -157,7 +171,8 @@ class QBEngine:
             self._boundaries.append((int(year), int(week)))
             self._snapshots[(int(year), int(week))] = {
                 "qb": {k: tuple(v) for k, v in qb.items()},
-                "team_last": {k: (v[0], v[1]) for k, v in team_last.items()},
+                "team_last": {k: (v[0], v[1], v[2]) for k, v in team_last.items()},
+                "team_seen": {k: frozenset(v) for k, v in team_seen.items()},
                 "league": tuple(league),
             }
 
@@ -188,21 +203,41 @@ class QBEngine:
         league_mean = lg_sum / lg_w if lg_w > 0 else np.nan
 
         rec = snap["qb"].get(qid)
-        if rec and rec[1] > 0 and np.isfinite(league_mean):
-            own = rec[0] / rec[1]
-            weight = rec[1] / (rec[1] + self.shrinkage)
-            # Shrink toward the league mean, hard when he has barely played.
-            # A rookie's first three good games are not evidence of a good
-            # quarterback, and this is where that gets said in arithmetic.
-            out["qb_value"] = float((own - league_mean) * weight)
+        if rec:
+            # How many times he has started is known whether or not anyone
+            # measured the passing in those games. Reporting it only alongside
+            # a value was the second half of the same bug: with efficiency
+            # unavailable, every quarterback came back at zero career starts.
             out["qb_starts"] = float(rec[2])
 
+            if rec[1] > 0 and np.isfinite(league_mean):
+                own = rec[0] / rec[1]
+                weight = rec[1] / (rec[1] + self.shrinkage)
+                # Shrink toward the league mean, hard when he has barely
+                # played. A rookie's first three good games are not evidence of
+                # a good quarterback, and this is where that gets said in
+                # arithmetic.
+                out["qb_value"] = float((own - league_mean) * weight)
+
         prev = snap["team_last"].get(team)
+        seen = snap.get("team_seen", {}).get(team, frozenset())
+        out["qb_first_for_team"] = 0.0 if qid in seen else 1.0
+
         if prev is None:
             # No prior start on record for this team - genuinely unknown, not
             # evidence of a change.
             out["qb_new_starter"] = np.nan
             out["qb_team_starts"] = 0.0
+        elif int(prev[2]) != int(year):
+            # The team's last start was in a previous season, so "did he start
+            # the last game" is asking about a game played before an entire
+            # offseason. Worse, it is actively wrong after a week-18 rest: on
+            # the live page Mahomes came back in week 1 flagged NEW STARTER
+            # because a backup had finished the previous January. Across a
+            # season boundary the honest answer is that the in-season question
+            # does not apply - `qb_first_for_team` is the one that does.
+            out["qb_new_starter"] = np.nan
+            out["qb_team_starts"] = float(prev[1]) if prev[0] == qid else 0.0
         else:
             out["qb_new_starter"] = 0.0 if prev[0] == qid else 1.0
             out["qb_team_starts"] = float(prev[1]) if prev[0] == qid else 0.0
