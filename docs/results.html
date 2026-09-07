@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NFL forecast results</title><style>
+:root{
+  --bg:#0f1115; --card:#171a21; --line:#252a34; --ink:#e8eaed; --dim:#9aa2ad;
+  --faint:#6b7280; --accent:#4ea1ff; --good:#3fb950; --warn:#d29922;
+  --home:#4ea1ff; --away:#f0883e;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f6f7f9; --card:#fff; --line:#e3e6ea; --ink:#14171c;
+         --dim:#5b6472; --faint:#8b95a3; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:28px 18px 64px}
+h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:13px;margin:0 0 22px}
+.strip{display:flex;flex-wrap:wrap;gap:14px;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:20px}
+.strip div{font-size:12px;color:var(--dim)}
+.strip b{display:block;font-size:17px;color:var(--ink);font-variant-numeric:tabular-nums}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);
+  border-radius:8px;padding:14px 16px;margin-bottom:22px;font-size:13px;color:var(--dim)}
+.note b{color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin-bottom:14px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+.match{font-weight:600;font-size:16px}
+.when{color:var(--faint);font-size:12px;white-space:nowrap}
+.verdict{font-size:19px;font-weight:600;margin-bottom:2px}
+.verdict .num{font-variant-numeric:tabular-nums;color:var(--accent)}
+.because{color:var(--dim);font-size:13px;margin-bottom:10px}
+.prob-bar{display:flex;height:7px;border-radius:4px;overflow:hidden;background:var(--line)}
+.prob-bar i{display:block}
+.prob-bar i.lead{background:var(--good)}
+.prob-bar i.trail{background:var(--faint);opacity:.45}
+.prob-ends,.band-ends{display:flex;justify-content:space-between;
+  font-size:11px;color:var(--faint);margin-top:4px}
+.band-row{margin:14px 0 4px}
+.band{position:relative;height:22px}
+.track{position:absolute;top:10px;left:0;right:0;height:2px;background:var(--line)}
+.iqr{position:absolute;top:6px;height:10px;background:var(--accent);opacity:.32;border-radius:3px}
+.zero{position:absolute;top:2px;width:1px;height:18px;background:var(--faint)}
+.med{position:absolute;top:2px;width:2px;height:18px;background:var(--accent)}
+.band-label{font-size:13px;color:var(--dim);margin-top:6px}
+.band-label b{color:var(--ink)}
+.qbs{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 2px;font-size:13px}
+.qb{color:var(--dim)}
+.qb b{color:var(--ink)}
+.flagnew{display:inline-block;background:var(--warn);color:#1a1200;font-size:10px;
+  font-weight:700;border-radius:3px;padding:1px 5px;margin-left:5px;
+  letter-spacing:.03em;vertical-align:1px}
+.meta{color:var(--faint);font-size:12px;margin-top:10px}
+.market{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.cmp-row{display:flex;gap:14px;font-size:13px;padding:2px 0}
+.cmp-k{width:66px;color:var(--faint);font-size:11px;text-transform:uppercase;
+  letter-spacing:.05em;padding-top:2px}
+.cmp-v{color:var(--dim);font-variant-numeric:tabular-nums}
+.gap{color:var(--faint);font-size:12px;margin-top:6px}
+footer{color:var(--faint);font-size:12px;margin-top:32px;text-align:center}
+pre{white-space:pre-wrap;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}}</style></head><body><div class="wrap"><h1>Forward-only results</h1><p class="sub">Updated 2026-09-07 16:40. Every forecast here was archived before its game kicked off.</p><div class="card"><pre>No graded forecasts yet. They appear once archived forecasts have games that have finished.</pre></div><footer><a href="./">Back to this week's forecasts</a></footer></div></body></html>
