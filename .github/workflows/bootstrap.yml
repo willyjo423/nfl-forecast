@@ -20,6 +20,12 @@ on:
         required: false
         default: true
 
+# The last step pushes the trained model back to the repo, and the workflow
+# token is read-only by default. Without this the whole run succeeds and then
+# fails at the final step with a 403.
+permissions:
+  contents: write
+
 jobs:
   bootstrap:
     runs-on: ubuntu-latest
@@ -72,10 +78,16 @@ jobs:
 
       - name: Commit the trained model
         # The daily job needs the model file, so it lives in the repo rather
-        # than in an artifact that expires.
+        # than in an artifact that expires. If this 403s, the run itself was
+        # fine - the model is in the artifact above - and the fix is either the
+        # permissions block at the top of this file or, if the repository
+        # default is locked down, Settings -> Actions -> General -> Workflow
+        # permissions -> Read and write.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f models/ data/metrics.json
-          git diff --staged --quiet || git commit -m "Bootstrap: retrain model"
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Bootstrap: retrain model"
+          git pull --rebase --autostash origin main || true
           git push
