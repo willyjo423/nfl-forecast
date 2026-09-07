@@ -1,0 +1,10 @@
+pandas>=2.2
+numpy>=1.26
+requests>=2.31
+# Play-by-play is published as parquet. Without pyarrow the loader falls back
+# to the gzipped CSV, which works but downloads several times as much.
+pyarrow>=15.0
+# Needed once the model layer lands; harmless now.
+scikit-learn>=1.4
+scipy>=1.11
+joblib>=1.3
