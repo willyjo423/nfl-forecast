@@ -176,6 +176,16 @@ def _record(r) -> dict:
     # both more direct and the thing the sigma curve was built to express.
     p25, p75 = margin - 0.6745 * sigma, margin + 0.6745 * sigma
 
+    # The same statement for the total. One sigma covers every game rather than
+    # varying with evidence, because only the margin's spread was measured
+    # against how much had been played - so this range is honest but blunter,
+    # and it should not be read as being as finely tuned as the margin's.
+    tsigma = float(r.get("total_sigma", np.nan))
+    if np.isfinite(tsigma):
+        t25, t75 = total - 0.6745 * tsigma, total + 0.6745 * tsigma
+    else:
+        t25 = t75 = np.nan
+
     wx = {"temp_f": _j(r.get("temp_f")), "wind_mph": _j(r.get("wind_mph"))}
     kickoff = r.get("kickoff")
 
@@ -197,6 +207,9 @@ def _record(r) -> dict:
             "sigma": round(sigma, 1),
             "margin_p25": round(p25, 1),
             "margin_p75": round(p75, 1),
+            "total_sigma": _j(tsigma),
+            "total_p25": _j(t25),
+            "total_p75": _j(t75),
         },
 
         "quarterbacks": {

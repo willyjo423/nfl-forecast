@@ -50,7 +50,10 @@ def game(home="KC", away="BUF", hp=27, ap=20, prob=0.68, sigma=12.0,
         "forecast": {"home_points": hp, "away_points": ap, "margin": margin,
                      "total": hp + ap, "home_win_prob": prob, "sigma": sigma,
                      "margin_p25": round(margin - 0.6745 * sigma, 1),
-                     "margin_p75": round(margin + 0.6745 * sigma, 1)},
+                     "margin_p75": round(margin + 0.6745 * sigma, 1),
+                     "total_sigma": 13.0,
+                     "total_p25": round(hp + ap - 0.6745 * 13.0, 1),
+                     "total_p75": round(hp + ap + 0.6745 * 13.0, 1)},
         "quarterbacks": {"home": "P. Mahomes", "away": "J. Allen",
                          "home_new": 0, "away_new": 0, "home_first": 0, "away_first": 0,
                          "home_starts": 120, "away_starts": 110},
@@ -133,6 +136,31 @@ def test_direction() -> None:
         out = dashboard._band(g)
         check(f"direction labels present (margin {g['forecast']['margin']})",
               "wins" in out and "&#8592;" in out and "&#8594;" in out)
+
+
+def test_total_range() -> None:
+    section("TOTAL RANGE")
+    out = dashboard._band(game(hp=27, ap=20))
+    check("the total range is shown", "add up to between" in out, out[-300:])
+    check("it sits below the margin sentence",
+          out.index("add up to between") > out.index("Half of the time"),
+          "the total line belongs under the margin line, not above it")
+    check("it brackets the projected total",
+          "39 and 56" in out or "38 and 56" in out,
+          re.sub(r"<[^>]+>", "", out).split("add up to")[-1][:40])
+    check("no team is named on the total line",
+          "KC" not in out.split("add up to")[-1]
+          and "BUF" not in out.split("add up to")[-1],
+          "a total has no direction, so naming a side would only confuse it")
+
+    # A model trained before total_sigma was surfaced supplies no range, and
+    # the card must simply omit the line rather than invent one.
+    stale = game()
+    stale["forecast"] = {k: v for k, v in stale["forecast"].items()
+                         if not k.startswith("total_p")}
+    out = dashboard._band(stale)
+    check("an absent total range is omitted, not guessed",
+          "add up to between" not in out and "Half of the time" in out)
 
 
 def test_probability_bar() -> None:
@@ -298,7 +326,8 @@ def test_record() -> None:
 
 def main() -> int:
     print("NFL forecast job and page - offline checks")
-    for fn in (test_season, test_direction, test_probability_bar,
+    for fn in (test_season, test_direction, test_total_range,
+               test_probability_bar,
                test_quarterbacks, test_market, test_context, test_page,
                test_record):
         try:

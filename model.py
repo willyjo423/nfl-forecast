@@ -345,6 +345,12 @@ class NFLModel:
             "home_win_prob": prob,
             "margin_sigma": (self.sigma_for(played) if played is not None
                              else np.full(len(Xf), self.margin_sigma)),
+            # Surfaced so the page can state a range for the total the same way
+            # it does for the margin. This is a value `fit` already measured and
+            # stored; exposing it changes no coefficient and needs no retrain,
+            # and a model pickled before this line still carries it.
+            "total_sigma": np.full(len(Xf),
+                                   float(getattr(self, "total_sigma", 10.5))),
             "pred_home_points": (total + margin) / 2,
             "pred_away_points": (total - margin) / 2,
         }, index=X.index)

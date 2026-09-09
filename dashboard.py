@@ -73,6 +73,7 @@ h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
 .med{position:absolute;top:2px;width:2px;height:18px;background:var(--accent)}
 .band-label{font-size:13px;color:var(--dim);margin-top:6px}
 .band-label b{color:var(--ink)}
+.band-label.total{margin-top:2px}
 .qbs{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 2px;font-size:13px}
 .qb{color:var(--dim)}
 .qb b{color:var(--ink)}
@@ -153,6 +154,16 @@ def _band(g: dict) -> str:
         label = (f'Half of the time this lands between <b>{_e(away)} by '
                  f'{abs(p25):.0f}</b> and <b>{_e(home)} by {p75:.0f}</b>')
 
+    # The same statement for the combined score, sitting under the margin one.
+    # No direction to get wrong here, so it needs none of the naming the line
+    # above does - a total is just a number, and 41 to 55 reads the same way
+    # round for both teams.
+    t25, t75 = f.get("total_p25"), f.get("total_p75")
+    total_label = ""
+    if t25 is not None and t75 is not None:
+        total_label = (f'<div class="band-label total">and the two scores add '
+                       f'up to between <b>{t25:.0f} and {t75:.0f}</b></div>')
+
     return (
         '<div class="band-row"><div class="band">'
         '<div class="track"></div>'
@@ -161,7 +172,7 @@ def _band(g: dict) -> str:
         f'<div class="med" style="left:{pos(med):.1f}%"></div></div>'
         f'<div class="band-ends"><span>&#8592; {_e(away)} wins</span>'
         f'<span>{_e(home)} wins &#8594;</span></div>'
-        f'<div class="band-label">{label}</div></div>')
+        f'<div class="band-label">{label}</div>{total_label}</div>')
 
 
 def _quarterbacks(g: dict) -> str:
