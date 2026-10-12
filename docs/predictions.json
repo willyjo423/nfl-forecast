@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T12:29:00.968436-04:00",
+  "generated_at": "2026-10-12T16:06:11.259881-04:00",
   "season": 2026,
   "week": 5,
   "games": [
@@ -59,17 +59,17 @@
       "away_team": "PHI",
       "neutral_site": true,
       "forecast": {
-        "home_points": 29,
-        "away_points": 19,
-        "margin": 9.9,
-        "total": 47.4,
-        "home_win_prob": 0.7651,
+        "home_points": 28,
+        "away_points": 18,
+        "margin": 10.0,
+        "total": 45.6,
+        "home_win_prob": 0.7671,
         "sigma": 10.9,
         "margin_p25": 2.6,
         "margin_p75": 17.3,
         "total_sigma": 10.5,
-        "total_p25": 40.3,
-        "total_p75": 54.5
+        "total_p25": 38.5,
+        "total_p75": 52.6
       },
       "quarterbacks": {
         "home": "Trevor Lawrence",
@@ -89,13 +89,13 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 52.9,
-        "wind_mph": 5.6
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "53\u00b0F",
+      "weather_text": "",
       "market_margin": 7.5,
       "market_total": 41.5,
-      "vs_market": 2.4
+      "vs_market": 2.5
     },
     {
       "game_id": "2026_05_CHI_GB",
@@ -109,14 +109,14 @@
         "home_points": 21,
         "away_points": 25,
         "margin": -4.0,
-        "total": 46.9,
-        "home_win_prob": 0.3511,
+        "total": 45.5,
+        "home_win_prob": 0.3503,
         "sigma": 10.9,
-        "margin_p25": -11.3,
-        "margin_p75": 3.4,
+        "margin_p25": -11.4,
+        "margin_p75": 3.3,
         "total_sigma": 10.5,
-        "total_p25": 39.9,
-        "total_p75": 54.0
+        "total_p25": 38.4,
+        "total_p75": 52.5
       },
       "quarterbacks": {
         "home": "Jordan Love",
@@ -136,12 +136,12 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 56.2,
-        "wind_mph": 3.8
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "56\u00b0F",
+      "weather_text": "",
       "market_margin": -1.5,
-      "market_total": 47.5,
+      "market_total": 46.5,
       "vs_market": -2.5
     },
     {
@@ -155,15 +155,15 @@
       "forecast": {
         "home_points": 21,
         "away_points": 26,
-        "margin": -4.7,
-        "total": 46.9,
-        "home_win_prob": 0.3306,
+        "margin": -4.9,
+        "total": 46.1,
+        "home_win_prob": 0.3235,
         "sigma": 10.9,
-        "margin_p25": -12.0,
-        "margin_p75": 2.7,
+        "margin_p25": -12.3,
+        "margin_p75": 2.4,
         "total_sigma": 10.5,
-        "total_p25": 39.8,
-        "total_p75": 54.0
+        "total_p25": 39.1,
+        "total_p75": 53.2
       },
       "quarterbacks": {
         "home": "Malik Willis",
@@ -183,13 +183,13 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 84.6,
-        "wind_mph": 6.2
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "85\u00b0F",
+      "weather_text": "",
       "market_margin": -7.0,
       "market_total": 44.5,
-      "vs_market": 2.3
+      "vs_market": 2.1
     },
     {
       "game_id": "2026_05_LV_NE",
@@ -202,15 +202,15 @@
       "forecast": {
         "home_points": 26,
         "away_points": 21,
-        "margin": 4.1,
-        "total": 47.1,
-        "home_win_prob": 0.6072,
+        "margin": 4.8,
+        "total": 46.5,
+        "home_win_prob": 0.6285,
         "sigma": 10.9,
-        "margin_p25": -3.2,
-        "margin_p75": 11.5,
+        "margin_p25": -2.5,
+        "margin_p75": 12.2,
         "total_sigma": 10.5,
-        "total_p25": 40.0,
-        "total_p75": 54.2
+        "total_p25": 39.4,
+        "total_p75": 53.6
       },
       "quarterbacks": {
         "home": "Drake Maye",
@@ -230,13 +230,13 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 49.4,
-        "wind_mph": 1.3
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "49\u00b0F",
+      "weather_text": "",
       "market_margin": 3.5,
       "market_total": 45.5,
-      "vs_market": 0.6
+      "vs_market": 1.3
     },
     {
       "game_id": "2026_05_MIN_NO",
@@ -249,12 +249,12 @@
       "forecast": {
         "home_points": 19,
         "away_points": 22,
-        "margin": -3.4,
+        "margin": -3.6,
         "total": 41.1,
-        "home_win_prob": 0.3693,
+        "home_win_prob": 0.3619,
         "sigma": 10.9,
-        "margin_p25": -10.7,
-        "margin_p75": 4.0,
+        "margin_p25": -11.0,
+        "margin_p75": 3.7,
         "total_sigma": 10.5,
         "total_p25": 34.0,
         "total_p75": 48.2
@@ -283,7 +283,7 @@
       "weather_text": "Indoors",
       "market_margin": -2.5,
       "market_total": 41.5,
-      "vs_market": -0.9
+      "vs_market": -1.1
     },
     {
       "game_id": "2026_05_CLE_NYJ",
@@ -297,14 +297,14 @@
         "home_points": 20,
         "away_points": 19,
         "margin": 1.1,
-        "total": 39.9,
-        "home_win_prob": 0.5108,
+        "total": 39.3,
+        "home_win_prob": 0.5099,
         "sigma": 10.9,
-        "margin_p25": -6.2,
-        "margin_p75": 8.5,
+        "margin_p25": -6.3,
+        "margin_p75": 8.4,
         "total_sigma": 10.5,
-        "total_p25": 32.8,
-        "total_p75": 47.0
+        "total_p25": 32.2,
+        "total_p75": 46.4
       },
       "quarterbacks": {
         "home": "Geno Smith",
@@ -324,10 +324,10 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 59.8,
-        "wind_mph": 6.6
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "60\u00b0F",
+      "weather_text": "",
       "market_margin": 2.5,
       "market_total": 38.5,
       "vs_market": -1.4
@@ -341,17 +341,17 @@
       "away_team": "IND",
       "neutral_site": false,
       "forecast": {
-        "home_points": 23,
-        "away_points": 23,
-        "margin": -0.4,
-        "total": 46.3,
-        "home_win_prob": 0.4632,
+        "home_points": 24,
+        "away_points": 24,
+        "margin": -0.5,
+        "total": 48.0,
+        "home_win_prob": 0.4596,
         "sigma": 10.9,
-        "margin_p25": -7.7,
-        "margin_p75": 7.0,
+        "margin_p25": -7.8,
+        "margin_p75": 6.9,
         "total_sigma": 10.5,
-        "total_p25": 39.2,
-        "total_p75": 53.3
+        "total_p25": 40.9,
+        "total_p75": 55.1
       },
       "quarterbacks": {
         "home": "Aaron Rodgers",
@@ -371,13 +371,13 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 57.3,
-        "wind_mph": 9.3
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "57\u00b0F",
+      "weather_text": "",
       "market_margin": 3.0,
       "market_total": 41.5,
-      "vs_market": -3.4
+      "vs_market": -3.5
     },
     {
       "game_id": "2026_05_HOU_TEN",
@@ -389,16 +389,16 @@
       "neutral_site": false,
       "forecast": {
         "home_points": 18,
-        "away_points": 23,
-        "margin": -4.7,
-        "total": 41.1,
-        "home_win_prob": 0.3307,
+        "away_points": 22,
+        "margin": -4.6,
+        "total": 39.9,
+        "home_win_prob": 0.3343,
         "sigma": 10.9,
-        "margin_p25": -12.0,
-        "margin_p75": 2.7,
+        "margin_p25": -11.9,
+        "margin_p75": 2.8,
         "total_sigma": 10.5,
-        "total_p25": 34.0,
-        "total_p75": 48.2
+        "total_p25": 32.8,
+        "total_p75": 47.0
       },
       "quarterbacks": {
         "home": "Cam Ward",
@@ -418,13 +418,13 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 61.5,
-        "wind_mph": 5.8
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "62\u00b0F",
+      "weather_text": "",
       "market_margin": -6.5,
       "market_total": 37.5,
-      "vs_market": 1.8
+      "vs_market": 1.9
     },
     {
       "game_id": "2026_05_NYG_WAS",
@@ -435,17 +435,17 @@
       "away_team": "NYG",
       "neutral_site": false,
       "forecast": {
-        "home_points": 21,
-        "away_points": 21,
-        "margin": -0.3,
-        "total": 41.8,
-        "home_win_prob": 0.4655,
+        "home_points": 22,
+        "away_points": 22,
+        "margin": -0.1,
+        "total": 44.3,
+        "home_win_prob": 0.4704,
         "sigma": 10.9,
-        "margin_p25": -7.6,
-        "margin_p75": 7.1,
+        "margin_p25": -7.5,
+        "margin_p75": 7.2,
         "total_sigma": 10.5,
-        "total_p25": 34.7,
-        "total_p75": 48.9
+        "total_p25": 37.2,
+        "total_p75": 51.3
       },
       "quarterbacks": {
         "home": "Jayden Daniels",
@@ -465,13 +465,13 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 61.9,
-        "wind_mph": 11.7
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "62\u00b0F, breezy 12 mph",
+      "weather_text": "",
       "market_margin": 3.5,
       "market_total": 41.5,
-      "vs_market": -3.8
+      "vs_market": -3.6
     },
     {
       "game_id": "2026_05_DEN_LAC",
@@ -492,7 +492,7 @@
         "margin_p75": 5.4,
         "total_sigma": 10.5,
         "total_p25": 36.3,
-        "total_p75": 50.5
+        "total_p75": 50.4
       },
       "quarterbacks": {
         "home": "Justin Herbert",
@@ -517,7 +517,7 @@
       },
       "weather_text": "Indoors",
       "market_margin": -3.5,
-      "market_total": 41.5,
+      "market_total": 42.5,
       "vs_market": 1.5
     },
     {
@@ -555,16 +555,16 @@
         "home_rest": 7.0,
         "away_rest": 7.0,
         "div_game": 0.0,
-        "is_dome": 0.0,
+        "is_dome": 1.0,
         "games_played": 4
       },
       "weather": {
         "temp_f": 68.0,
         "wind_mph": 0.0
       },
-      "weather_text": "68\u00b0F",
+      "weather_text": "Indoors",
       "market_margin": -5.5,
-      "market_total": 54.5,
+      "market_total": 55.5,
       "vs_market": 1.0
     },
     {
@@ -579,14 +579,14 @@
         "home_points": 21,
         "away_points": 26,
         "margin": -4.9,
-        "total": 46.9,
-        "home_win_prob": 0.3231,
+        "total": 46.4,
+        "home_win_prob": 0.324,
         "sigma": 10.9,
         "margin_p25": -12.3,
         "margin_p75": 2.4,
         "total_sigma": 10.5,
-        "total_p25": 39.8,
-        "total_p75": 54.0
+        "total_p25": 39.3,
+        "total_p75": 53.5
       },
       "quarterbacks": {
         "home": "Drew Lock",
@@ -606,10 +606,10 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 47.0,
-        "wind_mph": 5.4
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "47\u00b0F",
+      "weather_text": "",
       "market_margin": 3.0,
       "market_total": 46.5,
       "vs_market": -7.9
@@ -625,15 +625,15 @@
       "forecast": {
         "home_points": 23,
         "away_points": 23,
-        "margin": 0.0,
-        "total": 45.5,
-        "home_win_prob": 0.4759,
+        "margin": 0.2,
+        "total": 45.9,
+        "home_win_prob": 0.4801,
         "sigma": 10.9,
-        "margin_p25": -7.3,
-        "margin_p75": 7.4,
+        "margin_p25": -7.2,
+        "margin_p75": 7.5,
         "total_sigma": 10.5,
-        "total_p25": 38.5,
-        "total_p75": 52.6
+        "total_p25": 38.8,
+        "total_p75": 53.0
       },
       "quarterbacks": {
         "home": "Michael Penix Jr.",
@@ -653,13 +653,13 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 68.0,
-        "wind_mph": 0.0
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "68\u00b0F",
-      "market_margin": 3.0,
-      "market_total": 43.5,
-      "vs_market": -3.0
+      "weather_text": "",
+      "market_margin": 3.5,
+      "market_total": 44.5,
+      "vs_market": -3.3
     },
     {
       "game_id": "2026_05_BUF_LA",
@@ -704,9 +704,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "Indoors",
-      "market_margin": 3.0,
+      "market_margin": 3.5,
       "market_total": 54.5,
-      "vs_market": -4.7
+      "vs_market": -5.2
     }
   ],
   "model_metrics": {
