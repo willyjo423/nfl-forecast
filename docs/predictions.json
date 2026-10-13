@@ -1,712 +1,665 @@
 {
-  "generated_at": "2026-10-12T16:06:11.259881-04:00",
+  "generated_at": "2026-10-13T13:53:21.762578-04:00",
   "season": 2026,
-  "week": 5,
+  "week": 6,
   "games": [
     {
-      "game_id": "2026_05_TB_DAL",
-      "kickoff_utc": "2026-10-08T20:15:00",
+      "game_id": "2026_06_SEA_DEN",
+      "kickoff_utc": "2026-10-15T20:15:00",
       "kickoff_et": "Thu 8:15 PM",
-      "week": 5,
-      "home_team": "DAL",
-      "away_team": "TB",
+      "week": 6,
+      "home_team": "DEN",
+      "away_team": "SEA",
       "neutral_site": false,
       "forecast": {
-        "home_points": 30,
-        "away_points": 24,
-        "margin": 6.5,
-        "total": 53.9,
-        "home_win_prob": 0.6779,
+        "home_points": 21,
+        "away_points": 21,
+        "margin": 0.0,
+        "total": 41.3,
+        "home_win_prob": 0.4763,
         "sigma": 10.9,
-        "margin_p25": -0.8,
-        "margin_p75": 13.9,
+        "margin_p25": -7.3,
+        "margin_p75": 7.4,
         "total_sigma": 10.5,
-        "total_p25": 46.8,
-        "total_p75": 61.0
+        "total_p25": 34.2,
+        "total_p75": 48.4
       },
       "quarterbacks": {
-        "home": "Dak Prescott",
-        "away": "Jalon Daniels",
+        "home": "Bo Nix",
+        "away": "Drew Lock",
         "home_new": 0.0,
         "away_new": 0.0,
         "home_first": 0.0,
         "away_first": 0.0,
-        "home_starts": 149.0,
-        "away_starts": 1.0
+        "home_starts": 41.0,
+        "away_starts": 29.0
       },
       "context": {
         "home_rest": 4.0,
         "away_rest": 4.0,
         "div_game": 0.0,
-        "is_dome": 1.0,
-        "games_played": 4
+        "is_dome": 0.0,
+        "games_played": 5
       },
       "weather": {
-        "temp_f": 68.0,
-        "wind_mph": 0.0
+        "temp_f": 46.6,
+        "wind_mph": 14.2
       },
-      "weather_text": "Indoors",
-      "market_margin": 9.5,
-      "market_total": 49.5,
-      "vs_market": -3.0
+      "weather_text": "47\u00b0F, breezy 14 mph",
+      "market_margin": -3.0,
+      "market_total": 40.5,
+      "vs_market": 3.0
     },
     {
-      "game_id": "2026_05_PHI_JAX",
-      "kickoff_utc": "2026-10-11T09:30:00",
+      "game_id": "2026_06_HOU_JAX",
+      "kickoff_utc": "2026-10-18T09:30:00",
       "kickoff_et": "Sun 9:30 AM",
-      "week": 5,
+      "week": 6,
       "home_team": "JAX",
-      "away_team": "PHI",
+      "away_team": "HOU",
       "neutral_site": true,
       "forecast": {
-        "home_points": 28,
+        "home_points": 25,
         "away_points": 18,
-        "margin": 10.0,
-        "total": 45.6,
-        "home_win_prob": 0.7671,
+        "margin": 6.8,
+        "total": 43.2,
+        "home_win_prob": 0.6869,
         "sigma": 10.9,
-        "margin_p25": 2.6,
-        "margin_p75": 17.3,
+        "margin_p25": -0.5,
+        "margin_p75": 14.2,
         "total_sigma": 10.5,
-        "total_p25": 38.5,
-        "total_p75": 52.6
+        "total_p25": 36.1,
+        "total_p75": 50.2
       },
       "quarterbacks": {
         "home": "Trevor Lawrence",
-        "away": "Jalen Hurts",
+        "away": "C.J. Stroud",
         "home_new": 0.0,
         "away_new": 0.0,
         "home_first": 0.0,
         "away_first": 0.0,
-        "home_starts": 84.0,
-        "away_starts": 97.0
-      },
-      "context": {
-        "home_rest": 7.0,
-        "away_rest": 7.0,
-        "div_game": 0.0,
-        "is_dome": 0.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": null,
-        "wind_mph": null
-      },
-      "weather_text": "",
-      "market_margin": 7.5,
-      "market_total": 41.5,
-      "vs_market": 2.5
-    },
-    {
-      "game_id": "2026_05_CHI_GB",
-      "kickoff_utc": "2026-10-11T13:00:00",
-      "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "GB",
-      "away_team": "CHI",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 21,
-        "away_points": 25,
-        "margin": -4.0,
-        "total": 45.5,
-        "home_win_prob": 0.3503,
-        "sigma": 10.9,
-        "margin_p25": -11.4,
-        "margin_p75": 3.3,
-        "total_sigma": 10.5,
-        "total_p25": 38.4,
-        "total_p75": 52.5
-      },
-      "quarterbacks": {
-        "home": "Jordan Love",
-        "away": "Tyson Bagent",
-        "home_new": 0.0,
-        "away_new": 1.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 56.0,
-        "away_starts": 4.0
+        "home_starts": 85.0,
+        "away_starts": 56.0
       },
       "context": {
         "home_rest": 7.0,
         "away_rest": 7.0,
         "div_game": 1.0,
         "is_dome": 0.0,
-        "games_played": 4
+        "games_played": 5
       },
       "weather": {
-        "temp_f": null,
-        "wind_mph": null
+        "temp_f": 48.9,
+        "wind_mph": 11.0
       },
-      "weather_text": "",
-      "market_margin": -1.5,
-      "market_total": 46.5,
-      "vs_market": -2.5
+      "weather_text": "49\u00b0F, breezy 11 mph",
+      "market_margin": 3.0,
+      "market_total": 42.5,
+      "vs_market": 3.8
     },
     {
-      "game_id": "2026_05_CIN_MIA",
-      "kickoff_utc": "2026-10-11T13:00:00",
+      "game_id": "2026_06_CHI_ATL",
+      "kickoff_utc": "2026-10-18T13:00:00",
       "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "MIA",
-      "away_team": "CIN",
+      "week": 6,
+      "home_team": "ATL",
+      "away_team": "CHI",
       "neutral_site": false,
       "forecast": {
-        "home_points": 21,
-        "away_points": 26,
-        "margin": -4.9,
-        "total": 46.1,
-        "home_win_prob": 0.3235,
+        "home_points": 24,
+        "away_points": 23,
+        "margin": 0.9,
+        "total": 47.1,
+        "home_win_prob": 0.5029,
         "sigma": 10.9,
-        "margin_p25": -12.3,
-        "margin_p75": 2.4,
+        "margin_p25": -6.5,
+        "margin_p75": 8.2,
         "total_sigma": 10.5,
-        "total_p25": 39.1,
-        "total_p75": 53.2
+        "total_p25": 40.0,
+        "total_p75": 54.2
       },
       "quarterbacks": {
-        "home": "Malik Willis",
-        "away": "Joe Burrow",
+        "home": "Michael Penix Jr.",
+        "away": "Tyson Bagent",
         "home_new": 0.0,
         "away_new": 0.0,
         "home_first": 0.0,
         "away_first": 0.0,
-        "home_starts": 10.0,
-        "away_starts": 88.0
+        "home_starts": 15.0,
+        "away_starts": 5.0
       },
       "context": {
         "home_rest": 7.0,
         "away_rest": 7.0,
         "div_game": 0.0,
         "is_dome": 0.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": null,
-        "wind_mph": null
-      },
-      "weather_text": "",
-      "market_margin": -7.0,
-      "market_total": 44.5,
-      "vs_market": 2.1
-    },
-    {
-      "game_id": "2026_05_LV_NE",
-      "kickoff_utc": "2026-10-11T13:00:00",
-      "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "NE",
-      "away_team": "LV",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 26,
-        "away_points": 21,
-        "margin": 4.8,
-        "total": 46.5,
-        "home_win_prob": 0.6285,
-        "sigma": 10.9,
-        "margin_p25": -2.5,
-        "margin_p75": 12.2,
-        "total_sigma": 10.5,
-        "total_p25": 39.4,
-        "total_p75": 53.6
-      },
-      "quarterbacks": {
-        "home": "Drake Maye",
-        "away": "Kirk Cousins",
-        "home_new": 0.0,
-        "away_new": 0.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 36.0,
-        "away_starts": 175.0
-      },
-      "context": {
-        "home_rest": 7.0,
-        "away_rest": 7.0,
-        "div_game": 0.0,
-        "is_dome": 0.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": null,
-        "wind_mph": null
-      },
-      "weather_text": "",
-      "market_margin": 3.5,
-      "market_total": 45.5,
-      "vs_market": 1.3
-    },
-    {
-      "game_id": "2026_05_MIN_NO",
-      "kickoff_utc": "2026-10-11T13:00:00",
-      "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "NO",
-      "away_team": "MIN",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 19,
-        "away_points": 22,
-        "margin": -3.6,
-        "total": 41.1,
-        "home_win_prob": 0.3619,
-        "sigma": 10.9,
-        "margin_p25": -11.0,
-        "margin_p75": 3.7,
-        "total_sigma": 10.5,
-        "total_p25": 34.0,
-        "total_p75": 48.2
-      },
-      "quarterbacks": {
-        "home": "Tyler Shough",
-        "away": "Kyler Murray",
-        "home_new": 0.0,
-        "away_new": 0.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 13.0,
-        "away_starts": 90.0
-      },
-      "context": {
-        "home_rest": 6.0,
-        "away_rest": 7.0,
-        "div_game": 0.0,
-        "is_dome": 1.0,
-        "games_played": 4
+        "games_played": 5
       },
       "weather": {
         "temp_f": 68.0,
         "wind_mph": 0.0
       },
-      "weather_text": "Indoors",
-      "market_margin": -2.5,
-      "market_total": 41.5,
-      "vs_market": -1.1
+      "weather_text": "68\u00b0F",
+      "market_margin": -3.0,
+      "market_total": 49.5,
+      "vs_market": 3.9
     },
     {
-      "game_id": "2026_05_CLE_NYJ",
-      "kickoff_utc": "2026-10-11T13:00:00",
+      "game_id": "2026_06_BAL_CLE",
+      "kickoff_utc": "2026-10-18T13:00:00",
       "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "NYJ",
-      "away_team": "CLE",
+      "week": 6,
+      "home_team": "CLE",
+      "away_team": "BAL",
       "neutral_site": false,
       "forecast": {
-        "home_points": 20,
-        "away_points": 19,
-        "margin": 1.1,
-        "total": 39.3,
-        "home_win_prob": 0.5099,
+        "home_points": 19,
+        "away_points": 24,
+        "margin": -5.0,
+        "total": 43.5,
+        "home_win_prob": 0.3226,
         "sigma": 10.9,
-        "margin_p25": -6.3,
-        "margin_p75": 8.4,
+        "margin_p25": -12.3,
+        "margin_p75": 2.4,
         "total_sigma": 10.5,
-        "total_p25": 32.2,
-        "total_p75": 46.4
+        "total_p25": 36.4,
+        "total_p75": 50.6
       },
       "quarterbacks": {
-        "home": "Geno Smith",
-        "away": "Deshaun Watson",
+        "home": "Deshaun Watson",
+        "away": "Lamar Jackson",
+        "home_new": 0.0,
+        "away_new": 1.0,
+        "home_first": 0.0,
+        "away_first": 0.0,
+        "home_starts": 80.0,
+        "away_starts": 119.0
+      },
+      "context": {
+        "home_rest": 7.0,
+        "away_rest": 7.0,
+        "div_game": 1.0,
+        "is_dome": 0.0,
+        "games_played": 5
+      },
+      "weather": {
+        "temp_f": 46.5,
+        "wind_mph": 9.4
+      },
+      "weather_text": "46\u00b0F",
+      "market_margin": -4.5,
+      "market_total": 41.5,
+      "vs_market": -0.5
+    },
+    {
+      "game_id": "2026_06_TEN_IND",
+      "kickoff_utc": "2026-10-18T13:00:00",
+      "kickoff_et": "Sun 1:00 PM",
+      "week": 6,
+      "home_team": "IND",
+      "away_team": "TEN",
+      "neutral_site": false,
+      "forecast": {
+        "home_points": 25,
+        "away_points": 21,
+        "margin": 4.3,
+        "total": 46.7,
+        "home_win_prob": 0.6109,
+        "sigma": 10.9,
+        "margin_p25": -3.1,
+        "margin_p75": 11.6,
+        "total_sigma": 10.5,
+        "total_p25": 39.6,
+        "total_p75": 53.8
+      },
+      "quarterbacks": {
+        "home": "Daniel Jones",
+        "away": "Cam Ward",
         "home_new": 0.0,
         "away_new": 0.0,
         "home_first": 0.0,
         "away_first": 0.0,
-        "home_starts": 103.0,
-        "away_starts": 79.0
+        "home_starts": 89.0,
+        "away_starts": 22.0
       },
       "context": {
         "home_rest": 7.0,
-        "away_rest": 10.0,
+        "away_rest": 7.0,
+        "div_game": 1.0,
+        "is_dome": 0.0,
+        "games_played": 5
+      },
+      "weather": {
+        "temp_f": 68.0,
+        "wind_mph": 0.0
+      },
+      "weather_text": "68\u00b0F",
+      "market_margin": 7.0,
+      "market_total": 44.5,
+      "vs_market": -2.7
+    },
+    {
+      "game_id": "2026_06_NYJ_NE",
+      "kickoff_utc": "2026-10-18T13:00:00",
+      "kickoff_et": "Sun 1:00 PM",
+      "week": 6,
+      "home_team": "NE",
+      "away_team": "NYJ",
+      "neutral_site": false,
+      "forecast": {
+        "home_points": 25,
+        "away_points": 15,
+        "margin": 9.9,
+        "total": 39.7,
+        "home_win_prob": 0.7651,
+        "sigma": 10.9,
+        "margin_p25": 2.6,
+        "margin_p75": 17.3,
+        "total_sigma": 10.5,
+        "total_p25": 32.6,
+        "total_p75": 46.7
+      },
+      "quarterbacks": {
+        "home": "Drake Maye",
+        "away": "Geno Smith",
+        "home_new": 0.0,
+        "away_new": 0.0,
+        "home_first": 0.0,
+        "away_first": 0.0,
+        "home_starts": 37.0,
+        "away_starts": 104.0
+      },
+      "context": {
+        "home_rest": 7.0,
+        "away_rest": 7.0,
+        "div_game": 1.0,
+        "is_dome": 0.0,
+        "games_played": 5
+      },
+      "weather": {
+        "temp_f": 42.8,
+        "wind_mph": 9.0
+      },
+      "weather_text": "43\u00b0F",
+      "market_margin": 7.5,
+      "market_total": 43.5,
+      "vs_market": 2.4
+    },
+    {
+      "game_id": "2026_06_NO_NYG",
+      "kickoff_utc": "2026-10-18T13:00:00",
+      "kickoff_et": "Sun 1:00 PM",
+      "week": 6,
+      "home_team": "NYG",
+      "away_team": "NO",
+      "neutral_site": false,
+      "forecast": {
+        "home_points": 23,
+        "away_points": 21,
+        "margin": 2.0,
+        "total": 44.7,
+        "home_win_prob": 0.5397,
+        "sigma": 10.9,
+        "margin_p25": -5.3,
+        "margin_p75": 9.4,
+        "total_sigma": 10.5,
+        "total_p25": 37.6,
+        "total_p75": 51.7
+      },
+      "quarterbacks": {
+        "home": "Jameis Winston",
+        "away": "Tyler Shough",
+        "home_new": 0.0,
+        "away_new": 0.0,
+        "home_first": 0.0,
+        "away_first": 0.0,
+        "home_starts": 95.0,
+        "away_starts": 14.0
+      },
+      "context": {
+        "home_rest": 7.0,
+        "away_rest": 7.0,
+        "div_game": 0.0,
+        "is_dome": 0.0,
+        "games_played": 5
+      },
+      "weather": {
+        "temp_f": 47.7,
+        "wind_mph": 6.2
+      },
+      "weather_text": "48\u00b0F",
+      "market_margin": -1.5,
+      "market_total": 45.5,
+      "vs_market": 3.5
+    },
+    {
+      "game_id": "2026_06_CAR_PHI",
+      "kickoff_utc": "2026-10-18T13:00:00",
+      "kickoff_et": "Sun 1:00 PM",
+      "week": 6,
+      "home_team": "PHI",
+      "away_team": "CAR",
+      "neutral_site": false,
+      "forecast": {
+        "home_points": 23,
+        "away_points": 23,
+        "margin": 0.2,
+        "total": 45.8,
+        "home_win_prob": 0.4804,
+        "sigma": 10.9,
+        "margin_p25": -7.2,
+        "margin_p75": 7.5,
+        "total_sigma": 10.5,
+        "total_p25": 38.8,
+        "total_p75": 52.9
+      },
+      "quarterbacks": {
+        "home": "Jalen Hurts",
+        "away": "Bryce Young",
+        "home_new": 0.0,
+        "away_new": 0.0,
+        "home_first": 0.0,
+        "away_first": 0.0,
+        "home_starts": 98.0,
+        "away_starts": 46.0
+      },
+      "context": {
+        "home_rest": 7.0,
+        "away_rest": 14.0,
         "div_game": 0.0,
         "is_dome": 0.0,
         "games_played": 4
       },
       "weather": {
-        "temp_f": null,
-        "wind_mph": null
+        "temp_f": 48.0,
+        "wind_mph": 5.5
       },
-      "weather_text": "",
-      "market_margin": 2.5,
-      "market_total": 38.5,
-      "vs_market": -1.4
+      "weather_text": "48\u00b0F",
+      "market_margin": 1.5,
+      "market_total": 41.5,
+      "vs_market": -1.3
     },
     {
-      "game_id": "2026_05_IND_PIT",
-      "kickoff_utc": "2026-10-11T13:00:00",
+      "game_id": "2026_06_PIT_TB",
+      "kickoff_utc": "2026-10-18T13:00:00",
       "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "PIT",
-      "away_team": "IND",
+      "week": 6,
+      "home_team": "TB",
+      "away_team": "PIT",
       "neutral_site": false,
       "forecast": {
-        "home_points": 24,
-        "away_points": 24,
-        "margin": -0.5,
-        "total": 48.0,
-        "home_win_prob": 0.4596,
+        "home_points": 21,
+        "away_points": 21,
+        "margin": 0.0,
+        "total": 42.9,
+        "home_win_prob": 0.4755,
         "sigma": 10.9,
-        "margin_p25": -7.8,
-        "margin_p75": 6.9,
+        "margin_p25": -7.3,
+        "margin_p75": 7.4,
         "total_sigma": 10.5,
-        "total_p25": 40.9,
-        "total_p75": 55.1
+        "total_p25": 35.8,
+        "total_p75": 50.0
       },
       "quarterbacks": {
-        "home": "Aaron Rodgers",
-        "away": "Daniel Jones",
+        "home": "Jalon Daniels",
+        "away": "Aaron Rodgers",
         "home_new": 0.0,
         "away_new": 0.0,
         "home_first": 0.0,
         "away_first": 0.0,
-        "home_starts": 282.0,
-        "away_starts": 88.0
+        "home_starts": 2.0,
+        "away_starts": 283.0
       },
       "context": {
         "home_rest": 10.0,
         "away_rest": 7.0,
         "div_game": 0.0,
         "is_dome": 0.0,
-        "games_played": 4
+        "games_played": 5
       },
       "weather": {
-        "temp_f": null,
-        "wind_mph": null
+        "temp_f": 74.1,
+        "wind_mph": 12.4
       },
-      "weather_text": "",
-      "market_margin": 3.0,
-      "market_total": 41.5,
-      "vs_market": -3.5
+      "weather_text": "74\u00b0F, breezy 12 mph",
+      "market_margin": -2.5,
+      "market_total": 40.5,
+      "vs_market": 2.5
     },
     {
-      "game_id": "2026_05_HOU_TEN",
-      "kickoff_utc": "2026-10-11T13:00:00",
-      "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "TEN",
-      "away_team": "HOU",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 18,
-        "away_points": 22,
-        "margin": -4.6,
-        "total": 39.9,
-        "home_win_prob": 0.3343,
-        "sigma": 10.9,
-        "margin_p25": -11.9,
-        "margin_p75": 2.8,
-        "total_sigma": 10.5,
-        "total_p25": 32.8,
-        "total_p75": 47.0
-      },
-      "quarterbacks": {
-        "home": "Cam Ward",
-        "away": "C.J. Stroud",
-        "home_new": 0.0,
-        "away_new": 0.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 21.0,
-        "away_starts": 55.0
-      },
-      "context": {
-        "home_rest": 7.0,
-        "away_rest": 7.0,
-        "div_game": 1.0,
-        "is_dome": 0.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": null,
-        "wind_mph": null
-      },
-      "weather_text": "",
-      "market_margin": -6.5,
-      "market_total": 37.5,
-      "vs_market": 1.9
-    },
-    {
-      "game_id": "2026_05_NYG_WAS",
-      "kickoff_utc": "2026-10-11T13:00:00",
-      "kickoff_et": "Sun 1:00 PM",
-      "week": 5,
-      "home_team": "WAS",
-      "away_team": "NYG",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 22,
-        "away_points": 22,
-        "margin": -0.1,
-        "total": 44.3,
-        "home_win_prob": 0.4704,
-        "sigma": 10.9,
-        "margin_p25": -7.5,
-        "margin_p75": 7.2,
-        "total_sigma": 10.5,
-        "total_p25": 37.2,
-        "total_p75": 51.3
-      },
-      "quarterbacks": {
-        "home": "Jayden Daniels",
-        "away": "Jameis Winston",
-        "home_new": 1.0,
-        "away_new": 0.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 26.0,
-        "away_starts": 94.0
-      },
-      "context": {
-        "home_rest": 7.0,
-        "away_rest": 7.0,
-        "div_game": 1.0,
-        "is_dome": 0.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": null,
-        "wind_mph": null
-      },
-      "weather_text": "",
-      "market_margin": 3.5,
-      "market_total": 41.5,
-      "vs_market": -3.6
-    },
-    {
-      "game_id": "2026_05_DEN_LAC",
-      "kickoff_utc": "2026-10-11T16:05:00",
+      "game_id": "2026_06_ARI_LA",
+      "kickoff_utc": "2026-10-18T16:05:00",
       "kickoff_et": "Sun 4:05 PM",
-      "week": 5,
-      "home_team": "LAC",
-      "away_team": "DEN",
+      "week": 6,
+      "home_team": "LA",
+      "away_team": "ARI",
       "neutral_site": false,
       "forecast": {
-        "home_points": 21,
-        "away_points": 23,
-        "margin": -2.0,
-        "total": 43.4,
-        "home_win_prob": 0.4123,
+        "home_points": 30,
+        "away_points": 19,
+        "margin": 10.6,
+        "total": 48.6,
+        "home_win_prob": 0.7813,
         "sigma": 10.9,
-        "margin_p25": -9.3,
-        "margin_p75": 5.4,
+        "margin_p25": 3.3,
+        "margin_p75": 18.0,
         "total_sigma": 10.5,
-        "total_p25": 36.3,
-        "total_p75": 50.4
+        "total_p25": 41.5,
+        "total_p75": 55.7
       },
       "quarterbacks": {
-        "home": "Justin Herbert",
-        "away": "Bo Nix",
+        "home": "Matthew Stafford",
+        "away": "Jacoby Brissett",
         "home_new": 0.0,
         "away_new": 0.0,
         "home_first": 0.0,
         "away_first": 0.0,
-        "home_starts": 102.0,
-        "away_starts": 40.0
-      },
-      "context": {
-        "home_rest": 7.0,
-        "away_rest": 7.0,
-        "div_game": 1.0,
-        "is_dome": 1.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": 68.0,
-        "wind_mph": 0.0
-      },
-      "weather_text": "Indoors",
-      "market_margin": -3.5,
-      "market_total": 42.5,
-      "vs_market": 1.5
-    },
-    {
-      "game_id": "2026_05_DET_ARI",
-      "kickoff_utc": "2026-10-11T16:25:00",
-      "kickoff_et": "Sun 4:25 PM",
-      "week": 5,
-      "home_team": "ARI",
-      "away_team": "DET",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 24,
-        "away_points": 29,
-        "margin": -4.5,
-        "total": 52.8,
-        "home_win_prob": 0.3364,
-        "sigma": 10.9,
-        "margin_p25": -11.8,
-        "margin_p75": 2.9,
-        "total_sigma": 10.5,
-        "total_p25": 45.7,
-        "total_p75": 59.9
-      },
-      "quarterbacks": {
-        "home": "Jacoby Brissett",
-        "away": "Jared Goff",
-        "home_new": 0.0,
-        "away_new": 0.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 69.0,
-        "away_starts": 164.0
-      },
-      "context": {
-        "home_rest": 7.0,
-        "away_rest": 7.0,
-        "div_game": 0.0,
-        "is_dome": 1.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": 68.0,
-        "wind_mph": 0.0
-      },
-      "weather_text": "Indoors",
-      "market_margin": -5.5,
-      "market_total": 55.5,
-      "vs_market": 1.0
-    },
-    {
-      "game_id": "2026_05_SF_SEA",
-      "kickoff_utc": "2026-10-11T16:25:00",
-      "kickoff_et": "Sun 4:25 PM",
-      "week": 5,
-      "home_team": "SEA",
-      "away_team": "SF",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 21,
-        "away_points": 26,
-        "margin": -4.9,
-        "total": 46.4,
-        "home_win_prob": 0.324,
-        "sigma": 10.9,
-        "margin_p25": -12.3,
-        "margin_p75": 2.4,
-        "total_sigma": 10.5,
-        "total_p25": 39.3,
-        "total_p75": 53.5
-      },
-      "quarterbacks": {
-        "home": "Drew Lock",
-        "away": "Brock Purdy",
-        "home_new": 0.0,
-        "away_new": 0.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 28.0,
-        "away_starts": 57.0
-      },
-      "context": {
-        "home_rest": 7.0,
-        "away_rest": 7.0,
-        "div_game": 1.0,
-        "is_dome": 0.0,
-        "games_played": 4
-      },
-      "weather": {
-        "temp_f": null,
-        "wind_mph": null
-      },
-      "weather_text": "",
-      "market_margin": 3.0,
-      "market_total": 46.5,
-      "vs_market": -7.9
-    },
-    {
-      "game_id": "2026_05_BAL_ATL",
-      "kickoff_utc": "2026-10-11T20:20:00",
-      "kickoff_et": "Sun 8:20 PM",
-      "week": 5,
-      "home_team": "ATL",
-      "away_team": "BAL",
-      "neutral_site": false,
-      "forecast": {
-        "home_points": 23,
-        "away_points": 23,
-        "margin": 0.2,
-        "total": 45.9,
-        "home_win_prob": 0.4801,
-        "sigma": 10.9,
-        "margin_p25": -7.2,
-        "margin_p75": 7.5,
-        "total_sigma": 10.5,
-        "total_p25": 38.8,
-        "total_p75": 53.0
-      },
-      "quarterbacks": {
-        "home": "Michael Penix Jr.",
-        "away": "Tyler Huntley",
-        "home_new": 0.0,
-        "away_new": 1.0,
-        "home_first": 0.0,
-        "away_first": 0.0,
-        "home_starts": 14.0,
-        "away_starts": 15.0
+        "home_starts": 257.0,
+        "away_starts": 70.0
       },
       "context": {
         "home_rest": 6.0,
         "away_rest": 7.0,
-        "div_game": 0.0,
+        "div_game": 1.0,
+        "is_dome": 1.0,
+        "games_played": 5
+      },
+      "weather": {
+        "temp_f": 68.0,
+        "wind_mph": 0.0
+      },
+      "weather_text": "Indoors",
+      "market_margin": 12.5,
+      "market_total": 52.5,
+      "vs_market": -1.9
+    },
+    {
+      "game_id": "2026_06_LAC_KC",
+      "kickoff_utc": "2026-10-18T16:25:00",
+      "kickoff_et": "Sun 4:25 PM",
+      "week": 6,
+      "home_team": "KC",
+      "away_team": "LAC",
+      "neutral_site": false,
+      "forecast": {
+        "home_points": 26,
+        "away_points": 18,
+        "margin": 7.9,
+        "total": 43.8,
+        "home_win_prob": 0.7142,
+        "sigma": 10.9,
+        "margin_p25": 0.5,
+        "margin_p75": 15.2,
+        "total_sigma": 10.5,
+        "total_p25": 36.7,
+        "total_p75": 50.9
+      },
+      "quarterbacks": {
+        "home": "Patrick Mahomes",
+        "away": "Justin Herbert",
+        "home_new": 0.0,
+        "away_new": 0.0,
+        "home_first": 0.0,
+        "away_first": 0.0,
+        "home_starts": 151.0,
+        "away_starts": 103.0
+      },
+      "context": {
+        "home_rest": 14.0,
+        "away_rest": 7.0,
+        "div_game": 1.0,
         "is_dome": 0.0,
         "games_played": 4
       },
       "weather": {
-        "temp_f": null,
-        "wind_mph": null
+        "temp_f": 53.9,
+        "wind_mph": 11.7
       },
-      "weather_text": "",
-      "market_margin": 3.5,
-      "market_total": 44.5,
-      "vs_market": -3.3
+      "weather_text": "54\u00b0F, breezy 12 mph",
+      "market_margin": 8.5,
+      "market_total": 42.5,
+      "vs_market": -0.6
     },
     {
-      "game_id": "2026_05_BUF_LA",
-      "kickoff_utc": "2026-10-12T20:15:00",
-      "kickoff_et": "Mon 8:15 PM",
-      "week": 5,
-      "home_team": "LA",
+      "game_id": "2026_06_BUF_LV",
+      "kickoff_utc": "2026-10-18T16:25:00",
+      "kickoff_et": "Sun 4:25 PM",
+      "week": 6,
+      "home_team": "LV",
       "away_team": "BUF",
       "neutral_site": false,
       "forecast": {
-        "home_points": 25,
-        "away_points": 27,
-        "margin": -1.7,
-        "total": 51.8,
-        "home_win_prob": 0.4195,
+        "home_points": 23,
+        "away_points": 29,
+        "margin": -6.5,
+        "total": 52.4,
+        "home_win_prob": 0.2803,
         "sigma": 10.9,
-        "margin_p25": -9.1,
-        "margin_p75": 5.6,
+        "margin_p25": -13.9,
+        "margin_p75": 0.8,
         "total_sigma": 10.5,
-        "total_p25": 44.7,
-        "total_p75": 58.8
+        "total_p25": 45.4,
+        "total_p75": 59.5
       },
       "quarterbacks": {
-        "home": "Matthew Stafford",
+        "home": "Kirk Cousins",
         "away": "Josh Allen",
         "home_new": 0.0,
         "away_new": 0.0,
         "home_first": 0.0,
         "away_first": 0.0,
-        "home_starts": 256.0,
-        "away_starts": 143.0
+        "home_starts": 176.0,
+        "away_starts": 144.0
       },
       "context": {
-        "home_rest": 8.0,
-        "away_rest": 8.0,
+        "home_rest": 7.0,
+        "away_rest": 6.0,
         "div_game": 0.0,
         "is_dome": 1.0,
-        "games_played": 4
+        "games_played": 5
       },
       "weather": {
         "temp_f": 68.0,
         "wind_mph": 0.0
       },
       "weather_text": "Indoors",
-      "market_margin": 3.5,
-      "market_total": 54.5,
-      "vs_market": -5.2
+      "market_margin": -4.5,
+      "market_total": 53.5,
+      "vs_market": -2.0
+    },
+    {
+      "game_id": "2026_06_DAL_GB",
+      "kickoff_utc": "2026-10-18T20:20:00",
+      "kickoff_et": "Sun 8:20 PM",
+      "week": 6,
+      "home_team": "GB",
+      "away_team": "DAL",
+      "neutral_site": false,
+      "forecast": {
+        "home_points": 26,
+        "away_points": 22,
+        "margin": 3.9,
+        "total": 48.3,
+        "home_win_prob": 0.5985,
+        "sigma": 10.9,
+        "margin_p25": -3.5,
+        "margin_p75": 11.2,
+        "total_sigma": 10.5,
+        "total_p25": 41.2,
+        "total_p75": 55.4
+      },
+      "quarterbacks": {
+        "home": "Jordan Love",
+        "away": "Dak Prescott",
+        "home_new": 0.0,
+        "away_new": 0.0,
+        "home_first": 0.0,
+        "away_first": 0.0,
+        "home_starts": 57.0,
+        "away_starts": 150.0
+      },
+      "context": {
+        "home_rest": 7.0,
+        "away_rest": 10.0,
+        "div_game": 0.0,
+        "is_dome": 0.0,
+        "games_played": 5
+      },
+      "weather": {
+        "temp_f": 62.0,
+        "wind_mph": 19.7
+      },
+      "weather_text": "62\u00b0F, wind 20 mph",
+      "market_margin": 1.5,
+      "market_total": 52.5,
+      "vs_market": 2.4
+    },
+    {
+      "game_id": "2026_06_WAS_SF",
+      "kickoff_utc": "2026-10-19T20:15:00",
+      "kickoff_et": "Mon 8:15 PM",
+      "week": 6,
+      "home_team": "SF",
+      "away_team": "WAS",
+      "neutral_site": false,
+      "forecast": {
+        "home_points": 30,
+        "away_points": 21,
+        "margin": 8.8,
+        "total": 51.4,
+        "home_win_prob": 0.7383,
+        "sigma": 10.9,
+        "margin_p25": 1.4,
+        "margin_p75": 16.2,
+        "total_sigma": 10.5,
+        "total_p25": 44.3,
+        "total_p75": 58.4
+      },
+      "quarterbacks": {
+        "home": "Brock Purdy",
+        "away": "Jayden Daniels",
+        "home_new": 0.0,
+        "away_new": 0.0,
+        "home_first": 0.0,
+        "away_first": 0.0,
+        "home_starts": 58.0,
+        "away_starts": 27.0
+      },
+      "context": {
+        "home_rest": 8.0,
+        "away_rest": 8.0,
+        "div_game": 0.0,
+        "is_dome": 0.0,
+        "games_played": 5
+      },
+      "weather": {
+        "temp_f": 67.3,
+        "wind_mph": 7.8
+      },
+      "weather_text": "67\u00b0F",
+      "market_margin": 7.5,
+      "market_total": 50.5,
+      "vs_market": 1.3
     }
   ],
   "model_metrics": {
