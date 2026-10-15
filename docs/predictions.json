@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T11:40:10.775691-04:00",
+  "generated_at": "2026-10-15T11:26:45.837202-04:00",
   "season": 2026,
   "week": 6,
   "games": [
@@ -15,14 +15,14 @@
         "home_points": 21,
         "away_points": 21,
         "margin": 0.0,
-        "total": 41.4,
+        "total": 41.3,
         "home_win_prob": 0.4763,
         "sigma": 10.9,
         "margin_p25": -7.3,
         "margin_p75": 7.4,
         "total_sigma": 10.5,
-        "total_p25": 34.3,
-        "total_p75": 48.5
+        "total_p25": 34.2,
+        "total_p75": 48.4
       },
       "quarterbacks": {
         "home": "Bo Nix",
@@ -42,10 +42,10 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 47.5,
-        "wind_mph": 12.5
+        "temp_f": 50.3,
+        "wind_mph": 14.4
       },
-      "weather_text": "48\u00b0F, breezy 12 mph",
+      "weather_text": "50\u00b0F, breezy 14 mph",
       "market_margin": -2.5,
       "market_total": 40.5,
       "vs_market": 2.5
@@ -62,14 +62,14 @@
         "home_points": 25,
         "away_points": 18,
         "margin": 6.8,
-        "total": 43.2,
+        "total": 43.0,
         "home_win_prob": 0.6869,
         "sigma": 10.9,
         "margin_p25": -0.5,
         "margin_p75": 14.2,
         "total_sigma": 10.5,
-        "total_p25": 36.1,
-        "total_p75": 50.2
+        "total_p25": 36.0,
+        "total_p75": 50.1
       },
       "quarterbacks": {
         "home": "Trevor Lawrence",
@@ -89,10 +89,10 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 48.9,
-        "wind_mph": 11.4
+        "temp_f": 49.0,
+        "wind_mph": 10.5
       },
-      "weather_text": "49\u00b0F, breezy 11 mph",
+      "weather_text": "49\u00b0F, breezy 10 mph",
       "market_margin": 2.5,
       "market_total": 42.5,
       "vs_market": 4.3
@@ -140,9 +140,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "68\u00b0F",
-      "market_margin": -3.0,
-      "market_total": 49.5,
-      "vs_market": 3.9
+      "market_margin": -1.5,
+      "market_total": 51.5,
+      "vs_market": 2.4
     },
     {
       "game_id": "2026_06_BAL_CLE",
@@ -183,10 +183,10 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 46.0,
-        "wind_mph": 9.8
+        "temp_f": 44.7,
+        "wind_mph": 9.9
       },
-      "weather_text": "46\u00b0F",
+      "weather_text": "45\u00b0F",
       "market_margin": -5.5,
       "market_total": 42.5,
       "vs_market": 0.5
@@ -247,17 +247,17 @@
       "away_team": "NYJ",
       "neutral_site": false,
       "forecast": {
-        "home_points": 25,
-        "away_points": 15,
-        "margin": 9.9,
-        "total": 39.6,
-        "home_win_prob": 0.7651,
+        "home_points": 26,
+        "away_points": 16,
+        "margin": 9.6,
+        "total": 41.8,
+        "home_win_prob": 0.7582,
         "sigma": 10.9,
-        "margin_p25": 2.6,
-        "margin_p75": 17.3,
+        "margin_p25": 2.3,
+        "margin_p75": 17.0,
         "total_sigma": 10.5,
-        "total_p25": 32.5,
-        "total_p75": 46.7
+        "total_p25": 34.7,
+        "total_p75": 48.8
       },
       "quarterbacks": {
         "home": "Drake Maye",
@@ -277,13 +277,13 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 42.9,
-        "wind_mph": 8.3
+        "temp_f": 42.4,
+        "wind_mph": 4.8
       },
-      "weather_text": "43\u00b0F",
+      "weather_text": "42\u00b0F",
       "market_margin": 7.5,
       "market_total": 43.5,
-      "vs_market": 2.4
+      "vs_market": 2.1
     },
     {
       "game_id": "2026_06_NO_NYG",
@@ -294,17 +294,17 @@
       "away_team": "NO",
       "neutral_site": false,
       "forecast": {
-        "home_points": 22,
-        "away_points": 20,
+        "home_points": 23,
+        "away_points": 21,
         "margin": 2.0,
-        "total": 42.5,
+        "total": 44.6,
         "home_win_prob": 0.5397,
         "sigma": 10.9,
         "margin_p25": -5.3,
         "margin_p75": 9.4,
         "total_sigma": 10.5,
-        "total_p25": 35.4,
-        "total_p75": 49.6
+        "total_p25": 37.5,
+        "total_p75": 51.7
       },
       "quarterbacks": {
         "home": "Jameis Winston",
@@ -324,10 +324,10 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 47.1,
-        "wind_mph": 7.2
+        "temp_f": 46.0,
+        "wind_mph": 3.6
       },
-      "weather_text": "47\u00b0F",
+      "weather_text": "46\u00b0F",
       "market_margin": -1.5,
       "market_total": 45.5,
       "vs_market": 3.5
@@ -350,7 +350,7 @@
         "margin_p25": -7.2,
         "margin_p75": 7.5,
         "total_sigma": 10.5,
-        "total_p25": 38.8,
+        "total_p25": 38.7,
         "total_p75": 52.9
       },
       "quarterbacks": {
@@ -371,10 +371,10 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 48.1,
-        "wind_mph": 4.1
+        "temp_f": 46.3,
+        "wind_mph": 2.6
       },
-      "weather_text": "48\u00b0F",
+      "weather_text": "46\u00b0F",
       "market_margin": -1.5,
       "market_total": 40.5,
       "vs_market": 1.7
@@ -418,12 +418,12 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 74.1,
-        "wind_mph": 15.9
+        "temp_f": 70.3,
+        "wind_mph": 15.8
       },
-      "weather_text": "74\u00b0F, breezy 16 mph",
+      "weather_text": "70\u00b0F, breezy 16 mph",
       "market_margin": -2.5,
-      "market_total": 40.5,
+      "market_total": 39.5,
       "vs_market": 2.5
     },
     {
@@ -512,10 +512,10 @@
         "games_played": 4
       },
       "weather": {
-        "temp_f": 58.8,
-        "wind_mph": 14.4
+        "temp_f": 57.8,
+        "wind_mph": 13.9
       },
-      "weather_text": "59\u00b0F, breezy 14 mph",
+      "weather_text": "58\u00b0F, breezy 14 mph",
       "market_margin": 8.5,
       "market_total": 42.5,
       "vs_market": -0.4
@@ -606,10 +606,10 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 63.7,
-        "wind_mph": 19.5
+        "temp_f": 62.1,
+        "wind_mph": 19.9
       },
-      "weather_text": "64\u00b0F, wind 20 mph",
+      "weather_text": "62\u00b0F, wind 20 mph",
       "market_margin": 1.5,
       "market_total": 53.5,
       "vs_market": 2.4
@@ -626,14 +626,14 @@
         "home_points": 30,
         "away_points": 21,
         "margin": 8.8,
-        "total": 50.9,
+        "total": 51.4,
         "home_win_prob": 0.7383,
         "sigma": 10.9,
         "margin_p25": 1.4,
         "margin_p75": 16.2,
         "total_sigma": 10.5,
-        "total_p25": 43.9,
-        "total_p75": 58.0
+        "total_p25": 44.3,
+        "total_p75": 58.4
       },
       "quarterbacks": {
         "home": "Brock Purdy",
@@ -653,10 +653,10 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 66.3,
-        "wind_mph": 7.7
+        "temp_f": 67.0,
+        "wind_mph": 7.6
       },
-      "weather_text": "66\u00b0F",
+      "weather_text": "67\u00b0F",
       "market_margin": 7.5,
       "market_total": 50.5,
       "vs_market": 1.3
