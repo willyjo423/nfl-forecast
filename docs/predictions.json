@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T10:43:17.084065-04:00",
+  "generated_at": "2026-10-26T13:05:11.821607-04:00",
   "season": 2026,
   "week": 7,
   "games": [
@@ -59,17 +59,17 @@
       "away_team": "PIT",
       "neutral_site": true,
       "forecast": {
-        "home_points": 20,
-        "away_points": 24,
-        "margin": -4.0,
-        "total": 44.4,
-        "home_win_prob": 0.3507,
+        "home_points": 21,
+        "away_points": 25,
+        "margin": -3.9,
+        "total": 45.9,
+        "home_win_prob": 0.3539,
         "sigma": 10.9,
-        "margin_p25": -11.3,
-        "margin_p75": 3.4,
+        "margin_p25": -11.2,
+        "margin_p75": 3.5,
         "total_sigma": 10.5,
-        "total_p25": 37.3,
-        "total_p75": 51.5
+        "total_p25": 38.8,
+        "total_p75": 53.0
       },
       "quarterbacks": {
         "home": "Tyler Shough",
@@ -89,13 +89,13 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": null,
-        "wind_mph": null
+        "temp_f": 68.0,
+        "wind_mph": 0.0
       },
       "weather_text": "Indoors",
       "market_margin": -3.0,
       "market_total": 43.5,
-      "vs_market": -1.0
+      "vs_market": -0.9
     },
     {
       "game_id": "2026_07_SF_ATL",
@@ -106,17 +106,17 @@
       "away_team": "SF",
       "neutral_site": false,
       "forecast": {
-        "home_points": 23,
+        "home_points": 22,
         "away_points": 29,
-        "margin": -6.8,
-        "total": 52.2,
-        "home_win_prob": 0.2743,
+        "margin": -6.7,
+        "total": 51.7,
+        "home_win_prob": 0.2745,
         "sigma": 10.9,
         "margin_p25": -14.1,
         "margin_p75": 0.6,
         "total_sigma": 10.5,
-        "total_p25": 45.1,
-        "total_p75": 59.3
+        "total_p25": 44.7,
+        "total_p75": 58.8
       },
       "quarterbacks": {
         "home": "Michael Penix Jr.",
@@ -136,13 +136,13 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 68.0,
-        "wind_mph": 0.0
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "68\u00b0F",
+      "weather_text": "",
       "market_margin": -2.5,
-      "market_total": 50.5,
-      "vs_market": -4.3
+      "market_total": 49.5,
+      "vs_market": -4.2
     },
     {
       "game_id": "2026_07_CIN_BAL",
@@ -155,15 +155,15 @@
       "forecast": {
         "home_points": 24,
         "away_points": 24,
-        "margin": -0.4,
-        "total": 48.0,
-        "home_win_prob": 0.4637,
+        "margin": 0.4,
+        "total": 48.3,
+        "home_win_prob": 0.4869,
         "sigma": 10.9,
-        "margin_p25": -7.7,
-        "margin_p75": 7.0,
+        "margin_p25": -7.0,
+        "margin_p75": 7.7,
         "total_sigma": 10.5,
-        "total_p25": 40.9,
-        "total_p75": 55.0
+        "total_p25": 41.2,
+        "total_p75": 55.4
       },
       "quarterbacks": {
         "home": "Tyler Huntley",
@@ -183,13 +183,13 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 48.9,
-        "wind_mph": 0.2
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "49\u00b0F",
+      "weather_text": "",
       "market_margin": -3.0,
       "market_total": 46.5,
-      "vs_market": 2.6
+      "vs_market": 3.4
     },
     {
       "game_id": "2026_07_TB_CAR",
@@ -201,26 +201,26 @@
       "neutral_site": false,
       "forecast": {
         "home_points": 25,
-        "away_points": 21,
-        "margin": 3.4,
-        "total": 46.1,
-        "home_win_prob": 0.5842,
+        "away_points": 22,
+        "margin": 2.9,
+        "total": 47.0,
+        "home_win_prob": 0.5695,
         "sigma": 10.9,
-        "margin_p25": -3.9,
-        "margin_p75": 10.8,
+        "margin_p25": -4.4,
+        "margin_p75": 10.3,
         "total_sigma": 10.5,
-        "total_p25": 39.1,
-        "total_p75": 53.2
+        "total_p25": 39.9,
+        "total_p75": 54.1
       },
       "quarterbacks": {
         "home": "Bryce Young",
-        "away": "Jalon Daniels",
+        "away": "Baker Mayfield",
         "home_new": 0.0,
-        "away_new": 0.0,
+        "away_new": 1.0,
         "home_first": 0.0,
         "away_first": 0.0,
         "home_starts": 47.0,
-        "away_starts": 3.0
+        "away_starts": 128.0
       },
       "context": {
         "home_rest": 7.0,
@@ -230,13 +230,13 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 50.0,
-        "wind_mph": 8.1
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "50\u00b0F",
+      "weather_text": "",
       "market_margin": 3.0,
       "market_total": 44.5,
-      "vs_market": 0.4
+      "vs_market": -0.1
     },
     {
       "game_id": "2026_07_NYG_HOU",
@@ -247,14 +247,14 @@
       "away_team": "NYG",
       "neutral_site": false,
       "forecast": {
-        "home_points": 28,
+        "home_points": 27,
         "away_points": 19,
-        "margin": 8.6,
+        "margin": 8.4,
         "total": 46.4,
-        "home_win_prob": 0.7336,
+        "home_win_prob": 0.7273,
         "sigma": 10.9,
-        "margin_p25": 1.3,
-        "margin_p75": 16.0,
+        "margin_p25": 1.0,
+        "margin_p75": 15.7,
         "total_sigma": 10.5,
         "total_p25": 39.3,
         "total_p75": 53.5
@@ -273,17 +273,17 @@
         "home_rest": 7.0,
         "away_rest": 7.0,
         "div_game": 0.0,
-        "is_dome": 0.0,
+        "is_dome": 1.0,
         "games_played": 6
       },
       "weather": {
         "temp_f": 68.0,
         "wind_mph": 0.0
       },
-      "weather_text": "68\u00b0F",
-      "market_margin": 10.5,
+      "weather_text": "Indoors",
+      "market_margin": 10.0,
       "market_total": 42.5,
-      "vs_market": -1.9
+      "vs_market": -1.6
     },
     {
       "game_id": "2026_07_IND_MIN",
@@ -328,9 +328,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "Indoors",
-      "market_margin": 7.0,
+      "market_margin": 6.5,
       "market_total": 41.5,
-      "vs_market": -3.2
+      "vs_market": -2.7
     },
     {
       "game_id": "2026_07_MIA_NYJ",
@@ -343,15 +343,15 @@
       "forecast": {
         "home_points": 23,
         "away_points": 20,
-        "margin": 3.2,
-        "total": 43.2,
-        "home_win_prob": 0.5773,
+        "margin": 3.1,
+        "total": 42.2,
+        "home_win_prob": 0.5743,
         "sigma": 10.9,
-        "margin_p25": -4.2,
-        "margin_p75": 10.5,
+        "margin_p25": -4.3,
+        "margin_p75": 10.4,
         "total_sigma": 10.5,
-        "total_p25": 36.1,
-        "total_p75": 50.3
+        "total_p25": 35.1,
+        "total_p75": 49.3
       },
       "quarterbacks": {
         "home": "Geno Smith",
@@ -371,13 +371,13 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 45.8,
-        "wind_mph": 1.1
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "46\u00b0F",
+      "weather_text": "",
       "market_margin": 3.5,
       "market_total": 39.5,
-      "vs_market": -0.3
+      "vs_market": -0.4
     },
     {
       "game_id": "2026_07_CLE_TEN",
@@ -391,14 +391,14 @@
         "home_points": 19,
         "away_points": 22,
         "margin": -2.5,
-        "total": 41.2,
-        "home_win_prob": 0.3944,
+        "total": 41.1,
+        "home_win_prob": 0.3965,
         "sigma": 10.9,
-        "margin_p25": -9.9,
-        "margin_p75": 4.8,
+        "margin_p25": -9.8,
+        "margin_p75": 4.9,
         "total_sigma": 10.5,
-        "total_p25": 34.2,
-        "total_p75": 48.3
+        "total_p25": 34.0,
+        "total_p75": 48.1
       },
       "quarterbacks": {
         "home": "Cam Ward",
@@ -418,13 +418,13 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 47.8,
-        "wind_mph": 1.3
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "48\u00b0F",
-      "market_margin": -2.5,
+      "weather_text": "",
+      "market_margin": -1.5,
       "market_total": 36.5,
-      "vs_market": -0.0
+      "vs_market": -1.0
     },
     {
       "game_id": "2026_07_DEN_ARI",
@@ -436,13 +436,13 @@
       "neutral_site": false,
       "forecast": {
         "home_points": 17,
-        "away_points": 25,
-        "margin": -8.2,
+        "away_points": 26,
+        "margin": -8.5,
         "total": 42.7,
-        "home_win_prob": 0.2382,
+        "home_win_prob": 0.2316,
         "sigma": 10.9,
-        "margin_p25": -15.6,
-        "margin_p75": -0.9,
+        "margin_p25": -15.9,
+        "margin_p75": -1.2,
         "total_sigma": 10.5,
         "total_p25": 35.6,
         "total_p75": 49.7
@@ -461,17 +461,17 @@
         "home_rest": 7.0,
         "away_rest": 10.0,
         "div_game": 0.0,
-        "is_dome": 0.0,
+        "is_dome": 1.0,
         "games_played": 6
       },
       "weather": {
         "temp_f": 68.0,
         "wind_mph": 0.0
       },
-      "weather_text": "68\u00b0F",
+      "weather_text": "Indoors",
       "market_margin": -4.5,
-      "market_total": 42.5,
-      "vs_market": -3.7
+      "market_total": 44.5,
+      "vs_market": -4.0
     },
     {
       "game_id": "2026_07_GB_DET",
@@ -485,14 +485,14 @@
         "home_points": 28,
         "away_points": 27,
         "margin": 1.4,
-        "total": 55.4,
+        "total": 54.8,
         "home_win_prob": 0.5206,
         "sigma": 10.9,
         "margin_p25": -5.9,
         "margin_p75": 8.8,
         "total_sigma": 10.5,
-        "total_p25": 48.3,
-        "total_p75": 62.5
+        "total_p25": 47.7,
+        "total_p75": 61.9
       },
       "quarterbacks": {
         "home": "Jared Goff",
@@ -564,7 +564,7 @@
       },
       "weather_text": "Indoors",
       "market_margin": -3.5,
-      "market_total": 48.5,
+      "market_total": 49.5,
       "vs_market": -0.6
     },
     {
@@ -577,16 +577,16 @@
       "neutral_site": false,
       "forecast": {
         "home_points": 24,
-        "away_points": 20,
+        "away_points": 21,
         "margin": 3.6,
-        "total": 44.4,
-        "home_win_prob": 0.5897,
+        "total": 45.0,
+        "home_win_prob": 0.5899,
         "sigma": 10.9,
         "margin_p25": -3.8,
         "margin_p75": 10.9,
         "total_sigma": 10.5,
-        "total_p25": 37.3,
-        "total_p75": 51.4
+        "total_p25": 37.9,
+        "total_p75": 52.1
       },
       "quarterbacks": {
         "home": "Sam Darnold",
@@ -606,12 +606,12 @@
         "games_played": 5
       },
       "weather": {
-        "temp_f": 52.6,
-        "wind_mph": 8.3
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "53\u00b0F",
+      "weather_text": "",
       "market_margin": 3.0,
-      "market_total": 42.5,
+      "market_total": 43.5,
       "vs_market": 0.6
     },
     {
@@ -653,12 +653,12 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 70.0,
-        "wind_mph": 9.2
+        "temp_f": 69.8,
+        "wind_mph": 8.3
       },
       "weather_text": "70\u00b0F",
       "market_margin": -4.5,
-      "market_total": 43.5,
+      "market_total": 44.5,
       "vs_market": 2.3
     }
   ],
