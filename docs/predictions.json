@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T13:14:41.000230-04:00",
+  "generated_at": "2026-10-30T12:55:10.831893-04:00",
   "season": 2026,
   "week": 8,
   "games": [
@@ -12,17 +12,17 @@
       "away_team": "CAR",
       "neutral_site": false,
       "forecast": {
-        "home_points": 24,
-        "away_points": 20,
-        "margin": 4.3,
-        "total": 44.3,
-        "home_win_prob": 0.6126,
+        "home_points": 25,
+        "away_points": 21,
+        "margin": 3.4,
+        "total": 45.7,
+        "home_win_prob": 0.5855,
         "sigma": 10.9,
-        "margin_p25": -3.0,
-        "margin_p75": 11.7,
+        "margin_p25": -3.9,
+        "margin_p75": 10.8,
         "total_sigma": 10.5,
-        "total_p25": 37.2,
-        "total_p75": 51.4
+        "total_p25": 38.6,
+        "total_p75": 52.7
       },
       "quarterbacks": {
         "home": "Jordan Love",
@@ -42,13 +42,13 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 57.0,
-        "wind_mph": 13.0
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "57\u00b0F, breezy 13 mph",
+      "weather_text": "",
       "market_margin": 3.5,
-      "market_total": 46.5,
-      "vs_market": 0.8
+      "market_total": 47.5,
+      "vs_market": -0.1
     },
     {
       "game_id": "2026_08_BAL_BUF",
@@ -62,14 +62,14 @@
         "home_points": 31,
         "away_points": 26,
         "margin": 4.9,
-        "total": 57.5,
+        "total": 57.7,
         "home_win_prob": 0.6291,
         "sigma": 10.9,
         "margin_p25": -2.5,
         "margin_p75": 12.2,
         "total_sigma": 10.5,
-        "total_p25": 50.5,
-        "total_p75": 64.6
+        "total_p25": 50.6,
+        "total_p75": 64.7
       },
       "quarterbacks": {
         "home": "Josh Allen",
@@ -89,10 +89,10 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 51.8,
-        "wind_mph": 5.2
+        "temp_f": 48.6,
+        "wind_mph": 3.6
       },
-      "weather_text": "52\u00b0F",
+      "weather_text": "49\u00b0F",
       "market_margin": 3.0,
       "market_total": 54.5,
       "vs_market": 1.9
@@ -136,13 +136,13 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 59.3,
-        "wind_mph": 3.9
+        "temp_f": 59.6,
+        "wind_mph": 3.8
       },
-      "weather_text": "59\u00b0F",
-      "market_margin": 11.5,
+      "weather_text": "60\u00b0F",
+      "market_margin": 12.5,
       "market_total": 46.5,
-      "vs_market": -5.6
+      "vs_market": -6.6
     },
     {
       "game_id": "2026_08_ARI_DAL",
@@ -277,10 +277,10 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 74.6,
-        "wind_mph": 9.1
+        "temp_f": 75.1,
+        "wind_mph": 10.3
       },
-      "weather_text": "75\u00b0F",
+      "weather_text": "75\u00b0F, breezy 10 mph",
       "market_margin": 10.0,
       "market_total": 46.5,
       "vs_market": -3.8
@@ -324,8 +324,8 @@
         "games_played": 7
       },
       "weather": {
-        "temp_f": 50.4,
-        "wind_mph": 3.0
+        "temp_f": 49.6,
+        "wind_mph": 2.9
       },
       "weather_text": "50\u00b0F",
       "market_margin": 1.5,
@@ -371,8 +371,8 @@
         "games_played": 7
       },
       "weather": {
-        "temp_f": 54.0,
-        "wind_mph": 3.5
+        "temp_f": 54.4,
+        "wind_mph": 3.3
       },
       "weather_text": "54\u00b0F",
       "market_margin": 3.5,
@@ -389,16 +389,16 @@
       "neutral_site": false,
       "forecast": {
         "home_points": 22,
-        "away_points": 20,
+        "away_points": 19,
         "margin": 2.3,
-        "total": 41.4,
+        "total": 41.2,
         "home_win_prob": 0.5499,
         "sigma": 10.9,
         "margin_p25": -5.0,
         "margin_p75": 9.7,
         "total_sigma": 10.5,
-        "total_p25": 34.3,
-        "total_p75": 48.5
+        "total_p25": 34.1,
+        "total_p75": 48.3
       },
       "quarterbacks": {
         "home": "Baker Mayfield",
@@ -418,12 +418,12 @@
         "games_played": 7
       },
       "weather": {
-        "temp_f": 73.9,
-        "wind_mph": 11.7
+        "temp_f": 73.7,
+        "wind_mph": 13.5
       },
-      "weather_text": "74\u00b0F, breezy 12 mph",
+      "weather_text": "74\u00b0F, breezy 14 mph",
       "market_margin": 2.5,
-      "market_total": 44.5,
+      "market_total": 43.5,
       "vs_market": -0.2
     },
     {
@@ -491,7 +491,7 @@
         "margin_p25": -8.0,
         "margin_p75": 6.7,
         "total_sigma": 10.5,
-        "total_p25": 34.3,
+        "total_p25": 34.2,
         "total_p75": 48.4
       },
       "quarterbacks": {
@@ -512,8 +512,8 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 54.6,
-        "wind_mph": 2.7
+        "temp_f": 55.1,
+        "wind_mph": 0.8
       },
       "weather_text": "55\u00b0F",
       "market_margin": -1.5,
@@ -532,14 +532,14 @@
         "home_points": 20,
         "away_points": 25,
         "margin": -5.2,
-        "total": 44.2,
+        "total": 44.9,
         "home_win_prob": 0.3165,
         "sigma": 10.9,
         "margin_p25": -12.5,
         "margin_p75": 2.2,
         "total_sigma": 10.5,
-        "total_p25": 37.1,
-        "total_p75": 51.3
+        "total_p25": 37.8,
+        "total_p75": 51.9
       },
       "quarterbacks": {
         "home": "Malik Willis",
@@ -559,10 +559,10 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 78.2,
-        "wind_mph": 16.8
+        "temp_f": 82.7,
+        "wind_mph": 18.1
       },
-      "weather_text": "78\u00b0F, breezy 17 mph",
+      "weather_text": "83\u00b0F, wind 18 mph",
       "market_margin": -7.0,
       "market_total": 43.5,
       "vs_market": 1.8
@@ -606,8 +606,8 @@
         "games_played": 6
       },
       "weather": {
-        "temp_f": 62.7,
-        "wind_mph": 5.7
+        "temp_f": 62.9,
+        "wind_mph": 6.5
       },
       "weather_text": "63\u00b0F",
       "market_margin": 6.0,
@@ -653,10 +653,10 @@
         "games_played": 7
       },
       "weather": {
-        "temp_f": 49.9,
-        "wind_mph": 3.2
+        "temp_f": 51.4,
+        "wind_mph": 1.6
       },
-      "weather_text": "50\u00b0F",
+      "weather_text": "51\u00b0F",
       "market_margin": 3.0,
       "market_total": 46.5,
       "vs_market": 2.1
