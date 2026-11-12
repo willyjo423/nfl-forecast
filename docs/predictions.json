@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T13:16:16.739767-05:00",
+  "generated_at": "2026-11-12T13:40:01.647608-05:00",
   "season": 2026,
   "week": 10,
   "games": [
@@ -42,13 +42,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 57.2,
-        "wind_mph": 10.6
+        "temp_f": 55.6,
+        "wind_mph": 11.1
       },
-      "weather_text": "57\u00b0F, breezy 11 mph",
-      "market_margin": 2.5,
-      "market_total": 41.5,
-      "vs_market": -0.3
+      "weather_text": "56\u00b0F, breezy 11 mph",
+      "market_margin": 1.5,
+      "market_total": 40.5,
+      "vs_market": 0.7
     },
     {
       "game_id": "2026_10_NE_DET",
@@ -140,9 +140,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "68\u00b0F",
-      "market_margin": -3.5,
-      "market_total": 45.5,
-      "vs_market": -2.0
+      "market_margin": -3.0,
+      "market_total": 46.5,
+      "vs_market": -2.5
     },
     {
       "game_id": "2026_10_HOU_CLE",
@@ -183,10 +183,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 43.6,
-        "wind_mph": 13.8
+        "temp_f": 46.0,
+        "wind_mph": 14.3
       },
-      "weather_text": "44\u00b0F, breezy 14 mph",
+      "weather_text": "46\u00b0F, breezy 14 mph",
       "market_margin": -4.5,
       "market_total": 40.5,
       "vs_market": -3.4
@@ -202,12 +202,12 @@
       "forecast": {
         "home_points": 24,
         "away_points": 17,
-        "margin": 7.6,
+        "margin": 7.7,
         "total": 41.3,
-        "home_win_prob": 0.7068,
+        "home_win_prob": 0.7102,
         "sigma": 10.9,
-        "margin_p25": 0.2,
-        "margin_p75": 14.9,
+        "margin_p25": 0.4,
+        "margin_p75": 15.1,
         "total_sigma": 10.5,
         "total_p25": 34.2,
         "total_p75": 48.3
@@ -230,13 +230,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 36.1,
-        "wind_mph": 5.4
+        "temp_f": 29.2,
+        "wind_mph": 3.0
       },
-      "weather_text": "36\u00b0F",
-      "market_margin": 3.5,
+      "weather_text": "29\u00b0F",
+      "market_margin": 3.0,
       "market_total": 42.5,
-      "vs_market": 4.1
+      "vs_market": 4.7
     },
     {
       "game_id": "2026_10_MIA_IND",
@@ -371,10 +371,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 39.8,
-        "wind_mph": 10.1
+        "temp_f": 43.0,
+        "wind_mph": 10.2
       },
-      "weather_text": "40\u00b0F, breezy 10 mph",
+      "weather_text": "43\u00b0F, breezy 10 mph",
       "market_margin": -8.5,
       "market_total": 50.5,
       "vs_market": -0.6
@@ -418,8 +418,8 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 39.5,
-        "wind_mph": 2.8
+        "temp_f": 40.4,
+        "wind_mph": 3.2
       },
       "weather_text": "40\u00b0F",
       "market_margin": -10.5,
@@ -606,8 +606,8 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 49.3,
-        "wind_mph": 4.5
+        "temp_f": 49.2,
+        "wind_mph": 3.9
       },
       "weather_text": "49\u00b0F",
       "market_margin": 3.5,
@@ -626,14 +626,14 @@
         "home_points": 23,
         "away_points": 20,
         "margin": 2.9,
-        "total": 42.6,
+        "total": 42.4,
         "home_win_prob": 0.5673,
         "sigma": 10.9,
         "margin_p25": -4.5,
         "margin_p75": 10.2,
         "total_sigma": 10.5,
-        "total_p25": 35.5,
-        "total_p75": 49.6
+        "total_p25": 35.3,
+        "total_p75": 49.5
       },
       "quarterbacks": {
         "home": "Tyler Huntley",
@@ -653,10 +653,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 52.6,
-        "wind_mph": 7.0
+        "temp_f": 53.5,
+        "wind_mph": 8.4
       },
-      "weather_text": "53\u00b0F",
+      "weather_text": "54\u00b0F",
       "market_margin": 4.5,
       "market_total": 38.5,
       "vs_market": -1.6
