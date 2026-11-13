@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T13:40:01.647608-05:00",
+  "generated_at": "2026-11-13T13:19:53.601530-05:00",
   "season": 2026,
   "week": 10,
   "games": [
@@ -15,14 +15,14 @@
         "home_points": 23,
         "away_points": 21,
         "margin": 2.2,
-        "total": 43.8,
-        "home_win_prob": 0.5456,
+        "total": 44.7,
+        "home_win_prob": 0.5458,
         "sigma": 10.9,
         "margin_p25": -5.2,
         "margin_p75": 9.5,
         "total_sigma": 10.5,
-        "total_p25": 36.7,
-        "total_p75": 50.8
+        "total_p25": 37.6,
+        "total_p75": 51.8
       },
       "quarterbacks": {
         "home": "J.J. McCarthy",
@@ -42,10 +42,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 55.6,
-        "wind_mph": 11.1
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "56\u00b0F, breezy 11 mph",
+      "weather_text": "",
       "market_margin": 1.5,
       "market_total": 40.5,
       "vs_market": 0.7
@@ -93,9 +93,9 @@
         "wind_mph": null
       },
       "weather_text": "Indoors",
-      "market_margin": 2.5,
-      "market_total": 51.5,
-      "vs_market": 0.4
+      "market_margin": 3.0,
+      "market_total": 49.5,
+      "vs_market": -0.1
     },
     {
       "game_id": "2026_10_KC_ATL",
@@ -141,7 +141,7 @@
       },
       "weather_text": "68\u00b0F",
       "market_margin": -3.0,
-      "market_total": 46.5,
+      "market_total": 47.5,
       "vs_market": -2.5
     },
     {
@@ -183,10 +183,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 46.0,
-        "wind_mph": 14.3
+        "temp_f": 45.4,
+        "wind_mph": 16.4
       },
-      "weather_text": "46\u00b0F, breezy 14 mph",
+      "weather_text": "45\u00b0F, breezy 16 mph",
       "market_margin": -4.5,
       "market_total": 40.5,
       "vs_market": -3.4
@@ -230,8 +230,8 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 29.2,
-        "wind_mph": 3.0
+        "temp_f": 29.1,
+        "wind_mph": 3.2
       },
       "weather_text": "29\u00b0F",
       "market_margin": 3.0,
@@ -350,7 +350,7 @@
         "margin_p25": -16.4,
         "margin_p75": -1.7,
         "total_sigma": 10.5,
-        "total_p25": 42.3,
+        "total_p25": 42.2,
         "total_p75": 56.4
       },
       "quarterbacks": {
@@ -371,10 +371,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 43.0,
-        "wind_mph": 10.2
+        "temp_f": 41.2,
+        "wind_mph": 11.1
       },
-      "weather_text": "43\u00b0F, breezy 10 mph",
+      "weather_text": "41\u00b0F, breezy 11 mph",
       "market_margin": -8.5,
       "market_total": 50.5,
       "vs_market": -0.6
@@ -390,12 +390,12 @@
       "forecast": {
         "home_points": 21,
         "away_points": 29,
-        "margin": -8.4,
+        "margin": -8.2,
         "total": 49.9,
-        "home_win_prob": 0.2332,
+        "home_win_prob": 0.2375,
         "sigma": 10.9,
-        "margin_p25": -15.8,
-        "margin_p75": -1.1,
+        "margin_p25": -15.6,
+        "margin_p75": -0.9,
         "total_sigma": 10.5,
         "total_p25": 42.8,
         "total_p75": 57.0
@@ -418,13 +418,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 40.4,
-        "wind_mph": 3.2
+        "temp_f": 40.5,
+        "wind_mph": 3.7
       },
       "weather_text": "40\u00b0F",
       "market_margin": -10.5,
       "market_total": 46.5,
-      "vs_market": 2.1
+      "vs_market": 2.3
     },
     {
       "game_id": "2026_10_LA_ARI",
@@ -579,14 +579,14 @@
         "home_points": 28,
         "away_points": 24,
         "margin": 3.9,
-        "total": 52.8,
+        "total": 52.5,
         "home_win_prob": 0.6003,
         "sigma": 10.9,
         "margin_p25": -3.4,
         "margin_p75": 11.3,
         "total_sigma": 10.5,
-        "total_p25": 45.7,
-        "total_p75": 59.9
+        "total_p25": 45.5,
+        "total_p75": 59.6
       },
       "quarterbacks": {
         "home": "Joe Burrow",
@@ -606,10 +606,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 49.2,
-        "wind_mph": 3.9
+        "temp_f": 48.1,
+        "wind_mph": 4.9
       },
-      "weather_text": "49\u00b0F",
+      "weather_text": "48\u00b0F",
       "market_margin": 3.5,
       "market_total": 49.5,
       "vs_market": 0.4
@@ -653,10 +653,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 53.5,
-        "wind_mph": 8.4
+        "temp_f": 53.0,
+        "wind_mph": 8.0
       },
-      "weather_text": "54\u00b0F",
+      "weather_text": "53\u00b0F",
       "market_margin": 4.5,
       "market_total": 38.5,
       "vs_market": -1.6
