@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T13:19:53.601530-05:00",
+  "generated_at": "2026-11-14T11:48:33.404819-05:00",
   "season": 2026,
   "week": 10,
   "games": [
@@ -93,9 +93,9 @@
         "wind_mph": null
       },
       "weather_text": "Indoors",
-      "market_margin": 3.0,
+      "market_margin": 2.5,
       "market_total": 49.5,
-      "vs_market": -0.1
+      "vs_market": 0.4
     },
     {
       "game_id": "2026_10_KC_ATL",
@@ -155,12 +155,12 @@
       "forecast": {
         "home_points": 15,
         "away_points": 23,
-        "margin": -7.9,
+        "margin": -8.0,
         "total": 37.7,
-        "home_win_prob": 0.2464,
+        "home_win_prob": 0.2434,
         "sigma": 10.9,
-        "margin_p25": -15.2,
-        "margin_p75": -0.5,
+        "margin_p25": -15.4,
+        "margin_p75": -0.6,
         "total_sigma": 10.5,
         "total_p25": 30.6,
         "total_p75": 44.8
@@ -183,13 +183,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 45.4,
-        "wind_mph": 16.4
+        "temp_f": 43.1,
+        "wind_mph": 14.9
       },
-      "weather_text": "45\u00b0F, breezy 16 mph",
+      "weather_text": "43\u00b0F, breezy 15 mph",
       "market_margin": -4.5,
       "market_total": 40.5,
-      "vs_market": -3.4
+      "vs_market": -3.5
     },
     {
       "game_id": "2026_10_MIN_GB",
@@ -200,14 +200,14 @@
       "away_team": "MIN",
       "neutral_site": false,
       "forecast": {
-        "home_points": 24,
+        "home_points": 25,
         "away_points": 17,
-        "margin": 7.7,
+        "margin": 7.8,
         "total": 41.3,
-        "home_win_prob": 0.7102,
+        "home_win_prob": 0.7135,
         "sigma": 10.9,
-        "margin_p25": 0.4,
-        "margin_p75": 15.1,
+        "margin_p25": 0.5,
+        "margin_p75": 15.2,
         "total_sigma": 10.5,
         "total_p25": 34.2,
         "total_p75": 48.3
@@ -230,13 +230,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 29.1,
-        "wind_mph": 3.2
+        "temp_f": 31.3,
+        "wind_mph": 4.0
       },
-      "weather_text": "29\u00b0F",
-      "market_margin": 3.0,
+      "weather_text": "31\u00b0F",
+      "market_margin": 2.5,
       "market_total": 42.5,
-      "vs_market": 4.7
+      "vs_market": 5.3
     },
     {
       "game_id": "2026_10_MIA_IND",
@@ -350,7 +350,7 @@
         "margin_p25": -16.4,
         "margin_p75": -1.7,
         "total_sigma": 10.5,
-        "total_p25": 42.2,
+        "total_p25": 42.3,
         "total_p75": 56.4
       },
       "quarterbacks": {
@@ -371,10 +371,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 41.2,
-        "wind_mph": 11.1
+        "temp_f": 37.9,
+        "wind_mph": 6.8
       },
-      "weather_text": "41\u00b0F, breezy 11 mph",
+      "weather_text": "38\u00b0F",
       "market_margin": -8.5,
       "market_total": 50.5,
       "vs_market": -0.6
@@ -390,12 +390,12 @@
       "forecast": {
         "home_points": 21,
         "away_points": 29,
-        "margin": -8.2,
+        "margin": -8.4,
         "total": 49.9,
-        "home_win_prob": 0.2375,
+        "home_win_prob": 0.2348,
         "sigma": 10.9,
-        "margin_p25": -15.6,
-        "margin_p75": -0.9,
+        "margin_p25": -15.7,
+        "margin_p75": -1.0,
         "total_sigma": 10.5,
         "total_p25": 42.8,
         "total_p75": 57.0
@@ -418,13 +418,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 40.5,
-        "wind_mph": 3.7
+        "temp_f": 29.2,
+        "wind_mph": 1.1
       },
-      "weather_text": "40\u00b0F",
+      "weather_text": "29\u00b0F",
       "market_margin": -10.5,
       "market_total": 46.5,
-      "vs_market": 2.3
+      "vs_market": 2.1
     },
     {
       "game_id": "2026_10_LA_ARI",
@@ -563,9 +563,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "68\u00b0F",
-      "market_margin": -3.5,
+      "market_margin": -4.5,
       "market_total": 55.5,
-      "vs_market": -0.9
+      "vs_market": 0.1
     },
     {
       "game_id": "2026_10_PIT_CIN",
@@ -606,10 +606,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 48.1,
-        "wind_mph": 4.9
+        "temp_f": 44.9,
+        "wind_mph": 5.7
       },
-      "weather_text": "48\u00b0F",
+      "weather_text": "45\u00b0F",
       "market_margin": 3.5,
       "market_total": 49.5,
       "vs_market": 0.4
@@ -653,10 +653,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 53.0,
-        "wind_mph": 8.0
+        "temp_f": 53.7,
+        "wind_mph": 8.1
       },
-      "weather_text": "53\u00b0F",
+      "weather_text": "54\u00b0F",
       "market_margin": 4.5,
       "market_total": 38.5,
       "vs_market": -1.6
