@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T11:48:33.404819-05:00",
+  "generated_at": "2026-11-15T12:31:15.897160-05:00",
   "season": 2026,
   "week": 10,
   "games": [
@@ -94,7 +94,7 @@
       },
       "weather_text": "Indoors",
       "market_margin": 2.5,
-      "market_total": 49.5,
+      "market_total": 50.5,
       "vs_market": 0.4
     },
     {
@@ -155,12 +155,12 @@
       "forecast": {
         "home_points": 15,
         "away_points": 23,
-        "margin": -8.0,
+        "margin": -7.9,
         "total": 37.7,
-        "home_win_prob": 0.2434,
+        "home_win_prob": 0.2461,
         "sigma": 10.9,
-        "margin_p25": -15.4,
-        "margin_p75": -0.6,
+        "margin_p25": -15.2,
+        "margin_p75": -0.5,
         "total_sigma": 10.5,
         "total_p25": 30.6,
         "total_p75": 44.8
@@ -183,13 +183,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 43.1,
-        "wind_mph": 14.9
+        "temp_f": 44.7,
+        "wind_mph": 17.6
       },
-      "weather_text": "43\u00b0F, breezy 15 mph",
+      "weather_text": "45\u00b0F, breezy 18 mph",
       "market_margin": -4.5,
       "market_total": 40.5,
-      "vs_market": -3.5
+      "vs_market": -3.4
     },
     {
       "game_id": "2026_10_MIN_GB",
@@ -200,16 +200,16 @@
       "away_team": "MIN",
       "neutral_site": false,
       "forecast": {
-        "home_points": 25,
+        "home_points": 24,
         "away_points": 17,
-        "margin": 7.8,
-        "total": 41.3,
-        "home_win_prob": 0.7135,
+        "margin": 7.7,
+        "total": 41.2,
+        "home_win_prob": 0.7102,
         "sigma": 10.9,
-        "margin_p25": 0.5,
-        "margin_p75": 15.2,
+        "margin_p25": 0.4,
+        "margin_p75": 15.1,
         "total_sigma": 10.5,
-        "total_p25": 34.2,
+        "total_p25": 34.1,
         "total_p75": 48.3
       },
       "quarterbacks": {
@@ -230,13 +230,13 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 31.3,
-        "wind_mph": 4.0
+        "temp_f": 26.4,
+        "wind_mph": 0.9
       },
-      "weather_text": "31\u00b0F",
+      "weather_text": "26\u00b0F",
       "market_margin": 2.5,
       "market_total": 42.5,
-      "vs_market": 5.3
+      "vs_market": 5.2
     },
     {
       "game_id": "2026_10_MIA_IND",
@@ -281,9 +281,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "68\u00b0F",
-      "market_margin": 3.5,
-      "market_total": 38.5,
-      "vs_market": -1.9
+      "market_margin": 4.5,
+      "market_total": 37.5,
+      "vs_market": -2.9
     },
     {
       "game_id": "2026_10_CAR_NO",
@@ -328,9 +328,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "Indoors",
-      "market_margin": 2.5,
+      "market_margin": 1.5,
       "market_total": 48.5,
-      "vs_market": -4.2
+      "vs_market": -3.2
     },
     {
       "game_id": "2026_10_BUF_NYJ",
@@ -371,10 +371,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 37.9,
-        "wind_mph": 6.8
+        "temp_f": 41.3,
+        "wind_mph": 7.8
       },
-      "weather_text": "38\u00b0F",
+      "weather_text": "41\u00b0F",
       "market_margin": -8.5,
       "market_total": 50.5,
       "vs_market": -0.6
@@ -418,12 +418,12 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 29.2,
-        "wind_mph": 1.1
+        "temp_f": 30.5,
+        "wind_mph": 1.5
       },
-      "weather_text": "29\u00b0F",
+      "weather_text": "30\u00b0F",
       "market_margin": -10.5,
-      "market_total": 46.5,
+      "market_total": 45.5,
       "vs_market": 2.1
     },
     {
@@ -470,7 +470,7 @@
       },
       "weather_text": "68\u00b0F",
       "market_margin": -9.5,
-      "market_total": 39.5,
+      "market_total": 38.5,
       "vs_market": 1.8
     },
     {
@@ -606,10 +606,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 44.9,
-        "wind_mph": 5.7
+        "temp_f": 49.3,
+        "wind_mph": 5.5
       },
-      "weather_text": "45\u00b0F",
+      "weather_text": "49\u00b0F",
       "market_margin": 3.5,
       "market_total": 49.5,
       "vs_market": 0.4
@@ -653,10 +653,10 @@
         "games_played": 8
       },
       "weather": {
-        "temp_f": 53.7,
-        "wind_mph": 8.1
+        "temp_f": 50.7,
+        "wind_mph": 7.6
       },
-      "weather_text": "54\u00b0F",
+      "weather_text": "51\u00b0F",
       "market_margin": 4.5,
       "market_total": 38.5,
       "vs_market": -1.6
