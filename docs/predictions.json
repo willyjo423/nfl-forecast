@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T14:17:51.441631-05:00",
+  "generated_at": "2026-11-20T13:56:20.317580-05:00",
   "season": 2026,
   "week": 11,
   "games": [
@@ -12,17 +12,17 @@
       "away_team": "IND",
       "neutral_site": false,
       "forecast": {
-        "home_points": 27,
-        "away_points": 21,
-        "margin": 5.3,
-        "total": 47.9,
-        "home_win_prob": 0.6425,
+        "home_points": 26,
+        "away_points": 20,
+        "margin": 5.4,
+        "total": 46.1,
+        "home_win_prob": 0.6451,
         "sigma": 10.9,
         "margin_p25": -2.0,
         "margin_p75": 12.7,
         "total_sigma": 10.5,
-        "total_p25": 40.8,
-        "total_p75": 55.0
+        "total_p25": 39.0,
+        "total_p75": 53.2
       },
       "quarterbacks": {
         "home": "C.J. Stroud",
@@ -42,13 +42,13 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 68.0,
-        "wind_mph": 0.0
+        "temp_f": null,
+        "wind_mph": null
       },
-      "weather_text": "68\u00b0F",
+      "weather_text": "",
       "market_margin": 12.5,
       "market_total": 44.5,
-      "vs_market": -7.2
+      "vs_market": -7.1
     },
     {
       "game_id": "2026_11_MIA_BUF",
@@ -62,14 +62,14 @@
         "home_points": 29,
         "away_points": 19,
         "margin": 10.1,
-        "total": 48.2,
+        "total": 48.1,
         "home_win_prob": 0.7705,
         "sigma": 10.9,
         "margin_p25": 2.8,
         "margin_p75": 17.5,
         "total_sigma": 10.5,
-        "total_p25": 41.1,
-        "total_p75": 55.3
+        "total_p25": 41.0,
+        "total_p75": 55.2
       },
       "quarterbacks": {
         "home": "Josh Allen",
@@ -89,10 +89,10 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 46.2,
+        "temp_f": 49.0,
         "wind_mph": 5.8
       },
-      "weather_text": "46\u00b0F",
+      "weather_text": "49\u00b0F",
       "market_margin": 16.5,
       "market_total": 44.5,
       "vs_market": -6.4
@@ -106,17 +106,17 @@
       "away_team": "BAL",
       "neutral_site": false,
       "forecast": {
-        "home_points": 23,
-        "away_points": 22,
-        "margin": 0.7,
-        "total": 44.6,
-        "home_win_prob": 0.499,
+        "home_points": 25,
+        "away_points": 24,
+        "margin": 0.6,
+        "total": 48.8,
+        "home_win_prob": 0.4952,
         "sigma": 10.9,
-        "margin_p25": -6.6,
-        "margin_p75": 8.1,
+        "margin_p25": -6.7,
+        "margin_p75": 8.0,
         "total_sigma": 10.5,
-        "total_p25": 37.5,
-        "total_p75": 51.7
+        "total_p25": 41.7,
+        "total_p75": 55.9
       },
       "quarterbacks": {
         "home": "Bryce Young",
@@ -136,13 +136,13 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 55.3,
-        "wind_mph": 12.0
+        "temp_f": 57.3,
+        "wind_mph": 5.6
       },
-      "weather_text": "55\u00b0F, breezy 12 mph",
+      "weather_text": "57\u00b0F",
       "market_margin": 3.0,
       "market_total": 43.5,
-      "vs_market": -2.3
+      "vs_market": -2.4
     },
     {
       "game_id": "2026_11_NO_CHI",
@@ -183,10 +183,10 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 57.7,
-        "wind_mph": 10.5
+        "temp_f": 55.4,
+        "wind_mph": 10.3
       },
-      "weather_text": "58\u00b0F, breezy 10 mph",
+      "weather_text": "55\u00b0F, breezy 10 mph",
       "market_margin": 11.5,
       "market_total": 48.5,
       "vs_market": -5.3
@@ -235,7 +235,7 @@
       },
       "weather_text": "68\u00b0F",
       "market_margin": 8.5,
-      "market_total": 55.5,
+      "market_total": 54.5,
       "vs_market": -4.1
     },
     {
@@ -281,9 +281,9 @@
         "wind_mph": 0.0
       },
       "weather_text": "Indoors",
-      "market_margin": 6.0,
+      "market_margin": 5.5,
       "market_total": 45.5,
-      "vs_market": -2.0
+      "vs_market": -1.5
     },
     {
       "game_id": "2026_11_ARI_KC",
@@ -324,13 +324,13 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 48.2,
-        "wind_mph": 14.8
+        "temp_f": 48.5,
+        "wind_mph": 13.8
       },
-      "weather_text": "48\u00b0F, breezy 15 mph",
-      "market_margin": 15.5,
+      "weather_text": "48\u00b0F, breezy 14 mph",
+      "market_margin": 16.5,
       "market_total": 40.5,
-      "vs_market": -4.9
+      "vs_market": -5.9
     },
     {
       "game_id": "2026_11_JAX_NYG",
@@ -342,16 +342,16 @@
       "neutral_site": false,
       "forecast": {
         "home_points": 19,
-        "away_points": 27,
+        "away_points": 28,
         "margin": -8.2,
-        "total": 46.5,
+        "total": 46.9,
         "home_win_prob": 0.2395,
         "sigma": 10.9,
         "margin_p25": -15.5,
         "margin_p75": -0.8,
         "total_sigma": 10.5,
-        "total_p25": 39.4,
-        "total_p75": 53.6
+        "total_p25": 39.9,
+        "total_p75": 54.0
       },
       "quarterbacks": {
         "home": "J.J. McCarthy",
@@ -371,10 +371,10 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 52.4,
-        "wind_mph": 6.9
+        "temp_f": 54.3,
+        "wind_mph": 4.8
       },
-      "weather_text": "52\u00b0F",
+      "weather_text": "54\u00b0F",
       "market_margin": -6.0,
       "market_total": 46.5,
       "vs_market": -2.2
@@ -465,13 +465,13 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 38.4,
-        "wind_mph": 1.4
+        "temp_f": 37.9,
+        "wind_mph": 1.6
       },
       "weather_text": "38\u00b0F",
-      "market_margin": 10.0,
+      "market_margin": 10.5,
       "market_total": 40.5,
-      "vs_market": -2.5
+      "vs_market": -3.0
     },
     {
       "game_id": "2026_11_PIT_PHI",
@@ -483,16 +483,16 @@
       "neutral_site": false,
       "forecast": {
         "home_points": 19,
-        "away_points": 23,
+        "away_points": 24,
         "margin": -4.4,
-        "total": 41.9,
+        "total": 43.2,
         "home_win_prob": 0.3395,
         "sigma": 10.9,
         "margin_p25": -11.7,
         "margin_p75": 3.0,
         "total_sigma": 10.5,
-        "total_p25": 34.8,
-        "total_p75": 49.0
+        "total_p25": 36.1,
+        "total_p75": 50.3
       },
       "quarterbacks": {
         "home": "Joe Milton III",
@@ -512,13 +512,13 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 57.3,
-        "wind_mph": 10.2
+        "temp_f": 58.4,
+        "wind_mph": 6.0
       },
-      "weather_text": "57\u00b0F, breezy 10 mph",
-      "market_margin": -4.5,
+      "weather_text": "58\u00b0F",
+      "market_margin": -3.5,
       "market_total": 37.5,
-      "vs_market": 0.1
+      "vs_market": -0.9
     },
     {
       "game_id": "2026_11_MIN_SF",
@@ -563,9 +563,9 @@
         "wind_mph": null
       },
       "weather_text": "",
-      "market_margin": 3.0,
+      "market_margin": 3.5,
       "market_total": 46.5,
-      "vs_market": 5.1
+      "vs_market": 4.6
     },
     {
       "game_id": "2026_11_CIN_WAS",
@@ -576,17 +576,17 @@
       "away_team": "CIN",
       "neutral_site": false,
       "forecast": {
-        "home_points": 22,
-        "away_points": 28,
+        "home_points": 23,
+        "away_points": 29,
         "margin": -5.7,
-        "total": 49.6,
+        "total": 51.6,
         "home_win_prob": 0.3023,
         "sigma": 10.9,
         "margin_p25": -13.0,
         "margin_p75": 1.7,
         "total_sigma": 10.5,
-        "total_p25": 42.6,
-        "total_p75": 56.7
+        "total_p25": 44.5,
+        "total_p75": 58.7
       },
       "quarterbacks": {
         "home": "Jayden Daniels",
@@ -606,13 +606,13 @@
         "games_played": 9
       },
       "weather": {
-        "temp_f": 56.0,
-        "wind_mph": 11.7
+        "temp_f": 63.3,
+        "wind_mph": 10.3
       },
-      "weather_text": "56\u00b0F, breezy 12 mph",
-      "market_margin": -6.5,
+      "weather_text": "63\u00b0F, breezy 10 mph",
+      "market_margin": -6.0,
       "market_total": 53.5,
-      "vs_market": 0.8
+      "vs_market": 0.3
     }
   ],
   "model_metrics": {
