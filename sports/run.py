@@ -89,6 +89,9 @@ def main(argv=None) -> int:
                                "total": {k: float(v) for k, v in fit["coef_t"].items()}}
     up = g[~g["done"] & (g["date"] >= today.isoformat())
            & (g["date"] <= (today + dt.timedelta(days=1)).isoformat()) & g["rate_margin"].notna()]
+    # only games that have not started yet
+    start = pd.to_datetime(up["start_utc"], utc=True, errors="coerce")
+    up = up[start.isna() | (start > pd.Timestamp(now).tz_convert("UTC") - pd.Timedelta(minutes=10))]
     pred = M.predict(fit, up) if len(up) else up
     payload = R.payload(sport, pred, metrics, tonight, now)
     (ROOT / "docs" / f"{sport}.json").write_text(json.dumps(payload, indent=1, default=str))
