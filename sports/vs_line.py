@@ -102,7 +102,7 @@ def _bucket_rows(gap: np.ndarray, won: np.ndarray, push: np.ndarray, edges, unit
             continue
         w = int(won[m].sum())
         out.append({"gap": f"{lo:g}–{hi:g} {unit}" if hi < 99 else f"{lo:g}+ {unit}",
-                    "n": n, "won": w, "lost": n - w, "pct": round(w / n, 3)})
+                    "lo": lo, "hi": hi, "n": n, "won": w, "lost": n - w, "pct": round(w / n, 3)})
     m = ~push
     n = int(m.sum())
     if n:
@@ -164,3 +164,42 @@ def report(sport: str, oos: pd.DataFrame, season: int, today: dt.date) -> dict:
             res["total"] = _bucket_rows(g2, np.sign(r2) == np.sign(g2), p2,
                                         [(0, 0.3), (0.3, 0.6), (0.6, 1.0), (1.0, 99)], "goals")
     return res
+
+
+BREAKEVEN = 0.524
+MIN_GAMES = 50
+
+
+def flag_table(*reports: dict) -> dict:
+    """Combine seasons: per market and gap range, which side has hit and how
+    often. A range is flagged when one side beat break-even (52.4%) over at
+    least 50 games - the model's side, or the market's side when the model's
+    lean lost often enough."""
+    out = {}
+    for key in ("spread", "total", "moneyline"):
+        acc: dict = {}
+        for r in reports:
+            for row in (r or {}).get(key) or []:
+                if "lo" not in row:
+                    continue
+                a = acc.setdefault((row["lo"], row["hi"]), {"won": 0, "lost": 0, "gap": row["gap"]})
+                a["won"] += row["won"]
+                a["lost"] += row["lost"]
+        rows = []
+        for (lo, hi), a in sorted(acc.items()):
+            n = a["won"] + a["lost"]
+            p = a["won"] / n if n else 0.5
+            side = "model" if p >= BREAKEVEN else "market" if (1 - p) >= BREAKEVEN else None
+            rows.append({"lo": lo, "hi": hi, "gap": a["gap"], "n": n, "model_pct": round(p, 3),
+                         "flag": side if n >= MIN_GAMES else None,
+                         "hit": round(p if side == "model" else 1 - p, 3) if side else None})
+        if rows:
+            out[key] = rows
+    return out
+
+
+def flag_for(table: dict, key: str, gap: float) -> dict | None:
+    for r in table.get(key) or []:
+        if r["lo"] <= abs(gap) < r["hi"]:
+            return r if r.get("flag") else None
+    return None

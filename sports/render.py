@@ -59,6 +59,7 @@ def payload(sport: str, pred, metrics: dict, tonight: dict, now: dt.datetime) ->
              "market": {"margin": _f(r.get("line_margin")), "total": _f(r.get("line_total")),
                         "moneyline": [r["ml_home"], r["ml_away"]] if r.get("ml_home") is not None
                         and not (isinstance(r.get("ml_home"), float) and np.isnan(r["ml_home"])) else None}}
+        g["flags"] = _flags(sport, r, metrics.get("flags") or {})
         if sport == "nba":
             g["dfs"] = {"home_avail": _f(r.get("home_dfs_avail")), "away_avail": _f(r.get("away_dfs_avail")),
                         "home_change": _f(r.get("home_dfs_change")), "away_change": _f(r.get("away_dfs_change")),
@@ -75,6 +76,45 @@ def payload(sport: str, pred, metrics: dict, tonight: dict, now: dt.datetime) ->
                             for s in ("home", "away")}
         games.append(g)
     return {"sport": sport, "generated_at": now.isoformat(), "games": games, "model_metrics": metrics}
+
+
+def _flags(sport: str, r: dict, table: dict) -> list[dict]:
+    """Games whose model-vs-line gap falls in a range where one side has hit
+    above break-even this season and last."""
+    from sports import vs_line as VL
+    out = []
+    home, away = r["home"], r["away"]
+    lm, lt = _f(r.get("line_margin")), _f(r.get("line_total"))
+    if sport == "nba" and lm is not None:
+        gap = float(r["pred_margin"]) - lm
+        row = VL.flag_for(table, "spread", gap)
+        if row and abs(gap) >= 1e-9:
+            model_home = gap > 0
+            take_home = model_home if row["flag"] == "model" else not model_home
+            t = home if take_home else away
+            num = -lm if take_home else lm
+            out.append({"market": "Spread", "take": f"{t} {num:+g}" if num else f"{t} PK",
+                        "why": row["flag"], "hit": row["hit"], "n": row["n"], "gap": row["gap"]})
+    if lt is not None:
+        gap = float(r["pred_total"]) - lt
+        row = VL.flag_for(table, "total", gap)
+        if row and abs(gap) >= 1e-9:
+            over = gap > 0 if row["flag"] == "model" else gap < 0
+            out.append({"market": "Total", "take": f"{'Over' if over else 'Under'} {lt:g}",
+                        "why": row["flag"], "hit": row["hit"], "n": row["n"], "gap": row["gap"]})
+    mh, ma = r.get("ml_home"), r.get("ml_away")
+    if sport == "nhl" and mh is not None and ma is not None and not (isinstance(mh, float) and np.isnan(mh)):
+        ih = -mh / (-mh + 100) if mh < 0 else 100 / (mh + 100)
+        ia = -ma / (-ma + 100) if ma < 0 else 100 / (ma + 100)
+        edge = (float(r["home_win_prob"]) - ih / (ih + ia)) * 100
+        row = VL.flag_for(table, "moneyline", edge)
+        if row:
+            model_home = edge > 0
+            take_home = model_home if row["flag"] == "model" else not model_home
+            t, o = (home, mh) if take_home else (away, ma)
+            out.append({"market": "Moneyline", "take": f"{t} {o:+g}", "why": row["flag"],
+                        "hit": row["hit"], "n": row["n"], "gap": row["gap"]})
+    return out
 
 
 def _card(sport: str, g: dict) -> str:
@@ -133,6 +173,15 @@ def _card(sport: str, g: dict) -> str:
                  f'<br>{skl(home, sk.get("home_avail"), sk.get("home_change"), sk.get("home_out") or [])}</div>'
                  f'<div class="dfs">Goalies (DFS confirmations) &mdash; {gl(away, g["goalies"]["away"])}'
                  f'<br>{gl(home, g["goalies"]["home"])}</div>')
+    fl = g.get("flags") or []
+    if fl:
+        items = "".join(
+            f'<div style="margin-top:4px"><span class="flagnew" style="background:var(--good);color:#04140a">FLAG</span> '
+            f'<b>{_e(x["take"])}</b> <span style="color:var(--dim)">({_e(x["market"])}: '
+            f'{"model&#39;s side" if x["why"] == "model" else "market side &mdash; fading the model"}; '
+            f'{x["hit"] * 100:.1f}% over {x["n"]} games with a {_e(x["gap"])} gap)</span></div>'
+            for x in fl)
+        extra = f'<div class="dfs" style="border-top-color:var(--good)">{items}</div>' + extra
     rest = g.get("rest") or {}
     b2b = [t for t, r in ((away, rest.get("away")), (home, rest.get("home"))) if r is not None and r <= 1]
     meta = f'<div class="meta">Back-to-back: {_e(", ".join(b2b))}</div>' if b2b else ""
@@ -154,6 +203,14 @@ def page(sport: str, payload: dict) -> str:
         cells.append(("Winner picked", f'{m["win_accuracy"] * 100:.0f}%'))
     strip = '<div class="strip">' + "".join(f"<div>{_e(k)}<b>{_e(v)}</b></div>" for k, v in cells) + "</div>"
     when = payload["generated_at"][:16].replace("T", " ")
+    flagged = [(g, x) for g in payload["games"] for x in (g.get("flags") or [])]
+    if flagged:
+        strip += ('<div class="note" style="border-left-color:var(--good)"><b>Flagged plays</b> &mdash; games whose '
+                  'model-vs-line gap is in a range where one side has hit above 52.4% (this season + last, 50+ games):'
+                  + "".join(f'<div style="margin-top:6px">{_e(g["away"])} at {_e(g["home"])} &middot; '
+                            f'<b>{_e(x["take"])}</b> ({_e(x["market"])}, {x["hit"] * 100:.1f}% / {x["n"]} games'
+                            f'{", market side" if x["why"] == "market" else ""})</div>' for g, x in flagged)
+                  + '</div>')
     strip += _record(m.get("vs_line"), "This season") + _record(m.get("vs_line_last_season"), "Last season")
     driver = ("Driven by the DFS models: each team's strength tonight from the DFS player projections "
               "(who is playing, late scratches included), on top of team ratings and rest."

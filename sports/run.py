@@ -86,6 +86,7 @@ def main(argv=None) -> int:
         cur = F.season_of(today)
         metrics["vs_line"] = VL.report(sport, chosen, cur, today)
         metrics["vs_line_last_season"] = VL.report(sport, chosen, cur - 1, today)
+        metrics["flags"] = VL.flag_table(metrics["vs_line"], metrics["vs_line_last_season"])
     except Exception as exc:                                   # noqa: BLE001
         log.warning("vs-line report failed: %s", exc)
     print(json.dumps({k: v for k, v in metrics.items() if isinstance(v, (int, float))}, indent=1))
