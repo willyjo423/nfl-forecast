@@ -154,6 +154,7 @@ def page(sport: str, payload: dict) -> str:
         cells.append(("Winner picked", f'{m["win_accuracy"] * 100:.0f}%'))
     strip = '<div class="strip">' + "".join(f"<div>{_e(k)}<b>{_e(v)}</b></div>" for k, v in cells) + "</div>"
     when = payload["generated_at"][:16].replace("T", " ")
+    strip += _record(m.get("vs_line"), "This season") + _record(m.get("vs_line_last_season"), "Last season")
     driver = ("Driven by the DFS models: each team's strength tonight from the DFS player projections "
               "(who is playing, late scratches included), on top of team ratings and rest."
               if sport == "nba" else
@@ -174,3 +175,30 @@ def page(sport: str, payload: dict) -> str:
             f'<div class="wrap">{tabs(sport)}<h1>{name} forecasts</h1>'
             f'<p class="sub">Generated {_e(when)} ET &middot; {_e(driver)}</p>{strip}{body}'
             '<footer>Forecasts only. No betting advice.</footer></div></body></html>')
+
+
+def _record(v: dict | None, title: str) -> str:
+    """Model's lean vs the line, by how far apart they were."""
+    if not v or not v.get("games_with_line"):
+        return ""
+    parts = []
+    for key, name in (("spread", "Spread (model's side vs the line)"), ("moneyline", "Moneyline (model's side at the book's price)"),
+                      ("total", "Total (model's over/under vs the line)")):
+        rows = v.get(key) or []
+        if not rows:
+            continue
+        body = "".join(
+            f'<tr><td class="k">{_e(r["gap"])}</td><td class="m">{r["won"]}&ndash;{r["lost"]}</td>'
+            f'<td class="l">{r["pct"] * 100:.1f}%</td><td class="lean"><span>{r["n"]} games</span></td></tr>'
+            for r in rows)
+        extra = ""
+        if key == "moneyline" and v.get("moneyline_units") is not None:
+            extra = f'<div class="meta">1 unit on every lean: {v["moneyline_units"]:+.2f} units</div>'
+        parts.append(f'<div style="font-size:13px;color:var(--dim);margin-top:8px">{name}</div>'
+                     f'<table class="mvl"><tr><th>Gap</th><th>W&ndash;L</th><th>Win %</th><th></th></tr>{body}</table>{extra}')
+    if not parts:
+        return ""
+    return (f'<details class="card" style="padding:12px 16px"><summary style="cursor:pointer;font-weight:600">'
+            f'{_e(title)} vs the line &mdash; {v["games_with_line"]} games with a saved line</summary>'
+            f'{"".join(parts)}<div class="meta">Each game forecast before it was played (walk-forward). '
+            f'Break-even at standard -110 pricing is 52.4%.</div></details>')
