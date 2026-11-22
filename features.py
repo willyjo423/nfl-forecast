@@ -79,13 +79,13 @@ FEATURE_GROUPS = {
     "situation": SITUATION_COLUMNS,
     "efficiency": EFFICIENCY_COLUMNS,
     "quarterback": QB_COLUMNS,
-    # NFL-DFS player projections summed to the team (dfs_link.py). Measured
-    # here; NOT in FEATURE_COLUMNS until it earns its place.
+    # NFL-DFS player projections summed to the team (dfs_link.py): part of
+    # the model by choice - the forecasts are driven by the DFS models.
     "dfs": DFS_COLUMNS,
 }
 
 FEATURE_COLUMNS = (STRENGTH_COLUMNS + SITUATION_COLUMNS
-                   + EFFICIENCY_COLUMNS + QB_COLUMNS)
+                   + EFFICIENCY_COLUMNS + QB_COLUMNS + DFS_COLUMNS)
 
 TARGETS = ["margin", "total", "home_win"]
 
@@ -237,7 +237,7 @@ def build_features(games: pd.DataFrame, engine: RatingsEngine,
         rows.append(row)
 
     df = pd.DataFrame(rows)
-    for c in FEATURE_COLUMNS + DFS_COLUMNS:     # DFS ones filled by dfs_link.attach
+    for c in FEATURE_COLUMNS:     # the DFS ones are filled by dfs_link.attach
         if c not in df.columns:
             df[c] = np.nan
         df[c] = pd.to_numeric(df[c], errors="coerce")

@@ -1,0 +1,50 @@
+name: NBA and NHL forecasts
+
+# Rates teams, adds the DFS layer (NBA: team strength from the DFS player
+# projections; NHL: DFS skater strength + the starting goalie from the DFS
+# confirmations), and publishes docs/nba.html and docs/nhl.html.
+# Runs in the morning, mid-afternoon and just before the evening games so
+# late scratches and goalie confirmations land.
+on:
+  schedule:
+    - cron: "17 15 * * *"    # ~7am PT
+    - cron: "43 20 * * *"    # ~12:45pm PT
+    - cron: "7 23 * * *"     # ~3pm PT, before the 7pm ET puck drops / tips
+  workflow_dispatch:
+    inputs:
+      sports:
+        default: "nba nhl"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sports
+  cancel-in-progress: false
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Forecast
+        run: |
+          for s in ${{ inputs.sports || 'nba nhl' }}; do
+            python -m sports.run --sport $s 2>&1 | grep -v "^INFO" | tail -40 || true
+          done
+      - name: Publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/nba.* docs/nhl.* data/nba_metrics.json data/nhl_metrics.json \
+            data/cache/nba_games_*.csv data/cache/nhl_games_*.csv data/cache/nhl_goalies_*.csv 2>/dev/null || true
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "NBA/NHL forecasts: $(date -u +%Y-%m-%d\ %H:%M)"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash origin main && git push && exit 0; sleep 8; done
+          exit 1
