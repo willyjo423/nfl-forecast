@@ -144,6 +144,16 @@ def main() -> int:
     oos = model_mod.walk_forward(feat)
     metrics = model_mod.evaluate(oos)
     print(model_mod.summarize(metrics))
+
+    rule("MODEL vs MARKET: DOES A LINE+MODEL BLEND BEAT THE LINE?")
+    import market
+    Xm, _ = training_matrix(feat)
+    metrics["market_blend"] = market.market_blend(oos, Xm)
+    print(market.summarize(metrics["market_blend"]))
+    keep = [c for c in ("season_tested", "week", "margin", "total", "pred_margin", "pred_total",
+                        "market_margin", "total_line") if c in oos.columns]
+    oos[keep].join(Xm[[c for c in ("home_qb_new", "away_qb_new") if c in Xm.columns]]) \
+        .to_csv(config.DATA / "oos.csv")
     model_mod.save_metrics(metrics, METRICS_PATH)
 
     rule("FITTING THE FINAL MODEL")
