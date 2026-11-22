@@ -1,44 +1,7 @@
 {
  "sport": "nba",
- "generated_at": "2026-11-21T23:56:32.255063-05:00",
+ "generated_at": "2026-11-22T01:02:13.971974-05:00",
  "games": [
-  {
-   "game_id": "401910028",
-   "date": "2026-11-21",
-   "when": "Sat 10:00 PM ET",
-   "home": "SAC",
-   "away": "BOS",
-   "forecast": {
-    "home_points": 103.0,
-    "away_points": 118.0,
-    "margin": -14.3,
-    "total": 221.2,
-    "home_win_prob": 0.1313,
-    "margin_p25": -23.5,
-    "margin_p75": -5.1,
-    "total_p25": 208.7,
-    "total_p75": 233.8
-   },
-   "rest": {
-    "home": 1.0,
-    "away": 3.0
-   },
-   "market": {
-    "margin": null,
-    "total": null
-   },
-   "dfs": {
-    "home_avail": 186.6,
-    "away_avail": 213.5,
-    "home_change": -3.4,
-    "away_change": 24.4,
-    "home_out": [],
-    "away_out": [
-     "Jayson Tatum",
-     "Derrick White"
-    ]
-   }
-  },
   {
    "game_id": "401910029",
    "date": "2026-11-22",
@@ -48,13 +11,13 @@
    "forecast": {
     "home_points": 113.0,
     "away_points": 114.0,
-    "margin": -1.0,
+    "margin": -0.9,
     "total": 227.8,
-    "home_win_prob": 0.4663,
-    "margin_p25": -10.2,
-    "margin_p75": 8.2,
-    "total_p25": 215.3,
-    "total_p75": 240.4
+    "home_win_prob": 0.469,
+    "margin_p25": -10.1,
+    "margin_p75": 8.3,
+    "total_p25": 215.2,
+    "total_p75": 240.3
    },
    "rest": {
     "home": 2.0,
@@ -62,7 +25,8 @@
    },
    "market": {
     "margin": -2.5,
-    "total": 225.5
+    "total": 225.5,
+    "moneyline": null
    },
    "dfs": {
     "home_avail": 198.9,
@@ -89,11 +53,11 @@
     "away_points": 116.0,
     "margin": -0.8,
     "total": 232.0,
-    "home_win_prob": 0.471,
-    "margin_p25": -10.1,
+    "home_win_prob": 0.474,
+    "margin_p25": -10.0,
     "margin_p75": 8.4,
-    "total_p25": 219.4,
-    "total_p75": 244.5
+    "total_p25": 219.5,
+    "total_p75": 244.6
    },
    "rest": {
     "home": 4.0,
@@ -101,7 +65,8 @@
    },
    "market": {
     "margin": 2.5,
-    "total": 231.5
+    "total": 231.5,
+    "moneyline": null
    },
    "dfs": {
     "home_avail": 165.7,
@@ -123,13 +88,13 @@
    "forecast": {
     "home_points": 112.0,
     "away_points": 113.0,
-    "margin": -0.4,
-    "total": 224.7,
-    "home_win_prob": 0.4871,
-    "margin_p25": -9.6,
-    "margin_p75": 8.8,
-    "total_p25": 212.1,
-    "total_p75": 237.2
+    "margin": -0.3,
+    "total": 224.8,
+    "home_win_prob": 0.4906,
+    "margin_p25": -9.5,
+    "margin_p75": 8.9,
+    "total_p25": 212.2,
+    "total_p75": 237.3
    },
    "rest": {
     "home": 2.0,
@@ -137,7 +102,8 @@
    },
    "market": {
     "margin": -5.5,
-    "total": 222.5
+    "total": 222.5,
+    "moneyline": null
    },
    "dfs": {
     "home_avail": 197.0,
@@ -160,12 +126,12 @@
     "home_points": 113.0,
     "away_points": 118.0,
     "margin": -5.6,
-    "total": 231.0,
-    "home_win_prob": 0.3216,
+    "total": 231.1,
+    "home_win_prob": 0.323,
     "margin_p25": -14.8,
     "margin_p75": 3.6,
-    "total_p25": 218.4,
-    "total_p75": 243.5
+    "total_p25": 218.5,
+    "total_p75": 243.6
    },
    "rest": {
     "home": 2.0,
@@ -173,7 +139,8 @@
    },
    "market": {
     "margin": -8.5,
-    "total": 237.5
+    "total": 237.5,
+    "moneyline": null
    },
    "dfs": {
     "home_avail": 149.2,
@@ -195,12 +162,12 @@
    "forecast": {
     "home_points": 111.0,
     "away_points": 112.0,
-    "margin": -0.8,
+    "margin": -0.7,
     "total": 223.0,
-    "home_win_prob": 0.4738,
-    "margin_p25": -10.0,
-    "margin_p75": 8.4,
-    "total_p25": 210.4,
+    "home_win_prob": 0.4765,
+    "margin_p25": -9.9,
+    "margin_p75": 8.5,
+    "total_p25": 210.5,
     "total_p75": 235.6
    },
    "rest": {
@@ -209,7 +176,8 @@
    },
    "market": {
     "margin": -1.5,
-    "total": 225.5
+    "total": 225.5,
+    "moneyline": null
    },
    "dfs": {
     "home_avail": 191.7,
@@ -236,8 +204,8 @@
     "home_points": 111.0,
     "away_points": 105.0,
     "margin": 6.0,
-    "total": 215.9,
-    "home_win_prob": 0.6866,
+    "total": 215.8,
+    "home_win_prob": 0.6864,
     "margin_p25": -3.2,
     "margin_p75": 15.2,
     "total_p25": 203.3,
@@ -249,7 +217,8 @@
    },
    "market": {
     "margin": 10.5,
-    "total": 218.5
+    "total": 218.5,
+    "moneyline": null
    },
    "dfs": {
     "home_avail": 211.8,
@@ -273,28 +242,29 @@
    "away": "BOS",
    "forecast": {
     "home_points": 108.0,
-    "away_points": 111.0,
-    "margin": -3.3,
-    "total": 219.3,
-    "home_win_prob": 0.3911,
-    "margin_p25": -12.5,
-    "margin_p75": 5.9,
-    "total_p25": 206.8,
-    "total_p75": 231.9
+    "away_points": 110.0,
+    "margin": -2.6,
+    "total": 218.0,
+    "home_win_prob": 0.4141,
+    "margin_p25": -11.8,
+    "margin_p75": 6.6,
+    "total_p25": 205.5,
+    "total_p75": 230.6
    },
    "rest": {
     "home": 3.0,
     "away": 1.0
    },
    "market": {
-    "margin": -8.5,
-    "total": 212.5
+    "margin": -9.5,
+    "total": 212.5,
+    "moneyline": null
    },
    "dfs": {
     "home_avail": 178.1,
     "away_avail": 213.5,
     "home_change": -16.0,
-    "away_change": 23.5,
+    "away_change": 23.7,
     "home_out": [
      "Stephen Curry",
      "Jimmy Butler"
@@ -304,14 +274,374 @@
      "Derrick White"
     ]
    }
+  },
+  {
+   "game_id": "401910036",
+   "date": "2026-11-23",
+   "when": "Mon 7:00 PM ET",
+   "home": "CHA",
+   "away": "MEM",
+   "forecast": {
+    "home_points": 105.0,
+    "away_points": 115.0,
+    "margin": -10.2,
+    "total": 220.6,
+    "home_win_prob": 0.206,
+    "margin_p25": -19.4,
+    "margin_p75": -1.0,
+    "total_p25": 208.0,
+    "total_p75": 233.1
+   },
+   "rest": {
+    "home": 3.0,
+    "away": 2.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": null,
+    "home_change": null,
+    "away_change": null,
+    "home_out": [],
+    "away_out": []
+   }
+  },
+  {
+   "game_id": "401910037",
+   "date": "2026-11-23",
+   "when": "Mon 7:00 PM ET",
+   "home": "PHI",
+   "away": "POR",
+   "forecast": {
+    "home_points": 113.0,
+    "away_points": 116.0,
+    "margin": -2.4,
+    "total": 229.3,
+    "home_win_prob": 0.4222,
+    "margin_p25": -11.6,
+    "margin_p75": 6.9,
+    "total_p25": 216.8,
+    "total_p75": 241.9
+   },
+   "rest": {
+    "home": 2.0,
+    "away": 2.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": null,
+    "home_change": null,
+    "away_change": null,
+    "home_out": [],
+    "away_out": []
+   }
+  },
+  {
+   "game_id": "401910038",
+   "date": "2026-11-23",
+   "when": "Mon 7:30 PM ET",
+   "home": "IND",
+   "away": "OKC",
+   "forecast": {
+    "home_points": 109.0,
+    "away_points": 114.0,
+    "margin": -5.3,
+    "total": 223.5,
+    "home_win_prob": 0.33,
+    "margin_p25": -14.6,
+    "margin_p75": 3.9,
+    "total_p25": 211.0,
+    "total_p75": 236.1
+   },
+   "rest": {
+    "home": 1.0,
+    "away": 1.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": 170.4,
+    "away_avail": 223.9,
+    "home_change": -35.9,
+    "away_change": 36.1,
+    "home_out": [
+     "Tyrese Haliburton"
+    ],
+    "away_out": [
+     "Chet Holmgren"
+    ]
+   }
+  },
+  {
+   "game_id": "401910039",
+   "date": "2026-11-23",
+   "when": "Mon 7:30 PM ET",
+   "home": "TOR",
+   "away": "MIL",
+   "forecast": {
+    "home_points": 118.0,
+    "away_points": 109.0,
+    "margin": 8.8,
+    "total": 227.4,
+    "home_win_prob": 0.7612,
+    "margin_p25": -0.4,
+    "margin_p75": 18.0,
+    "total_p25": 214.9,
+    "total_p75": 240.0
+   },
+   "rest": {
+    "home": 3.0,
+    "away": 2.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": null,
+    "home_change": null,
+    "away_change": null,
+    "home_out": [],
+    "away_out": []
+   }
+  },
+  {
+   "game_id": "401910040",
+   "date": "2026-11-23",
+   "when": "Mon 7:30 PM ET",
+   "home": "MIN",
+   "away": "BKN",
+   "forecast": {
+    "home_points": 119.0,
+    "away_points": 106.0,
+    "margin": 13.1,
+    "total": 224.2,
+    "home_win_prob": 0.8487,
+    "margin_p25": 3.9,
+    "margin_p75": 22.3,
+    "total_p25": 211.6,
+    "total_p75": 236.7
+   },
+   "rest": {
+    "home": 2.0,
+    "away": 3.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": null,
+    "home_change": null,
+    "away_change": null,
+    "home_out": [],
+    "away_out": []
+   }
+  },
+  {
+   "game_id": "401910041",
+   "date": "2026-11-23",
+   "when": "Mon 8:00 PM ET",
+   "home": "CHI",
+   "away": "CLE",
+   "forecast": {
+    "home_points": 117.0,
+    "away_points": 123.0,
+    "margin": -6.3,
+    "total": 239.3,
+    "home_win_prob": 0.3018,
+    "margin_p25": -15.5,
+    "margin_p75": 2.9,
+    "total_p25": 226.8,
+    "total_p75": 251.9
+   },
+   "rest": {
+    "home": 1.0,
+    "away": 3.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": 149.2,
+    "away_avail": null,
+    "home_change": -28.3,
+    "away_change": null,
+    "home_out": [
+     "Caleb Wilson"
+    ],
+    "away_out": []
+   }
+  },
+  {
+   "game_id": "401910042",
+   "date": "2026-11-23",
+   "when": "Mon 8:00 PM ET",
+   "home": "NOP",
+   "away": "PHX",
+   "forecast": {
+    "home_points": 115.0,
+    "away_points": 120.0,
+    "margin": -5.3,
+    "total": 234.5,
+    "home_win_prob": 0.3316,
+    "margin_p25": -14.5,
+    "margin_p75": 3.9,
+    "total_p25": 221.9,
+    "total_p75": 247.0
+   },
+   "rest": {
+    "home": 2.0,
+    "away": 3.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": null,
+    "home_change": null,
+    "away_change": null,
+    "home_out": [],
+    "away_out": []
+   }
+  },
+  {
+   "game_id": "401910043",
+   "date": "2026-11-23",
+   "when": "Mon 8:30 PM ET",
+   "home": "HOU",
+   "away": "LAC",
+   "forecast": {
+    "home_points": 121.0,
+    "away_points": 110.0,
+    "margin": 11.0,
+    "total": 230.4,
+    "home_win_prob": 0.8087,
+    "margin_p25": 1.8,
+    "margin_p75": 20.2,
+    "total_p25": 217.8,
+    "total_p75": 243.0
+   },
+   "rest": {
+    "home": 3.0,
+    "away": 2.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": null,
+    "home_change": null,
+    "away_change": null,
+    "home_out": [],
+    "away_out": []
+   }
+  },
+  {
+   "game_id": "401910044",
+   "date": "2026-11-23",
+   "when": "Mon 10:00 PM ET",
+   "home": "LAL",
+   "away": "UTA",
+   "forecast": {
+    "home_points": 119.0,
+    "away_points": 109.0,
+    "margin": 9.8,
+    "total": 228.7,
+    "home_win_prob": 0.7829,
+    "margin_p25": 0.6,
+    "margin_p75": 19.0,
+    "total_p25": 216.2,
+    "total_p75": 241.3
+   },
+   "rest": {
+    "home": 3.0,
+    "away": 1.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": 191.7,
+    "home_change": null,
+    "away_change": -24.8,
+    "home_out": [],
+    "away_out": [
+     "Lauri Markkanen",
+     "Jaren Jackson Jr.",
+     "Jusuf Nurkic"
+    ]
+   }
+  },
+  {
+   "game_id": "401910045",
+   "date": "2026-11-23",
+   "when": "Mon 10:00 PM ET",
+   "home": "SAC",
+   "away": "SAS",
+   "forecast": {
+    "home_points": 105.0,
+    "away_points": 118.0,
+    "margin": -13.6,
+    "total": 222.7,
+    "home_win_prob": 0.1419,
+    "margin_p25": -22.8,
+    "margin_p75": -4.4,
+    "total_p25": 210.1,
+    "total_p75": 235.2
+   },
+   "rest": {
+    "home": 2.0,
+    "away": 2.0
+   },
+   "market": {
+    "margin": null,
+    "total": null,
+    "moneyline": null
+   },
+   "dfs": {
+    "home_avail": null,
+    "away_avail": null,
+    "home_change": null,
+    "away_change": null,
+    "home_out": [],
+    "away_out": []
+   }
   }
  ],
  "model_metrics": {
-  "n_games": 9587,
-  "margin_mae": 10.890087195050654,
-  "total_mae": 14.855668080134736,
-  "win_accuracy": 0.6564097214978617,
-  "win_brier": 0.2152458484930512,
+  "n_games": 9588,
+  "margin_mae": 10.890557767650652,
+  "total_mae": 14.857040694456837,
+  "win_accuracy": 0.6563412599082186,
+  "win_brier": 0.21530225447004184,
   "seasons": [
    2018,
    2019,
@@ -327,24 +657,24 @@
   "coefficients": {
    "margin": {
     "rate_margin": 1.124,
-    "home_b2b": -2.095,
-    "away_b2b": 2.003,
-    "rest_diff": 0.162,
+    "home_b2b": -2.091,
+    "away_b2b": 2.006,
+    "rest_diff": 0.158,
     "dfs_avail_diff": 0.048,
     "dfs_change_diff": -0.034,
-    "dfs_missing_diff": 0.03,
-    "dfs_avail_diff_na": 0.397,
-    "dfs_change_diff_na": 0.397,
-    "dfs_missing_diff_na": -0.894
+    "dfs_missing_diff": 0.031,
+    "dfs_avail_diff_na": 0.391,
+    "dfs_change_diff_na": 0.391,
+    "dfs_missing_diff_na": -0.884
    },
    "total": {
     "rate_total": 0.985,
-    "home_b2b": 0.109,
-    "away_b2b": 0.306,
+    "home_b2b": 0.092,
+    "away_b2b": 0.312,
     "dfs_avail_sum": 0.028,
     "dfs_change_sum": 0.023,
-    "dfs_avail_sum_na": 5.505,
-    "dfs_change_sum_na": 5.505
+    "dfs_avail_sum_na": 5.586,
+    "dfs_change_sum_na": 5.586
    }
   }
  }
