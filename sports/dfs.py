@@ -142,3 +142,67 @@ def nhl_tonight() -> dict:
                 lst[p["name"]] = (float(p.get("pp") or 0), str(p.get("gst") or ""))
     return {t: sorted([(n, pp, g) for n, (pp, g) in v.items()], key=lambda x: -x[1])
             for t, v in res.items()}
+
+
+# ------------------------------------------------------------ book lines
+NHL_NAMES = {
+    "Anaheim Ducks": "ANA", "Boston Bruins": "BOS", "Buffalo Sabres": "BUF", "Calgary Flames": "CGY",
+    "Carolina Hurricanes": "CAR", "Chicago Blackhawks": "CHI", "Colorado Avalanche": "COL",
+    "Columbus Blue Jackets": "CBJ", "Dallas Stars": "DAL", "Detroit Red Wings": "DET",
+    "Edmonton Oilers": "EDM", "Florida Panthers": "FLA", "Los Angeles Kings": "LAK", "Minnesota Wild": "MIN",
+    "Montreal Canadiens": "MTL", "Montréal Canadiens": "MTL", "Nashville Predators": "NSH",
+    "New Jersey Devils": "NJD", "New York Islanders": "NYI", "New York Rangers": "NYR",
+    "Ottawa Senators": "OTT", "Philadelphia Flyers": "PHI", "Pittsburgh Penguins": "PIT",
+    "San Jose Sharks": "SJS", "Seattle Kraken": "SEA", "St Louis Blues": "STL", "St. Louis Blues": "STL",
+    "Tampa Bay Lightning": "TBL", "Toronto Maple Leafs": "TOR", "Utah Mammoth": "UTA",
+    "Utah Hockey Club": "UTA", "Vancouver Canucks": "VAN", "Vegas Golden Knights": "VGK",
+    "Washington Capitals": "WSH", "Winnipeg Jets": "WPG"}
+
+
+def nhl_book(dates: list[str]) -> dict:
+    """{(home, away): {ml_home, ml_away, line_total}} from the DFS site's odds files."""
+    out = {}
+    for d in dates:
+        try:
+            js = requests.get(PAGES + f"data/odds/nhl_{d}.json", timeout=30).json()
+        except Exception:                                      # noqa: BLE001
+            continue
+        for g in js.get("games") or []:
+            h, a = NHL_NAMES.get(g.get("home_team")), NHL_NAMES.get(g.get("away_team"))
+            if not h or not a:
+                continue
+            rec = {}
+            for bk in g.get("bookmakers") or []:
+                for mk in bk.get("markets") or []:
+                    if mk.get("key") == "h2h":
+                        for o in mk.get("outcomes") or []:
+                            t = NHL_NAMES.get(o.get("name"))
+                            if t == h:
+                                rec["ml_home"] = float(o["price"])
+                            elif t == a:
+                                rec["ml_away"] = float(o["price"])
+                    if mk.get("key") == "totals":
+                        pts = [o.get("point") for o in mk.get("outcomes") or [] if o.get("point") is not None]
+                        if pts:
+                            rec["line_total"] = float(pts[0])
+                break
+            if rec:
+                out[(h, a)] = rec
+    return out
+
+
+def nba_book(dates: list[str]) -> dict:
+    """{(home, away): {line_margin, line_total}} (home margin, + = home favoured)."""
+    out = {}
+    for d in dates:
+        try:
+            js = requests.get(PAGES + f"data/odds/nba_{d}.json", timeout=30).json()
+        except Exception:                                      # noqa: BLE001
+            continue
+        for t, v in (js.get("lines") or {}).items():
+            if not v.get("home"):
+                continue
+            h, a = nba_team(t), nba_team(v.get("opp"))
+            out[(h, a)] = {"line_margin": None if v.get("spread") is None else -float(v["spread"]),
+                           "line_total": v.get("total")}
+    return out

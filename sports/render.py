@@ -56,7 +56,9 @@ def payload(sport: str, pred, metrics: dict, tonight: dict, now: dt.datetime) ->
                           "total_p25": round(float(r["total_p25"]), 1),
                           "total_p75": round(float(r["total_p75"]), 1)},
              "rest": {"home": _f(r.get("home_rest"), 0), "away": _f(r.get("away_rest"), 0)},
-             "market": {"margin": _f(r.get("line_margin")), "total": _f(r.get("line_total"))}}
+             "market": {"margin": _f(r.get("line_margin")), "total": _f(r.get("line_total")),
+                        "moneyline": [r["ml_home"], r["ml_away"]] if r.get("ml_home") is not None
+                        and not (isinstance(r.get("ml_home"), float) and np.isnan(r["ml_home"])) else None}}
         if sport == "nba":
             g["dfs"] = {"home_avail": _f(r.get("home_dfs_avail")), "away_avail": _f(r.get("away_dfs_avail")),
                         "home_change": _f(r.get("home_dfs_change")), "away_change": _f(r.get("away_dfs_change")),
@@ -90,25 +92,13 @@ def _card(sport: str, g: dict) -> str:
            f'<i class="{"lead" if p >= .5 else "trail"}" style="width:{hpct}%"></i></div>'
            f'<div class="prob-ends"><span>{_e(away)} {100 - hpct}%</span><span>{_e(home)} {hpct}%</span></div>')
     mk = g.get("market") or {}
+    import lines_view as LV
     if sport == "nba":
-        s = half(f["margin"])
-        spread = f"{_e(home)} -{abs(s):g}" if s > 0 else (f"{_e(away)} -{abs(s):g}" if s < 0 else "Pick'em")
-        mline = ""
-        if mk.get("margin") is not None:
-            ms = mk["margin"]
-            mline = f"market: {_e(home)} {-ms:+g}" if ms else "market: pick'em"
-        first = (f'<div><div class="k">Spread</div><div class="v">{spread}</div>'
-                 f'<div class="m">{mline or "&nbsp;"}</div></div>')
+        lines = LV.table(home, away, f["margin"], f["total"], mk.get("margin"), mk.get("total"), p)
     else:
-        first = (f'<div><div class="k">Moneyline</div><div class="v">{_e(fav)} {american(max(p, 1 - p))}</div>'
-                 f'<div class="m">{_e(away if fav == home else home)} {american(min(p, 1 - p))} (fair odds)</div></div>')
-    tot_m = f"market {mk['total']:g}" if mk.get("total") is not None else "&nbsp;"
-    total = (f'<div><div class="k">Total</div><div class="v">{half(f["total"]) if sport == "nba" else round(f["total"] * 2) / 2:g}</div>'
-             f'<div class="m">{tot_m}</div></div>')
-    winbox = (f'<div><div class="k">Win</div><div class="v">{_e(fav)} {conf}%</div>'
-              f'<div class="m">middle half: {f["total_p25"]:g}&ndash;{f["total_p75"]:g} {unit}</div></div>')
-    lines = f'<div class="lines">{first}{total}{winbox}</div>'
-
+        ml = mk.get("moneyline") or ()
+        lines = LV.table(home, away, None, f["total"], None, mk.get("total"), p,
+                         moneyline=tuple(ml), total_fmt="1")
     extra = ""
     if sport == "nba" and g.get("dfs"):
         d = g["dfs"]

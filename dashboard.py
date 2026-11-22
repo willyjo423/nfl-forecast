@@ -102,6 +102,10 @@ footer{color:var(--faint);font-size:12px;margin-top:32px;text-align:center}
 """
 
 
+import lines_view as _LV  # noqa: E402
+CSS += _LV.CSS
+
+
 def _e(x) -> str:
     return html.escape(str(x if x is not None else ""))
 
@@ -277,26 +281,13 @@ def _market(g: dict) -> str:
 
 
 def _lines(g: dict) -> str:
-    """Model spread, total and win %, side by side, with the market under each."""
+    """Model vs line, one table (lines_view.py)."""
+    import lines_view as LV
     f = g.get("forecast") or {}
     if f.get("margin") is None:
         return ""
-    home, away = g["home_team"], g["away_team"]
-    sp = round(f["margin"] * 2) / 2
-    spread = f"{_e(home)} -{abs(sp):g}" if sp > 0 else (f"{_e(away)} -{abs(sp):g}" if sp < 0 else "Pick'em")
-    mm = g.get("market_margin")
-    mline = ("market: " + (f"{_e(home)} {-mm:+g}" if mm else "pick'em")) if mm is not None else "&nbsp;"
-    tot = round((f.get("total") or 0) * 2) / 2
-    mt = g.get("market_total")
-    p = f.get("home_win_prob") or 0.5
-    fav = home if p >= 0.5 else away
-    return ('<div class="lines">'
-            f'<div><div class="k">Spread</div><div class="v">{spread}</div><div class="m">{mline}</div></div>'
-            f'<div><div class="k">Total</div><div class="v">{tot:g}</div>'
-            f'<div class="m">{"market " + format(mt, "g") if mt is not None else "&nbsp;"}</div></div>'
-            f'<div><div class="k">Win</div><div class="v">{_e(fav)} {round(100 * max(p, 1 - p))}%</div>'
-            f'<div class="m">&nbsp;</div></div></div>'
-            + _dfs(g))
+    return LV.table(g["home_team"], g["away_team"], f["margin"], f.get("total"),
+                    g.get("market_margin"), g.get("market_total"), f.get("home_win_prob")) + _dfs(g)
 
 
 def _dfs(g: dict) -> str:
@@ -319,7 +310,7 @@ def _card(g: dict) -> str:
         '<div class="card">'
         f'<div class="head"><span class="match">{_e(g["away_team"])} at '
         f'{_e(g["home_team"])}</span><span class="when">{_e(when)}</span></div>'
-        f'{_forecast(g)}{_lines(g)}{_band(g)}{_quarterbacks(g)}{_context(g)}{_market(g)}'
+        f'{_forecast(g)}{_lines(g)}{_band(g)}{_quarterbacks(g)}{_context(g)}'
         '</div>')
 
 

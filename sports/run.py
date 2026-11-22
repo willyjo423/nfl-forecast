@@ -92,6 +92,17 @@ def main(argv=None) -> int:
     # only games that have not started yet
     start = pd.to_datetime(up["start_utc"], utc=True, errors="coerce")
     up = up[start.isna() | (start > pd.Timestamp(now).tz_convert("UTC") - pd.Timedelta(minutes=10))]
+    # book lines from the DFS site's odds feed (fills what ESPN/NHL lack)
+    dates = sorted(up["date"].unique()) if len(up) else []
+    book = DFS.nba_book(dates) if sport == "nba" else DFS.nhl_book(dates)
+    up = up.copy()
+    for c in ("ml_home", "ml_away"):
+        up[c] = np.nan
+    for i, r in up.iterrows():
+        b = book.get((r["home"], r["away"])) or {}
+        for c, v in b.items():
+            if v is not None and (c.startswith("ml") or pd.isna(r.get(c))):
+                up.at[i, c] = v
     pred = M.predict(fit, up) if len(up) else up
     payload = R.payload(sport, pred, metrics, tonight, now)
     (ROOT / "docs" / f"{sport}.json").write_text(json.dumps(payload, indent=1, default=str))
