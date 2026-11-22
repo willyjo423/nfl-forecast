@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated_at": "2026-11-22T01:02:39.475649-05:00",
+ "generated_at": "2026-11-22T01:20:19.694811-05:00",
  "games": [
   {
    "game_id": "2026020373",
@@ -624,6 +624,77 @@
    2026
   ],
   "dfs_layer": "DFS skater strength + starting goalie (DFS confirmations + his record)",
+  "vs_line": {
+   "season": 2026,
+   "games_forecast": 287,
+   "games_with_line": 8,
+   "moneyline": [
+    {
+     "gap": "0\u20133 % win-prob",
+     "n": 3,
+     "won": 2,
+     "lost": 1,
+     "pct": 0.667
+    },
+    {
+     "gap": "3\u20136 % win-prob",
+     "n": 3,
+     "won": 1,
+     "lost": 2,
+     "pct": 0.333
+    },
+    {
+     "gap": "6\u201310 % win-prob",
+     "n": 2,
+     "won": 0,
+     "lost": 2,
+     "pct": 0.0
+    },
+    {
+     "gap": "all games",
+     "n": 8,
+     "won": 3,
+     "lost": 5,
+     "pct": 0.375
+    }
+   ],
+   "moneyline_units": -2.76,
+   "total": [
+    {
+     "gap": "0\u20130.3 goals",
+     "n": 4,
+     "won": 1,
+     "lost": 3,
+     "pct": 0.25
+    },
+    {
+     "gap": "0.3\u20130.6 goals",
+     "n": 3,
+     "won": 2,
+     "lost": 1,
+     "pct": 0.667
+    },
+    {
+     "gap": "0.6\u20131 goals",
+     "n": 1,
+     "won": 1,
+     "lost": 0,
+     "pct": 1.0
+    },
+    {
+     "gap": "all games",
+     "n": 8,
+     "won": 4,
+     "lost": 4,
+     "pct": 0.5
+    }
+   ]
+  },
+  "vs_line_last_season": {
+   "season": 2025,
+   "games_forecast": 1308,
+   "games_with_line": 0
+  },
   "coefficients": {
    "margin": {
     "rate_margin": 1.074,

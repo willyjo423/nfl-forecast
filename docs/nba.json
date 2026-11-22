@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated_at": "2026-11-22T01:02:13.971974-05:00",
+ "generated_at": "2026-11-22T01:19:38.166735-05:00",
  "games": [
   {
    "game_id": "401910029",
@@ -216,8 +216,8 @@
     "away": 2.0
    },
    "market": {
-    "margin": 10.5,
-    "total": 218.5,
+    "margin": 9.5,
+    "total": 217.5,
     "moneyline": null
    },
    "dfs": {
@@ -654,6 +654,166 @@
    2026
   ],
   "dfs_layer": "DFS team strength (who is playing, from the DFS player projections)",
+  "vs_line": {
+   "season": 2026,
+   "games_forecast": 163,
+   "games_with_line": 161,
+   "spread": [
+    {
+     "gap": "0\u20132 pts",
+     "n": 72,
+     "won": 41,
+     "lost": 31,
+     "pct": 0.569
+    },
+    {
+     "gap": "2\u20134 pts",
+     "n": 44,
+     "won": 20,
+     "lost": 24,
+     "pct": 0.455
+    },
+    {
+     "gap": "4\u20136 pts",
+     "n": 25,
+     "won": 9,
+     "lost": 16,
+     "pct": 0.36
+    },
+    {
+     "gap": "6+ pts",
+     "n": 20,
+     "won": 13,
+     "lost": 7,
+     "pct": 0.65
+    },
+    {
+     "gap": "all games",
+     "n": 161,
+     "won": 83,
+     "lost": 78,
+     "pct": 0.516
+    }
+   ],
+   "total": [
+    {
+     "gap": "0\u20133 pts",
+     "n": 94,
+     "won": 52,
+     "lost": 42,
+     "pct": 0.553
+    },
+    {
+     "gap": "3\u20136 pts",
+     "n": 47,
+     "won": 22,
+     "lost": 25,
+     "pct": 0.468
+    },
+    {
+     "gap": "6\u201310 pts",
+     "n": 15,
+     "won": 6,
+     "lost": 9,
+     "pct": 0.4
+    },
+    {
+     "gap": "10+ pts",
+     "n": 5,
+     "won": 2,
+     "lost": 3,
+     "pct": 0.4
+    },
+    {
+     "gap": "all games",
+     "n": 161,
+     "won": 82,
+     "lost": 79,
+     "pct": 0.509
+    }
+   ],
+   "avg_abs_gap_spread": 2.93
+  },
+  "vs_line_last_season": {
+   "season": 2025,
+   "games_forecast": 1243,
+   "games_with_line": 1065,
+   "spread": [
+    {
+     "gap": "0\u20132 pts",
+     "n": 414,
+     "won": 210,
+     "lost": 204,
+     "pct": 0.507
+    },
+    {
+     "gap": "2\u20134 pts",
+     "n": 331,
+     "won": 147,
+     "lost": 184,
+     "pct": 0.444
+    },
+    {
+     "gap": "4\u20136 pts",
+     "n": 185,
+     "won": 87,
+     "lost": 98,
+     "pct": 0.47
+    },
+    {
+     "gap": "6+ pts",
+     "n": 135,
+     "won": 71,
+     "lost": 64,
+     "pct": 0.526
+    },
+    {
+     "gap": "all games",
+     "n": 1065,
+     "won": 515,
+     "lost": 550,
+     "pct": 0.484
+    }
+   ],
+   "total": [
+    {
+     "gap": "0\u20133 pts",
+     "n": 478,
+     "won": 236,
+     "lost": 242,
+     "pct": 0.494
+    },
+    {
+     "gap": "3\u20136 pts",
+     "n": 321,
+     "won": 165,
+     "lost": 156,
+     "pct": 0.514
+    },
+    {
+     "gap": "6\u201310 pts",
+     "n": 204,
+     "won": 94,
+     "lost": 110,
+     "pct": 0.461
+    },
+    {
+     "gap": "10+ pts",
+     "n": 62,
+     "won": 31,
+     "lost": 31,
+     "pct": 0.5
+    },
+    {
+     "gap": "all games",
+     "n": 1065,
+     "won": 526,
+     "lost": 539,
+     "pct": 0.494
+    }
+   ],
+   "avg_abs_gap_spread": 3.11
+  },
   "coefficients": {
    "margin": {
     "rate_margin": 1.124,
