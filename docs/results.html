@@ -59,19 +59,30 @@ h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
 .cmp-v{color:var(--dim);font-variant-numeric:tabular-nums}
 .gap{color:var(--faint);font-size:12px;margin-top:6px}
 footer{color:var(--faint);font-size:12px;margin-top:32px;text-align:center}
-pre{white-space:pre-wrap;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}}</style></head><body><div class="wrap"><h1>Forward-only results</h1><p class="sub">Updated 2026-11-21 17:51. Every forecast here was archived before its game kicked off.</p><div class="card"><pre>FORWARD-ONLY RESULTS  (forecasts archived before kickoff)
+.lines{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 4px}
+.lines div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.lines .k{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
+.lines .v{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.lines .m{font-size:12px;color:var(--dim)}
+.dfs{font-size:13px;color:var(--dim);margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+.dfs b{color:var(--ink)}
+.tabs{display:flex;gap:8px;margin:0 0 18px}
+.tabs a{flex:1;text-align:center;padding:9px 0;border-radius:9px;border:1px solid var(--line);
+  background:var(--card);color:var(--dim);text-decoration:none;font-weight:600;font-size:14px}
+.tabs a.on{background:var(--accent);border-color:var(--accent);color:#06121f}
+pre{white-space:pre-wrap;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}}</style></head><body><div class="wrap"><h1>Forward-only results</h1><p class="sub">Updated 2026-11-22 05:53. Every forecast here was archived before its game kicked off.</p><div class="card"><pre>FORWARD-ONLY RESULTS  (forecasts archived before kickoff)
 ==============================================================
 Games graded           : 151
 Seasons                : 2026
 Margin MAE             : 9.75 pts
 Margin bias            : +1.42 pts (toward the home side)
-Total MAE              : 11.19 pts
+Total MAE              : 11.18 pts
 Winner picked          : 67.5%
 Landed in stated range : 47.7%  (should be about 50%)
 
 Closing line MAE       : 9.56 pts
 Model MAE, same games  : 9.75 pts
-  -> 0.18 pts worse than the market
+  -> 0.19 pts worse than the market
 
 Win probability, by band:
   (0.0, 0.35]    said  29.7%, happened  20.7%  (n=29)
