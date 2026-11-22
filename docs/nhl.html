@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NHL forecasts</title><style>
+:root{
+  --bg:#0f1115; --card:#171a21; --line:#252a34; --ink:#e8eaed; --dim:#9aa2ad;
+  --faint:#6b7280; --accent:#4ea1ff; --good:#3fb950; --warn:#d29922;
+  --home:#4ea1ff; --away:#f0883e;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f6f7f9; --card:#fff; --line:#e3e6ea; --ink:#14171c;
+         --dim:#5b6472; --faint:#8b95a3; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:28px 18px 64px}
+h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:13px;margin:0 0 22px}
+.strip{display:flex;flex-wrap:wrap;gap:14px;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:20px}
+.strip div{font-size:12px;color:var(--dim)}
+.strip b{display:block;font-size:17px;color:var(--ink);font-variant-numeric:tabular-nums}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);
+  border-radius:8px;padding:14px 16px;margin-bottom:22px;font-size:13px;color:var(--dim)}
+.note b{color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin-bottom:14px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+.match{font-weight:600;font-size:16px}
+.when{color:var(--faint);font-size:12px;white-space:nowrap}
+.verdict{font-size:19px;font-weight:600;margin-bottom:2px}
+.verdict .num{font-variant-numeric:tabular-nums;color:var(--accent)}
+.because{color:var(--dim);font-size:13px;margin-bottom:10px}
+.prob-bar{display:flex;height:7px;border-radius:4px;overflow:hidden;background:var(--line)}
+.prob-bar i{display:block}
+.prob-bar i.lead{background:var(--good)}
+.prob-bar i.trail{background:var(--faint);opacity:.45}
+.prob-ends,.band-ends{display:flex;justify-content:space-between;
+  font-size:11px;color:var(--faint);margin-top:4px}
+.band-row{margin:14px 0 4px}
+.band{position:relative;height:22px}
+.track{position:absolute;top:10px;left:0;right:0;height:2px;background:var(--line)}
+.iqr{position:absolute;top:6px;height:10px;background:var(--accent);opacity:.32;border-radius:3px}
+.zero{position:absolute;top:2px;width:1px;height:18px;background:var(--faint)}
+.med{position:absolute;top:2px;width:2px;height:18px;background:var(--accent)}
+.band-label{font-size:13px;color:var(--dim);margin-top:6px}
+.band-label b{color:var(--ink)}
+.band-label.total{margin-top:2px}
+.qbs{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 2px;font-size:13px}
+.qb{color:var(--dim)}
+.qb b{color:var(--ink)}
+.flagnew{display:inline-block;background:var(--warn);color:#1a1200;font-size:10px;
+  font-weight:700;border-radius:3px;padding:1px 5px;margin-left:5px;
+  letter-spacing:.03em;vertical-align:1px}
+.meta{color:var(--faint);font-size:12px;margin-top:10px}
+.market{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.cmp-row{display:flex;gap:14px;font-size:13px;padding:2px 0}
+.cmp-k{width:66px;color:var(--faint);font-size:11px;text-transform:uppercase;
+  letter-spacing:.05em;padding-top:2px}
+.cmp-v{color:var(--dim);font-variant-numeric:tabular-nums}
+.gap{color:var(--faint);font-size:12px;margin-top:6px}
+footer{color:var(--faint);font-size:12px;margin-top:32px;text-align:center}
+.lines{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 4px}
+.lines div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.lines .k{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
+.lines .v{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.lines .m{font-size:12px;color:var(--dim)}
+.dfs{font-size:13px;color:var(--dim);margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+.dfs b{color:var(--ink)}
+.tabs{display:flex;gap:8px;margin:0 0 18px}
+.tabs a{flex:1;text-align:center;padding:9px 0;border-radius:9px;border:1px solid var(--line);
+  background:var(--card);color:var(--dim);text-decoration:none;font-weight:600;font-size:14px}
+.tabs a.on{background:var(--accent);border-color:var(--accent);color:#06121f}
+</style></head><body><div class="wrap"><nav class="tabs"><a href="index.html" class="">NFL</a><a href="nba.html" class="">NBA</a><a href="nhl.html" class="on">NHL</a></nav><h1>NHL forecasts</h1><p class="sub">Generated 2026-11-21 23:39 ET &middot; Driven by the DFS models: each team&#x27;s skater strength tonight from the DFS projections (who dresses), the starting goalie from the DFS confirmations and his record, on top of team ratings and rest. Moneylines are fair odds from the win probability.</p><div class="strip"><div>Games<b>7</b></div><div>Margin MAE<b>2.14</b></div><div>Total MAE<b>1.84</b></div><div>Winner picked<b>57%</b></div></div><h2 style="font-size:15px;color:var(--dim);margin:18px 0 10px">Saturday Nov 21</h2><div class="card"><div class="head"><span class="match">MIN at VAN</span><span class="when">Sat 10:00 PM ET</span></div><div class="verdict">MIN <span class="num">4.2&ndash;2.5</span></div><div class="because">MIN to win &mdash; <b>78%</b></div><div class="prob-bar"><i class="lead" style="width:78%"></i><i class="trail" style="width:22%"></i></div><div class="prob-ends"><span>MIN 78%</span><span>VAN 22%</span></div><div class="lines"><div><div class="k">Moneyline</div><div class="v">MIN -347</div><div class="m">VAN +347 (fair odds)</div></div><div><div class="k">Total</div><div class="v">7</div><div class="m">&nbsp;</div></div><div><div class="k">Win</div><div class="v">MIN 78%</div><div class="m">middle half: 5.2&ndash;8.3 goals</div></div></div><div class="dfs">DFS skater strength &mdash; MIN <b>155</b> DK pts dressed (+38 vs usual)<br>VAN <b>123</b> DK pts dressed (+40 vs usual)</div><div class="dfs">Goalies (DFS confirmations) &mdash; MIN: <b>Jesper Wallstedt</b> (regular starter) &middot; +0.29 goals/game vs average<br>VAN: <b>Nikita Tolopilo</b> (Likely 85%) &middot; -0.10 goals/game vs average</div></div><div class="card"><div class="head"><span class="match">SEA at SJS</span><span class="when">Sat 10:00 PM ET</span></div><div class="verdict">SEA <span class="num">3.5&ndash;3.4</span></div><div class="because">SEA to win &mdash; <b>53%</b></div><div class="prob-bar"><i class="lead" style="width:53%"></i><i class="trail" style="width:47%"></i></div><div class="prob-ends"><span>SEA 53%</span><span>SJS 47%</span></div><div class="lines"><div><div class="k">Moneyline</div><div class="v">SEA -113</div><div class="m">SJS +113 (fair odds)</div></div><div><div class="k">Total</div><div class="v">7</div><div class="m">&nbsp;</div></div><div><div class="k">Win</div><div class="v">SEA 53%</div><div class="m">middle half: 5.3&ndash;8.4 goals</div></div></div><div class="dfs">DFS skater strength &mdash; SEA <b>120</b> DK pts dressed (+27 vs usual)<br>SJS <b>135</b> DK pts dressed (+38 vs usual)</div><div class="dfs">Goalies (DFS confirmations) &mdash; SEA: <b>Philipp Grubauer</b> (regular starter) &middot; -0.04 goals/game vs average<br>SJS: <b>Yaroslav Askarov</b> (regular starter) &middot; -0.15 goals/game vs average</div></div><h2 style="font-size:15px;color:var(--dim);margin:18px 0 10px">Sunday Nov 22</h2><div class="card"><div class="head"><span class="match">CAR at NYR</span><span class="when">Sun 12:30 PM ET</span></div><div class="verdict">CAR <span class="num">3.2&ndash;3.0</span></div><div class="because">CAR to win &mdash; <b>54%</b></div><div class="prob-bar"><i class="lead" style="width:54%"></i><i class="trail" style="width:46%"></i></div><div class="prob-ends"><span>CAR 54%</span><span>NYR 46%</span></div><div class="lines"><div><div class="k">Moneyline</div><div class="v">CAR -120</div><div class="m">NYR +120 (fair odds)</div></div><div><div class="k">Total</div><div class="v">6</div><div class="m">&nbsp;</div></div><div><div class="k">Win</div><div class="v">CAR 54%</div><div class="m">middle half: 4.7&ndash;7.8 goals</div></div></div><div class="dfs">DFS skater strength &mdash; CAR <b>118</b> DK pts dressed (-6 vs usual)<br>NYR <b>107</b> DK pts dressed (+16 vs usual)</div><div class="dfs">Goalies (DFS confirmations) &mdash; CAR: <b>Pyotr Kochetkov</b> (Unconfirmed 60%) &middot; +0.01 goals/game vs average<br>NYR: <b>Dylan Garand</b> (Unconfirmed 60%) &middot; +0.06 goals/game vs average</div><div class="meta">Back-to-back: CAR</div></div><div class="card"><div class="head"><span class="match">BUF at TBL</span><span class="when">Sun 5:00 PM ET</span></div><div class="verdict">TBL <span class="num">4.0&ndash;2.6</span></div><div class="because">TBL to win &mdash; <b>73%</b></div><div class="prob-bar"><i class="trail" style="width:27%"></i><i class="lead" style="width:73%"></i></div><div class="prob-ends"><span>BUF 27%</span><span>TBL 73%</span></div><div class="lines"><div><div class="k">Moneyline</div><div class="v">TBL -272</div><div class="m">BUF +272 (fair odds)</div></div><div><div class="k">Total</div><div class="v">6.5</div><div class="m">&nbsp;</div></div><div><div class="k">Win</div><div class="v">TBL 73%</div><div class="m">middle half: 5&ndash;8.1 goals</div></div></div><div class="dfs">DFS skater strength &mdash; BUF <b>114</b> DK pts dressed (+3 vs usual)<br>TBL <b>150</b> DK pts dressed (+32 vs usual)</div><div class="dfs">Goalies (DFS confirmations) &mdash; BUF: <b>Alex Lyon</b> (Unconfirmed 60%) &middot; +0.01 goals/game vs average<br>TBL: <b>Andrei Vasilevskiy</b> (Unconfirmed 60%) &middot; +0.14 goals/game vs average</div><div class="meta">Back-to-back: BUF</div></div><div class="card"><div class="head"><span class="match">EDM at STL</span><span class="when">Sun 7:00 PM ET</span></div><div class="verdict">EDM <span class="num">3.4&ndash;3.2</span></div><div class="because">EDM to win &mdash; <b>53%</b></div><div class="prob-bar"><i class="lead" style="width:53%"></i><i class="trail" style="width:47%"></i></div><div class="prob-ends"><span>EDM 53%</span><span>STL 47%</span></div><div class="lines"><div><div class="k">Moneyline</div><div class="v">EDM -111</div><div class="m">STL +111 (fair odds)</div></div><div><div class="k">Total</div><div class="v">6.5</div><div class="m">&nbsp;</div></div><div><div class="k">Win</div><div class="v">EDM 53%</div><div class="m">middle half: 5.1&ndash;8.1 goals</div></div></div><div class="dfs">DFS skater strength &mdash; EDM <b>118</b> DK pts dressed (-3 vs usual)<br>STL <b>120</b> DK pts dressed (+17 vs usual)</div><div class="dfs">Goalies (DFS confirmations) &mdash; EDM: <b>Tristan Jarry</b> (Unconfirmed 60%) &middot; -0.04 goals/game vs average<br>STL: <b>Jordan Binnington</b> (Unconfirmed 60%) &middot; +0.02 goals/game vs average</div><div class="meta">Back-to-back: EDM, STL</div></div><div class="card"><div class="head"><span class="match">PIT at DAL</span><span class="when">Sun 7:00 PM ET</span></div><div class="verdict">DAL <span class="num">3.9&ndash;2.5</span></div><div class="because">DAL to win &mdash; <b>72%</b></div><div class="prob-bar"><i class="trail" style="width:28%"></i><i class="lead" style="width:72%"></i></div><div class="prob-ends"><span>PIT 28%</span><span>DAL 72%</span></div><div class="lines"><div><div class="k">Moneyline</div><div class="v">DAL -253</div><div class="m">PIT +253 (fair odds)</div></div><div><div class="k">Total</div><div class="v">6.5</div><div class="m">&nbsp;</div></div><div><div class="k">Win</div><div class="v">DAL 72%</div><div class="m">middle half: 4.9&ndash;7.9 goals</div></div></div><div class="dfs">DFS skater strength &mdash; PIT <b>100</b> DK pts dressed (-4 vs usual)<br>DAL <b>148</b> DK pts dressed (+42 vs usual)</div><div class="dfs">Goalies (DFS confirmations) &mdash; PIT: <b>Sergei Murashov</b> (Unconfirmed 60%) &middot; -0.06 goals/game vs average<br>DAL: <b>Jake Oettinger</b> (Unconfirmed 60%) &middot; +0.10 goals/game vs average</div><div class="meta">Back-to-back: PIT</div></div><div class="card"><div class="head"><span class="match">CHI at VAN</span><span class="when">Sun 8:00 PM ET</span></div><div class="verdict">CHI <span class="num">3.6&ndash;3.4</span></div><div class="because">CHI to win &mdash; <b>55%</b></div><div class="prob-bar"><i class="lead" style="width:55%"></i><i class="trail" style="width:45%"></i></div><div class="prob-ends"><span>CHI 55%</span><span>VAN 45%</span></div><div class="lines"><div><div class="k">Moneyline</div><div class="v">CHI -125</div><div class="m">VAN +125 (fair odds)</div></div><div><div class="k">Total</div><div class="v">7</div><div class="m">&nbsp;</div></div><div><div class="k">Win</div><div class="v">CHI 55%</div><div class="m">middle half: 5.4&ndash;8.5 goals</div></div></div><div class="dfs">DFS skater strength &mdash; CHI <b>140</b> DK pts dressed (+54 vs usual)<br>VAN <b>123</b> DK pts dressed (+36 vs usual)</div><div class="dfs">Goalies (DFS confirmations) &mdash; CHI: <b>Drew Commesso</b> (Likely 85%) &middot; -0.01 goals/game vs average<br>VAN: <b>Nikita Tolopilo</b> (Likely 85%) &middot; -0.10 goals/game vs average</div><div class="meta">Back-to-back: CHI, VAN</div></div><footer>Forecasts only. No betting advice.</footer></div></body></html>
