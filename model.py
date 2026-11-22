@@ -115,7 +115,9 @@ class NFLModel:
         """Fit the trees on the *residual* from a rescaled ratings baseline."""
         # A column with no data at all (e.g. the DFS team projections before
         # their export covers these seasons) cannot be fitted on; leave it out.
-        self.features = [c for c in self.features if c in X.columns and X[c].notna().any()]
+        feats = list(dict.fromkeys(self.features))
+        X = X.loc[:, ~X.columns.duplicated()]
+        self.features = [c for c in feats if c in X.columns and X[c].notna().any()]
         X = X[self.features]
 
         self.margin_line = _fit_line(
