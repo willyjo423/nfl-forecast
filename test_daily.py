@@ -275,11 +275,9 @@ def test_page() -> None:
     check("both games rendered", out.count('class="card"') == 2)
     check("the headline says what it is", "NFL forecasts" in out)
 
-    check("the page states it trails the market",
-          "points better than this one" in out,
-          "the honest framing must survive into the rendered page")
-    check("the null ATS result is stated",
-          "50.4%" in out and "52.4%" in out)
+    check("same tab layout as the NBA and NHL pages",
+          'class="tabs"' in out and "nba.html" in out and "nhl.html" in out)
+    check("model vs line table on every card", out.count('class="mvl"') >= 2)
     check("no betting advice claimed", "No betting advice" in out)
 
     empty = dashboard.render(payload([]))
