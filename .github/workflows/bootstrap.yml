@@ -59,6 +59,7 @@ jobs:
 
       - name: Build
         run: |
+          set -o pipefail     # a crash in build.py must fail the run, not end in "nothing changed"
           if [ "${{ inputs.ablation }}" = "false" ]; then
             python build.py --seasons ${{ inputs.start_year }} ${{ inputs.end_year }} --no-ablation | tee bootstrap.txt
           else
