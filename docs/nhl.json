@@ -1,79 +1,7 @@
 {
  "sport": "nhl",
- "generated_at": "2026-11-22T12:27:47.449667-05:00",
+ "generated_at": "2026-11-22T16:06:26.192107-05:00",
  "games": [
-  {
-   "game_id": "2026020373",
-   "date": "2026-11-22",
-   "when": "Sun 12:30 PM ET",
-   "home": "NYR",
-   "away": "CAR",
-   "forecast": {
-    "home_points": 3.0,
-    "away_points": 3.3,
-    "margin": -0.3,
-    "total": 6.2,
-    "home_win_prob": 0.441,
-    "margin_p25": -2.0,
-    "margin_p75": 1.4,
-    "total_p25": 4.7,
-    "total_p75": 7.8
-   },
-   "rest": {
-    "home": 5.0,
-    "away": 1.0
-   },
-   "market": {
-    "margin": null,
-    "total": 6.5,
-    "moneyline": [
-     136.0,
-     -162.0
-    ]
-   },
-   "flags": [
-    {
-     "market": "Total",
-     "take": "Over 6.5",
-     "why": "market",
-     "hit": 0.8,
-     "n": 5,
-     "gap": "0\u20130.4 goals",
-     "early": true
-    },
-    {
-     "market": "Moneyline",
-     "take": "NYR +136",
-     "why": "model",
-     "hit": 0.6,
-     "n": 5,
-     "gap": "0\u20134 % win-prob",
-     "early": true
-    }
-   ],
-   "skaters": {
-    "home_avail": 100.5,
-    "away_avail": 118.9,
-    "home_change": 9.7,
-    "away_change": -5.1,
-    "home_out": [],
-    "away_out": []
-   },
-   "goalies": {
-    "home": {
-     "name": "Dylan Garand",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.06
-    },
-    "away": {
-     "name": "Brandon Bussi",
-     "start_prob": 1.0,
-     "status": "Confirmed",
-     "quality": -0.04
-    }
-   }
-  },
   {
    "game_id": "2026020374",
    "date": "2026-11-22",
@@ -85,11 +13,11 @@
     "away_points": 2.6,
     "margin": 1.4,
     "total": 6.6,
-    "home_win_prob": 0.7265,
+    "home_win_prob": 0.7311,
     "margin_p25": -0.3,
     "margin_p75": 3.1,
     "total_p25": 5.1,
-    "total_p75": 8.1
+    "total_p75": 8.2
    },
    "rest": {
     "home": 3.0,
@@ -115,19 +43,19 @@
     }
    ],
    "skaters": {
-    "home_avail": 148.4,
-    "away_avail": 114.3,
-    "home_change": 30.2,
-    "away_change": 3.4,
+    "home_avail": 149.7,
+    "away_avail": 112.4,
+    "home_change": 31.5,
+    "away_change": 1.4,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
-     "name": "Andrei Vasilevskiy",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.14
+     "name": "Dennis Hildeby",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.07
     },
     "away": {
      "name": "Ukko-Pekka Luukkonen",
@@ -148,7 +76,7 @@
     "away_points": 3.2,
     "margin": 0.1,
     "total": 6.5,
-    "home_win_prob": 0.5191,
+    "home_win_prob": 0.5167,
     "margin_p25": -1.6,
     "margin_p75": 1.8,
     "total_p25": 5.0,
@@ -178,10 +106,10 @@
     }
    ],
    "skaters": {
-    "home_avail": 127.5,
-    "away_avail": 111.4,
-    "home_change": 25.1,
-    "away_change": -9.2,
+    "home_avail": 126.9,
+    "away_avail": 109.2,
+    "home_change": 24.6,
+    "away_change": -11.4,
     "home_out": [],
     "away_out": []
    },
@@ -194,9 +122,9 @@
     },
     "away": {
      "name": "Tristan Jarry",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.04
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": -0.03
     }
    }
   },
@@ -211,7 +139,7 @@
     "away_points": 2.5,
     "margin": 1.4,
     "total": 6.4,
-    "home_win_prob": 0.7199,
+    "home_win_prob": 0.7202,
     "margin_p25": -0.3,
     "margin_p75": 3.0,
     "total_p25": 4.9,
@@ -225,8 +153,8 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -225.0,
-     185.0
+     -230.0,
+     190.0
     ]
    },
    "flags": [
@@ -241,10 +169,10 @@
     }
    ],
    "skaters": {
-    "home_avail": 146.5,
-    "away_avail": 100.4,
-    "home_change": 40.3,
-    "away_change": -3.5,
+    "home_avail": 146.9,
+    "away_avail": 100.7,
+    "home_change": 40.8,
+    "away_change": -3.2,
     "home_out": [],
     "away_out": []
    },
@@ -274,10 +202,10 @@
     "away_points": 3.6,
     "margin": -0.1,
     "total": 7.0,
-    "home_win_prob": 0.4697,
+    "home_win_prob": 0.473,
     "margin_p25": -1.8,
-    "margin_p75": 1.5,
-    "total_p25": 5.5,
+    "margin_p75": 1.6,
+    "total_p25": 5.4,
     "total_p75": 8.5
    },
    "rest": {
@@ -288,14 +216,14 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -108.0,
-     -112.0
+     -105.0,
+     -115.0
     ]
    },
    "flags": [
     {
      "market": "Moneyline",
-     "take": "CHI -112",
+     "take": "CHI -115",
      "why": "model",
      "hit": 0.6,
      "n": 5,
@@ -304,10 +232,10 @@
     }
    ],
    "skaters": {
-    "home_avail": 123.7,
-    "away_avail": 136.3,
-    "home_change": 40.7,
-    "away_change": 50.3,
+    "home_avail": 123.9,
+    "away_avail": 134.5,
+    "home_change": 40.8,
+    "away_change": 48.5,
     "home_out": [],
     "away_out": []
    },
@@ -337,7 +265,7 @@
     "away_points": 2.8,
     "margin": 0.7,
     "total": 6.3,
-    "home_win_prob": 0.619,
+    "home_win_prob": 0.6174,
     "margin_p25": -1.0,
     "margin_p75": 2.4,
     "total_p25": 4.8,
@@ -387,7 +315,7 @@
     "away_points": 2.8,
     "margin": 0.5,
     "total": 6.0,
-    "home_win_prob": 0.5849,
+    "home_win_prob": 0.5839,
     "margin_p25": -1.2,
     "margin_p75": 2.2,
     "total_p25": 4.5,
@@ -437,7 +365,7 @@
     "away_points": 2.9,
     "margin": 0.4,
     "total": 6.2,
-    "home_win_prob": 0.5708,
+    "home_win_prob": 0.5691,
     "margin_p25": -1.3,
     "margin_p75": 2.1,
     "total_p25": 4.7,
@@ -487,7 +415,7 @@
     "away_points": 2.8,
     "margin": 0.6,
     "total": 6.2,
-    "home_win_prob": 0.596,
+    "home_win_prob": 0.5945,
     "margin_p25": -1.1,
     "margin_p75": 2.3,
     "total_p25": 4.7,
@@ -535,9 +463,9 @@
    "forecast": {
     "home_points": 3.3,
     "away_points": 3.2,
-    "margin": 0.1,
+    "margin": 0.0,
     "total": 6.5,
-    "home_win_prob": 0.5044,
+    "home_win_prob": 0.5035,
     "margin_p25": -1.6,
     "margin_p75": 1.7,
     "total_p25": 5.0,
@@ -587,7 +515,7 @@
     "away_points": 3.4,
     "margin": -0.0,
     "total": 6.8,
-    "home_win_prob": 0.4945,
+    "home_win_prob": 0.4933,
     "margin_p25": -1.7,
     "margin_p75": 1.7,
     "total_p25": 5.2,
@@ -636,8 +564,8 @@
     "home_points": 2.5,
     "away_points": 3.7,
     "margin": -1.2,
-    "total": 6.1,
-    "home_win_prob": 0.2924,
+    "total": 6.2,
+    "home_win_prob": 0.2912,
     "margin_p25": -2.9,
     "margin_p75": 0.5,
     "total_p25": 4.6,
@@ -678,11 +606,11 @@
   }
  ],
  "model_metrics": {
-  "n_games": 9988,
-  "margin_mae": 2.1435510235071287,
-  "total_mae": 1.8386541085001926,
-  "win_accuracy": 0.5727873448137766,
-  "win_brier": 0.24046592590996554,
+  "n_games": 9989,
+  "margin_mae": 2.143573340324189,
+  "total_mae": 1.8385711911382465,
+  "win_accuracy": 0.5727300030033037,
+  "win_brier": 0.24045782994625284,
   "seasons": [
    2018,
    2019,
@@ -697,7 +625,7 @@
   "dfs_layer": "DFS skater strength + starting goalie (DFS confirmations + his record)",
   "vs_line": {
    "season": 2026,
-   "games_forecast": 287,
+   "games_forecast": 288,
    "games_with_line": 8,
    "moneyline": [
     {
@@ -808,13 +736,13 @@
   },
   "coefficients": {
    "margin": {
-    "rate_margin": 1.073,
+    "rate_margin": 1.074,
     "home_b2b": -0.252,
-    "away_b2b": 0.217,
-    "rest_diff": 0.045,
-    "goalie_q_diff": 0.62,
-    "home_backup": 0.048,
-    "away_backup": -0.05,
+    "away_b2b": 0.216,
+    "rest_diff": 0.044,
+    "goalie_q_diff": 0.622,
+    "home_backup": 0.049,
+    "away_backup": -0.053,
     "sk_avail_diff": 0.005,
     "sk_change_diff": 0.004,
     "sk_avail_diff_na": 0.004,
