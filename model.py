@@ -524,6 +524,10 @@ def ablation(feat: pd.DataFrame, groups: dict[str, list[str]],
     log.info("ablation %-16s %3d cols -> MAE %.3f",
              base_group, len(base_cols), results[base_group]["margin_mae"])
 
+    # A group with no data at all (e.g. the DFS link before its export
+    # exists) is skipped rather than fitted on empty columns.
+    groups = {k: v for k, v in groups.items()
+              if k == base_group or any(c in feat.columns and feat[c].notna().any() for c in v)}
     for name, cols in groups.items():
         if name == base_group:
             continue
