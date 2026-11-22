@@ -27,6 +27,18 @@ BASELINE_MARGIN = "proj_margin"
 BASELINE_TOTAL = "proj_total"
 
 
+def _fit_trees(X: pd.DataFrame, y) -> HistGradientBoostingRegressor:
+    """Fit the booster. A column with no values at all in this particular
+    training slice (the DFS team projections start in 2009, so an early
+    walk-forward fold has none) cannot be binned; it is held at a constant,
+    which the trees simply never split on."""
+    empty = [c for c in X.columns if X[c].isna().all()]
+    if empty:
+        X = X.copy()
+        X[empty] = 0.0
+    return _regressor().fit(X, y)
+
+
 def _regressor(**kw) -> HistGradientBoostingRegressor:
     params = dict(
         loss="absolute_error",   # margins are heavy-tailed; MAE is the honest loss
@@ -118,8 +130,8 @@ class NFLModel:
         margin_base = self._baseline(X, "margin")
         total_base = self._baseline(X, "total")
 
-        self.margin = _regressor().fit(X, y["margin"].to_numpy() - margin_base)
-        self.total = _regressor().fit(X, y["total"].to_numpy() - total_base)
+        self.margin = _fit_trees(X, y["margin"].to_numpy() - margin_base)
+        self.total = _fit_trees(X, y["total"].to_numpy() - total_base)
 
         # One held-out pass serves two purposes: it says whether the finished
         # forecasts are on the right scale, and it supplies the margins the
@@ -166,7 +178,7 @@ class NFLModel:
             raw = X.loc[sel, BASELINE_MARGIN].to_numpy(dtype=float)
             return line[0] * np.nan_to_num(raw, nan=0.0) + line[1]
 
-        trees = _regressor().fit(X.loc[train],
+        trees = _fit_trees(X.loc[train],
                                  y.loc[train, "margin"].to_numpy() - base(train))
         return {
             "pred": base(held) + trees.predict(X.loc[held]),
