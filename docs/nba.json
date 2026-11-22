@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated_at": "2026-11-22T01:19:38.166735-05:00",
+ "generated_at": "2026-11-22T01:23:08.649286-05:00",
  "games": [
   {
    "game_id": "401910029",
@@ -28,6 +28,7 @@
     "total": 225.5,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": 198.9,
     "away_avail": 202.8,
@@ -68,6 +69,16 @@
     "total": 231.5,
     "moneyline": null
    },
+   "flags": [
+    {
+     "market": "Spread",
+     "take": "MIA -2.5",
+     "why": "market",
+     "hit": 0.555,
+     "n": 375,
+     "gap": "2\u20134 pts"
+    }
+   ],
    "dfs": {
     "home_avail": 165.7,
     "away_avail": 223.9,
@@ -105,6 +116,16 @@
     "total": 222.5,
     "moneyline": null
    },
+   "flags": [
+    {
+     "market": "Spread",
+     "take": "ORL -5.5",
+     "why": "market",
+     "hit": 0.543,
+     "n": 210,
+     "gap": "4\u20136 pts"
+    }
+   ],
    "dfs": {
     "home_avail": 197.0,
     "away_avail": 188.8,
@@ -142,6 +163,24 @@
     "total": 237.5,
     "moneyline": null
    },
+   "flags": [
+    {
+     "market": "Spread",
+     "take": "DEN -8.5",
+     "why": "market",
+     "hit": 0.555,
+     "n": 375,
+     "gap": "2\u20134 pts"
+    },
+    {
+     "market": "Total",
+     "take": "Over 237.5",
+     "why": "market",
+     "hit": 0.543,
+     "n": 219,
+     "gap": "6\u201310 pts"
+    }
+   ],
    "dfs": {
     "home_avail": 149.2,
     "away_avail": 189.1,
@@ -179,6 +218,7 @@
     "total": 225.5,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": 191.7,
     "away_avail": 207.1,
@@ -220,6 +260,16 @@
     "total": 217.5,
     "moneyline": null
    },
+   "flags": [
+    {
+     "market": "Spread",
+     "take": "NYK -9.5",
+     "why": "market",
+     "hit": 0.555,
+     "n": 375,
+     "gap": "2\u20134 pts"
+    }
+   ],
    "dfs": {
     "home_avail": 211.8,
     "away_avail": 170.4,
@@ -260,6 +310,16 @@
     "total": 212.5,
     "moneyline": null
    },
+   "flags": [
+    {
+     "market": "Spread",
+     "take": "GSW +9.5",
+     "why": "model",
+     "hit": 0.542,
+     "n": 155,
+     "gap": "6+ pts"
+    }
+   ],
    "dfs": {
     "home_avail": 178.1,
     "away_avail": 213.5,
@@ -301,6 +361,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": null,
@@ -336,6 +397,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": null,
@@ -371,6 +433,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": 170.4,
     "away_avail": 223.9,
@@ -410,6 +473,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": null,
@@ -445,6 +509,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": null,
@@ -480,6 +545,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": 149.2,
     "away_avail": null,
@@ -517,6 +583,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": null,
@@ -552,6 +619,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": null,
@@ -587,6 +655,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": 191.7,
@@ -626,6 +695,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "dfs": {
     "home_avail": null,
     "away_avail": null,
@@ -661,6 +731,8 @@
    "spread": [
     {
      "gap": "0\u20132 pts",
+     "lo": 0,
+     "hi": 2,
      "n": 72,
      "won": 41,
      "lost": 31,
@@ -668,6 +740,8 @@
     },
     {
      "gap": "2\u20134 pts",
+     "lo": 2,
+     "hi": 4,
      "n": 44,
      "won": 20,
      "lost": 24,
@@ -675,6 +749,8 @@
     },
     {
      "gap": "4\u20136 pts",
+     "lo": 4,
+     "hi": 6,
      "n": 25,
      "won": 9,
      "lost": 16,
@@ -682,6 +758,8 @@
     },
     {
      "gap": "6+ pts",
+     "lo": 6,
+     "hi": 99,
      "n": 20,
      "won": 13,
      "lost": 7,
@@ -698,6 +776,8 @@
    "total": [
     {
      "gap": "0\u20133 pts",
+     "lo": 0,
+     "hi": 3,
      "n": 94,
      "won": 52,
      "lost": 42,
@@ -705,6 +785,8 @@
     },
     {
      "gap": "3\u20136 pts",
+     "lo": 3,
+     "hi": 6,
      "n": 47,
      "won": 22,
      "lost": 25,
@@ -712,6 +794,8 @@
     },
     {
      "gap": "6\u201310 pts",
+     "lo": 6,
+     "hi": 10,
      "n": 15,
      "won": 6,
      "lost": 9,
@@ -719,6 +803,8 @@
     },
     {
      "gap": "10+ pts",
+     "lo": 10,
+     "hi": 99,
      "n": 5,
      "won": 2,
      "lost": 3,
@@ -741,6 +827,8 @@
    "spread": [
     {
      "gap": "0\u20132 pts",
+     "lo": 0,
+     "hi": 2,
      "n": 414,
      "won": 210,
      "lost": 204,
@@ -748,6 +836,8 @@
     },
     {
      "gap": "2\u20134 pts",
+     "lo": 2,
+     "hi": 4,
      "n": 331,
      "won": 147,
      "lost": 184,
@@ -755,6 +845,8 @@
     },
     {
      "gap": "4\u20136 pts",
+     "lo": 4,
+     "hi": 6,
      "n": 185,
      "won": 87,
      "lost": 98,
@@ -762,6 +854,8 @@
     },
     {
      "gap": "6+ pts",
+     "lo": 6,
+     "hi": 99,
      "n": 135,
      "won": 71,
      "lost": 64,
@@ -778,6 +872,8 @@
    "total": [
     {
      "gap": "0\u20133 pts",
+     "lo": 0,
+     "hi": 3,
      "n": 478,
      "won": 236,
      "lost": 242,
@@ -785,6 +881,8 @@
     },
     {
      "gap": "3\u20136 pts",
+     "lo": 3,
+     "hi": 6,
      "n": 321,
      "won": 165,
      "lost": 156,
@@ -792,6 +890,8 @@
     },
     {
      "gap": "6\u201310 pts",
+     "lo": 6,
+     "hi": 10,
      "n": 204,
      "won": 94,
      "lost": 110,
@@ -799,6 +899,8 @@
     },
     {
      "gap": "10+ pts",
+     "lo": 10,
+     "hi": 99,
      "n": 62,
      "won": 31,
      "lost": 31,
@@ -813,6 +915,84 @@
     }
    ],
    "avg_abs_gap_spread": 3.11
+  },
+  "flags": {
+   "spread": [
+    {
+     "lo": 0,
+     "hi": 2,
+     "gap": "0\u20132 pts",
+     "n": 486,
+     "model_pct": 0.516,
+     "flag": null,
+     "hit": null
+    },
+    {
+     "lo": 2,
+     "hi": 4,
+     "gap": "2\u20134 pts",
+     "n": 375,
+     "model_pct": 0.445,
+     "flag": "market",
+     "hit": 0.555
+    },
+    {
+     "lo": 4,
+     "hi": 6,
+     "gap": "4\u20136 pts",
+     "n": 210,
+     "model_pct": 0.457,
+     "flag": "market",
+     "hit": 0.543
+    },
+    {
+     "lo": 6,
+     "hi": 99,
+     "gap": "6+ pts",
+     "n": 155,
+     "model_pct": 0.542,
+     "flag": "model",
+     "hit": 0.542
+    }
+   ],
+   "total": [
+    {
+     "lo": 0,
+     "hi": 3,
+     "gap": "0\u20133 pts",
+     "n": 572,
+     "model_pct": 0.503,
+     "flag": null,
+     "hit": null
+    },
+    {
+     "lo": 3,
+     "hi": 6,
+     "gap": "3\u20136 pts",
+     "n": 368,
+     "model_pct": 0.508,
+     "flag": null,
+     "hit": null
+    },
+    {
+     "lo": 6,
+     "hi": 10,
+     "gap": "6\u201310 pts",
+     "n": 219,
+     "model_pct": 0.457,
+     "flag": "market",
+     "hit": 0.543
+    },
+    {
+     "lo": 10,
+     "hi": 99,
+     "gap": "10+ pts",
+     "n": 67,
+     "model_pct": 0.493,
+     "flag": null,
+     "hit": null
+    }
+   ]
   },
   "coefficients": {
    "margin": {

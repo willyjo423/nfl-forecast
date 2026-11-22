@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated_at": "2026-11-22T01:20:19.694811-05:00",
+ "generated_at": "2026-11-22T01:24:00.614940-05:00",
  "games": [
   {
    "game_id": "2026020373",
@@ -31,6 +31,7 @@
      -148.0
     ]
    },
+   "flags": [],
    "skaters": {
     "home_avail": 106.8,
     "away_avail": 117.7,
@@ -83,6 +84,7 @@
      170.0
     ]
    },
+   "flags": [],
    "skaters": {
     "home_avail": 150.3,
     "away_avail": 114.2,
@@ -135,6 +137,7 @@
      -118.0
     ]
    },
+   "flags": [],
    "skaters": {
     "home_avail": 119.8,
     "away_avail": 117.7,
@@ -187,6 +190,7 @@
      185.0
     ]
    },
+   "flags": [],
    "skaters": {
     "home_avail": 148.4,
     "away_avail": 100.3,
@@ -239,6 +243,7 @@
      -108.0
     ]
    },
+   "flags": [],
    "skaters": {
     "home_avail": 123.0,
     "away_avail": 140.1,
@@ -288,6 +293,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "skaters": {
     "home_avail": null,
     "away_avail": null,
@@ -337,6 +343,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "skaters": {
     "home_avail": null,
     "away_avail": null,
@@ -386,6 +393,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "skaters": {
     "home_avail": null,
     "away_avail": null,
@@ -435,6 +443,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "skaters": {
     "home_avail": null,
     "away_avail": null,
@@ -484,6 +493,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "skaters": {
     "home_avail": null,
     "away_avail": null,
@@ -533,6 +543,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "skaters": {
     "home_avail": null,
     "away_avail": null,
@@ -582,6 +593,7 @@
     "total": null,
     "moneyline": null
    },
+   "flags": [],
    "skaters": {
     "home_avail": null,
     "away_avail": null,
@@ -631,6 +643,8 @@
    "moneyline": [
     {
      "gap": "0\u20133 % win-prob",
+     "lo": 0,
+     "hi": 3,
      "n": 3,
      "won": 2,
      "lost": 1,
@@ -638,6 +652,8 @@
     },
     {
      "gap": "3\u20136 % win-prob",
+     "lo": 3,
+     "hi": 6,
      "n": 3,
      "won": 1,
      "lost": 2,
@@ -645,6 +661,8 @@
     },
     {
      "gap": "6\u201310 % win-prob",
+     "lo": 6,
+     "hi": 10,
      "n": 2,
      "won": 0,
      "lost": 2,
@@ -662,6 +680,8 @@
    "total": [
     {
      "gap": "0\u20130.3 goals",
+     "lo": 0,
+     "hi": 0.3,
      "n": 4,
      "won": 1,
      "lost": 3,
@@ -669,6 +689,8 @@
     },
     {
      "gap": "0.3\u20130.6 goals",
+     "lo": 0.3,
+     "hi": 0.6,
      "n": 3,
      "won": 2,
      "lost": 1,
@@ -676,6 +698,8 @@
     },
     {
      "gap": "0.6\u20131 goals",
+     "lo": 0.6,
+     "hi": 1.0,
      "n": 1,
      "won": 1,
      "lost": 0,
@@ -694,6 +718,66 @@
    "season": 2025,
    "games_forecast": 1308,
    "games_with_line": 0
+  },
+  "flags": {
+   "total": [
+    {
+     "lo": 0,
+     "hi": 0.3,
+     "gap": "0\u20130.3 goals",
+     "n": 4,
+     "model_pct": 0.25,
+     "flag": null,
+     "hit": 0.75
+    },
+    {
+     "lo": 0.3,
+     "hi": 0.6,
+     "gap": "0.3\u20130.6 goals",
+     "n": 3,
+     "model_pct": 0.667,
+     "flag": null,
+     "hit": 0.667
+    },
+    {
+     "lo": 0.6,
+     "hi": 1.0,
+     "gap": "0.6\u20131 goals",
+     "n": 1,
+     "model_pct": 1.0,
+     "flag": null,
+     "hit": 1.0
+    }
+   ],
+   "moneyline": [
+    {
+     "lo": 0,
+     "hi": 3,
+     "gap": "0\u20133 % win-prob",
+     "n": 3,
+     "model_pct": 0.667,
+     "flag": null,
+     "hit": 0.667
+    },
+    {
+     "lo": 3,
+     "hi": 6,
+     "gap": "3\u20136 % win-prob",
+     "n": 3,
+     "model_pct": 0.333,
+     "flag": null,
+     "hit": 0.667
+    },
+    {
+     "lo": 6,
+     "hi": 10,
+     "gap": "6\u201310 % win-prob",
+     "n": 2,
+     "model_pct": 0.0,
+     "flag": null,
+     "hit": 1.0
+    }
+   ]
   },
   "coefficients": {
    "margin": {
