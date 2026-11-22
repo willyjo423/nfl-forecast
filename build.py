@@ -151,12 +151,13 @@ def main() -> int:
         newqb = (feat["home_qb_new"] == 1) | (feat["away_qb_new"] == 1)
         big = (feat["home_dfs_change"].abs() >= 8) | (feat["away_dfs_change"].abs() >= 8)
         dfs_report = model_mod.subgroup_report(
-            feat, cols=FEATURE_COLUMNS + DFS_COLUMNS, base_cols=FEATURE_COLUMNS,
+            feat, cols=FEATURE_COLUMNS,
+            base_cols=[c for c in FEATURE_COLUMNS if c not in DFS_COLUMNS],
             subsets={"all games with DFS data": has,
                      "a new starting QB": has & newqb,
                      "a team's core down/up 8+ DK pts": has & big,
                      "settled games": has & ~newqb & ~big})
-        print("Current model vs current model + DFS team projections, paired:")
+        print("Model with vs without the DFS team projections, paired (for the record):")
         for label, r in dfs_report.items():
             if "delta" not in r:
                 print(f"  {label:<34} n={r.get('n', 0):>5}  too few games")
