@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T01:02:14.742519-05:00",
+  "generated_at": "2026-11-22T01:39:14.413989-05:00",
   "season": 2026,
   "week": 11,
   "games": [
@@ -54,7 +54,17 @@
       },
       "market_margin": 12.5,
       "market_total": 44.5,
-      "vs_market": -7.5
+      "vs_market": -7.5,
+      "flags": [
+        {
+          "market": "Total",
+          "take": "Over 44.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_MIA_BUF",
@@ -107,7 +117,17 @@
       },
       "market_margin": 16.5,
       "market_total": 44.5,
-      "vs_market": -7.0
+      "vs_market": -7.0,
+      "flags": [
+        {
+          "market": "Total",
+          "take": "Over 44.5",
+          "why": "model",
+          "hit": 0.524,
+          "n": 103,
+          "gap": "3\u20136 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_BAL_CAR",
@@ -160,7 +180,25 @@
       },
       "market_margin": 3.0,
       "market_total": 43.5,
-      "vs_market": -4.9
+      "vs_market": -4.9,
+      "flags": [
+        {
+          "market": "Spread",
+          "take": "CAR -3",
+          "why": "market",
+          "hit": 0.579,
+          "n": 57,
+          "gap": "4\u20136 pts"
+        },
+        {
+          "market": "Total",
+          "take": "Under 43.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_NO_CHI",
@@ -213,7 +251,25 @@
       },
       "market_margin": 11.5,
       "market_total": 48.5,
-      "vs_market": -5.1
+      "vs_market": -5.1,
+      "flags": [
+        {
+          "market": "Spread",
+          "take": "CHI -11.5",
+          "why": "market",
+          "hit": 0.579,
+          "n": 57,
+          "gap": "4\u20136 pts"
+        },
+        {
+          "market": "Total",
+          "take": "Over 48.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_TEN_DAL",
@@ -266,7 +322,17 @@
       },
       "market_margin": 7.5,
       "market_total": 54.5,
-      "vs_market": -6.3
+      "vs_market": -6.3,
+      "flags": [
+        {
+          "market": "Total",
+          "take": "Over 54.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_TB_DET",
@@ -319,7 +385,25 @@
       },
       "market_margin": 3.5,
       "market_total": 47.5,
-      "vs_market": 0.2
+      "vs_market": 0.2,
+      "flags": [
+        {
+          "market": "Spread",
+          "take": "DET -3.5",
+          "why": "model",
+          "hit": 0.532,
+          "n": 186,
+          "gap": "0\u20132 pts"
+        },
+        {
+          "market": "Total",
+          "take": "Over 47.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_ARI_KC",
@@ -372,7 +456,25 @@
       },
       "market_margin": 15.5,
       "market_total": 40.5,
-      "vs_market": -4.5
+      "vs_market": -4.5,
+      "flags": [
+        {
+          "market": "Spread",
+          "take": "KC -15.5",
+          "why": "market",
+          "hit": 0.579,
+          "n": 57,
+          "gap": "4\u20136 pts"
+        },
+        {
+          "market": "Total",
+          "take": "Under 40.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_JAX_NYG",
@@ -425,7 +527,17 @@
       },
       "market_margin": -6.0,
       "market_total": 45.5,
-      "vs_market": -2.2
+      "vs_market": -2.2,
+      "flags": [
+        {
+          "market": "Total",
+          "take": "Under 45.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_NYJ_LAC",
@@ -478,7 +590,17 @@
       },
       "market_margin": 3.0,
       "market_total": 41.5,
-      "vs_market": -3.8
+      "vs_market": -3.8,
+      "flags": [
+        {
+          "market": "Total",
+          "take": "Under 41.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_LV_DEN",
@@ -531,7 +653,17 @@
       },
       "market_margin": 10.5,
       "market_total": 40.5,
-      "vs_market": -4.0
+      "vs_market": -4.0,
+      "flags": [
+        {
+          "market": "Spread",
+          "take": "DEN -10.5",
+          "why": "market",
+          "hit": 0.579,
+          "n": 57,
+          "gap": "4\u20136 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_PIT_PHI",
@@ -584,7 +716,17 @@
       },
       "market_margin": -3.5,
       "market_total": 37.5,
-      "vs_market": -2.2
+      "vs_market": -2.2,
+      "flags": [
+        {
+          "market": "Total",
+          "take": "Over 37.5",
+          "why": "model",
+          "hit": 0.524,
+          "n": 103,
+          "gap": "3\u20136 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_MIN_SF",
@@ -637,7 +779,25 @@
       },
       "market_margin": 3.0,
       "market_total": 46.5,
-      "vs_market": 0.8
+      "vs_market": 0.8,
+      "flags": [
+        {
+          "market": "Spread",
+          "take": "SF -3",
+          "why": "model",
+          "hit": 0.532,
+          "n": 186,
+          "gap": "0\u20132 pts"
+        },
+        {
+          "market": "Total",
+          "take": "Over 46.5",
+          "why": "market",
+          "hit": 0.536,
+          "n": 289,
+          "gap": "0\u20133 pts"
+        }
+      ]
     },
     {
       "game_id": "2026_11_CIN_WAS",
@@ -690,7 +850,8 @@
       },
       "market_margin": -6.0,
       "market_total": 54.5,
-      "vs_market": -3.1
+      "vs_market": -3.1,
+      "flags": []
     }
   ],
   "model_metrics": {
@@ -889,6 +1050,247 @@
         "blend_minus_line": 0.001,
         "t": 1.26
       }
+    },
+    "vs_line": {
+      "season": 2026,
+      "games_forecast": 135,
+      "games_with_line": 135,
+      "spread": [
+        {
+          "gap": "0\u20132 pts",
+          "lo": 0,
+          "hi": 2,
+          "n": 73,
+          "won": 41,
+          "lost": 32,
+          "pct": 0.562
+        },
+        {
+          "gap": "2\u20134 pts",
+          "lo": 2,
+          "hi": 4,
+          "n": 44,
+          "won": 23,
+          "lost": 21,
+          "pct": 0.523
+        },
+        {
+          "gap": "4\u20136 pts",
+          "lo": 4,
+          "hi": 6,
+          "n": 10,
+          "won": 4,
+          "lost": 6,
+          "pct": 0.4
+        },
+        {
+          "gap": "6+ pts",
+          "lo": 6,
+          "hi": 99,
+          "n": 3,
+          "won": 1,
+          "lost": 2,
+          "pct": 0.333
+        },
+        {
+          "gap": "all games",
+          "n": 130,
+          "won": 69,
+          "lost": 61,
+          "pct": 0.531
+        }
+      ],
+      "total": [
+        {
+          "gap": "0\u20133 pts",
+          "lo": 0,
+          "hi": 3,
+          "n": 91,
+          "won": 40,
+          "lost": 51,
+          "pct": 0.44
+        },
+        {
+          "gap": "3\u20136 pts",
+          "lo": 3,
+          "hi": 6,
+          "n": 37,
+          "won": 16,
+          "lost": 21,
+          "pct": 0.432
+        },
+        {
+          "gap": "6\u201310 pts",
+          "lo": 6,
+          "hi": 10,
+          "n": 7,
+          "won": 4,
+          "lost": 3,
+          "pct": 0.571
+        },
+        {
+          "gap": "all games",
+          "n": 135,
+          "won": 60,
+          "lost": 75,
+          "pct": 0.444
+        }
+      ]
+    },
+    "vs_line_last_season": {
+      "season": 2025,
+      "games_forecast": 269,
+      "games_with_line": 269,
+      "spread": [
+        {
+          "gap": "0\u20132 pts",
+          "lo": 0,
+          "hi": 2,
+          "n": 113,
+          "won": 58,
+          "lost": 55,
+          "pct": 0.513
+        },
+        {
+          "gap": "2\u20134 pts",
+          "lo": 2,
+          "hi": 4,
+          "n": 88,
+          "won": 43,
+          "lost": 45,
+          "pct": 0.489
+        },
+        {
+          "gap": "4\u20136 pts",
+          "lo": 4,
+          "hi": 6,
+          "n": 47,
+          "won": 20,
+          "lost": 27,
+          "pct": 0.426
+        },
+        {
+          "gap": "6+ pts",
+          "lo": 6,
+          "hi": 99,
+          "n": 20,
+          "won": 9,
+          "lost": 11,
+          "pct": 0.45
+        },
+        {
+          "gap": "all games",
+          "n": 268,
+          "won": 130,
+          "lost": 138,
+          "pct": 0.485
+        }
+      ],
+      "total": [
+        {
+          "gap": "0\u20133 pts",
+          "lo": 0,
+          "hi": 3,
+          "n": 198,
+          "won": 94,
+          "lost": 104,
+          "pct": 0.475
+        },
+        {
+          "gap": "3\u20136 pts",
+          "lo": 3,
+          "hi": 6,
+          "n": 66,
+          "won": 38,
+          "lost": 28,
+          "pct": 0.576
+        },
+        {
+          "gap": "6\u201310 pts",
+          "lo": 6,
+          "hi": 10,
+          "n": 5,
+          "won": 3,
+          "lost": 2,
+          "pct": 0.6
+        },
+        {
+          "gap": "all games",
+          "n": 269,
+          "won": 135,
+          "lost": 134,
+          "pct": 0.502
+        }
+      ]
+    },
+    "flags": {
+      "spread": [
+        {
+          "lo": 0,
+          "hi": 2,
+          "gap": "0\u20132 pts",
+          "n": 186,
+          "model_pct": 0.532,
+          "flag": "model",
+          "hit": 0.532
+        },
+        {
+          "lo": 2,
+          "hi": 4,
+          "gap": "2\u20134 pts",
+          "n": 132,
+          "model_pct": 0.5,
+          "flag": null,
+          "hit": null
+        },
+        {
+          "lo": 4,
+          "hi": 6,
+          "gap": "4\u20136 pts",
+          "n": 57,
+          "model_pct": 0.421,
+          "flag": "market",
+          "hit": 0.579
+        },
+        {
+          "lo": 6,
+          "hi": 99,
+          "gap": "6+ pts",
+          "n": 23,
+          "model_pct": 0.435,
+          "flag": null,
+          "hit": 0.565
+        }
+      ],
+      "total": [
+        {
+          "lo": 0,
+          "hi": 3,
+          "gap": "0\u20133 pts",
+          "n": 289,
+          "model_pct": 0.464,
+          "flag": "market",
+          "hit": 0.536
+        },
+        {
+          "lo": 3,
+          "hi": 6,
+          "gap": "3\u20136 pts",
+          "n": 103,
+          "model_pct": 0.524,
+          "flag": "model",
+          "hit": 0.524
+        },
+        {
+          "lo": 6,
+          "hi": 10,
+          "gap": "6\u201310 pts",
+          "n": 12,
+          "model_pct": 0.583,
+          "flag": null,
+          "hit": 0.583
+        }
+      ]
     }
   }
 }
