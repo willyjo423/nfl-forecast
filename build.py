@@ -68,6 +68,9 @@ def assemble(seasons: list[int]) -> pd.DataFrame:
     rule("FEATURES")
     t0 = time.time()
     feat = build_features(games, engine, efficiency, quarterbacks)
+    import dfs_link
+    feat = dfs_link.attach(feat)
+    print(f"  NFL-DFS team projections on {feat['home_dfs_core'].notna().mean() * 100:.0f}% of games")
     print(f"  {len(feat):,} games x {len(feat.columns)} columns "
           f"in {time.time() - t0:.0f}s")
 
@@ -140,6 +143,29 @@ def main() -> int:
             print(f"  {label:<34} n={r['n']:>5}  {r['delta']:>+7.3f} pts  "
                   f"(t = {r['t']:+.2f})")
 
+    rule("DOES THE NFL-DFS PLAYER MODEL ADD TO THE FORECAST?")
+    from features import FEATURE_COLUMNS
+    from dfs_link import DFS_COLUMNS
+    if feat["home_dfs_core"].notna().mean() > 0.3:
+        has = feat["home_dfs_core"].notna() & feat["away_dfs_core"].notna()
+        newqb = (feat["home_qb_new"] == 1) | (feat["away_qb_new"] == 1)
+        big = (feat["home_dfs_change"].abs() >= 8) | (feat["away_dfs_change"].abs() >= 8)
+        dfs_report = model_mod.subgroup_report(
+            feat, cols=FEATURE_COLUMNS + DFS_COLUMNS, base_cols=FEATURE_COLUMNS,
+            subsets={"all games with DFS data": has,
+                     "a new starting QB": has & newqb,
+                     "a team's core down/up 8+ DK pts": has & big,
+                     "settled games": has & ~newqb & ~big})
+        print("Current model vs current model + DFS team projections, paired:")
+        for label, r in dfs_report.items():
+            if "delta" not in r:
+                print(f"  {label:<34} n={r.get('n', 0):>5}  too few games")
+                continue
+            print(f"  {label:<34} n={r['n']:>5}  {r['delta']:>+7.3f} pts  (t = {r['t']:+.2f})")
+    else:
+        dfs_report = {}
+        print("  team projections not available yet - skipped")
+
     rule("WALK-FORWARD EVALUATION")
     oos = model_mod.walk_forward(feat)
     metrics = model_mod.evaluate(oos)
@@ -149,6 +175,7 @@ def main() -> int:
     import market
     Xm, _ = training_matrix(feat)
     metrics["market_blend"] = market.market_blend(oos, Xm)
+    metrics["dfs_link"] = dfs_report
     print(market.summarize(metrics["market_blend"]))
     keep = [c for c in ("season_tested", "week", "margin", "total", "pred_margin", "pred_total",
                         "market_margin", "total_line") if c in oos.columns]

@@ -26,6 +26,7 @@ from efficiency import METRICS as EFF_METRICS
 from efficiency import EfficiencyEngine
 from qb import QBEngine
 from ratings import RatingsEngine
+from dfs_link import DFS_COLUMNS
 
 log = logging.getLogger(__name__)
 
@@ -78,6 +79,9 @@ FEATURE_GROUPS = {
     "situation": SITUATION_COLUMNS,
     "efficiency": EFFICIENCY_COLUMNS,
     "quarterback": QB_COLUMNS,
+    # NFL-DFS player projections summed to the team (dfs_link.py). Measured
+    # here; NOT in FEATURE_COLUMNS until it earns its place.
+    "dfs": DFS_COLUMNS,
 }
 
 FEATURE_COLUMNS = (STRENGTH_COLUMNS + SITUATION_COLUMNS
@@ -233,7 +237,7 @@ def build_features(games: pd.DataFrame, engine: RatingsEngine,
         rows.append(row)
 
     df = pd.DataFrame(rows)
-    for c in FEATURE_COLUMNS:
+    for c in FEATURE_COLUMNS + DFS_COLUMNS:     # DFS ones filled by dfs_link.attach
         if c not in df.columns:
             df[c] = np.nan
         df[c] = pd.to_numeric(df[c], errors="coerce")
