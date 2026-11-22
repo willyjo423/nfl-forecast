@@ -153,8 +153,9 @@ def report(sport: str, oos: pd.DataFrame, season: int, today: dt.date) -> dict:
             price = np.where(edge > 0, jm["mlh"], jm["mla"])
             payout = np.where(price > 0, price / 100, 100 / -price)
             units = np.where(won, payout, -1.0)
+            # two wide ranges while the NHL line history is short, so each fills fast
             res["moneyline"] = _bucket_rows(edge * 100, won, np.zeros(len(won), bool),
-                                            [(0, 3), (3, 6), (6, 10), (10, 99)], "% win-prob")
+                                            [(0, 4), (4, 99)], "% win-prob")
             res["moneyline_units"] = round(float(units.sum()), 2)
         jt = j.dropna(subset=["lt"])
         if len(jt):
@@ -162,7 +163,7 @@ def report(sport: str, oos: pd.DataFrame, season: int, today: dt.date) -> dict:
             r2 = (jt["total"] - jt["lt"]).to_numpy()
             p2 = np.isclose(r2, 0) | np.isclose(g2, 0)
             res["total"] = _bucket_rows(g2, np.sign(r2) == np.sign(g2), p2,
-                                        [(0, 0.3), (0.3, 0.6), (0.6, 1.0), (1.0, 99)], "goals")
+                                        [(0, 0.4), (0.4, 99)], "goals")
     return res
 
 
@@ -170,7 +171,7 @@ BREAKEVEN = 0.524
 MIN_GAMES = 50
 
 
-def flag_table(*reports: dict) -> dict:
+def flag_table(*reports: dict, min_games: int = MIN_GAMES) -> dict:
     """Combine seasons: per market and gap range, which side has hit and how
     often. A range is flagged when one side beat break-even (52.4%) over at
     least 50 games - the model's side, or the market's side when the model's
@@ -191,7 +192,8 @@ def flag_table(*reports: dict) -> dict:
             p = a["won"] / n if n else 0.5
             side = "model" if p >= BREAKEVEN else "market" if (1 - p) >= BREAKEVEN else None
             rows.append({"lo": lo, "hi": hi, "gap": a["gap"], "n": n, "model_pct": round(p, 3),
-                         "flag": side if n >= MIN_GAMES else None,
+                         "flag": side if n >= min_games else None,
+                         "early": n < MIN_GAMES,
                          "hit": round(p if side == "model" else 1 - p, 3) if side else None})
         if rows:
             out[key] = rows

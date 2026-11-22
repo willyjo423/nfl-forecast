@@ -101,7 +101,8 @@ def _flags(sport: str, r: dict, table: dict) -> list[dict]:
         if row and abs(gap) >= 1e-9:
             over = gap > 0 if row["flag"] == "model" else gap < 0
             out.append({"market": "Total", "take": f"{'Over' if over else 'Under'} {lt:g}",
-                        "why": row["flag"], "hit": row["hit"], "n": row["n"], "gap": row["gap"]})
+                        "why": row["flag"], "hit": row["hit"], "n": row["n"], "gap": row["gap"],
+                        "early": row.get("early")})
     mh, ma = r.get("ml_home"), r.get("ml_away")
     if sport == "nhl" and mh is not None and ma is not None and not (isinstance(mh, float) and np.isnan(mh)):
         ih = -mh / (-mh + 100) if mh < 0 else 100 / (mh + 100)
@@ -113,7 +114,7 @@ def _flags(sport: str, r: dict, table: dict) -> list[dict]:
             take_home = model_home if row["flag"] == "model" else not model_home
             t, o = (home, mh) if take_home else (away, ma)
             out.append({"market": "Moneyline", "take": f"{t} {o:+g}", "why": row["flag"],
-                        "hit": row["hit"], "n": row["n"], "gap": row["gap"]})
+                        "hit": row["hit"], "n": row["n"], "gap": row["gap"], "early": row.get("early")})
     return out
 
 
@@ -176,7 +177,7 @@ def _card(sport: str, g: dict) -> str:
     fl = g.get("flags") or []
     if fl:
         items = "".join(
-            f'<div style="margin-top:4px"><span class="flagnew" style="background:var(--good);color:#04140a">FLAG</span> '
+            f'<div style="margin-top:4px"><span class="flagnew" style="background:{"var(--warn)" if x.get("early") else "var(--good)"};color:#04140a">{"EARLY FLAG" if x.get("early") else "FLAG"}</span> '
             f'<b>{_e(x["take"])}</b> <span style="color:var(--dim)">({_e(x["market"])}: '
             f'{"model&#39;s side" if x["why"] == "model" else "market side &mdash; fading the model"}; '
             f'{x["hit"] * 100:.1f}% over {x["n"]} games with a {_e(x["gap"])} gap)</span></div>'
@@ -206,10 +207,11 @@ def page(sport: str, payload: dict) -> str:
     flagged = [(g, x) for g in payload["games"] for x in (g.get("flags") or [])]
     if flagged:
         strip += ('<div class="note" style="border-left-color:var(--good)"><b>Flagged plays</b> &mdash; games whose '
-                  'model-vs-line gap is in a range where one side has hit above 52.4% (this season + last, 50+ games):'
+                  ('model-vs-line gap is in a range where one side has hit above 52.4% (this season + last, 50+ games'
+                  + ('; EARLY flags: 4+ games while the NHL line history builds' if sport == 'nhl' else '') + '):')
                   + "".join(f'<div style="margin-top:6px">{_e(g["away"])} at {_e(g["home"])} &middot; '
                             f'<b>{_e(x["take"])}</b> ({_e(x["market"])}, {x["hit"] * 100:.1f}% / {x["n"]} games'
-                            f'{", market side" if x["why"] == "market" else ""})</div>' for g, x in flagged)
+                            f'{", market side" if x["why"] == "market" else ""}{", EARLY - small sample" if x.get("early") else ""})</div>' for g, x in flagged)
                   + '</div>')
     strip += _record(m.get("vs_line"), "This season") + _record(m.get("vs_line_last_season"), "Last season")
     driver = ("Driven by the DFS models: each team's strength tonight from the DFS player projections "
