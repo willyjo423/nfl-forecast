@@ -139,6 +139,8 @@ def run(week: int | None = None, target: date | None = None,
             slate.at[i, "wind_mph"] = got["wind_mph"]
 
     feat = build_features(slate, engine, efficiency, quarterbacks)
+    import dfs_link
+    feat = dfs_link.attach(feat, live=dfs_link.live_week())
     preds = model.predict(feat)
     out = feat.join(preds)
 
@@ -237,6 +239,8 @@ def _record(r) -> dict:
         # Reference only. The bootstrap measured 50.4% against the spread over
         # 3,757 out-of-sample games, so the gap between these two numbers is
         # reported and nothing is dressed up as a play.
+        "dfs": {"home_core": _j(r.get("home_dfs_core")), "away_core": _j(r.get("away_dfs_core")),
+                "home_change": _j(r.get("home_dfs_change")), "away_change": _j(r.get("away_dfs_change"))},
         "market_margin": _j(r.get("market_margin")),
         "market_total": _j(r.get("total_line")),
         "vs_market": (None if pd.isna(r.get("market_margin"))

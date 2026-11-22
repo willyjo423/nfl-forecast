@@ -88,6 +88,17 @@ h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
 .cmp-v{color:var(--dim);font-variant-numeric:tabular-nums}
 .gap{color:var(--faint);font-size:12px;margin-top:6px}
 footer{color:var(--faint);font-size:12px;margin-top:32px;text-align:center}
+.lines{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 4px}
+.lines div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.lines .k{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
+.lines .v{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.lines .m{font-size:12px;color:var(--dim)}
+.dfs{font-size:13px;color:var(--dim);margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+.dfs b{color:var(--ink)}
+.tabs{display:flex;gap:8px;margin:0 0 18px}
+.tabs a{flex:1;text-align:center;padding:9px 0;border-radius:9px;border:1px solid var(--line);
+  background:var(--card);color:var(--dim);text-decoration:none;font-weight:600;font-size:14px}
+.tabs a.on{background:var(--accent);border-color:var(--accent);color:#06121f}
 """
 
 
@@ -265,13 +276,50 @@ def _market(g: dict) -> str:
     return f'<div class="market">{body}<div class="gap">{gap}</div></div>'
 
 
+def _lines(g: dict) -> str:
+    """Model spread, total and win %, side by side, with the market under each."""
+    f = g.get("forecast") or {}
+    if f.get("margin") is None:
+        return ""
+    home, away = g["home_team"], g["away_team"]
+    sp = round(f["margin"] * 2) / 2
+    spread = f"{_e(home)} -{abs(sp):g}" if sp > 0 else (f"{_e(away)} -{abs(sp):g}" if sp < 0 else "Pick'em")
+    mm = g.get("market_margin")
+    mline = ("market: " + (f"{_e(home)} {-mm:+g}" if mm else "pick'em")) if mm is not None else "&nbsp;"
+    tot = round((f.get("total") or 0) * 2) / 2
+    mt = g.get("market_total")
+    p = f.get("home_win_prob") or 0.5
+    fav = home if p >= 0.5 else away
+    return ('<div class="lines">'
+            f'<div><div class="k">Spread</div><div class="v">{spread}</div><div class="m">{mline}</div></div>'
+            f'<div><div class="k">Total</div><div class="v">{tot:g}</div>'
+            f'<div class="m">{"market " + format(mt, "g") if mt is not None else "&nbsp;"}</div></div>'
+            f'<div><div class="k">Win</div><div class="v">{_e(fav)} {round(100 * max(p, 1 - p))}%</div>'
+            f'<div class="m">&nbsp;</div></div></div>'
+            + _dfs(g))
+
+
+def _dfs(g: dict) -> str:
+    d = g.get("dfs") or {}
+    if d.get("home_core") is None and d.get("away_core") is None:
+        return ""
+
+    def side(t, c, ch):
+        if c is None:
+            return f"{_e(t)}: no DFS board yet"
+        return f"{_e(t)} <b>{c:.0f}</b> DK pts" + ("" if ch is None else f" ({ch:+.0f} vs usual)")
+    return ('<div class="dfs">DFS skill-player strength (QB1, 2 RB, 3 WR, TE1) &mdash; '
+            f'{side(g["away_team"], d.get("away_core"), d.get("away_change"))} &middot; '
+            f'{side(g["home_team"], d.get("home_core"), d.get("home_change"))}</div>')
+
+
 def _card(g: dict) -> str:
     when = g.get("kickoff_et") or ""
     return (
         '<div class="card">'
         f'<div class="head"><span class="match">{_e(g["away_team"])} at '
         f'{_e(g["home_team"])}</span><span class="when">{_e(when)}</span></div>'
-        f'{_forecast(g)}{_band(g)}{_quarterbacks(g)}{_context(g)}{_market(g)}'
+        f'{_forecast(g)}{_lines(g)}{_band(g)}{_quarterbacks(g)}{_context(g)}{_market(g)}'
         '</div>')
 
 
@@ -319,6 +367,8 @@ def render(payload: dict, standalone: bool = True) -> str:
 
     body = (
         '<div class="wrap">'
+        '<nav class="tabs"><a href="index.html" class="on">NFL</a>'
+        '<a href="nba.html">NBA</a><a href="nhl.html">NHL</a></nav>'
         f'<h1>NFL forecasts &mdash; {_e(season)} week {_e(week)}</h1>'
         f'<p class="sub">Generated {_e(when)} ET. '
         f'Model figures are out-of-sample, from the last training run.</p>'
