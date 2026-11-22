@@ -155,7 +155,7 @@ def walk_forward(df: pd.DataFrame, extra_m: list[str], extra_t: list[str],
         mm = Ridge(alpha=1.0).fit(Xtr, tr["margin"])
         Ttr, Tte = _X(tr, ct), _X(te, ct).reindex(columns=_X(tr, ct).columns, fill_value=0.0)
         mt = Ridge(alpha=1.0).fit(Ttr, tr["total"])
-        p = te[["game_id", "date", "season", "margin", "total", "line_margin", "line_total"]].copy()
+        p = te[["game_id", "date", "season", "home", "away", "margin", "total", "line_margin", "line_total"]].copy()
         p["pred_margin"] = mm.predict(Xte)
         p["pred_total"] = mt.predict(Tte)
         ptr = mm.predict(Xtr)

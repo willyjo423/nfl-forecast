@@ -81,6 +81,13 @@ def main(argv=None) -> int:
     chosen = M.walk_forward(g, extra_m, extra_t)
     metrics = M.evaluate(chosen)
     metrics["dfs_layer"] = label
+    try:
+        from sports import vs_line as VL
+        cur = F.season_of(today)
+        metrics["vs_line"] = VL.report(sport, chosen, cur, today)
+        metrics["vs_line_last_season"] = VL.report(sport, chosen, cur - 1, today)
+    except Exception as exc:                                   # noqa: BLE001
+        log.warning("vs-line report failed: %s", exc)
     print(json.dumps({k: v for k, v in metrics.items() if isinstance(v, (int, float))}, indent=1))
 
     # ---- final model and the slate
