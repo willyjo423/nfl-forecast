@@ -203,3 +203,49 @@ def flag_for(table: dict, key: str, gap: float) -> dict | None:
         if r["lo"] <= abs(gap) < r["hi"]:
             return r if r.get("flag") else None
     return None
+
+
+def report_from_oos(oos: pd.DataFrame, season: int) -> dict:
+    """NFL: the same record from the bootstrap's walk-forward predictions
+    (data/oos.csv: pred_margin / market_margin / margin, pred_total / total_line / total)."""
+    o = oos[oos["season_tested"] == season]
+    res = {"season": season, "games_forecast": int(len(o))}
+    j = o.dropna(subset=["market_margin", "margin"])
+    res["games_with_line"] = int(len(j))
+    if len(j):
+        gap = (j["pred_margin"] - j["market_margin"]).to_numpy()
+        rm = (j["margin"] - j["market_margin"]).to_numpy()
+        push = np.isclose(rm, 0) | np.isclose(gap, 0)
+        res["spread"] = _bucket_rows(gap, np.sign(rm) == np.sign(gap), push,
+                                     [(0, 2), (2, 4), (4, 6), (6, 99)], "pts")
+    jt = o.dropna(subset=["total_line", "total"])
+    if len(jt):
+        g2 = (jt["pred_total"] - jt["total_line"]).to_numpy()
+        r2 = (jt["total"] - jt["total_line"]).to_numpy()
+        p2 = np.isclose(r2, 0) | np.isclose(g2, 0)
+        res["total"] = _bucket_rows(g2, np.sign(r2) == np.sign(g2), p2,
+                                    [(0, 3), (3, 6), (6, 10), (10, 99)], "pts")
+    return res
+
+
+def game_flags(table: dict, home: str, away: str, pred_margin, line_margin, pred_total, line_total) -> list[dict]:
+    """Flags for one game from home-perspective margins (spread sports)."""
+    out = []
+    if pred_margin is not None and line_margin is not None:
+        gap = float(pred_margin) - float(line_margin)
+        row = flag_for(table, "spread", gap)
+        if row and gap != 0:
+            model_home = gap > 0
+            take_home = model_home if row["flag"] == "model" else not model_home
+            t = home if take_home else away
+            num = -line_margin if take_home else line_margin
+            out.append({"market": "Spread", "take": f"{t} {num:+g}" if num else f"{t} PK",
+                        "why": row["flag"], "hit": row["hit"], "n": row["n"], "gap": row["gap"]})
+    if pred_total is not None and line_total is not None:
+        gap = float(pred_total) - float(line_total)
+        row = flag_for(table, "total", gap)
+        if row and gap != 0:
+            over = gap > 0 if row["flag"] == "model" else gap < 0
+            out.append({"market": "Total", "take": f"{'Over' if over else 'Under'} {line_total:g}",
+                        "why": row["flag"], "hit": row["hit"], "n": row["n"], "gap": row["gap"]})
+    return out

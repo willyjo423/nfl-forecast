@@ -306,11 +306,20 @@ def _dfs(g: dict) -> str:
 
 def _card(g: dict) -> str:
     when = g.get("kickoff_et") or ""
+    fl = g.get("flags") or []
+    flags = ""
+    if fl:
+        flags = '<div class="dfs" style="border-top-color:var(--good)">' + "".join(
+            f'<div style="margin-top:4px"><span class="flagnew" style="background:var(--good);color:#04140a">FLAG</span> '
+            f'<b>{_e(x["take"])}</b> <span style="color:var(--dim)">({_e(x["market"])}: '
+            f'{"model&#39;s side" if x["why"] == "model" else "market side &mdash; fading the model"}; '
+            f'{x["hit"] * 100:.1f}% over {x["n"]} games with a {_e(x["gap"])} gap)</span></div>'
+            for x in fl) + '</div>'
     return (
         '<div class="card">'
         f'<div class="head"><span class="match">{_e(g["away_team"])} at '
         f'{_e(g["home_team"])}</span><span class="when">{_e(when)}</span></div>'
-        f'{_forecast(g)}{_lines(g)}{_band(g)}{_quarterbacks(g)}{_context(g)}'
+        f'{_forecast(g)}{_lines(g)}{flags}{_quarterbacks(g)}{_context(g)}'
         '</div>')
 
 
@@ -352,18 +361,37 @@ def _honesty(payload: dict) -> str:
 
 
 def render(payload: dict, standalone: bool = True) -> str:
+    """Same layout as the NBA and NHL tabs (sports/render.py)."""
+    from sports import render as SR
     games = payload.get("games") or []
     when = (payload.get("generated_at") or "")[:16].replace("T", " ")
     season, week = payload.get("season"), payload.get("week")
-
+    m = payload.get("model_metrics") or {}
+    cells = [("Games", str(len(games)))]
+    if m.get("margin_mae"):
+        cells.append(("Margin MAE", f'{m["margin_mae"]:.2f}'))
+    if m.get("total_mae"):
+        cells.append(("Total MAE", f'{m["total_mae"]:.2f}'))
+    if m.get("win_accuracy"):
+        cells.append(("Winner picked", f'{m["win_accuracy"] * 100:.0f}%'))
+    strip = '<div class="strip">' + "".join(f"<div>{_e(k)}<b>{_e(v)}</b></div>" for k, v in cells) + "</div>"
+    flagged = [(g, x) for g in games for x in (g.get("flags") or [])]
+    if flagged:
+        strip += ('<div class="note" style="border-left-color:var(--good)"><b>Flagged plays</b> &mdash; games whose '
+                  'model-vs-line gap is in a range where one side has hit above 52.4% (this season + last, 50+ games):'
+                  + "".join(f'<div style="margin-top:6px">{_e(g["away_team"])} at {_e(g["home_team"])} &middot; '
+                            f'<b>{_e(x["take"])}</b> ({_e(x["market"])}, {x["hit"] * 100:.1f}% / {x["n"]} games'
+                            f'{", market side" if x["why"] == "market" else ""})</div>' for g, x in flagged)
+                  + '</div>')
+    strip += SR._record(m.get("vs_line"), "This season") + SR._record(m.get("vs_line_last_season"), "Last season")
+    driver = ("Driven by the DFS models: each team's skill-player strength this week from the NFL-DFS "
+              "projections (QB1, 2 RB, 3 WR, TE1), on top of team ratings, quarterbacks, rest and weather.")
     body = (
         '<div class="wrap">'
         '<nav class="tabs"><a href="index.html" class="on">NFL</a>'
         '<a href="nba.html">NBA</a><a href="nhl.html">NHL</a></nav>'
-        f'<h1>NFL forecasts &mdash; {_e(season)} week {_e(week)}</h1>'
-        f'<p class="sub">Generated {_e(when)} ET. '
-        f'Model figures are out-of-sample, from the last training run.</p>'
-        f'{_strip(payload)}{_honesty(payload)}'
+        f'<h1>NFL forecasts &mdash; week {_e(week)}</h1>'
+        f'<p class="sub">Generated {_e(when)} ET &middot; {_e(driver)}</p>{strip}'
         + ("".join(_card(g) for g in games) if games
            else '<div class="card">No games scheduled.</div>')
         + '<footer>Forecasts only. No betting advice.</footer></div>')
@@ -372,7 +400,7 @@ def render(payload: dict, standalone: bool = True) -> str:
         return body
     return ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
             "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
-            f"<title>NFL forecasts &mdash; {_e(season)} week {_e(week)}</title>"
+            f"<title>NFL forecasts &mdash; week {_e(week)}</title>"
             f"<style>{CSS}</style></head><body>{body}</body></html>")
 
 

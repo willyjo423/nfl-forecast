@@ -151,6 +151,23 @@ def run(week: int | None = None, target: date | None = None,
     if (config.DATA / "metrics.json").exists():
         metrics = json.loads((config.DATA / "metrics.json").read_text())
 
+    # the model's record against the line this season and last, and flags
+    try:
+        from sports import vs_line as VL
+        oos_path = config.DATA / "oos.csv"
+        if oos_path.exists():
+            oos = pd.read_csv(oos_path)
+            metrics["vs_line"] = VL.report_from_oos(oos, season)
+            metrics["vs_line_last_season"] = VL.report_from_oos(oos, season - 1)
+            metrics["flags"] = VL.flag_table(metrics["vs_line"], metrics["vs_line_last_season"])
+            for rec in records:
+                f = rec.get("forecast") or {}
+                rec["flags"] = VL.game_flags(metrics["flags"], rec["home_team"], rec["away_team"],
+                                             f.get("margin"), rec.get("market_margin"),
+                                             f.get("total"), rec.get("market_total"))
+    except Exception as exc:                                   # noqa: BLE001
+        log.warning("vs-line record failed: %s", exc)
+
     return {
         "generated_at": datetime.now(ET).isoformat(),
         "season": season,
