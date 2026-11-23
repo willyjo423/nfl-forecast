@@ -1,9 +1,9 @@
 {
- "n_games": 9988,
- "margin_mae": 2.1436080059051608,
- "total_mae": 1.838637046126522,
- "win_accuracy": 0.5719863836603925,
- "win_brier": 0.24047708420942632,
+ "n_games": 9990,
+ "margin_mae": 2.1438805048812197,
+ "total_mae": 1.8385477663524126,
+ "win_accuracy": 0.5728728728728729,
+ "win_brier": 0.24048031190689373,
  "seasons": [
   2018,
   2019,
@@ -18,34 +18,25 @@
  "dfs_layer": "DFS skater strength + starting goalie (DFS confirmations + his record)",
  "vs_line": {
   "season": 2026,
-  "games_forecast": 287,
+  "games_forecast": 289,
   "games_with_line": 8,
   "moneyline": [
    {
-    "gap": "0\u20133 % win-prob",
+    "gap": "0\u20134 % win-prob",
     "lo": 0,
-    "hi": 3,
-    "n": 3,
-    "won": 2,
-    "lost": 1,
-    "pct": 0.667
-   },
-   {
-    "gap": "3\u20136 % win-prob",
-    "lo": 3,
-    "hi": 6,
-    "n": 3,
-    "won": 1,
+    "hi": 4,
+    "n": 5,
+    "won": 3,
     "lost": 2,
-    "pct": 0.333
+    "pct": 0.6
    },
    {
-    "gap": "6\u201310 % win-prob",
-    "lo": 6,
-    "hi": 10,
-    "n": 2,
+    "gap": "4+ % win-prob",
+    "lo": 4,
+    "hi": 99,
+    "n": 3,
     "won": 0,
-    "lost": 2,
+    "lost": 3,
     "pct": 0.0
    },
    {
@@ -59,29 +50,20 @@
   "moneyline_units": -2.76,
   "total": [
    {
-    "gap": "0\u20130.3 goals",
+    "gap": "0\u20130.4 goals",
     "lo": 0,
-    "hi": 0.3,
-    "n": 4,
+    "hi": 0.4,
+    "n": 5,
     "won": 1,
-    "lost": 3,
-    "pct": 0.25
+    "lost": 4,
+    "pct": 0.2
    },
    {
-    "gap": "0.3\u20130.6 goals",
-    "lo": 0.3,
-    "hi": 0.6,
+    "gap": "0.4+ goals",
+    "lo": 0.4,
+    "hi": 99,
     "n": 3,
-    "won": 2,
-    "lost": 1,
-    "pct": 0.667
-   },
-   {
-    "gap": "0.6\u20131 goals",
-    "lo": 0.6,
-    "hi": 1.0,
-    "n": 1,
-    "won": 1,
+    "won": 3,
     "lost": 0,
     "pct": 1.0
    },
@@ -103,85 +85,71 @@
   "total": [
    {
     "lo": 0,
-    "hi": 0.3,
-    "gap": "0\u20130.3 goals",
-    "n": 4,
-    "model_pct": 0.25,
-    "flag": null,
-    "hit": 0.75
+    "hi": 0.4,
+    "gap": "0\u20130.4 goals",
+    "n": 5,
+    "model_pct": 0.2,
+    "flag": "market",
+    "early": true,
+    "hit": 0.8
    },
    {
-    "lo": 0.3,
-    "hi": 0.6,
-    "gap": "0.3\u20130.6 goals",
+    "lo": 0.4,
+    "hi": 99,
+    "gap": "0.4+ goals",
     "n": 3,
-    "model_pct": 0.667,
-    "flag": null,
-    "hit": 0.667
-   },
-   {
-    "lo": 0.6,
-    "hi": 1.0,
-    "gap": "0.6\u20131 goals",
-    "n": 1,
     "model_pct": 1.0,
     "flag": null,
+    "early": true,
     "hit": 1.0
    }
   ],
   "moneyline": [
    {
     "lo": 0,
-    "hi": 3,
-    "gap": "0\u20133 % win-prob",
-    "n": 3,
-    "model_pct": 0.667,
-    "flag": null,
-    "hit": 0.667
+    "hi": 4,
+    "gap": "0\u20134 % win-prob",
+    "n": 5,
+    "model_pct": 0.6,
+    "flag": "model",
+    "early": true,
+    "hit": 0.6
    },
    {
-    "lo": 3,
-    "hi": 6,
-    "gap": "3\u20136 % win-prob",
+    "lo": 4,
+    "hi": 99,
+    "gap": "4+ % win-prob",
     "n": 3,
-    "model_pct": 0.333,
-    "flag": null,
-    "hit": 0.667
-   },
-   {
-    "lo": 6,
-    "hi": 10,
-    "gap": "6\u201310 % win-prob",
-    "n": 2,
     "model_pct": 0.0,
     "flag": null,
+    "early": true,
     "hit": 1.0
    }
   ]
  },
  "coefficients": {
   "margin": {
-   "rate_margin": 1.074,
-   "home_b2b": -0.252,
-   "away_b2b": 0.217,
-   "rest_diff": 0.045,
-   "goalie_q_diff": 0.616,
-   "home_backup": 0.047,
-   "away_backup": -0.052,
+   "rate_margin": 1.073,
+   "home_b2b": -0.253,
+   "away_b2b": 0.215,
+   "rest_diff": 0.043,
+   "goalie_q_diff": 0.622,
+   "home_backup": 0.049,
+   "away_backup": -0.051,
    "sk_avail_diff": 0.005,
    "sk_change_diff": 0.004,
    "sk_avail_diff_na": 0.004,
    "sk_change_diff_na": 0.004
   },
   "total": {
-   "rate_total": 0.721,
+   "rate_total": 0.722,
    "home_b2b": -0.023,
-   "away_b2b": -0.076,
-   "goalie_q_sum": -0.378,
+   "away_b2b": -0.075,
+   "goalie_q_sum": -0.374,
    "sk_avail_sum": 0.002,
    "sk_change_sum": 0.002,
-   "sk_avail_sum_na": 0.191,
-   "sk_change_sum_na": 0.191
+   "sk_avail_sum_na": 0.19,
+   "sk_change_sum_na": 0.19
   }
  }
 }
