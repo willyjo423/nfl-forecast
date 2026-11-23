@@ -192,7 +192,11 @@ def flag_table(*reports: dict, min_games: int = MIN_GAMES) -> dict:
             p = a["won"] / n if n else 0.5
             side = "model" if p >= BREAKEVEN else "market" if (1 - p) >= BREAKEVEN else None
             rows.append({"lo": lo, "hi": hi, "gap": a["gap"], "n": n, "model_pct": round(p, 3),
-                         "flag": side if n >= min_games else None,
+                         # An EARLY flag needs the model to actually disagree
+                         # with the line: the smallest-gap range "hitting" in
+                         # a handful of games is luck (2026-11-23: NJD -205
+                         # flagged with the model at the line's own 66%).
+                         "flag": side if n >= min_games and not (n < MIN_GAMES and lo == 0) else None,
                          "early": n < MIN_GAMES,
                          "hit": round(p if side == "model" else 1 - p, 3) if side else None})
         if rows:
