@@ -207,7 +207,7 @@ def page(sport: str, payload: dict) -> str:
     flagged = [(g, x) for g in payload["games"] for x in (g.get("flags") or [])]
     if flagged:
         strip += ('<div class="note" style="border-left-color:var(--good)"><b>Flagged plays</b> &mdash; games whose '
-                  ('model-vs-line gap is in a range where one side has hit above 52.4% (this season + last, 50+ games'
+                  + ('model-vs-line gap is in a range where one side has hit above 52.4% (this season + last, 50+ games'
                   + ('; EARLY flags: 4+ games while the NHL line history builds' if sport == 'nhl' else '') + '):')
                   + "".join(f'<div style="margin-top:6px">{_e(g["away"])} at {_e(g["home"])} &middot; '
                             f'<b>{_e(x["take"])}</b> ({_e(x["market"])}, {x["hit"] * 100:.1f}% / {x["n"]} games'

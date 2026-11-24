@@ -35,9 +35,14 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Forecast
         run: |
+          # One sport failing must not stop the other, but the run must still
+          # go red: a page crash hid behind "|| true" for a day (2026-11-23).
+          set -o pipefail
+          FAIL=0
           for s in ${{ inputs.sports || 'nba nhl' }}; do
-            python -m sports.run --sport $s 2>&1 | grep -v "^INFO" | tail -40 || true
+            python -m sports.run --sport $s 2>&1 | grep -v "^INFO" | tail -40 || FAIL=1
           done
+          echo "FAIL=$FAIL" >> "$GITHUB_ENV"
       - name: Publish
         run: |
           git config user.name "github-actions[bot]"
@@ -47,4 +52,9 @@ jobs:
           git diff --staged --quiet && echo "nothing changed" && exit 0
           git commit -m "NBA/NHL forecasts: $(date -u +%Y-%m-%d\ %H:%M)"
           for i in 1 2 3 4 5; do git pull --rebase --autostash origin main && git push && exit 0; sleep 8; done
+          exit 1
+      - name: Fail if a sport failed
+        if: env.FAIL == '1'
+        run: |
+          echo "A forecast crashed; the other sport was still published."
           exit 1
