@@ -1,9 +1,9 @@
 {
  "n_games": 9605,
- "margin_mae": 10.885220110914116,
- "total_mae": 14.86071316481701,
+ "margin_mae": 10.884994547952394,
+ "total_mae": 14.860824570968525,
  "win_accuracy": 0.6559083810515357,
- "win_brier": 0.21529748695576106,
+ "win_brier": 0.21528246019063457,
  "seasons": [
   2018,
   2019,
@@ -19,50 +19,50 @@
  "vs_line": {
   "season": 2026,
   "games_forecast": 180,
-  "games_with_line": 172,
+  "games_with_line": 180,
   "spread": [
    {
     "gap": "0\u20132 pts",
     "lo": 0,
     "hi": 2,
-    "n": 75,
-    "won": 42,
+    "n": 79,
+    "won": 46,
     "lost": 33,
-    "pct": 0.56
+    "pct": 0.582
    },
    {
     "gap": "2\u20134 pts",
     "lo": 2,
     "hi": 4,
-    "n": 47,
-    "won": 23,
+    "n": 52,
+    "won": 28,
     "lost": 24,
-    "pct": 0.489
+    "pct": 0.538
    },
    {
     "gap": "4\u20136 pts",
     "lo": 4,
     "hi": 6,
-    "n": 28,
-    "won": 12,
-    "lost": 16,
-    "pct": 0.429
+    "n": 27,
+    "won": 10,
+    "lost": 17,
+    "pct": 0.37
    },
    {
     "gap": "6+ pts",
     "lo": 6,
     "hi": 99,
     "n": 22,
-    "won": 14,
-    "lost": 8,
-    "pct": 0.636
+    "won": 15,
+    "lost": 7,
+    "pct": 0.682
    },
    {
     "gap": "all games",
-    "n": 172,
-    "won": 91,
+    "n": 180,
+    "won": 99,
     "lost": 81,
-    "pct": 0.529
+    "pct": 0.55
    }
   ],
   "total": [
@@ -70,28 +70,28 @@
     "gap": "0\u20133 pts",
     "lo": 0,
     "hi": 3,
-    "n": 101,
-    "won": 53,
+    "n": 103,
+    "won": 55,
     "lost": 48,
-    "pct": 0.525
+    "pct": 0.534
    },
    {
     "gap": "3\u20136 pts",
     "lo": 3,
     "hi": 6,
-    "n": 50,
-    "won": 22,
-    "lost": 28,
-    "pct": 0.44
+    "n": 53,
+    "won": 23,
+    "lost": 30,
+    "pct": 0.434
    },
    {
     "gap": "6\u201310 pts",
     "lo": 6,
     "hi": 10,
-    "n": 16,
-    "won": 7,
-    "lost": 9,
-    "pct": 0.438
+    "n": 19,
+    "won": 9,
+    "lost": 10,
+    "pct": 0.474
    },
    {
     "gap": "10+ pts",
@@ -104,13 +104,13 @@
    },
    {
     "gap": "all games",
-    "n": 172,
-    "won": 84,
-    "lost": 88,
-    "pct": 0.488
+    "n": 180,
+    "won": 89,
+    "lost": 91,
+    "pct": 0.494
    }
   ],
-  "avg_abs_gap_spread": 2.92
+  "avg_abs_gap_spread": 2.89
  },
  "vs_line_last_season": {
   "season": 2025,
@@ -214,8 +214,8 @@
     "lo": 0,
     "hi": 2,
     "gap": "0\u20132 pts",
-    "n": 490,
-    "model_pct": 0.516,
+    "n": 494,
+    "model_pct": 0.52,
     "flag": null,
     "early": false,
     "hit": null
@@ -224,31 +224,31 @@
     "lo": 2,
     "hi": 4,
     "gap": "2\u20134 pts",
-    "n": 377,
-    "model_pct": 0.448,
+    "n": 382,
+    "model_pct": 0.455,
     "flag": "market",
     "early": false,
-    "hit": 0.552
+    "hit": 0.545
    },
    {
     "lo": 4,
     "hi": 6,
     "gap": "4\u20136 pts",
-    "n": 213,
-    "model_pct": 0.465,
+    "n": 212,
+    "model_pct": 0.458,
     "flag": "market",
     "early": false,
-    "hit": 0.535
+    "hit": 0.542
    },
    {
     "lo": 6,
     "hi": 99,
     "gap": "6+ pts",
     "n": 157,
-    "model_pct": 0.541,
+    "model_pct": 0.548,
     "flag": "model",
     "early": false,
-    "hit": 0.541
+    "hit": 0.548
    }
   ],
   "total": [
@@ -256,8 +256,8 @@
     "lo": 0,
     "hi": 3,
     "gap": "0\u20133 pts",
-    "n": 579,
-    "model_pct": 0.499,
+    "n": 581,
+    "model_pct": 0.501,
     "flag": null,
     "early": false,
     "hit": null
@@ -266,8 +266,8 @@
     "lo": 3,
     "hi": 6,
     "gap": "3\u20136 pts",
-    "n": 371,
-    "model_pct": 0.504,
+    "n": 374,
+    "model_pct": 0.503,
     "flag": null,
     "early": false,
     "hit": null
@@ -276,11 +276,11 @@
     "lo": 6,
     "hi": 10,
     "gap": "6\u201310 pts",
-    "n": 220,
-    "model_pct": 0.459,
+    "n": 223,
+    "model_pct": 0.462,
     "flag": "market",
     "early": false,
-    "hit": 0.541
+    "hit": 0.538
    },
    {
     "lo": 10,
@@ -298,23 +298,23 @@
   "margin": {
    "rate_margin": 1.123,
    "home_b2b": -2.087,
-   "away_b2b": 2.015,
+   "away_b2b": 2.014,
    "rest_diff": 0.15,
-   "dfs_avail_diff": 0.047,
-   "dfs_change_diff": -0.034,
-   "dfs_missing_diff": 0.031,
-   "dfs_avail_diff_na": 0.38,
-   "dfs_change_diff_na": 0.38,
-   "dfs_missing_diff_na": -0.871
+   "dfs_avail_diff": 0.048,
+   "dfs_change_diff": -0.037,
+   "dfs_missing_diff": 0.032,
+   "dfs_avail_diff_na": 0.369,
+   "dfs_change_diff_na": 0.369,
+   "dfs_missing_diff_na": -0.856
   },
   "total": {
    "rate_total": 0.985,
-   "home_b2b": 0.102,
-   "away_b2b": 0.288,
-   "dfs_avail_sum": 0.027,
-   "dfs_change_sum": 0.026,
-   "dfs_avail_sum_na": 5.332,
-   "dfs_change_sum_na": 5.332
+   "home_b2b": 0.101,
+   "away_b2b": 0.287,
+   "dfs_avail_sum": 0.028,
+   "dfs_change_sum": 0.024,
+   "dfs_avail_sum_na": 5.572,
+   "dfs_change_sum_na": 5.572
   }
  }
 }
