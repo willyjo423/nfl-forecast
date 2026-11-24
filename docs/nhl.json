@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated_at": "2026-11-24T00:01:03.681207-05:00",
+ "generated_at": "2026-11-24T01:57:03.385635-05:00",
  "games": [
   {
    "game_id": "2026020385",
@@ -13,7 +13,7 @@
     "away_points": 3.1,
     "margin": 0.2,
     "total": 6.4,
-    "home_win_prob": 0.5289,
+    "home_win_prob": 0.5282,
     "margin_p25": -1.5,
     "margin_p75": 1.9,
     "total_p25": 4.9,
@@ -36,8 +36,8 @@
      "market": "Moneyline",
      "take": "VGK -118",
      "why": "market",
-     "hit": 0.75,
-     "n": 4,
+     "hit": 0.6,
+     "n": 5,
      "gap": "4+ % win-prob",
      "early": true
     }
@@ -76,7 +76,7 @@
     "away_points": 2.9,
     "margin": 0.6,
     "total": 6.3,
-    "home_win_prob": 0.6025,
+    "home_win_prob": 0.602,
     "margin_p25": -1.1,
     "margin_p75": 2.3,
     "total_p25": 4.8,
@@ -111,7 +111,7 @@
      "name": "Stuart Skinner",
      "start_prob": null,
      "status": "regular starter",
-     "quality": -0.08
+     "quality": -0.07
     }
    }
   },
@@ -126,7 +126,7 @@
     "away_points": 3.2,
     "margin": -0.3,
     "total": 6.1,
-    "home_win_prob": 0.4483,
+    "home_win_prob": 0.4473,
     "margin_p25": -2.0,
     "margin_p75": 1.4,
     "total_p25": 4.6,
@@ -176,7 +176,7 @@
     "away_points": 3.4,
     "margin": -0.4,
     "total": 6.3,
-    "home_win_prob": 0.4212,
+    "home_win_prob": 0.4211,
     "margin_p25": -2.1,
     "margin_p75": 1.3,
     "total_p25": 4.8,
@@ -211,7 +211,7 @@
      "name": "Pyotr Kochetkov",
      "start_prob": null,
      "status": "regular starter",
-     "quality": 0.04
+     "quality": 0.03
     }
    }
   },
@@ -226,10 +226,10 @@
     "away_points": 3.2,
     "margin": -0.2,
     "total": 6.1,
-    "home_win_prob": 0.4572,
+    "home_win_prob": 0.4568,
     "margin_p25": -1.9,
     "margin_p75": 1.5,
-    "total_p25": 4.6,
+    "total_p25": 4.5,
     "total_p75": 7.6
    },
    "rest": {
@@ -276,7 +276,7 @@
     "away_points": 3.1,
     "margin": -0.1,
     "total": 6.2,
-    "home_win_prob": 0.4814,
+    "home_win_prob": 0.4825,
     "margin_p25": -1.8,
     "margin_p75": 1.6,
     "total_p25": 4.6,
@@ -311,7 +311,7 @@
      "name": "Joel Hofer",
      "start_prob": null,
      "status": "regular starter",
-     "quality": 0.23
+     "quality": 0.22
     }
    }
   },
@@ -325,8 +325,8 @@
     "home_points": 3.1,
     "away_points": 3.0,
     "margin": 0.1,
-    "total": 6.1,
-    "home_win_prob": 0.5111,
+    "total": 6.2,
+    "home_win_prob": 0.5103,
     "margin_p25": -1.6,
     "margin_p75": 1.8,
     "total_p25": 4.6,
@@ -376,7 +376,7 @@
     "away_points": 3.2,
     "margin": 0.2,
     "total": 6.5,
-    "home_win_prob": 0.5257,
+    "home_win_prob": 0.5245,
     "margin_p25": -1.5,
     "margin_p75": 1.9,
     "total_p25": 4.9,
@@ -405,7 +405,7 @@
      "name": "Logan Thompson",
      "start_prob": null,
      "status": "regular starter",
-     "quality": 0.16
+     "quality": 0.15
     },
     "away": {
      "name": "Dan Vladar",
@@ -455,7 +455,7 @@
      "name": "Cam Talbot",
      "start_prob": null,
      "status": "regular starter",
-     "quality": -0.01
+     "quality": -0.0
     },
     "away": {
      "name": "Connor Hellebuyck",
@@ -472,14 +472,14 @@
    "home": "DET",
    "away": "VAN",
    "forecast": {
-    "home_points": 3.5,
+    "home_points": 3.4,
     "away_points": 2.9,
     "margin": 0.5,
     "total": 6.4,
-    "home_win_prob": 0.5893,
+    "home_win_prob": 0.5858,
     "margin_p25": -1.2,
     "margin_p75": 2.2,
-    "total_p25": 4.9,
+    "total_p25": 4.8,
     "total_p75": 7.9
    },
    "rest": {
@@ -511,7 +511,7 @@
      "name": "Leevi Merilainen",
      "start_prob": null,
      "status": "regular starter",
-     "quality": -0.11
+     "quality": -0.08
     }
    }
   },
@@ -526,7 +526,7 @@
     "away_points": 2.9,
     "margin": 0.1,
     "total": 5.8,
-    "home_win_prob": 0.5166,
+    "home_win_prob": 0.5161,
     "margin_p25": -1.6,
     "margin_p75": 1.8,
     "total_p25": 4.3,
@@ -561,7 +561,7 @@
      "name": "Juuse Saros",
      "start_prob": null,
      "status": "regular starter",
-     "quality": 0.07
+     "quality": 0.08
     }
    }
   },
@@ -576,7 +576,7 @@
     "away_points": 2.6,
     "margin": 1.0,
     "total": 6.2,
-    "home_win_prob": 0.6607,
+    "home_win_prob": 0.6667,
     "margin_p25": -0.7,
     "margin_p75": 2.7,
     "total_p25": 4.6,
@@ -605,7 +605,7 @@
      "name": "Jesper Wallstedt",
      "start_prob": null,
      "status": "regular starter",
-     "quality": 0.29
+     "quality": 0.28
     },
     "away": {
      "name": "Sebastian Cossa",
@@ -626,7 +626,7 @@
     "away_points": 2.9,
     "margin": 0.3,
     "total": 6.2,
-    "home_win_prob": 0.5468,
+    "home_win_prob": 0.5459,
     "margin_p25": -1.4,
     "margin_p75": 2.0,
     "total_p25": 4.6,
@@ -676,11 +676,11 @@
     "away_points": 3.1,
     "margin": 0.3,
     "total": 6.5,
-    "home_win_prob": 0.5525,
+    "home_win_prob": 0.5547,
     "margin_p25": -1.4,
     "margin_p75": 2.0,
     "total_p25": 5.0,
-    "total_p75": 8.1
+    "total_p75": 8.0
    },
    "rest": {
     "home": 2.0,
@@ -711,7 +711,7 @@
      "name": "Spencer Knight",
      "start_prob": null,
      "status": "regular starter",
-     "quality": 0.03
+     "quality": 0.04
     }
    }
   },
@@ -722,13 +722,13 @@
    "home": "ANA",
    "away": "SJS",
    "forecast": {
-    "home_points": 3.6,
+    "home_points": 3.5,
     "away_points": 3.2,
-    "margin": 0.4,
-    "total": 6.7,
-    "home_win_prob": 0.5638,
-    "margin_p25": -1.3,
-    "margin_p75": 2.1,
+    "margin": 0.3,
+    "total": 6.8,
+    "home_win_prob": 0.5447,
+    "margin_p25": -1.4,
+    "margin_p75": 2.0,
     "total_p25": 5.2,
     "total_p75": 8.3
    },
@@ -752,26 +752,26 @@
    },
    "goalies": {
     "home": {
-     "name": "Laurent Brossoit",
+     "name": "Lukas Dostal",
      "start_prob": null,
      "status": "regular starter",
-     "quality": 0.04
+     "quality": -0.17
     },
     "away": {
      "name": "Yaroslav Askarov",
      "start_prob": null,
      "status": "regular starter",
-     "quality": -0.15
+     "quality": -0.14
     }
    }
   }
  ],
  "model_metrics": {
-  "n_games": 9998,
-  "margin_mae": 2.143346715111568,
-  "total_mae": 1.8388938587545212,
-  "win_accuracy": 0.5731146229245849,
-  "win_brier": 0.24047761845410132,
+  "n_games": 10000,
+  "margin_mae": 2.1431979781791664,
+  "total_mae": 1.8387531971555515,
+  "win_accuracy": 0.5735,
+  "win_brier": 0.24046641427525392,
   "seasons": [
    2018,
    2019,
@@ -786,45 +786,45 @@
   "dfs_layer": "DFS skater strength + starting goalie (DFS confirmations + his record)",
   "vs_line": {
    "season": 2026,
-   "games_forecast": 297,
-   "games_with_line": 11,
+   "games_forecast": 299,
+   "games_with_line": 13,
    "moneyline": [
     {
      "gap": "0\u20134 % win-prob",
      "lo": 0,
      "hi": 4,
-     "n": 7,
+     "n": 8,
      "won": 4,
-     "lost": 3,
-     "pct": 0.571
+     "lost": 4,
+     "pct": 0.5
     },
     {
      "gap": "4+ % win-prob",
      "lo": 4,
      "hi": 99,
-     "n": 4,
-     "won": 1,
+     "n": 5,
+     "won": 2,
      "lost": 3,
-     "pct": 0.25
+     "pct": 0.4
     },
     {
      "gap": "all games",
-     "n": 11,
-     "won": 5,
-     "lost": 6,
-     "pct": 0.455
+     "n": 13,
+     "won": 6,
+     "lost": 7,
+     "pct": 0.462
     }
    ],
-   "moneyline_units": -2.46,
+   "moneyline_units": -2.9,
    "total": [
     {
      "gap": "0\u20130.4 goals",
      "lo": 0,
      "hi": 0.4,
-     "n": 6,
+     "n": 8,
      "won": 1,
-     "lost": 5,
-     "pct": 0.167
+     "lost": 7,
+     "pct": 0.125
     },
     {
      "gap": "0.4+ goals",
@@ -837,10 +837,10 @@
     },
     {
      "gap": "all games",
-     "n": 11,
+     "n": 13,
      "won": 6,
-     "lost": 5,
-     "pct": 0.545
+     "lost": 7,
+     "pct": 0.462
     }
    ]
   },
@@ -855,11 +855,11 @@
      "lo": 0,
      "hi": 0.4,
      "gap": "0\u20130.4 goals",
-     "n": 6,
-     "model_pct": 0.167,
+     "n": 8,
+     "model_pct": 0.125,
      "flag": null,
      "early": true,
-     "hit": 0.833
+     "hit": 0.875
     },
     {
      "lo": 0.4,
@@ -877,21 +877,21 @@
      "lo": 0,
      "hi": 4,
      "gap": "0\u20134 % win-prob",
-     "n": 7,
-     "model_pct": 0.571,
+     "n": 8,
+     "model_pct": 0.5,
      "flag": null,
      "early": true,
-     "hit": 0.571
+     "hit": null
     },
     {
      "lo": 4,
      "hi": 99,
      "gap": "4+ % win-prob",
-     "n": 4,
-     "model_pct": 0.25,
+     "n": 5,
+     "model_pct": 0.4,
      "flag": "market",
      "early": true,
-     "hit": 0.75
+     "hit": 0.6
     }
    ]
   },
@@ -901,23 +901,23 @@
     "home_b2b": -0.254,
     "away_b2b": 0.214,
     "rest_diff": 0.043,
-    "goalie_q_diff": 0.623,
+    "goalie_q_diff": 0.627,
     "home_backup": 0.05,
-    "away_backup": -0.051,
+    "away_backup": -0.052,
     "sk_avail_diff": 0.005,
     "sk_change_diff": 0.004,
     "sk_avail_diff_na": 0.007,
     "sk_change_diff_na": 0.007
    },
    "total": {
-    "rate_total": 0.723,
+    "rate_total": 0.721,
     "home_b2b": -0.018,
     "away_b2b": -0.075,
-    "goalie_q_sum": -0.368,
+    "goalie_q_sum": -0.374,
     "sk_avail_sum": 0.002,
     "sk_change_sum": 0.002,
-    "sk_avail_sum_na": 0.188,
-    "sk_change_sum_na": 0.188
+    "sk_avail_sum_na": 0.189,
+    "sk_change_sum_na": 0.189
    }
   }
  }
