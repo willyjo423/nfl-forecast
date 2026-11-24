@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T06:00:37.378726-05:00",
+  "generated_at": "2026-11-24T15:58:14.690012-05:00",
   "season": 2026,
   "week": 12,
   "games": [
@@ -53,7 +53,7 @@
         "away_change": null
       },
       "market_margin": 2.5,
-      "market_total": 43.5,
+      "market_total": 44.5,
       "vs_market": 1.4,
       "flags": [
         {
@@ -66,7 +66,7 @@
         },
         {
           "market": "Total",
-          "take": "Under 43.5",
+          "take": "Under 44.5",
           "why": "market",
           "hit": 0.545,
           "n": 99,
@@ -239,10 +239,10 @@
         "games_played": 10
       },
       "weather": {
-        "temp_f": 34.8,
-        "wind_mph": 22.3
+        "temp_f": 35.3,
+        "wind_mph": 18.4
       },
-      "weather_text": "35\u00b0F, wind 22 mph",
+      "weather_text": "35\u00b0F, wind 18 mph",
       "dfs": {
         "home_core": null,
         "away_core": null,
@@ -250,7 +250,7 @@
         "away_change": null
       },
       "market_margin": 3.0,
-      "market_total": 48.5,
+      "market_total": 47.5,
       "vs_market": -2.7,
       "flags": [
         {
@@ -302,10 +302,10 @@
         "games_played": 10
       },
       "weather": {
-        "temp_f": 35.7,
-        "wind_mph": 14.2
+        "temp_f": 37.2,
+        "wind_mph": 13.7
       },
-      "weather_text": "36\u00b0F, breezy 14 mph",
+      "weather_text": "37\u00b0F, breezy 14 mph",
       "dfs": {
         "home_core": null,
         "away_core": null,
@@ -335,14 +335,14 @@
       "away_team": "NO",
       "neutral_site": false,
       "forecast": {
-        "home_points": 27,
+        "home_points": 28,
         "away_points": 20,
-        "margin": 7.3,
+        "margin": 7.5,
         "total": 47.6,
-        "home_win_prob": 0.7057,
+        "home_win_prob": 0.7119,
         "sigma": 11.2,
-        "margin_p25": -0.3,
-        "margin_p75": 14.9,
+        "margin_p25": -0.0,
+        "margin_p75": 15.1,
         "total_sigma": 11.4,
         "total_p25": 39.9,
         "total_p75": 55.3
@@ -366,7 +366,7 @@
       },
       "weather": {
         "temp_f": 43.5,
-        "wind_mph": 6.6
+        "wind_mph": 7.8
       },
       "weather_text": "44\u00b0F",
       "dfs": {
@@ -377,7 +377,7 @@
       },
       "market_margin": 10.0,
       "market_total": 50.5,
-      "vs_market": -2.7,
+      "vs_market": -2.5,
       "flags": [
         {
           "market": "Spread",
@@ -439,7 +439,7 @@
         "away_change": null
       },
       "market_margin": 6.5,
-      "market_total": 46.5,
+      "market_total": 47.5,
       "vs_market": -0.4,
       "flags": [
         {
@@ -555,7 +555,7 @@
       },
       "weather": {
         "temp_f": 54.7,
-        "wind_mph": 2.1
+        "wind_mph": 1.7
       },
       "weather_text": "55\u00b0F",
       "dfs": {
@@ -590,14 +590,14 @@
         "home_points": 20,
         "away_points": 22,
         "margin": -1.5,
-        "total": 42.0,
+        "total": 42.1,
         "home_win_prob": 0.426,
         "sigma": 11.2,
         "margin_p25": -9.0,
         "margin_p75": 6.1,
         "total_sigma": 11.4,
-        "total_p25": 34.3,
-        "total_p75": 49.7
+        "total_p25": 34.4,
+        "total_p75": 49.8
       },
       "quarterbacks": {
         "home": "Kyle McCord",
@@ -617,10 +617,10 @@
         "games_played": 10
       },
       "weather": {
-        "temp_f": 74.7,
-        "wind_mph": 9.7
+        "temp_f": 73.7,
+        "wind_mph": 7.0
       },
-      "weather_text": "75\u00b0F",
+      "weather_text": "74\u00b0F",
       "dfs": {
         "home_core": null,
         "away_core": null,
@@ -808,7 +808,7 @@
         "away_change": null
       },
       "market_margin": -7.5,
-      "market_total": 40.5,
+      "market_total": 42.5,
       "vs_market": -0.2,
       "flags": [
         {
@@ -818,14 +818,6 @@
           "hit": 0.552,
           "n": 163,
           "gap": "0\u20132 pts"
-        },
-        {
-          "market": "Total",
-          "take": "Under 40.5",
-          "why": "market",
-          "hit": 0.545,
-          "n": 99,
-          "gap": "3\u20136 pts"
         }
       ]
     },
@@ -838,17 +830,17 @@
       "away_team": "SEA",
       "neutral_site": false,
       "forecast": {
-        "home_points": 26,
-        "away_points": 23,
+        "home_points": 25,
+        "away_points": 22,
         "margin": 2.9,
-        "total": 48.7,
-        "home_win_prob": 0.5708,
+        "total": 46.1,
+        "home_win_prob": 0.5709,
         "sigma": 11.2,
         "margin_p25": -4.7,
         "margin_p75": 10.5,
         "total_sigma": 11.4,
-        "total_p25": 41.0,
-        "total_p75": 56.4
+        "total_p25": 38.4,
+        "total_p75": 53.8
       },
       "quarterbacks": {
         "home": "Brock Purdy",
@@ -868,10 +860,10 @@
         "games_played": 10
       },
       "weather": {
-        "temp_f": 58.6,
-        "wind_mph": 4.5
+        "temp_f": 60.9,
+        "wind_mph": 7.3
       },
-      "weather_text": "59\u00b0F",
+      "weather_text": "61\u00b0F",
       "dfs": {
         "home_core": null,
         "away_core": null,
@@ -903,15 +895,15 @@
       "forecast": {
         "home_points": 20,
         "away_points": 21,
-        "margin": -0.8,
-        "total": 41.1,
-        "home_win_prob": 0.4487,
+        "margin": -0.6,
+        "total": 41.4,
+        "home_win_prob": 0.4557,
         "sigma": 11.2,
-        "margin_p25": -8.3,
-        "margin_p75": 6.8,
+        "margin_p25": -8.1,
+        "margin_p75": 7.0,
         "total_sigma": 11.4,
-        "total_p25": 33.4,
-        "total_p75": 48.8
+        "total_p25": 33.7,
+        "total_p75": 49.1
       },
       "quarterbacks": {
         "home": "Deshaun Watson",
@@ -931,10 +923,10 @@
         "games_played": 10
       },
       "weather": {
-        "temp_f": 48.9,
-        "wind_mph": 15.9
+        "temp_f": 51.8,
+        "wind_mph": 18.0
       },
-      "weather_text": "49\u00b0F, breezy 16 mph",
+      "weather_text": "52\u00b0F, wind 18 mph",
       "dfs": {
         "home_core": null,
         "away_core": null,
@@ -943,7 +935,7 @@
       },
       "market_margin": 4.5,
       "market_total": 41.5,
-      "vs_market": -5.3,
+      "vs_market": -5.1,
       "flags": [
         {
           "market": "Spread",
@@ -967,14 +959,14 @@
         "home_points": 23,
         "away_points": 21,
         "margin": 2.1,
-        "total": 43.8,
+        "total": 43.5,
         "home_win_prob": 0.5441,
         "sigma": 11.2,
         "margin_p25": -5.5,
         "margin_p75": 9.7,
         "total_sigma": 11.4,
-        "total_p25": 36.1,
-        "total_p75": 51.4
+        "total_p25": 35.9,
+        "total_p75": 51.2
       },
       "quarterbacks": {
         "home": "Baker Mayfield",
@@ -994,10 +986,10 @@
         "games_played": 10
       },
       "weather": {
-        "temp_f": 74.1,
-        "wind_mph": 11.6
+        "temp_f": 64.7,
+        "wind_mph": 17.1
       },
-      "weather_text": "74\u00b0F, breezy 12 mph",
+      "weather_text": "65\u00b0F, breezy 17 mph",
       "dfs": {
         "home_core": null,
         "away_core": null,
