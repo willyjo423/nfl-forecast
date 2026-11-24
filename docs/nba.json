@@ -1,102 +1,7 @@
 {
  "sport": "nba",
- "generated_at": "2026-11-23T21:15:03.084850-05:00",
+ "generated_at": "2026-11-23T23:59:51.842192-05:00",
  "games": [
-  {
-   "game_id": "401910044",
-   "date": "2026-11-23",
-   "when": "Mon 10:00 PM ET",
-   "home": "LAL",
-   "away": "UTA",
-   "forecast": {
-    "home_points": 121.0,
-    "away_points": 109.0,
-    "margin": 11.6,
-    "total": 229.8,
-    "home_win_prob": 0.8216,
-    "margin_p25": 2.4,
-    "margin_p75": 20.8,
-    "total_p25": 217.3,
-    "total_p75": 242.4
-   },
-   "rest": {
-    "home": 3.0,
-    "away": 1.0
-   },
-   "market": {
-    "margin": 12.5,
-    "total": 224.5,
-    "moneyline": null
-   },
-   "flags": [],
-   "dfs": {
-    "home_avail": 231.0,
-    "away_avail": 201.5,
-    "home_change": 7.0,
-    "away_change": -17.1,
-    "home_out": [
-     "Austin Reaves"
-    ],
-    "away_out": [
-     "Lauri Markkanen",
-     "Jaren Jackson Jr.",
-     "Jusuf Nurkic",
-     "Jaxson Hayes"
-    ]
-   }
-  },
-  {
-   "game_id": "401910045",
-   "date": "2026-11-23",
-   "when": "Mon 10:00 PM ET",
-   "home": "SAC",
-   "away": "SAS",
-   "forecast": {
-    "home_points": 106.0,
-    "away_points": 118.0,
-    "margin": -11.6,
-    "total": 224.1,
-    "home_win_prob": 0.1775,
-    "margin_p25": -20.8,
-    "margin_p75": -2.4,
-    "total_p25": 211.5,
-    "total_p75": 236.7
-   },
-   "rest": {
-    "home": 2.0,
-    "away": 2.0
-   },
-   "market": {
-    "margin": -8.5,
-    "total": 223.5,
-    "moneyline": null
-   },
-   "flags": [
-    {
-     "market": "Spread",
-     "take": "SAC +8.5",
-     "why": "market",
-     "hit": 0.552,
-     "n": 377,
-     "gap": "2\u20134 pts"
-    }
-   ],
-   "dfs": {
-    "home_avail": 202.5,
-    "away_avail": 215.3,
-    "home_change": 12.4,
-    "away_change": 21.3,
-    "home_out": [
-     "Maxime Raynaud"
-    ],
-    "away_out": [
-     "Victor Wembanyama",
-     "Dylan Harper",
-     "De'Aaron Fox",
-     "Julian Champagnie"
-    ]
-   }
-  },
   {
    "game_id": "401909314",
    "date": "2026-11-24",
@@ -104,15 +9,15 @@
    "home": "ORL",
    "away": "DET",
    "forecast": {
-    "home_points": 109.0,
+    "home_points": 110.0,
     "away_points": 113.0,
-    "margin": -4.1,
-    "total": 222.2,
-    "home_win_prob": 0.3673,
-    "margin_p25": -13.3,
-    "margin_p75": 5.1,
-    "total_p25": 209.7,
-    "total_p75": 234.8
+    "margin": -3.8,
+    "total": 223.0,
+    "home_win_prob": 0.376,
+    "margin_p25": -13.0,
+    "margin_p75": 5.4,
+    "total_p25": 210.5,
+    "total_p75": 235.6
    },
    "rest": {
     "home": 2.0,
@@ -120,7 +25,7 @@
    },
    "market": {
     "margin": -1.5,
-    "total": 214.5,
+    "total": 213.5,
     "moneyline": null
    },
    "flags": [
@@ -134,21 +39,25 @@
     },
     {
      "market": "Total",
-     "take": "Under 214.5",
+     "take": "Under 213.5",
      "why": "market",
-     "hit": 0.539,
-     "n": 219,
+     "hit": 0.541,
+     "n": 220,
      "gap": "6\u201310 pts",
      "early": false
     }
    ],
    "dfs": {
-    "home_avail": null,
-    "away_avail": null,
-    "home_change": null,
-    "away_change": null,
-    "home_out": [],
-    "away_out": []
+    "home_avail": 212.1,
+    "away_avail": 197.6,
+    "home_change": 19.5,
+    "away_change": 7.8,
+    "home_out": [
+     "Paolo Banchero"
+    ],
+    "away_out": [
+     "Jalen Duren"
+    ]
    }
   },
   {
@@ -159,14 +68,14 @@
    "away": "BOS",
    "forecast": {
     "home_points": 105.0,
-    "away_points": 113.0,
-    "margin": -7.9,
-    "total": 217.4,
-    "home_win_prob": 0.2602,
-    "margin_p25": -17.1,
-    "margin_p75": 1.3,
-    "total_p25": 204.8,
-    "total_p75": 229.9
+    "away_points": 112.0,
+    "margin": -7.1,
+    "total": 216.3,
+    "home_win_prob": 0.2817,
+    "margin_p25": -16.3,
+    "margin_p75": 2.1,
+    "total_p25": 203.8,
+    "total_p75": 228.9
    },
    "rest": {
     "home": 2.0,
@@ -174,7 +83,7 @@
    },
    "market": {
     "margin": -10.5,
-    "total": 216.5,
+    "total": 217.5,
     "moneyline": null
    },
    "flags": [
@@ -188,10 +97,10 @@
     }
    ],
    "dfs": {
-    "home_avail": null,
-    "away_avail": null,
-    "home_change": null,
-    "away_change": null,
+    "home_avail": 193.2,
+    "away_avail": 185.2,
+    "home_change": -18.3,
+    "away_change": -7.4,
     "home_out": [],
     "away_out": []
    }
@@ -203,15 +112,15 @@
    "home": "DEN",
    "away": "DAL",
    "forecast": {
-    "home_points": 116.0,
-    "away_points": 113.0,
-    "margin": 3.2,
-    "total": 229.7,
-    "home_win_prob": 0.6024,
-    "margin_p25": -6.0,
-    "margin_p75": 12.4,
-    "total_p25": 217.1,
-    "total_p75": 242.2
+    "home_points": 115.0,
+    "away_points": 112.0,
+    "margin": 3.0,
+    "total": 227.9,
+    "home_win_prob": 0.5955,
+    "margin_p25": -6.2,
+    "margin_p75": 12.2,
+    "total_p25": 215.4,
+    "total_p75": 240.5
    },
    "rest": {
     "home": 2.0,
@@ -233,21 +142,21 @@
     }
    ],
    "dfs": {
-    "home_avail": null,
-    "away_avail": null,
-    "home_change": null,
-    "away_change": null,
+    "home_avail": 176.2,
+    "away_avail": 194.1,
+    "home_change": -26.8,
+    "away_change": -9.9,
     "home_out": [],
     "away_out": []
    }
   }
  ],
  "model_metrics": {
-  "n_games": 9595,
-  "margin_mae": 10.88797698647253,
-  "total_mae": 14.862504829434743,
-  "win_accuracy": 0.6558624283480979,
-  "win_brier": 0.21531953104914062,
+  "n_games": 9603,
+  "margin_mae": 10.886751562264635,
+  "total_mae": 14.860747586523365,
+  "win_accuracy": 0.6558367176923878,
+  "win_brier": 0.21533316706096314,
   "seasons": [
    2018,
    2019,
@@ -262,7 +171,7 @@
   "dfs_layer": "DFS team strength (who is playing, from the DFS player projections)",
   "vs_line": {
    "season": 2026,
-   "games_forecast": 170,
+   "games_forecast": 178,
    "games_with_line": 170,
    "spread": [
     {
@@ -270,9 +179,9 @@
      "lo": 0,
      "hi": 2,
      "n": 75,
-     "won": 42,
-     "lost": 33,
-     "pct": 0.56
+     "won": 43,
+     "lost": 32,
+     "pct": 0.573
     },
     {
      "gap": "2\u20134 pts",
@@ -304,9 +213,9 @@
     {
      "gap": "all games",
      "n": 170,
-     "won": 89,
-     "lost": 81,
-     "pct": 0.524
+     "won": 90,
+     "lost": 80,
+     "pct": 0.529
     }
    ],
    "total": [
@@ -314,37 +223,37 @@
      "gap": "0\u20133 pts",
      "lo": 0,
      "hi": 3,
-     "n": 98,
+     "n": 99,
      "won": 52,
-     "lost": 46,
-     "pct": 0.531
+     "lost": 47,
+     "pct": 0.525
     },
     {
      "gap": "3\u20136 pts",
      "lo": 3,
      "hi": 6,
-     "n": 51,
+     "n": 50,
      "won": 22,
-     "lost": 29,
-     "pct": 0.431
+     "lost": 28,
+     "pct": 0.44
     },
     {
      "gap": "6\u201310 pts",
      "lo": 6,
      "hi": 10,
-     "n": 15,
+     "n": 16,
      "won": 7,
-     "lost": 8,
-     "pct": 0.467
+     "lost": 9,
+     "pct": 0.438
     },
     {
      "gap": "10+ pts",
      "lo": 10,
      "hi": 99,
-     "n": 6,
+     "n": 5,
      "won": 2,
-     "lost": 4,
-     "pct": 0.333
+     "lost": 3,
+     "pct": 0.4
     },
     {
      "gap": "all games",
@@ -354,7 +263,7 @@
      "pct": 0.488
     }
    ],
-   "avg_abs_gap_spread": 2.9
+   "avg_abs_gap_spread": 2.91
   },
   "vs_line_last_season": {
    "season": 2025,
@@ -459,7 +368,7 @@
      "hi": 2,
      "gap": "0\u20132 pts",
      "n": 490,
-     "model_pct": 0.516,
+     "model_pct": 0.518,
      "flag": null,
      "early": false,
      "hit": null
@@ -500,8 +409,8 @@
      "lo": 0,
      "hi": 3,
      "gap": "0\u20133 pts",
-     "n": 576,
-     "model_pct": 0.5,
+     "n": 577,
+     "model_pct": 0.499,
      "flag": null,
      "early": false,
      "hit": null
@@ -510,8 +419,8 @@
      "lo": 3,
      "hi": 6,
      "gap": "3\u20136 pts",
-     "n": 372,
-     "model_pct": 0.503,
+     "n": 371,
+     "model_pct": 0.504,
      "flag": null,
      "early": false,
      "hit": null
@@ -520,18 +429,18 @@
      "lo": 6,
      "hi": 10,
      "gap": "6\u201310 pts",
-     "n": 219,
-     "model_pct": 0.461,
+     "n": 220,
+     "model_pct": 0.459,
      "flag": "market",
      "early": false,
-     "hit": 0.539
+     "hit": 0.541
     },
     {
      "lo": 10,
      "hi": 99,
      "gap": "10+ pts",
-     "n": 68,
-     "model_pct": 0.485,
+     "n": 67,
+     "model_pct": 0.493,
      "flag": null,
      "early": false,
      "hit": null
@@ -541,24 +450,24 @@
   "coefficients": {
    "margin": {
     "rate_margin": 1.123,
-    "home_b2b": -2.089,
-    "away_b2b": 1.996,
-    "rest_diff": 0.162,
-    "dfs_avail_diff": 0.047,
-    "dfs_change_diff": -0.034,
+    "home_b2b": -2.088,
+    "away_b2b": 2.014,
+    "rest_diff": 0.149,
+    "dfs_avail_diff": 0.048,
+    "dfs_change_diff": -0.035,
     "dfs_missing_diff": 0.031,
-    "dfs_avail_diff_na": 0.381,
-    "dfs_change_diff_na": 0.381,
-    "dfs_missing_diff_na": -0.874
+    "dfs_avail_diff_na": 0.378,
+    "dfs_change_diff_na": 0.378,
+    "dfs_missing_diff_na": -0.867
    },
    "total": {
-    "rate_total": 0.986,
+    "rate_total": 0.985,
     "home_b2b": 0.098,
-    "away_b2b": 0.294,
+    "away_b2b": 0.299,
     "dfs_avail_sum": 0.028,
-    "dfs_change_sum": 0.025,
-    "dfs_avail_sum_na": 5.469,
-    "dfs_change_sum_na": 5.469
+    "dfs_change_sum": 0.024,
+    "dfs_avail_sum_na": 5.562,
+    "dfs_change_sum_na": 5.562
    }
   }
  }
