@@ -1,70 +1,7 @@
 {
  "sport": "nhl",
- "generated_at": "2026-11-24T18:56:31.544684-05:00",
+ "generated_at": "2026-11-24T22:46:22.499942-05:00",
  "games": [
-  {
-   "game_id": "2026020385",
-   "date": "2026-11-24",
-   "when": "Tue 8:00 PM ET",
-   "home": "EDM",
-   "away": "VGK",
-   "forecast": {
-    "home_points": 3.3,
-    "away_points": 3.1,
-    "margin": 0.2,
-    "total": 6.4,
-    "home_win_prob": 0.528,
-    "margin_p25": -1.5,
-    "margin_p75": 1.9,
-    "total_p25": 4.9,
-    "total_p75": 8.0
-   },
-   "rest": {
-    "home": 2.0,
-    "away": 3.0
-   },
-   "market": {
-    "margin": null,
-    "total": 6.5,
-    "moneyline": [
-     -102.0,
-     -118.0
-    ]
-   },
-   "flags": [
-    {
-     "market": "Moneyline",
-     "take": "VGK -118",
-     "why": "market",
-     "hit": 0.6,
-     "n": 5,
-     "gap": "4+ % win-prob",
-     "early": true
-    }
-   ],
-   "skaters": {
-    "home_avail": null,
-    "away_avail": null,
-    "home_change": null,
-    "away_change": null,
-    "home_out": [],
-    "away_out": []
-   },
-   "goalies": {
-    "home": {
-     "name": "Devon Levi",
-     "start_prob": null,
-     "status": "regular starter",
-     "quality": -0.08
-    },
-    "away": {
-     "name": "Adin Hill",
-     "start_prob": null,
-     "status": "regular starter",
-     "quality": 0.02
-    }
-   }
-  },
   {
    "game_id": "2026020386",
    "date": "2026-11-25",
@@ -76,7 +13,7 @@
     "away_points": 2.9,
     "margin": 0.6,
     "total": 6.3,
-    "home_win_prob": 0.6024,
+    "home_win_prob": 0.6009,
     "margin_p25": -1.1,
     "margin_p75": 2.3,
     "total_p25": 4.8,
@@ -126,7 +63,7 @@
     "away_points": 3.2,
     "margin": -0.3,
     "total": 6.1,
-    "home_win_prob": 0.4475,
+    "home_win_prob": 0.4462,
     "margin_p25": -2.0,
     "margin_p75": 1.4,
     "total_p25": 4.6,
@@ -176,7 +113,7 @@
     "away_points": 3.4,
     "margin": -0.4,
     "total": 6.3,
-    "home_win_prob": 0.4213,
+    "home_win_prob": 0.42,
     "margin_p25": -2.1,
     "margin_p75": 1.3,
     "total_p25": 4.8,
@@ -226,7 +163,7 @@
     "away_points": 3.2,
     "margin": -0.2,
     "total": 6.1,
-    "home_win_prob": 0.4566,
+    "home_win_prob": 0.4546,
     "margin_p25": -1.9,
     "margin_p75": 1.5,
     "total_p25": 4.6,
@@ -272,11 +209,11 @@
    "home": "NYI",
    "away": "STL",
    "forecast": {
-    "home_points": 3.1,
+    "home_points": 3.0,
     "away_points": 3.1,
     "margin": -0.1,
     "total": 6.2,
-    "home_win_prob": 0.4809,
+    "home_win_prob": 0.4789,
     "margin_p25": -1.8,
     "margin_p75": 1.6,
     "total_p25": 4.6,
@@ -326,7 +263,7 @@
     "away_points": 3.0,
     "margin": 0.1,
     "total": 6.2,
-    "home_win_prob": 0.5101,
+    "home_win_prob": 0.5088,
     "margin_p25": -1.6,
     "margin_p75": 1.8,
     "total_p25": 4.6,
@@ -376,7 +313,7 @@
     "away_points": 3.2,
     "margin": 0.2,
     "total": 6.5,
-    "home_win_prob": 0.5257,
+    "home_win_prob": 0.5246,
     "margin_p25": -1.5,
     "margin_p75": 1.9,
     "total_p25": 4.9,
@@ -426,7 +363,7 @@
     "away_points": 3.4,
     "margin": -0.6,
     "total": 6.3,
-    "home_win_prob": 0.3882,
+    "home_win_prob": 0.3867,
     "margin_p25": -2.3,
     "margin_p75": 1.1,
     "total_p25": 4.7,
@@ -476,7 +413,7 @@
     "away_points": 2.9,
     "margin": 0.5,
     "total": 6.4,
-    "home_win_prob": 0.5887,
+    "home_win_prob": 0.5873,
     "margin_p25": -1.2,
     "margin_p75": 2.2,
     "total_p25": 4.9,
@@ -526,7 +463,7 @@
     "away_points": 2.9,
     "margin": 0.1,
     "total": 5.8,
-    "home_win_prob": 0.5162,
+    "home_win_prob": 0.5148,
     "margin_p25": -1.6,
     "margin_p75": 1.8,
     "total_p25": 4.3,
@@ -576,7 +513,7 @@
     "away_points": 2.6,
     "margin": 1.0,
     "total": 6.2,
-    "home_win_prob": 0.6683,
+    "home_win_prob": 0.6667,
     "margin_p25": -0.7,
     "margin_p75": 2.7,
     "total_p25": 4.6,
@@ -626,7 +563,7 @@
     "away_points": 2.9,
     "margin": 0.3,
     "total": 6.2,
-    "home_win_prob": 0.546,
+    "home_win_prob": 0.5445,
     "margin_p25": -1.4,
     "margin_p75": 2.0,
     "total_p25": 4.6,
@@ -676,8 +613,8 @@
     "away_points": 3.1,
     "margin": 0.3,
     "total": 6.5,
-    "home_win_prob": 0.5559,
-    "margin_p25": -1.3,
+    "home_win_prob": 0.554,
+    "margin_p25": -1.4,
     "margin_p75": 2.0,
     "total_p25": 5.0,
     "total_p75": 8.1
@@ -723,10 +660,10 @@
    "away": "SJS",
    "forecast": {
     "home_points": 3.5,
-    "away_points": 3.2,
+    "away_points": 3.3,
     "margin": 0.3,
     "total": 6.8,
-    "home_win_prob": 0.5447,
+    "home_win_prob": 0.5428,
     "margin_p25": -1.4,
     "margin_p75": 2.0,
     "total_p25": 5.2,
@@ -767,11 +704,11 @@
   }
  ],
  "model_metrics": {
-  "n_games": 10000,
-  "margin_mae": 2.143133055305213,
-  "total_mae": 1.8387354902163804,
-  "win_accuracy": 0.5733,
-  "win_brier": 0.24045911407765994,
+  "n_games": 10001,
+  "margin_mae": 2.143137266086639,
+  "total_mae": 1.838707098319196,
+  "win_accuracy": 0.5732426757324267,
+  "win_brier": 0.24046292482708842,
   "seasons": [
    2018,
    2019,
@@ -786,8 +723,8 @@
   "dfs_layer": "DFS skater strength + starting goalie (DFS confirmations + his record)",
   "vs_line": {
    "season": 2026,
-   "games_forecast": 299,
-   "games_with_line": 13,
+   "games_forecast": 300,
+   "games_with_line": 14,
    "moneyline": [
     {
      "gap": "0\u20134 % win-prob",
@@ -802,29 +739,29 @@
      "gap": "4+ % win-prob",
      "lo": 4,
      "hi": 99,
-     "n": 5,
+     "n": 6,
      "won": 2,
-     "lost": 3,
-     "pct": 0.4
+     "lost": 4,
+     "pct": 0.333
     },
     {
      "gap": "all games",
-     "n": 13,
+     "n": 14,
      "won": 7,
-     "lost": 6,
-     "pct": 0.538
+     "lost": 7,
+     "pct": 0.5
     }
    ],
-   "moneyline_units": -1.05,
+   "moneyline_units": -2.05,
    "total": [
     {
      "gap": "0\u20130.4 goals",
      "lo": 0,
      "hi": 0.4,
-     "n": 8,
+     "n": 9,
      "won": 1,
-     "lost": 7,
-     "pct": 0.125
+     "lost": 8,
+     "pct": 0.111
     },
     {
      "gap": "0.4+ goals",
@@ -837,10 +774,10 @@
     },
     {
      "gap": "all games",
-     "n": 13,
+     "n": 14,
      "won": 6,
-     "lost": 7,
-     "pct": 0.462
+     "lost": 8,
+     "pct": 0.429
     }
    ]
   },
@@ -855,11 +792,11 @@
      "lo": 0,
      "hi": 0.4,
      "gap": "0\u20130.4 goals",
-     "n": 8,
-     "model_pct": 0.125,
+     "n": 9,
+     "model_pct": 0.111,
      "flag": null,
      "early": true,
-     "hit": 0.875
+     "hit": 0.889
     },
     {
      "lo": 0.4,
@@ -887,21 +824,21 @@
      "lo": 4,
      "hi": 99,
      "gap": "4+ % win-prob",
-     "n": 5,
-     "model_pct": 0.4,
+     "n": 6,
+     "model_pct": 0.333,
      "flag": "market",
      "early": true,
-     "hit": 0.6
+     "hit": 0.667
     }
    ]
   },
   "coefficients": {
    "margin": {
     "rate_margin": 1.071,
-    "home_b2b": -0.254,
-    "away_b2b": 0.214,
-    "rest_diff": 0.043,
-    "goalie_q_diff": 0.633,
+    "home_b2b": -0.253,
+    "away_b2b": 0.213,
+    "rest_diff": 0.044,
+    "goalie_q_diff": 0.634,
     "home_backup": 0.051,
     "away_backup": -0.052,
     "sk_avail_diff": 0.005,
@@ -913,7 +850,7 @@
     "rate_total": 0.723,
     "home_b2b": -0.018,
     "away_b2b": -0.075,
-    "goalie_q_sum": -0.371,
+    "goalie_q_sum": -0.372,
     "sk_avail_sum": 0.002,
     "sk_change_sum": 0.001,
     "sk_avail_sum_na": 0.159,
