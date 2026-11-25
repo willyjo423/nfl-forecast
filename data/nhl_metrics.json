@@ -1,9 +1,9 @@
 {
  "n_games": 10001,
- "margin_mae": 2.143137266086639,
- "total_mae": 1.838707098319196,
- "win_accuracy": 0.5732426757324267,
- "win_brier": 0.24046292482708842,
+ "margin_mae": 2.1432002994522765,
+ "total_mae": 1.8386932721905012,
+ "win_accuracy": 0.5731426857314269,
+ "win_brier": 0.24047926028083527,
  "seasons": [
   2018,
   2019,
@@ -129,27 +129,27 @@
  },
  "coefficients": {
   "margin": {
-   "rate_margin": 1.071,
-   "home_b2b": -0.253,
-   "away_b2b": 0.213,
+   "rate_margin": 1.072,
+   "home_b2b": -0.252,
+   "away_b2b": 0.214,
    "rest_diff": 0.044,
-   "goalie_q_diff": 0.634,
-   "home_backup": 0.051,
-   "away_backup": -0.052,
+   "goalie_q_diff": 0.628,
+   "home_backup": 0.047,
+   "away_backup": -0.053,
    "sk_avail_diff": 0.005,
    "sk_change_diff": 0.003,
-   "sk_avail_diff_na": 0.008,
-   "sk_change_diff_na": 0.008
+   "sk_avail_diff_na": 0.007,
+   "sk_change_diff_na": 0.007
   },
   "total": {
    "rate_total": 0.723,
    "home_b2b": -0.018,
-   "away_b2b": -0.075,
-   "goalie_q_sum": -0.372,
+   "away_b2b": -0.076,
+   "goalie_q_sum": -0.382,
    "sk_avail_sum": 0.002,
    "sk_change_sum": 0.001,
-   "sk_avail_sum_na": 0.159,
-   "sk_change_sum_na": 0.159
+   "sk_avail_sum_na": 0.161,
+   "sk_change_sum_na": 0.161
   }
  }
 }
