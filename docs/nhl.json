@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated_at": "2026-11-25T00:25:09.824339-05:00",
+ "generated_at": "2026-11-25T18:39:56.921884-05:00",
  "games": [
   {
    "game_id": "2026020386",
@@ -11,11 +11,11 @@
    "forecast": {
     "home_points": 3.7,
     "away_points": 3.0,
-    "margin": 0.8,
-    "total": 6.7,
-    "home_win_prob": 0.6279,
-    "margin_p25": -0.9,
-    "margin_p75": 2.5,
+    "margin": 0.7,
+    "total": 6.6,
+    "home_win_prob": 0.623,
+    "margin_p25": -1.0,
+    "margin_p75": 2.4,
     "total_p25": 5.1,
     "total_p75": 8.2
    },
@@ -27,31 +27,31 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -162.0,
-     136.0
+     -170.0,
+     142.0
     ]
    },
    "flags": [],
    "skaters": {
-    "home_avail": 141.8,
-    "away_avail": 117.1,
-    "home_change": 38.4,
-    "away_change": 10.5,
+    "home_avail": 140.7,
+    "away_avail": 117.6,
+    "home_change": 37.2,
+    "away_change": 11.0,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Jeremy Swayman",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.11
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.19
     },
     "away": {
-     "name": "Stuart Skinner",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.07
+     "name": "Nico Daws",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": -0.05
     }
    }
   },
@@ -64,10 +64,10 @@
    "forecast": {
     "home_points": 3.2,
     "away_points": 3.3,
-    "margin": -0.0,
+    "margin": -0.1,
     "total": 6.5,
-    "home_win_prob": 0.4869,
-    "margin_p25": -1.7,
+    "home_win_prob": 0.48,
+    "margin_p25": -1.8,
     "margin_p75": 1.6,
     "total_p25": 5.0,
     "total_p75": 8.0
@@ -96,25 +96,25 @@
     }
    ],
    "skaters": {
-    "home_avail": 138.8,
-    "away_avail": 114.4,
-    "home_change": 26.8,
-    "away_change": 21.8,
+    "home_avail": 132.8,
+    "away_avail": 114.0,
+    "home_change": 20.8,
+    "away_change": 21.4,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Ukko-Pekka Luukkonen",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.02
+     "start_prob": 0.85,
+     "status": "Likely",
+     "quality": -0.04
     },
     "away": {
      "name": "Joonas Korpisalo",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.05
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": -0.1
     }
    }
   },
@@ -125,14 +125,14 @@
    "home": "TBL",
    "away": "CAR",
    "forecast": {
-    "home_points": 3.0,
+    "home_points": 2.9,
     "away_points": 3.5,
     "margin": -0.6,
     "total": 6.5,
-    "home_win_prob": 0.3955,
+    "home_win_prob": 0.3873,
     "margin_p25": -2.3,
     "margin_p75": 1.1,
-    "total_p25": 5.0,
+    "total_p25": 4.9,
     "total_p75": 8.0
    },
    "rest": {
@@ -143,14 +143,14 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     110.0,
-     -130.0
+     -105.0,
+     -115.0
     ]
    },
    "flags": [
     {
      "market": "Moneyline",
-     "take": "TBL +110",
+     "take": "TBL -105",
      "why": "market",
      "hit": 0.667,
      "n": 6,
@@ -159,11 +159,13 @@
     }
    ],
    "skaters": {
-    "home_avail": 108.9,
-    "away_avail": 122.0,
-    "home_change": -12.9,
-    "away_change": -2.6,
-    "home_out": [],
+    "home_avail": 101.9,
+    "away_avail": 117.2,
+    "home_change": -19.9,
+    "away_change": -7.3,
+    "home_out": [
+     "Brandon Hagel"
+    ],
     "away_out": []
    },
    "goalies": {
@@ -174,10 +176,10 @@
      "quality": 0.13
     },
     "away": {
-     "name": "Pyotr Kochetkov",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.01
+     "name": "Brandon Bussi",
+     "start_prob": 0.85,
+     "status": "Likely",
+     "quality": -0.02
     }
    }
   },
@@ -188,19 +190,91 @@
    "home": "FLA",
    "away": "OTT",
    "forecast": {
-    "home_points": 3.1,
-    "away_points": 3.2,
-    "margin": -0.1,
-    "total": 6.3,
-    "home_win_prob": 0.4712,
-    "margin_p25": -1.8,
-    "margin_p75": 1.6,
+    "home_points": 3.0,
+    "away_points": 3.3,
+    "margin": -0.3,
+    "total": 6.2,
+    "home_win_prob": 0.4426,
+    "margin_p25": -2.0,
+    "margin_p75": 1.4,
     "total_p25": 4.7,
     "total_p75": 7.8
    },
    "rest": {
     "home": 4.0,
     "away": 2.0
+   },
+   "market": {
+    "margin": null,
+    "total": 5.5,
+    "moneyline": [
+     -125.0,
+     105.0
+    ]
+   },
+   "flags": [
+    {
+     "market": "Total",
+     "take": "Over 5.5",
+     "why": "model",
+     "hit": 1.0,
+     "n": 5,
+     "gap": "0.4+ goals",
+     "early": true
+    },
+    {
+     "market": "Moneyline",
+     "take": "FLA -125",
+     "why": "market",
+     "hit": 0.667,
+     "n": 6,
+     "gap": "4+ % win-prob",
+     "early": true
+    }
+   ],
+   "skaters": {
+    "home_avail": 105.7,
+    "away_avail": 111.3,
+    "home_change": -8.9,
+    "away_change": -1.0,
+    "home_out": [],
+    "away_out": []
+   },
+   "goalies": {
+    "home": {
+     "name": "Jacob Markstrom",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": -0.05
+    },
+    "away": {
+     "name": "Linus Ullmark",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.24
+    }
+   }
+  },
+  {
+   "game_id": "2026020390",
+   "date": "2026-11-25",
+   "when": "Wed 7:00 PM ET",
+   "home": "NYI",
+   "away": "STL",
+   "forecast": {
+    "home_points": 3.3,
+    "away_points": 3.2,
+    "margin": 0.1,
+    "total": 6.5,
+    "home_win_prob": 0.518,
+    "margin_p25": -1.6,
+    "margin_p75": 1.8,
+    "total_p25": 4.9,
+    "total_p75": 8.0
+   },
+   "rest": {
+    "home": 2.0,
+    "away": 3.0
    },
    "market": {
     "margin": null,
@@ -219,94 +293,22 @@
      "n": 5,
      "gap": "0.4+ goals",
      "early": true
-    },
-    {
-     "market": "Moneyline",
-     "take": "FLA -130",
-     "why": "market",
-     "hit": 0.667,
-     "n": 6,
-     "gap": "4+ % win-prob",
-     "early": true
     }
    ],
    "skaters": {
-    "home_avail": 105.6,
-    "away_avail": 109.3,
-    "home_change": -9.0,
-    "away_change": -3.1,
-    "home_out": [],
-    "away_out": []
-   },
-   "goalies": {
-    "home": {
-     "name": "Jacob Markstrom",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.03
-    },
-    "away": {
-     "name": "Linus Ullmark",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.03
-    }
-   }
-  },
-  {
-   "game_id": "2026020390",
-   "date": "2026-11-25",
-   "when": "Wed 7:00 PM ET",
-   "home": "NYI",
-   "away": "STL",
-   "forecast": {
-    "home_points": 3.3,
-    "away_points": 3.2,
-    "margin": 0.0,
-    "total": 6.5,
-    "home_win_prob": 0.503,
-    "margin_p25": -1.6,
-    "margin_p75": 1.7,
-    "total_p25": 4.9,
-    "total_p75": 8.0
-   },
-   "rest": {
-    "home": 2.0,
-    "away": 3.0
-   },
-   "market": {
-    "margin": null,
-    "total": 5.5,
-    "moneyline": [
-     -120.0,
-     100.0
-    ]
-   },
-   "flags": [
-    {
-     "market": "Total",
-     "take": "Over 5.5",
-     "why": "model",
-     "hit": 1.0,
-     "n": 5,
-     "gap": "0.4+ goals",
-     "early": true
-    }
-   ],
-   "skaters": {
-    "home_avail": 123.7,
-    "away_avail": 114.7,
-    "home_change": 14.6,
-    "away_change": 9.3,
+    "home_avail": 127.8,
+    "away_avail": 110.0,
+    "home_change": 18.7,
+    "away_change": 4.7,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Ilya Sorokin",
-     "start_prob": 0.85,
-     "status": "Likely",
-     "quality": 0.21
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.23
     },
     "away": {
      "name": "Joel Hofer",
@@ -323,15 +325,15 @@
    "home": "PIT",
    "away": "CGY",
    "forecast": {
-    "home_points": 3.3,
+    "home_points": 3.4,
     "away_points": 3.1,
-    "margin": 0.2,
+    "margin": 0.3,
     "total": 6.4,
-    "home_win_prob": 0.5339,
-    "margin_p25": -1.5,
-    "margin_p75": 1.9,
-    "total_p25": 4.8,
-    "total_p75": 7.9
+    "home_win_prob": 0.5441,
+    "margin_p25": -1.4,
+    "margin_p75": 2.0,
+    "total_p25": 4.9,
+    "total_p75": 8.0
    },
    "rest": {
     "home": 3.0,
@@ -341,14 +343,14 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -162.0,
-     136.0
+     -175.0,
+     145.0
     ]
    },
    "flags": [
     {
      "market": "Moneyline",
-     "take": "PIT -162",
+     "take": "PIT -175",
      "why": "market",
      "hit": 0.667,
      "n": 6,
@@ -357,25 +359,25 @@
     }
    ],
    "skaters": {
-    "home_avail": 131.4,
-    "away_avail": 108.7,
-    "home_change": 27.1,
-    "away_change": 13.3,
+    "home_avail": 136.5,
+    "away_avail": 109.4,
+    "home_change": 32.2,
+    "away_change": 14.0,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Arturs Silovs",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.09
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": -0.15
     },
     "away": {
-     "name": "Devin Cooley",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.07
+     "name": "Dustin Wolf",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.03
     }
    }
   },
@@ -387,14 +389,14 @@
    "away": "PHI",
    "forecast": {
     "home_points": 3.5,
-    "away_points": 3.4,
-    "margin": 0.1,
+    "away_points": 3.3,
+    "margin": 0.2,
     "total": 6.8,
-    "home_win_prob": 0.5114,
-    "margin_p25": -1.6,
+    "home_win_prob": 0.5228,
+    "margin_p25": -1.5,
     "margin_p75": 1.8,
-    "total_p25": 5.3,
-    "total_p75": 8.4
+    "total_p25": 5.2,
+    "total_p75": 8.3
    },
    "rest": {
     "home": 4.0,
@@ -420,25 +422,25 @@
     }
    ],
    "skaters": {
-    "home_avail": 131.0,
-    "away_avail": 123.5,
-    "home_change": 23.8,
-    "away_change": 22.9,
+    "home_avail": 137.9,
+    "away_avail": 122.4,
+    "home_change": 30.7,
+    "away_change": 21.8,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Logan Thompson",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.03
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.16
     },
     "away": {
-     "name": "Dan Vladar",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.01
+     "name": "Joseph Woll",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.07
     }
    }
   },
@@ -452,8 +454,8 @@
     "home_points": 2.9,
     "away_points": 3.6,
     "margin": -0.7,
-    "total": 6.5,
-    "home_win_prob": 0.3736,
+    "total": 6.6,
+    "home_win_prob": 0.3682,
     "margin_p25": -2.4,
     "margin_p75": 1.0,
     "total_p25": 5.0,
@@ -467,14 +469,14 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     130.0,
-     -155.0
+     124.0,
+     -148.0
     ]
    },
    "flags": [
     {
      "market": "Moneyline",
-     "take": "CBJ +130",
+     "take": "CBJ +124",
      "why": "market",
      "hit": 0.667,
      "n": 6,
@@ -483,25 +485,25 @@
     }
    ],
    "skaters": {
-    "home_avail": 114.4,
-    "away_avail": 137.7,
-    "home_change": 14.0,
-    "away_change": 19.4,
+    "home_avail": 119.3,
+    "away_avail": 138.9,
+    "home_change": 18.9,
+    "away_change": 20.6,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Cam Talbot",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.05
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": -0.01
     },
     "away": {
      "name": "Connor Hellebuyck",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.07
+     "start_prob": 0.85,
+     "status": "Likely",
+     "quality": 0.11
     }
    }
   },
@@ -514,12 +516,12 @@
    "forecast": {
     "home_points": 3.8,
     "away_points": 2.9,
-    "margin": 0.9,
+    "margin": 1.0,
     "total": 6.7,
-    "home_win_prob": 0.6584,
+    "home_win_prob": 0.6612,
     "margin_p25": -0.7,
-    "margin_p75": 2.6,
-    "total_p25": 5.2,
+    "margin_p75": 2.7,
+    "total_p25": 5.1,
     "total_p75": 8.2
    },
    "rest": {
@@ -530,16 +532,16 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -218.0,
-     180.0
+     -230.0,
+     190.0
     ]
    },
    "flags": [],
    "skaters": {
-    "home_avail": 146.1,
-    "away_avail": 106.6,
-    "home_change": 49.8,
-    "away_change": 19.9,
+    "home_avail": 146.2,
+    "away_avail": 103.4,
+    "home_change": 49.9,
+    "away_change": 16.7,
     "home_out": [],
     "away_out": []
    },
@@ -552,9 +554,9 @@
     },
     "away": {
      "name": "Leevi Merilainen",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.14
+     "start_prob": 0.85,
+     "status": "Likely",
+     "quality": -0.12
     }
    }
   },
@@ -568,8 +570,8 @@
     "home_points": 3.2,
     "away_points": 2.9,
     "margin": 0.3,
-    "total": 6.1,
-    "home_win_prob": 0.5456,
+    "total": 6.0,
+    "home_win_prob": 0.5464,
     "margin_p25": -1.4,
     "margin_p75": 2.0,
     "total_p25": 4.5,
@@ -608,19 +610,19 @@
     }
    ],
    "skaters": {
-    "home_avail": 125.0,
-    "away_avail": 101.7,
-    "home_change": 14.6,
-    "away_change": 1.3,
+    "home_avail": 123.9,
+    "away_avail": 101.2,
+    "home_change": 13.4,
+    "away_change": 0.8,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Jake Oettinger",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.11
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.13
     },
     "away": {
      "name": "Juuse Saros",
@@ -641,11 +643,11 @@
     "away_points": 2.7,
     "margin": 1.0,
     "total": 6.4,
-    "home_win_prob": 0.6644,
-    "margin_p25": -0.7,
+    "home_win_prob": 0.6741,
+    "margin_p25": -0.6,
     "margin_p75": 2.7,
-    "total_p25": 4.9,
-    "total_p75": 8.0
+    "total_p25": 4.8,
+    "total_p75": 7.9
    },
    "rest": {
     "home": 2.0,
@@ -655,14 +657,14 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -155.0,
-     130.0
+     -148.0,
+     124.0
     ]
    },
    "flags": [
     {
      "market": "Moneyline",
-     "take": "UTA +130",
+     "take": "UTA +124",
      "why": "market",
      "hit": 0.667,
      "n": 6,
@@ -671,19 +673,19 @@
     }
    ],
    "skaters": {
-    "home_avail": 129.1,
-    "away_avail": 112.5,
-    "home_change": 3.4,
-    "away_change": -0.4,
+    "home_avail": 129.8,
+    "away_avail": 115.4,
+    "home_change": 4.0,
+    "away_change": 2.5,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Jesper Wallstedt",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.15
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.29
     },
     "away": {
      "name": "Karel Vejmelka",
@@ -700,14 +702,14 @@
    "home": "COL",
    "away": "MTL",
    "forecast": {
-    "home_points": 3.3,
+    "home_points": 3.4,
     "away_points": 3.0,
     "margin": 0.3,
-    "total": 6.3,
-    "home_win_prob": 0.5515,
-    "margin_p25": -1.4,
+    "total": 6.4,
+    "home_win_prob": 0.5556,
+    "margin_p25": -1.3,
     "margin_p75": 2.0,
-    "total_p25": 4.8,
+    "total_p25": 4.9,
     "total_p75": 7.9
    },
    "rest": {
@@ -718,31 +720,31 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -125.0,
-     105.0
+     -120.0,
+     100.0
     ]
    },
    "flags": [],
    "skaters": {
-    "home_avail": 117.6,
-    "away_avail": 109.5,
-    "home_change": -5.5,
-    "away_change": 6.9,
+    "home_avail": 130.8,
+    "away_avail": 114.3,
+    "home_change": 7.6,
+    "away_change": 11.7,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "MacKenzie Blackwood",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.1
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.06
     },
     "away": {
      "name": "Jacob Fowler",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": 0.11
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.16
     }
    }
   },
@@ -757,7 +759,7 @@
     "away_points": 3.2,
     "margin": 0.5,
     "total": 6.8,
-    "home_win_prob": 0.5834,
+    "home_win_prob": 0.5813,
     "margin_p25": -1.2,
     "margin_p75": 2.2,
     "total_p25": 5.3,
@@ -771,25 +773,25 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -166.0,
-     140.0
+     -155.0,
+     130.0
     ]
    },
    "flags": [],
    "skaters": {
-    "home_avail": 133.4,
-    "away_avail": 118.1,
-    "home_change": 31.1,
-    "away_change": 27.2,
+    "home_avail": 131.2,
+    "away_avail": 119.3,
+    "home_change": 28.9,
+    "away_change": 28.4,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
      "name": "Joey Daccord",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.01
+     "start_prob": 0.85,
+     "status": "Likely",
+     "quality": -0.0
     },
     "away": {
      "name": "Spencer Knight",
@@ -807,14 +809,14 @@
    "away": "SJS",
    "forecast": {
     "home_points": 3.7,
-    "away_points": 3.4,
-    "margin": 0.3,
-    "total": 7.1,
-    "home_win_prob": 0.5458,
-    "margin_p25": -1.4,
-    "margin_p75": 2.0,
-    "total_p25": 5.5,
-    "total_p75": 8.6
+    "away_points": 3.3,
+    "margin": 0.4,
+    "total": 7.0,
+    "home_win_prob": 0.5619,
+    "margin_p25": -1.3,
+    "margin_p75": 2.1,
+    "total_p25": 5.4,
+    "total_p75": 8.5
    },
    "rest": {
     "home": 2.0,
@@ -824,8 +826,8 @@
     "margin": null,
     "total": 6.5,
     "moneyline": [
-     -148.0,
-     124.0
+     -135.0,
+     114.0
     ]
    },
    "flags": [
@@ -840,35 +842,35 @@
     }
    ],
    "skaters": {
-    "home_avail": 141.2,
-    "away_avail": 125.7,
-    "home_change": 27.8,
-    "away_change": 27.1,
+    "home_avail": 141.4,
+    "away_avail": 126.6,
+    "home_change": 28.0,
+    "away_change": 28.0,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
-     "name": "Lukas Dostal",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.13
+     "name": "Laurent Brossoit",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.04
     },
     "away": {
      "name": "Alex Nedeljkovic",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.07
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": -0.01
     }
    }
   }
  ],
  "model_metrics": {
   "n_games": 10001,
-  "margin_mae": 2.1432002994522765,
-  "total_mae": 1.8386932721905012,
-  "win_accuracy": 0.5731426857314269,
-  "win_brier": 0.24047926028083527,
+  "margin_mae": 2.143207015786787,
+  "total_mae": 1.8387012628535386,
+  "win_accuracy": 0.5732426757324267,
+  "win_brier": 0.24047101017879444,
   "seasons": [
    2018,
    2019,
@@ -994,27 +996,27 @@
   },
   "coefficients": {
    "margin": {
-    "rate_margin": 1.072,
+    "rate_margin": 1.073,
     "home_b2b": -0.252,
     "away_b2b": 0.214,
     "rest_diff": 0.044,
-    "goalie_q_diff": 0.628,
+    "goalie_q_diff": 0.622,
     "home_backup": 0.047,
     "away_backup": -0.053,
     "sk_avail_diff": 0.005,
     "sk_change_diff": 0.003,
-    "sk_avail_diff_na": 0.007,
-    "sk_change_diff_na": 0.007
+    "sk_avail_diff_na": 0.008,
+    "sk_change_diff_na": 0.008
    },
    "total": {
     "rate_total": 0.723,
     "home_b2b": -0.018,
-    "away_b2b": -0.076,
-    "goalie_q_sum": -0.382,
+    "away_b2b": -0.075,
+    "goalie_q_sum": -0.376,
     "sk_avail_sum": 0.002,
     "sk_change_sum": 0.001,
-    "sk_avail_sum_na": 0.161,
-    "sk_change_sum_na": 0.161
+    "sk_avail_sum_na": 0.16,
+    "sk_change_sum_na": 0.16
    }
   }
  }

@@ -1,43 +1,7 @@
 {
  "sport": "nba",
- "generated_at": "2026-11-25T00:24:30.945831-05:00",
+ "generated_at": "2026-11-25T18:39:19.058172-05:00",
  "games": [
-  {
-   "game_id": "401909317",
-   "date": "2026-11-25",
-   "when": "Wed 5:00 PM ET",
-   "home": "PHI",
-   "away": "MIA",
-   "forecast": {
-    "home_points": 119.0,
-    "away_points": 119.0,
-    "margin": 0.3,
-    "total": 238.7,
-    "home_win_prob": 0.5079,
-    "margin_p25": -8.9,
-    "margin_p75": 9.5,
-    "total_p25": 226.1,
-    "total_p75": 251.2
-   },
-   "rest": {
-    "home": 2.0,
-    "away": 3.0
-   },
-   "market": {
-    "margin": 1.5,
-    "total": 237.5,
-    "moneyline": null
-   },
-   "flags": [],
-   "dfs": {
-    "home_avail": null,
-    "away_avail": null,
-    "home_change": null,
-    "away_change": null,
-    "home_out": [],
-    "away_out": []
-   }
-  },
   {
    "game_id": "401909318",
    "date": "2026-11-25",
@@ -45,40 +9,49 @@
    "home": "CHA",
    "away": "CHI",
    "forecast": {
-    "home_points": 112.0,
+    "home_points": 113.0,
     "away_points": 113.0,
-    "margin": -1.4,
-    "total": 225.5,
-    "home_win_prob": 0.4516,
-    "margin_p25": -10.6,
-    "margin_p75": 7.8,
-    "total_p25": 212.9,
-    "total_p75": 238.0
+    "margin": -0.5,
+    "total": 226.1,
+    "home_win_prob": 0.4833,
+    "margin_p25": -9.7,
+    "margin_p75": 8.7,
+    "total_p25": 213.6,
+    "total_p75": 238.7
    },
    "rest": {
     "home": 2.0,
     "away": 2.0
    },
    "market": {
-    "margin": 3.5,
-    "total": 221.5,
+    "margin": 4.5,
+    "total": 217.5,
     "moneyline": null
    },
    "flags": [
     {
      "market": "Spread",
-     "take": "CHA -3.5",
+     "take": "CHA -4.5",
      "why": "market",
-     "hit": 0.542,
-     "n": 212,
+     "hit": 0.54,
+     "n": 213,
      "gap": "4\u20136 pts"
+    },
+    {
+     "market": "Total",
+     "take": "Under 217.5",
+     "why": "market",
+     "hit": 0.538,
+     "n": 223,
+     "gap": "6\u201310 pts",
+     "early": false
     }
    ],
    "dfs": {
-    "home_avail": 198.2,
-    "away_avail": 185.3,
-    "home_change": -13.9,
-    "away_change": -8.7,
+    "home_avail": 211.3,
+    "away_avail": 185.9,
+    "home_change": -3.4,
+    "away_change": -8.4,
     "home_out": [
      "Kon Knueppel",
      "Grayson Allen",
@@ -86,7 +59,8 @@
     ],
     "away_out": [
      "Norman Powell",
-     "Caleb Wilson"
+     "Caleb Wilson",
+     "Jalen Smith"
     ]
    }
   },
@@ -99,29 +73,29 @@
    "forecast": {
     "home_points": 113.0,
     "away_points": 108.0,
-    "margin": 5.2,
-    "total": 221.4,
-    "home_win_prob": 0.6629,
-    "margin_p25": -4.0,
-    "margin_p75": 14.4,
-    "total_p25": 208.9,
-    "total_p75": 234.0
+    "margin": 4.8,
+    "total": 220.4,
+    "home_win_prob": 0.6512,
+    "margin_p25": -4.4,
+    "margin_p75": 14.0,
+    "total_p25": 207.8,
+    "total_p75": 232.9
    },
    "rest": {
     "home": 3.0,
     "away": 2.0
    },
    "market": {
-    "margin": 3.5,
-    "total": 219.5,
+    "margin": 4.5,
+    "total": 220.5,
     "moneyline": null
    },
    "flags": [],
    "dfs": {
-    "home_avail": 179.6,
-    "away_avail": 203.5,
-    "home_change": -21.4,
-    "away_change": 7.8,
+    "home_avail": 163.0,
+    "away_avail": 199.7,
+    "home_change": -38.0,
+    "away_change": 4.4,
     "home_out": [
      "OG Anunoby"
     ],
@@ -139,38 +113,38 @@
    "forecast": {
     "home_points": 109.0,
     "away_points": 113.0,
-    "margin": -3.9,
-    "total": 222.6,
-    "home_win_prob": 0.373,
-    "margin_p25": -13.1,
-    "margin_p75": 5.3,
+    "margin": -3.8,
+    "total": 222.7,
+    "home_win_prob": 0.3766,
+    "margin_p25": -13.0,
+    "margin_p75": 5.4,
     "total_p25": 210.1,
-    "total_p75": 235.2
+    "total_p75": 235.3
    },
    "rest": {
     "home": 2.0,
     "away": 2.0
    },
    "market": {
-    "margin": 1.5,
+    "margin": 2.5,
     "total": 223.5,
     "moneyline": null
    },
    "flags": [
     {
      "market": "Spread",
-     "take": "OKC -1.5",
-     "why": "market",
-     "hit": 0.542,
-     "n": 212,
-     "gap": "4\u20136 pts"
+     "take": "MIN +2.5",
+     "why": "model",
+     "hit": 0.548,
+     "n": 157,
+     "gap": "6+ pts"
     }
    ],
    "dfs": {
-    "home_avail": 215.3,
-    "away_avail": 219.5,
-    "home_change": 25.0,
-    "away_change": -0.3,
+    "home_avail": 219.7,
+    "away_avail": 216.4,
+    "home_change": 29.4,
+    "away_change": -3.1,
     "home_out": [
      "Chet Holmgren",
      "Aday Mara"
@@ -188,39 +162,39 @@
    "away": "LAC",
    "forecast": {
     "home_points": 121.0,
-    "away_points": 109.0,
-    "margin": 11.8,
-    "total": 230.2,
-    "home_win_prob": 0.825,
-    "margin_p25": 2.6,
-    "margin_p75": 21.0,
-    "total_p25": 217.6,
-    "total_p75": 242.7
+    "away_points": 110.0,
+    "margin": 11.1,
+    "total": 231.0,
+    "home_win_prob": 0.8113,
+    "margin_p25": 1.9,
+    "margin_p75": 20.3,
+    "total_p25": 218.5,
+    "total_p75": 243.6
    },
    "rest": {
     "home": 2.0,
     "away": 2.0
    },
    "market": {
-    "margin": 6.5,
-    "total": 229.5,
+    "margin": 7.5,
+    "total": 227.5,
     "moneyline": null
    },
    "flags": [
     {
      "market": "Spread",
-     "take": "LAC +6.5",
+     "take": "LAC +7.5",
      "why": "market",
-     "hit": 0.542,
-     "n": 212,
-     "gap": "4\u20136 pts"
+     "hit": 0.544,
+     "n": 384,
+     "gap": "2\u20134 pts"
     }
    ],
    "dfs": {
-    "home_avail": 208.7,
-    "away_avail": 156.9,
-    "home_change": -7.1,
-    "away_change": -25.5,
+    "home_avail": 203.5,
+    "away_avail": 179.3,
+    "home_change": -11.7,
+    "away_change": -5.3,
     "home_out": [
      "Cameron Boozer"
     ],
@@ -234,15 +208,15 @@
    "home": "MIL",
    "away": "BKN",
    "forecast": {
-    "home_points": 118.0,
+    "home_points": 117.0,
     "away_points": 116.0,
     "margin": 1.2,
-    "total": 233.9,
-    "home_win_prob": 0.5369,
-    "margin_p25": -8.1,
+    "total": 233.7,
+    "home_win_prob": 0.5373,
+    "margin_p25": -8.0,
     "margin_p75": 10.4,
-    "total_p25": 221.4,
-    "total_p75": 246.5
+    "total_p25": 221.1,
+    "total_p75": 246.2
    },
    "rest": {
     "home": 2.0,
@@ -250,15 +224,15 @@
    },
    "market": {
     "margin": 1.5,
-    "total": 231.5,
+    "total": 234.5,
     "moneyline": null
    },
    "flags": [],
    "dfs": {
-    "home_avail": 204.1,
-    "away_avail": 214.9,
-    "home_change": -7.0,
-    "away_change": 0.7,
+    "home_avail": 201.7,
+    "away_avail": 211.2,
+    "home_change": -8.9,
+    "away_change": -1.9,
     "home_out": [],
     "away_out": []
    }
@@ -272,13 +246,13 @@
    "forecast": {
     "home_points": 118.0,
     "away_points": 112.0,
-    "margin": 6.3,
-    "total": 229.7,
-    "home_win_prob": 0.6965,
-    "margin_p25": -2.9,
-    "margin_p75": 15.5,
-    "total_p25": 217.1,
-    "total_p75": 242.2
+    "margin": 5.5,
+    "total": 230.3,
+    "home_win_prob": 0.6736,
+    "margin_p25": -3.7,
+    "margin_p75": 14.7,
+    "total_p25": 217.8,
+    "total_p75": 242.9
    },
    "rest": {
     "home": 2.0,
@@ -286,7 +260,7 @@
    },
    "market": {
     "margin": 9.5,
-    "total": 224.5,
+    "total": 222.5,
     "moneyline": null
    },
    "flags": [
@@ -294,17 +268,28 @@
      "market": "Spread",
      "take": "HOU -9.5",
      "why": "market",
-     "hit": 0.546,
-     "n": 383,
+     "hit": 0.544,
+     "n": 384,
      "gap": "2\u20134 pts"
+    },
+    {
+     "market": "Total",
+     "take": "Under 222.5",
+     "why": "market",
+     "hit": 0.538,
+     "n": 223,
+     "gap": "6\u201310 pts",
+     "early": false
     }
    ],
    "dfs": {
-    "home_avail": 211.2,
-    "away_avail": 186.9,
-    "home_change": 24.0,
-    "away_change": -23.2,
-    "home_out": [],
+    "home_avail": 213.7,
+    "away_avail": 196.6,
+    "home_change": 26.3,
+    "away_change": -13.5,
+    "home_out": [
+     "Jabari Smith Jr."
+    ],
     "away_out": []
    }
   },
@@ -317,43 +302,35 @@
    "forecast": {
     "home_points": 115.0,
     "away_points": 107.0,
-    "margin": 7.8,
-    "total": 221.8,
-    "home_win_prob": 0.7351,
-    "margin_p25": -1.4,
-    "margin_p75": 17.0,
-    "total_p25": 209.3,
-    "total_p75": 234.4
+    "margin": 8.4,
+    "total": 221.5,
+    "home_win_prob": 0.7498,
+    "margin_p25": -0.8,
+    "margin_p75": 17.6,
+    "total_p25": 208.9,
+    "total_p75": 234.1
    },
    "rest": {
     "home": 3.0,
     "away": 2.0
    },
    "market": {
-    "margin": 5.5,
-    "total": 218.5,
+    "margin": 7.5,
+    "total": 215.5,
     "moneyline": null
    },
-   "flags": [
-    {
-     "market": "Spread",
-     "take": "SAC +5.5",
-     "why": "market",
-     "hit": 0.546,
-     "n": 383,
-     "gap": "2\u20134 pts"
-    }
-   ],
+   "flags": [],
    "dfs": {
-    "home_avail": 188.3,
-    "away_avail": 202.9,
-    "home_change": -5.9,
-    "away_change": 10.3,
+    "home_avail": 189.4,
+    "away_avail": 195.2,
+    "home_change": -5.2,
+    "away_change": 2.5,
     "home_out": [
      "Stephen Curry",
      "Jimmy Butler"
     ],
     "away_out": [
+     "Zach LaVine",
      "Maxime Raynaud"
     ]
    }
@@ -367,13 +344,13 @@
    "forecast": {
     "home_points": 113.0,
     "away_points": 112.0,
-    "margin": 0.8,
-    "total": 224.7,
-    "home_win_prob": 0.5248,
-    "margin_p25": -8.4,
-    "margin_p75": 10.0,
-    "total_p25": 212.1,
-    "total_p75": 237.2
+    "margin": 1.1,
+    "total": 224.9,
+    "home_win_prob": 0.5343,
+    "margin_p25": -8.1,
+    "margin_p75": 10.3,
+    "total_p25": 212.3,
+    "total_p75": 237.4
    },
    "rest": {
     "home": 2.0,
@@ -381,7 +358,7 @@
    },
    "market": {
     "margin": -3.5,
-    "total": 226.5,
+    "total": 225.5,
     "moneyline": null
    },
    "flags": [
@@ -389,16 +366,16 @@
      "market": "Spread",
      "take": "SAS -3.5",
      "why": "market",
-     "hit": 0.542,
-     "n": 212,
+     "hit": 0.54,
+     "n": 213,
      "gap": "4\u20136 pts"
     }
    ],
    "dfs": {
-    "home_avail": 203.5,
-    "away_avail": 199.2,
-    "home_change": -15.4,
-    "away_change": 5.8,
+    "home_avail": 214.6,
+    "away_avail": 190.8,
+    "home_change": -5.5,
+    "away_change": -0.9,
     "home_out": [
      "Ja Morant"
     ],
@@ -410,11 +387,11 @@
   }
  ],
  "model_metrics": {
-  "n_games": 9607,
-  "margin_mae": 10.885022879271249,
-  "total_mae": 14.864542084726814,
-  "win_accuracy": 0.6561881961070053,
-  "win_brier": 0.21525628196841384,
+  "n_games": 9608,
+  "margin_mae": 10.886055460230086,
+  "total_mae": 14.863905454477349,
+  "win_accuracy": 0.6561199000832639,
+  "win_brier": 0.21526359308938964,
   "seasons": [
    2018,
    2019,
@@ -429,26 +406,26 @@
   "dfs_layer": "DFS team strength (who is playing, from the DFS player projections)",
   "vs_line": {
    "season": 2026,
-   "games_forecast": 182,
-   "games_with_line": 182,
+   "games_forecast": 183,
+   "games_with_line": 183,
    "spread": [
     {
      "gap": "0\u20132 pts",
      "lo": 0,
      "hi": 2,
-     "n": 80,
-     "won": 48,
+     "n": 79,
+     "won": 47,
      "lost": 32,
-     "pct": 0.6
+     "pct": 0.595
     },
     {
      "gap": "2\u20134 pts",
      "lo": 2,
      "hi": 4,
-     "n": 52,
-     "won": 27,
+     "n": 54,
+     "won": 29,
      "lost": 25,
-     "pct": 0.519
+     "pct": 0.537
     },
     {
      "gap": "4\u20136 pts",
@@ -470,10 +447,10 @@
     },
     {
      "gap": "all games",
-     "n": 182,
-     "won": 101,
+     "n": 183,
+     "won": 102,
      "lost": 81,
-     "pct": 0.555
+     "pct": 0.557
     }
    ],
    "total": [
@@ -481,44 +458,44 @@
      "gap": "0\u20133 pts",
      "lo": 0,
      "hi": 3,
-     "n": 102,
-     "won": 55,
+     "n": 103,
+     "won": 56,
      "lost": 47,
-     "pct": 0.539
+     "pct": 0.544
     },
     {
      "gap": "3\u20136 pts",
      "lo": 3,
      "hi": 6,
      "n": 55,
-     "won": 23,
-     "lost": 32,
-     "pct": 0.418
+     "won": 24,
+     "lost": 31,
+     "pct": 0.436
     },
     {
      "gap": "6\u201310 pts",
      "lo": 6,
      "hi": 10,
-     "n": 18,
+     "n": 19,
      "won": 9,
-     "lost": 9,
-     "pct": 0.5
+     "lost": 10,
+     "pct": 0.474
     },
     {
      "gap": "10+ pts",
      "lo": 10,
      "hi": 99,
-     "n": 7,
+     "n": 6,
      "won": 2,
-     "lost": 5,
-     "pct": 0.286
+     "lost": 4,
+     "pct": 0.333
     },
     {
      "gap": "all games",
-     "n": 182,
-     "won": 89,
-     "lost": 93,
-     "pct": 0.489
+     "n": 183,
+     "won": 91,
+     "lost": 92,
+     "pct": 0.497
     }
    ],
    "avg_abs_gap_spread": 2.9
@@ -541,19 +518,19 @@
      "gap": "2\u20134 pts",
      "lo": 2,
      "hi": 4,
-     "n": 331,
-     "won": 147,
+     "n": 330,
+     "won": 146,
      "lost": 184,
-     "pct": 0.444
+     "pct": 0.442
     },
     {
      "gap": "4\u20136 pts",
      "lo": 4,
      "hi": 6,
-     "n": 184,
-     "won": 86,
+     "n": 185,
+     "won": 87,
      "lost": 98,
-     "pct": 0.467
+     "pct": 0.47
     },
     {
      "gap": "6+ pts",
@@ -625,8 +602,8 @@
      "lo": 0,
      "hi": 2,
      "gap": "0\u20132 pts",
-     "n": 495,
-     "model_pct": 0.523,
+     "n": 494,
+     "model_pct": 0.522,
      "flag": null,
      "early": false,
      "hit": null
@@ -635,21 +612,21 @@
      "lo": 2,
      "hi": 4,
      "gap": "2\u20134 pts",
-     "n": 383,
-     "model_pct": 0.454,
+     "n": 384,
+     "model_pct": 0.456,
      "flag": "market",
      "early": false,
-     "hit": 0.546
+     "hit": 0.544
     },
     {
      "lo": 4,
      "hi": 6,
      "gap": "4\u20136 pts",
-     "n": 212,
-     "model_pct": 0.458,
+     "n": 213,
+     "model_pct": 0.46,
      "flag": "market",
      "early": false,
-     "hit": 0.542
+     "hit": 0.54
     },
     {
      "lo": 6,
@@ -667,8 +644,8 @@
      "lo": 0,
      "hi": 3,
      "gap": "0\u20133 pts",
-     "n": 580,
-     "model_pct": 0.502,
+     "n": 581,
+     "model_pct": 0.503,
      "flag": null,
      "early": false,
      "hit": null
@@ -678,7 +655,7 @@
      "hi": 6,
      "gap": "3\u20136 pts",
      "n": 376,
-     "model_pct": 0.5,
+     "model_pct": 0.503,
      "flag": null,
      "early": false,
      "hit": null
@@ -687,18 +664,18 @@
      "lo": 6,
      "hi": 10,
      "gap": "6\u201310 pts",
-     "n": 222,
-     "model_pct": 0.464,
+     "n": 223,
+     "model_pct": 0.462,
      "flag": "market",
      "early": false,
-     "hit": 0.536
+     "hit": 0.538
     },
     {
      "lo": 10,
      "hi": 99,
      "gap": "10+ pts",
-     "n": 69,
-     "model_pct": 0.478,
+     "n": 68,
+     "model_pct": 0.485,
      "flag": null,
      "early": false,
      "hit": null
@@ -708,24 +685,24 @@
   "coefficients": {
    "margin": {
     "rate_margin": 1.123,
-    "home_b2b": -2.085,
-    "away_b2b": 2.017,
+    "home_b2b": -2.082,
+    "away_b2b": 2.019,
     "rest_diff": 0.15,
     "dfs_avail_diff": 0.048,
     "dfs_change_diff": -0.037,
     "dfs_missing_diff": 0.032,
-    "dfs_avail_diff_na": 0.369,
-    "dfs_change_diff_na": 0.369,
-    "dfs_missing_diff_na": -0.857
+    "dfs_avail_diff_na": 0.373,
+    "dfs_change_diff_na": 0.373,
+    "dfs_missing_diff_na": -0.852
    },
    "total": {
     "rate_total": 0.985,
-    "home_b2b": 0.101,
-    "away_b2b": 0.286,
-    "dfs_avail_sum": 0.028,
-    "dfs_change_sum": 0.024,
-    "dfs_avail_sum_na": 5.635,
-    "dfs_change_sum_na": 5.635
+    "home_b2b": 0.102,
+    "away_b2b": 0.287,
+    "dfs_avail_sum": 0.029,
+    "dfs_change_sum": 0.023,
+    "dfs_avail_sum_na": 5.723,
+    "dfs_change_sum_na": 5.723
    }
   }
  }
