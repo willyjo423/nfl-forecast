@@ -1,9 +1,9 @@
 {
- "n_games": 9615,
- "margin_mae": 10.883169763665169,
- "total_mae": 14.863897278373166,
- "win_accuracy": 0.656266250650026,
- "win_brier": 0.21524029990360166,
+ "n_games": 9617,
+ "margin_mae": 10.882354015857292,
+ "total_mae": 14.862627323089468,
+ "win_accuracy": 0.6562337527295414,
+ "win_brier": 0.21521363411098102,
  "seasons": [
   2018,
   2019,
@@ -18,35 +18,35 @@
  "dfs_layer": "DFS team strength (who is playing, from the DFS player projections)",
  "vs_line": {
   "season": 2026,
-  "games_forecast": 190,
-  "games_with_line": 183,
+  "games_forecast": 192,
+  "games_with_line": 192,
   "spread": [
    {
     "gap": "0\u20132 pts",
     "lo": 0,
     "hi": 2,
-    "n": 80,
-    "won": 46,
-    "lost": 34,
-    "pct": 0.575
+    "n": 84,
+    "won": 51,
+    "lost": 33,
+    "pct": 0.607
    },
    {
     "gap": "2\u20134 pts",
     "lo": 2,
     "hi": 4,
     "n": 53,
-    "won": 28,
-    "lost": 25,
-    "pct": 0.528
+    "won": 27,
+    "lost": 26,
+    "pct": 0.509
    },
    {
     "gap": "4\u20136 pts",
     "lo": 4,
     "hi": 6,
-    "n": 28,
-    "won": 11,
+    "n": 33,
+    "won": 16,
     "lost": 17,
-    "pct": 0.393
+    "pct": 0.485
    },
    {
     "gap": "6+ pts",
@@ -59,10 +59,10 @@
    },
    {
     "gap": "all games",
-    "n": 183,
-    "won": 100,
+    "n": 192,
+    "won": 109,
     "lost": 83,
-    "pct": 0.546
+    "pct": 0.568
    }
   ],
   "total": [
@@ -70,44 +70,44 @@
     "gap": "0\u20133 pts",
     "lo": 0,
     "hi": 3,
-    "n": 104,
-    "won": 56,
-    "lost": 48,
-    "pct": 0.538
+    "n": 108,
+    "won": 59,
+    "lost": 49,
+    "pct": 0.546
    },
    {
     "gap": "3\u20136 pts",
     "lo": 3,
     "hi": 6,
-    "n": 54,
-    "won": 24,
-    "lost": 30,
-    "pct": 0.444
+    "n": 57,
+    "won": 25,
+    "lost": 32,
+    "pct": 0.439
    },
    {
     "gap": "6\u201310 pts",
     "lo": 6,
     "hi": 10,
-    "n": 18,
+    "n": 21,
     "won": 9,
-    "lost": 9,
-    "pct": 0.5
+    "lost": 12,
+    "pct": 0.429
    },
    {
     "gap": "10+ pts",
     "lo": 10,
     "hi": 99,
-    "n": 7,
+    "n": 6,
     "won": 2,
-    "lost": 5,
-    "pct": 0.286
+    "lost": 4,
+    "pct": 0.333
    },
    {
     "gap": "all games",
-    "n": 183,
-    "won": 91,
-    "lost": 92,
-    "pct": 0.497
+    "n": 192,
+    "won": 95,
+    "lost": 97,
+    "pct": 0.495
    }
   ],
   "avg_abs_gap_spread": 2.91
@@ -121,37 +121,37 @@
     "gap": "0\u20132 pts",
     "lo": 0,
     "hi": 2,
-    "n": 414,
-    "won": 210,
+    "n": 415,
+    "won": 211,
     "lost": 204,
-    "pct": 0.507
+    "pct": 0.508
    },
    {
     "gap": "2\u20134 pts",
     "lo": 2,
     "hi": 4,
-    "n": 331,
-    "won": 148,
-    "lost": 183,
-    "pct": 0.447
+    "n": 330,
+    "won": 146,
+    "lost": 184,
+    "pct": 0.442
    },
    {
     "gap": "4\u20136 pts",
     "lo": 4,
     "hi": 6,
-    "n": 186,
+    "n": 185,
     "won": 87,
-    "lost": 99,
-    "pct": 0.468
+    "lost": 98,
+    "pct": 0.47
    },
    {
     "gap": "6+ pts",
     "lo": 6,
     "hi": 99,
-    "n": 134,
-    "won": 70,
+    "n": 135,
+    "won": 71,
     "lost": 64,
-    "pct": 0.522
+    "pct": 0.526
    },
    {
     "gap": "all games",
@@ -166,28 +166,28 @@
     "gap": "0\u20133 pts",
     "lo": 0,
     "hi": 3,
-    "n": 478,
-    "won": 236,
+    "n": 479,
+    "won": 237,
     "lost": 242,
-    "pct": 0.494
+    "pct": 0.495
    },
    {
     "gap": "3\u20136 pts",
     "lo": 3,
     "hi": 6,
-    "n": 321,
-    "won": 165,
+    "n": 318,
+    "won": 162,
     "lost": 156,
-    "pct": 0.514
+    "pct": 0.509
    },
    {
     "gap": "6\u201310 pts",
     "lo": 6,
     "hi": 10,
-    "n": 204,
-    "won": 94,
+    "n": 206,
+    "won": 96,
     "lost": 110,
-    "pct": 0.461
+    "pct": 0.466
    },
    {
     "gap": "10+ pts",
@@ -214,41 +214,41 @@
     "lo": 0,
     "hi": 2,
     "gap": "0\u20132 pts",
-    "n": 494,
-    "model_pct": 0.518,
-    "flag": null,
+    "n": 499,
+    "model_pct": 0.525,
+    "flag": "model",
     "early": false,
-    "hit": null
+    "hit": 0.525
    },
    {
     "lo": 2,
     "hi": 4,
     "gap": "2\u20134 pts",
-    "n": 384,
-    "model_pct": 0.458,
+    "n": 383,
+    "model_pct": 0.452,
     "flag": "market",
     "early": false,
-    "hit": 0.542
+    "hit": 0.548
    },
    {
     "lo": 4,
     "hi": 6,
     "gap": "4\u20136 pts",
-    "n": 214,
-    "model_pct": 0.458,
+    "n": 218,
+    "model_pct": 0.472,
     "flag": "market",
     "early": false,
-    "hit": 0.542
+    "hit": 0.528
    },
    {
     "lo": 6,
     "hi": 99,
     "gap": "6+ pts",
-    "n": 156,
-    "model_pct": 0.545,
+    "n": 157,
+    "model_pct": 0.548,
     "flag": "model",
     "early": false,
-    "hit": 0.545
+    "hit": 0.548
    }
   ],
   "total": [
@@ -256,8 +256,8 @@
     "lo": 0,
     "hi": 3,
     "gap": "0\u20133 pts",
-    "n": 582,
-    "model_pct": 0.502,
+    "n": 587,
+    "model_pct": 0.504,
     "flag": null,
     "early": false,
     "hit": null
@@ -267,7 +267,7 @@
     "hi": 6,
     "gap": "3\u20136 pts",
     "n": 375,
-    "model_pct": 0.504,
+    "model_pct": 0.499,
     "flag": null,
     "early": false,
     "hit": null
@@ -276,18 +276,18 @@
     "lo": 6,
     "hi": 10,
     "gap": "6\u201310 pts",
-    "n": 222,
-    "model_pct": 0.464,
+    "n": 227,
+    "model_pct": 0.463,
     "flag": "market",
     "early": false,
-    "hit": 0.536
+    "hit": 0.537
    },
    {
     "lo": 10,
     "hi": 99,
     "gap": "10+ pts",
-    "n": 69,
-    "model_pct": 0.478,
+    "n": 68,
+    "model_pct": 0.485,
     "flag": null,
     "early": false,
     "hit": null
@@ -296,25 +296,25 @@
  },
  "coefficients": {
   "margin": {
-   "rate_margin": 1.124,
-   "home_b2b": -2.082,
-   "away_b2b": 2.014,
-   "rest_diff": 0.152,
-   "dfs_avail_diff": 0.048,
-   "dfs_change_diff": -0.036,
+   "rate_margin": 1.123,
+   "home_b2b": -2.078,
+   "away_b2b": 2.008,
+   "rest_diff": 0.156,
+   "dfs_avail_diff": 0.049,
+   "dfs_change_diff": -0.037,
    "dfs_missing_diff": 0.032,
-   "dfs_avail_diff_na": 0.375,
-   "dfs_change_diff_na": 0.375,
-   "dfs_missing_diff_na": -0.857
+   "dfs_avail_diff_na": 0.372,
+   "dfs_change_diff_na": 0.372,
+   "dfs_missing_diff_na": -0.856
   },
   "total": {
    "rate_total": 0.984,
-   "home_b2b": 0.112,
-   "away_b2b": 0.296,
-   "dfs_avail_sum": 0.028,
-   "dfs_change_sum": 0.024,
-   "dfs_avail_sum_na": 5.626,
-   "dfs_change_sum_na": 5.626
+   "home_b2b": 0.111,
+   "away_b2b": 0.295,
+   "dfs_avail_sum": 0.026,
+   "dfs_change_sum": 0.027,
+   "dfs_avail_sum_na": 5.267,
+   "dfs_change_sum_na": 5.267
   }
  }
 }
