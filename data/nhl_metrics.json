@@ -1,9 +1,9 @@
 {
- "n_games": 10015,
- "margin_mae": 2.1442894302276745,
- "total_mae": 1.8380899459004705,
- "win_accuracy": 0.5722416375436845,
- "win_brier": 0.2404965740866999,
+ "n_games": 10023,
+ "margin_mae": 2.1442541730362232,
+ "total_mae": 1.8385296268402453,
+ "win_accuracy": 0.5717848947420932,
+ "win_brier": 0.24050814713773386,
  "seasons": [
   2018,
   2019,
@@ -18,17 +18,17 @@
  "dfs_layer": "DFS skater strength + starting goalie (DFS confirmations + his record)",
  "vs_line": {
   "season": 2026,
-  "games_forecast": 314,
-  "games_with_line": 15,
+  "games_forecast": 322,
+  "games_with_line": 19,
   "moneyline": [
    {
     "gap": "0\u20134 % win-prob",
     "lo": 0,
     "hi": 4,
-    "n": 9,
-    "won": 6,
-    "lost": 3,
-    "pct": 0.667
+    "n": 13,
+    "won": 8,
+    "lost": 5,
+    "pct": 0.615
    },
    {
     "gap": "4+ % win-prob",
@@ -41,38 +41,38 @@
    },
    {
     "gap": "all games",
-    "n": 15,
-    "won": 8,
-    "lost": 7,
-    "pct": 0.533
+    "n": 19,
+    "won": 10,
+    "lost": 9,
+    "pct": 0.526
    }
   ],
-  "moneyline_units": -1.31,
+  "moneyline_units": -1.01,
   "total": [
    {
     "gap": "0\u20130.4 goals",
     "lo": 0,
     "hi": 0.4,
-    "n": 9,
+    "n": 13,
     "won": 2,
-    "lost": 7,
-    "pct": 0.222
+    "lost": 11,
+    "pct": 0.154
    },
    {
     "gap": "0.4+ goals",
     "lo": 0.4,
     "hi": 99,
     "n": 6,
-    "won": 5,
-    "lost": 1,
-    "pct": 0.833
+    "won": 6,
+    "lost": 0,
+    "pct": 1.0
    },
    {
     "gap": "all games",
-    "n": 15,
-    "won": 7,
-    "lost": 8,
-    "pct": 0.467
+    "n": 19,
+    "won": 8,
+    "lost": 11,
+    "pct": 0.421
    }
   ]
  },
@@ -87,21 +87,21 @@
     "lo": 0,
     "hi": 0.4,
     "gap": "0\u20130.4 goals",
-    "n": 9,
-    "model_pct": 0.222,
+    "n": 13,
+    "model_pct": 0.154,
     "flag": null,
     "early": true,
-    "hit": 0.778
+    "hit": 0.846
    },
    {
     "lo": 0.4,
     "hi": 99,
     "gap": "0.4+ goals",
     "n": 6,
-    "model_pct": 0.833,
+    "model_pct": 1.0,
     "flag": "model",
     "early": true,
-    "hit": 0.833
+    "hit": 1.0
    }
   ],
   "moneyline": [
@@ -109,11 +109,11 @@
     "lo": 0,
     "hi": 4,
     "gap": "0\u20134 % win-prob",
-    "n": 9,
-    "model_pct": 0.667,
+    "n": 13,
+    "model_pct": 0.615,
     "flag": null,
     "early": true,
-    "hit": 0.667
+    "hit": 0.615
    },
    {
     "lo": 4,
@@ -130,26 +130,26 @@
  "coefficients": {
   "margin": {
    "rate_margin": 1.072,
-   "home_b2b": -0.254,
-   "away_b2b": 0.212,
+   "home_b2b": -0.251,
+   "away_b2b": 0.21,
    "rest_diff": 0.045,
-   "goalie_q_diff": 0.619,
-   "home_backup": 0.056,
-   "away_backup": -0.052,
+   "goalie_q_diff": 0.616,
+   "home_backup": 0.048,
+   "away_backup": -0.047,
    "sk_avail_diff": 0.006,
    "sk_change_diff": 0.002,
-   "sk_avail_diff_na": 0.004,
-   "sk_change_diff_na": 0.004
+   "sk_avail_diff_na": 0.005,
+   "sk_change_diff_na": 0.005
   },
   "total": {
-   "rate_total": 0.723,
+   "rate_total": 0.724,
    "home_b2b": -0.018,
    "away_b2b": -0.075,
-   "goalie_q_sum": -0.378,
+   "goalie_q_sum": -0.368,
    "sk_avail_sum": 0.002,
    "sk_change_sum": 0.001,
-   "sk_avail_sum_na": 0.146,
-   "sk_change_sum_na": 0.146
+   "sk_avail_sum_na": 0.163,
+   "sk_change_sum_na": 0.163
   }
  }
 }
