@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated_at": "2026-11-26T18:53:30.093183-05:00",
+ "generated_at": "2026-11-26T22:18:31.604763-05:00",
  "games": [
   {
    "game_id": "2026020400",
@@ -10,13 +10,13 @@
    "away": "TOR",
    "forecast": {
     "home_points": 3.5,
-    "away_points": 3.0,
-    "margin": 0.5,
+    "away_points": 2.9,
+    "margin": 0.6,
     "total": 6.5,
-    "home_win_prob": 0.5791,
-    "margin_p25": -1.2,
-    "margin_p75": 2.2,
-    "total_p25": 5.0,
+    "home_win_prob": 0.6008,
+    "margin_p25": -1.1,
+    "margin_p75": 2.3,
+    "total_p25": 4.9,
     "total_p75": 8.0
    },
    "rest": {
@@ -30,10 +30,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 118.3,
-    "away_avail": 121.6,
-    "home_change": 9.6,
-    "away_change": 11.3,
+    "home_avail": 121.7,
+    "away_avail": 110.5,
+    "home_change": 13.1,
+    "away_change": 0.1,
     "home_out": [],
     "away_out": []
    },
@@ -63,11 +63,11 @@
     "away_points": 2.8,
     "margin": 0.9,
     "total": 6.4,
-    "home_win_prob": 0.6452,
+    "home_win_prob": 0.6448,
     "margin_p25": -0.8,
     "margin_p75": 2.6,
     "total_p25": 4.9,
-    "total_p75": 7.9
+    "total_p75": 8.0
    },
    "rest": {
     "home": 2.0,
@@ -80,10 +80,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 119.5,
-    "away_avail": 96.5,
-    "home_change": -2.4,
-    "away_change": -2.1,
+    "home_avail": 122.5,
+    "away_avail": 99.8,
+    "home_change": 0.6,
+    "away_change": 1.3,
     "home_out": [],
     "away_out": []
    },
@@ -110,14 +110,14 @@
    "away": "UTA",
    "forecast": {
     "home_points": 3.4,
-    "away_points": 3.0,
-    "margin": 0.4,
+    "away_points": 3.1,
+    "margin": 0.3,
     "total": 6.4,
-    "home_win_prob": 0.5601,
-    "margin_p25": -1.3,
-    "margin_p75": 2.1,
+    "home_win_prob": 0.5551,
+    "margin_p25": -1.4,
+    "margin_p75": 2.0,
     "total_p25": 4.9,
-    "total_p75": 7.9
+    "total_p75": 8.0
    },
    "rest": {
     "home": 2.0,
@@ -130,10 +130,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 104.1,
-    "away_avail": 103.3,
-    "home_change": 3.9,
-    "away_change": -9.4,
+    "home_avail": 110.9,
+    "away_avail": 113.5,
+    "home_change": 10.7,
+    "away_change": 0.8,
     "home_out": [],
     "away_out": []
    },
@@ -160,14 +160,14 @@
    "away": "DAL",
    "forecast": {
     "home_points": 3.1,
-    "away_points": 2.9,
-    "margin": 0.2,
+    "away_points": 3.0,
+    "margin": 0.1,
     "total": 6.1,
-    "home_win_prob": 0.5298,
-    "margin_p25": -1.5,
-    "margin_p75": 1.9,
-    "total_p25": 4.5,
-    "total_p75": 7.6
+    "home_win_prob": 0.5055,
+    "margin_p25": -1.6,
+    "margin_p75": 1.8,
+    "total_p25": 4.6,
+    "total_p75": 7.7
    },
    "rest": {
     "home": 2.0,
@@ -180,10 +180,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 105.5,
-    "away_avail": 95.2,
-    "home_change": -1.0,
-    "away_change": -17.1,
+    "home_avail": 108.4,
+    "away_avail": 114.1,
+    "home_change": 1.9,
+    "away_change": 1.8,
     "home_out": [],
     "away_out": []
    },
@@ -211,10 +211,10 @@
    "forecast": {
     "home_points": 3.3,
     "away_points": 3.0,
-    "margin": 0.3,
+    "margin": 0.4,
     "total": 6.3,
-    "home_win_prob": 0.5511,
-    "margin_p25": -1.4,
+    "home_win_prob": 0.558,
+    "margin_p25": -1.3,
     "margin_p75": 2.0,
     "total_p25": 4.7,
     "total_p75": 7.8
@@ -230,10 +230,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 104.4,
-    "away_avail": 96.2,
-    "home_change": -17.9,
-    "away_change": -16.7,
+    "home_avail": 106.1,
+    "away_avail": 93.3,
+    "home_change": -16.2,
+    "away_change": -19.6,
     "home_out": [],
     "away_out": []
    },
@@ -259,15 +259,15 @@
    "home": "PHI",
    "away": "VAN",
    "forecast": {
-    "home_points": 3.7,
-    "away_points": 3.0,
-    "margin": 0.7,
-    "total": 6.6,
-    "home_win_prob": 0.6158,
-    "margin_p25": -1.0,
-    "margin_p75": 2.4,
-    "total_p25": 5.1,
-    "total_p75": 8.2
+    "home_points": 3.8,
+    "away_points": 2.9,
+    "margin": 0.9,
+    "total": 6.7,
+    "home_win_prob": 0.6425,
+    "margin_p25": -0.8,
+    "margin_p75": 2.5,
+    "total_p25": 5.2,
+    "total_p75": 8.3
    },
    "rest": {
     "home": 2.0,
@@ -280,10 +280,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 102.2,
-    "away_avail": 89.3,
-    "home_change": 0.1,
-    "away_change": 1.8,
+    "home_avail": 123.0,
+    "away_avail": 91.1,
+    "home_change": 20.9,
+    "away_change": 3.6,
     "home_out": [],
     "away_out": []
    },
@@ -309,13 +309,13 @@
    "home": "WSH",
    "away": "FLA",
    "forecast": {
-    "home_points": 3.4,
+    "home_points": 3.3,
     "away_points": 3.5,
-    "margin": -0.1,
-    "total": 6.8,
-    "home_win_prob": 0.4769,
-    "margin_p25": -1.8,
-    "margin_p75": 1.6,
+    "margin": -0.2,
+    "total": 6.9,
+    "home_win_prob": 0.4624,
+    "margin_p25": -1.9,
+    "margin_p75": 1.5,
     "total_p25": 5.3,
     "total_p75": 8.4
    },
@@ -330,10 +330,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 115.2,
-    "away_avail": 111.3,
-    "home_change": 3.9,
-    "away_change": -3.1,
+    "home_avail": 116.8,
+    "away_avail": 122.3,
+    "home_change": 5.5,
+    "away_change": 7.9,
     "home_out": [],
     "away_out": []
    },
@@ -359,12 +359,12 @@
    "home": "CBJ",
    "away": "DET",
    "forecast": {
-    "home_points": 2.9,
+    "home_points": 3.0,
     "away_points": 3.1,
-    "margin": -0.1,
-    "total": 6.0,
-    "home_win_prob": 0.47,
-    "margin_p25": -1.8,
+    "margin": -0.0,
+    "total": 6.1,
+    "home_win_prob": 0.4876,
+    "margin_p25": -1.7,
     "margin_p75": 1.6,
     "total_p25": 4.5,
     "total_p75": 7.6
@@ -380,10 +380,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 100.1,
-    "away_avail": 110.7,
-    "home_change": -2.5,
-    "away_change": 11.0,
+    "home_avail": 110.9,
+    "away_avail": 109.3,
+    "home_change": 8.3,
+    "away_change": 9.6,
     "home_out": [],
     "away_out": []
    },
@@ -395,10 +395,10 @@
      "quality": 0.06
     },
     "away": {
-     "name": "Daniil Tarasov",
+     "name": "John Gibson",
      "start_prob": 0.6,
      "status": "Unconfirmed",
-     "quality": 0.0
+     "quality": -0.04
     }
    }
   },
@@ -409,15 +409,15 @@
    "home": "MIN",
    "away": "COL",
    "forecast": {
-    "home_points": 3.3,
+    "home_points": 3.2,
     "away_points": 3.1,
-    "margin": 0.1,
-    "total": 6.4,
-    "home_win_prob": 0.5208,
+    "margin": 0.2,
+    "total": 6.3,
+    "home_win_prob": 0.525,
     "margin_p25": -1.5,
-    "margin_p75": 1.8,
+    "margin_p75": 1.9,
     "total_p25": 4.8,
-    "total_p75": 7.9
+    "total_p75": 7.8
    },
    "rest": {
     "home": 2.0,
@@ -430,10 +430,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 116.1,
-    "away_avail": 119.7,
-    "home_change": -11.6,
-    "away_change": -5.1,
+    "home_avail": 108.4,
+    "away_avail": 109.3,
+    "home_change": -19.3,
+    "away_change": -15.5,
     "home_out": [],
     "away_out": []
    },
@@ -459,15 +459,15 @@
    "home": "ANA",
    "away": "LAK",
    "forecast": {
-    "home_points": 3.3,
-    "away_points": 3.4,
-    "margin": -0.1,
-    "total": 6.7,
-    "home_win_prob": 0.479,
-    "margin_p25": -1.8,
-    "margin_p75": 1.6,
-    "total_p25": 5.1,
-    "total_p75": 8.2
+    "home_points": 3.4,
+    "away_points": 3.2,
+    "margin": 0.1,
+    "total": 6.6,
+    "home_win_prob": 0.5168,
+    "margin_p25": -1.6,
+    "margin_p75": 1.8,
+    "total_p25": 5.0,
+    "total_p75": 8.1
    },
    "rest": {
     "home": 2.0,
@@ -480,19 +480,21 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 109.4,
-    "away_avail": 129.5,
-    "home_change": -8.7,
-    "away_change": 12.8,
-    "home_out": [],
+    "home_avail": 107.1,
+    "away_avail": 121.4,
+    "home_change": -11.1,
+    "away_change": 4.8,
+    "home_out": [
+     "Beckett Sennecke"
+    ],
     "away_out": []
    },
    "goalies": {
     "home": {
-     "name": "Lukas Dostal",
-     "start_prob": 0.6,
-     "status": "Unconfirmed",
-     "quality": -0.13
+     "name": "Laurent Brossoit",
+     "start_prob": 1.0,
+     "status": "Confirmed",
+     "quality": 0.05
     },
     "away": {
      "name": "Darcy Kuemper",
@@ -509,13 +511,13 @@
    "home": "SJS",
    "away": "VGK",
    "forecast": {
-    "home_points": 2.8,
-    "away_points": 3.8,
-    "margin": -1.0,
-    "total": 6.5,
-    "home_win_prob": 0.3288,
-    "margin_p25": -2.7,
-    "margin_p75": 0.7,
+    "home_points": 2.9,
+    "away_points": 3.7,
+    "margin": -0.9,
+    "total": 6.6,
+    "home_win_prob": 0.3485,
+    "margin_p25": -2.5,
+    "margin_p75": 0.8,
     "total_p25": 5.0,
     "total_p75": 8.1
    },
@@ -530,19 +532,19 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 92.4,
-    "away_avail": 122.0,
-    "home_change": -10.6,
-    "away_change": 12.3,
+    "home_avail": 106.7,
+    "away_avail": 116.4,
+    "home_change": 3.7,
+    "away_change": 6.7,
     "home_out": [],
     "away_out": []
    },
    "goalies": {
     "home": {
-     "name": "Alex Nedeljkovic",
+     "name": "Yaroslav Askarov",
      "start_prob": 0.6,
      "status": "Unconfirmed",
-     "quality": -0.08
+     "quality": -0.1
     },
     "away": {
      "name": "Adin Hill",
@@ -559,15 +561,15 @@
    "home": "CHI",
    "away": "NYR",
    "forecast": {
-    "home_points": 3.0,
+    "home_points": 2.9,
     "away_points": 3.3,
-    "margin": -0.3,
+    "margin": -0.4,
     "total": 6.3,
-    "home_win_prob": 0.4358,
-    "margin_p25": -2.0,
-    "margin_p75": 1.4,
-    "total_p25": 4.8,
-    "total_p75": 7.9
+    "home_win_prob": 0.4248,
+    "margin_p25": -2.1,
+    "margin_p75": 1.3,
+    "total_p25": 4.7,
+    "total_p75": 7.8
    },
    "rest": {
     "home": 2.0,
@@ -580,10 +582,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 98.8,
-    "away_avail": 92.1,
-    "home_change": 5.7,
-    "away_change": -2.6,
+    "home_avail": 98.6,
+    "away_avail": 95.3,
+    "home_change": 5.5,
+    "away_change": 0.5,
     "home_out": [],
     "away_out": []
    },
@@ -595,10 +597,10 @@
      "quality": -0.02
     },
     "away": {
-     "name": "Joonas Korpisalo",
+     "name": "Dylan Garand",
      "start_prob": 0.6,
      "status": "Unconfirmed",
-     "quality": -0.06
+     "quality": 0.05
     }
    }
   },
@@ -613,11 +615,11 @@
     "away_points": 3.0,
     "margin": 0.4,
     "total": 6.4,
-    "home_win_prob": 0.5664,
+    "home_win_prob": 0.563,
     "margin_p25": -1.3,
     "margin_p75": 2.1,
     "total_p25": 4.9,
-    "total_p75": 7.9
+    "total_p75": 8.0
    },
    "rest": {
     "home": 2.0,
@@ -630,10 +632,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 118.3,
-    "away_avail": 107.0,
-    "home_change": 7.1,
-    "away_change": -2.0,
+    "home_avail": 119.2,
+    "away_avail": 110.1,
+    "home_change": 7.9,
+    "away_change": 1.0,
     "home_out": [],
     "away_out": []
    },
@@ -659,15 +661,15 @@
    "home": "BUF",
    "away": "PIT",
    "forecast": {
-    "home_points": 3.5,
+    "home_points": 3.6,
     "away_points": 3.1,
-    "margin": 0.4,
+    "margin": 0.5,
     "total": 6.6,
-    "home_win_prob": 0.5676,
-    "margin_p25": -1.3,
-    "margin_p75": 2.1,
+    "home_win_prob": 0.5823,
+    "margin_p25": -1.2,
+    "margin_p75": 2.2,
     "total_p25": 5.1,
-    "total_p75": 8.1
+    "total_p75": 8.2
    },
    "rest": {
     "home": 2.0,
@@ -680,10 +682,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 110.5,
-    "away_avail": 113.4,
-    "home_change": -3.5,
-    "away_change": 3.9,
+    "home_avail": 121.3,
+    "away_avail": 114.3,
+    "home_change": 7.3,
+    "away_change": 4.8,
     "home_out": [],
     "away_out": []
    },
@@ -710,14 +712,14 @@
    "away": "SEA",
    "forecast": {
     "home_points": 3.7,
-    "away_points": 2.9,
-    "margin": 0.8,
-    "total": 6.6,
-    "home_win_prob": 0.6292,
-    "margin_p25": -0.9,
-    "margin_p75": 2.5,
+    "away_points": 3.0,
+    "margin": 0.7,
+    "total": 6.7,
+    "home_win_prob": 0.6102,
+    "margin_p25": -1.0,
+    "margin_p75": 2.3,
     "total_p25": 5.1,
-    "total_p75": 8.1
+    "total_p75": 8.2
    },
    "rest": {
     "home": 3.0,
@@ -730,10 +732,10 @@
    },
    "flags": [],
    "skaters": {
-    "home_avail": 119.2,
-    "away_avail": 88.1,
-    "home_change": -1.0,
-    "away_change": -18.0,
+    "home_avail": 124.6,
+    "away_avail": 107.1,
+    "home_change": 4.4,
+    "away_change": 1.1,
     "home_out": [],
     "away_out": []
    },
@@ -755,10 +757,10 @@
  ],
  "model_metrics": {
   "n_games": 10015,
-  "margin_mae": 2.144266048131266,
-  "total_mae": 1.8380539307333537,
-  "win_accuracy": 0.5730404393409885,
-  "win_brier": 0.24050037103403107,
+  "margin_mae": 2.1442912550894224,
+  "total_mae": 1.8380757530068372,
+  "win_accuracy": 0.5721417873190214,
+  "win_brier": 0.24049667124844457,
   "seasons": [
    2018,
    2019,
@@ -884,23 +886,23 @@
   },
   "coefficients": {
    "margin": {
-    "rate_margin": 1.07,
+    "rate_margin": 1.071,
     "home_b2b": -0.253,
     "away_b2b": 0.212,
     "rest_diff": 0.045,
-    "goalie_q_diff": 0.629,
-    "home_backup": 0.054,
-    "away_backup": -0.055,
+    "goalie_q_diff": 0.623,
+    "home_backup": 0.05,
+    "away_backup": -0.052,
     "sk_avail_diff": 0.006,
     "sk_change_diff": 0.002,
-    "sk_avail_diff_na": 0.004,
-    "sk_change_diff_na": 0.004
+    "sk_avail_diff_na": 0.003,
+    "sk_change_diff_na": 0.003
    },
    "total": {
     "rate_total": 0.722,
     "home_b2b": -0.018,
     "away_b2b": -0.075,
-    "goalie_q_sum": -0.385,
+    "goalie_q_sum": -0.381,
     "sk_avail_sum": 0.002,
     "sk_change_sum": 0.001,
     "sk_avail_sum_na": 0.148,
