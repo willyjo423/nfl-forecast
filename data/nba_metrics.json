@@ -1,9 +1,9 @@
 {
- "n_games": 9617,
- "margin_mae": 10.882220137670618,
- "total_mae": 14.862597369403012,
- "win_accuracy": 0.656441717791411,
- "win_brier": 0.21521385319999062,
+ "n_games": 9618,
+ "margin_mae": 10.882011429225807,
+ "total_mae": 14.862776687216783,
+ "win_accuracy": 0.6560615512580578,
+ "win_brier": 0.21524360145430502,
  "seasons": [
   2018,
   2019,
@@ -18,7 +18,7 @@
  "dfs_layer": "DFS team strength (who is playing, from the DFS player projections)",
  "vs_line": {
   "season": 2026,
-  "games_forecast": 192,
+  "games_forecast": 193,
   "games_with_line": 192,
   "spread": [
    {
@@ -26,27 +26,27 @@
     "lo": 0,
     "hi": 2,
     "n": 84,
-    "won": 51,
-    "lost": 33,
-    "pct": 0.607
+    "won": 50,
+    "lost": 34,
+    "pct": 0.595
    },
    {
     "gap": "2\u20134 pts",
     "lo": 2,
     "hi": 4,
-    "n": 54,
-    "won": 28,
+    "n": 55,
+    "won": 29,
     "lost": 26,
-    "pct": 0.519
+    "pct": 0.527
    },
    {
     "gap": "4\u20136 pts",
     "lo": 4,
     "hi": 6,
-    "n": 31,
-    "won": 14,
+    "n": 30,
+    "won": 13,
     "lost": 17,
-    "pct": 0.452
+    "pct": 0.433
    },
    {
     "gap": "6+ pts",
@@ -60,9 +60,9 @@
    {
     "gap": "all games",
     "n": 192,
-    "won": 109,
-    "lost": 83,
-    "pct": 0.568
+    "won": 108,
+    "lost": 84,
+    "pct": 0.562
    }
   ],
   "total": [
@@ -70,44 +70,44 @@
     "gap": "0\u20133 pts",
     "lo": 0,
     "hi": 3,
-    "n": 110,
-    "won": 59,
-    "lost": 51,
-    "pct": 0.536
+    "n": 108,
+    "won": 58,
+    "lost": 50,
+    "pct": 0.537
    },
    {
     "gap": "3\u20136 pts",
     "lo": 3,
     "hi": 6,
-    "n": 55,
+    "n": 57,
     "won": 25,
-    "lost": 30,
-    "pct": 0.455
+    "lost": 32,
+    "pct": 0.439
    },
    {
     "gap": "6\u201310 pts",
     "lo": 6,
     "hi": 10,
-    "n": 21,
+    "n": 20,
     "won": 9,
-    "lost": 12,
-    "pct": 0.429
+    "lost": 11,
+    "pct": 0.45
    },
    {
     "gap": "10+ pts",
     "lo": 10,
     "hi": 99,
-    "n": 6,
+    "n": 7,
     "won": 2,
-    "lost": 4,
-    "pct": 0.333
+    "lost": 5,
+    "pct": 0.286
    },
    {
     "gap": "all games",
     "n": 192,
-    "won": 95,
-    "lost": 97,
-    "pct": 0.495
+    "won": 94,
+    "lost": 98,
+    "pct": 0.49
    }
   ],
   "avg_abs_gap_spread": 2.91
@@ -121,19 +121,19 @@
     "gap": "0\u20132 pts",
     "lo": 0,
     "hi": 2,
-    "n": 414,
-    "won": 210,
+    "n": 415,
+    "won": 211,
     "lost": 204,
-    "pct": 0.507
+    "pct": 0.508
    },
    {
     "gap": "2\u20134 pts",
     "lo": 2,
     "hi": 4,
-    "n": 331,
-    "won": 147,
+    "n": 330,
+    "won": 146,
     "lost": 184,
-    "pct": 0.444
+    "pct": 0.442
    },
    {
     "gap": "4\u20136 pts",
@@ -214,11 +214,11 @@
     "lo": 0,
     "hi": 2,
     "gap": "0\u20132 pts",
-    "n": 498,
-    "model_pct": 0.524,
-    "flag": "model",
+    "n": 499,
+    "model_pct": 0.523,
+    "flag": null,
     "early": false,
-    "hit": 0.524
+    "hit": null
    },
    {
     "lo": 2,
@@ -234,11 +234,11 @@
     "lo": 4,
     "hi": 6,
     "gap": "4\u20136 pts",
-    "n": 216,
-    "model_pct": 0.468,
+    "n": 215,
+    "model_pct": 0.465,
     "flag": "market",
     "early": false,
-    "hit": 0.532
+    "hit": 0.535
    },
    {
     "lo": 6,
@@ -256,7 +256,7 @@
     "lo": 0,
     "hi": 3,
     "gap": "0\u20133 pts",
-    "n": 588,
+    "n": 586,
     "model_pct": 0.502,
     "flag": null,
     "early": false,
@@ -266,8 +266,8 @@
     "lo": 3,
     "hi": 6,
     "gap": "3\u20136 pts",
-    "n": 376,
-    "model_pct": 0.505,
+    "n": 378,
+    "model_pct": 0.503,
     "flag": null,
     "early": false,
     "hit": null
@@ -276,18 +276,18 @@
     "lo": 6,
     "hi": 10,
     "gap": "6\u201310 pts",
-    "n": 225,
-    "model_pct": 0.458,
+    "n": 224,
+    "model_pct": 0.46,
     "flag": "market",
     "early": false,
-    "hit": 0.542
+    "hit": 0.54
    },
    {
     "lo": 10,
     "hi": 99,
     "gap": "10+ pts",
-    "n": 68,
-    "model_pct": 0.485,
+    "n": 69,
+    "model_pct": 0.478,
     "flag": null,
     "early": false,
     "hit": null
@@ -296,25 +296,25 @@
  },
  "coefficients": {
   "margin": {
-   "rate_margin": 1.123,
-   "home_b2b": -2.08,
-   "away_b2b": 2.009,
+   "rate_margin": 1.124,
+   "home_b2b": -2.078,
+   "away_b2b": 2.008,
    "rest_diff": 0.156,
-   "dfs_avail_diff": 0.049,
-   "dfs_change_diff": -0.038,
-   "dfs_missing_diff": 0.032,
-   "dfs_avail_diff_na": 0.37,
-   "dfs_change_diff_na": 0.37,
-   "dfs_missing_diff_na": -0.853
+   "dfs_avail_diff": 0.048,
+   "dfs_change_diff": -0.036,
+   "dfs_missing_diff": 0.031,
+   "dfs_avail_diff_na": 0.376,
+   "dfs_change_diff_na": 0.376,
+   "dfs_missing_diff_na": -0.863
   },
   "total": {
-   "rate_total": 0.984,
-   "home_b2b": 0.11,
-   "away_b2b": 0.295,
-   "dfs_avail_sum": 0.027,
-   "dfs_change_sum": 0.025,
-   "dfs_avail_sum_na": 5.465,
-   "dfs_change_sum_na": 5.465
+   "rate_total": 0.983,
+   "home_b2b": 0.111,
+   "away_b2b": 0.296,
+   "dfs_avail_sum": 0.029,
+   "dfs_change_sum": 0.023,
+   "dfs_avail_sum_na": 5.717,
+   "dfs_change_sum_na": 5.717
   }
  }
 }
